@@ -1,10 +1,10 @@
 ---
-title: 'Tutorial: Tic-Tac-Toe'
+title: 'ట్యుటోరియల్: టిక్-టాక్-టో'
 ---
 
 <Intro>
 
-You will build a small tic-tac-toe game during this tutorial. This tutorial does not assume any existing React knowledge. The techniques you'll learn in the tutorial are fundamental to building any React app, and fully understanding it will give you a deep understanding of React.
+ఈ ట్యుటోరియల్ లో మీరు ఒక చిన్న టిక్-టాక్-టో గేమ్ ని నిర్మించుతారు. ఈ ట్యుటోరియల్ మీకు ఎలాంటి React(రియాక్ట్) ఫ్రేమ్ వర్క్ పరిజ్ఞానం లేదని భావిస్తుంది . ఈ ట్యుటోరియల్ లో మీరు నేర్చుకునే విధాలు ఏవైనా React(రియాక్ట్) యాప్ ని నిర్మించడానికి మూలముగా ఉంటాయి, మరియు దానిని పూర్తిగా అర్థం చేసుకోవడం వల్ల React(రియాక్ట్) గురించి మీకు లోతైన అవగాహన లభిస్తుంది.
 
 </Intro>
 
