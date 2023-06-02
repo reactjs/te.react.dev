@@ -11,19 +11,19 @@ React డాక్యుమెంటేషన్‌కు స్వాగతం!
 <YouWillLearn>
 
 - కంపోనెంట్లను ఎలా క్రియేట్ చెయ్యాలి మరియు వాటిని ఎలా నెస్ట్ చెయ్యాలి 
-- మార్కప్ మరియు స్టైలును ఎలా జోడిన్చాలి 
+- మార్కప్ మరియు స్టైల్స్ ను ఎలా జోడిన్చాలి 
 - డేటాను ఎలా ప్రదర్శించాలి
 - కన్డిషన్లను మరియు లిస్ట్లను ఎలా రెండర్ చెయ్యాలి
 - ఈవెంట్‌లకు ప్రతిస్పందించడం మరియు స్క్రీన్‌ను ఎలా అప్‌డేట్ చెయ్యాలి
-- కమ్పోనెన్ట్స్ మధ్య డేటాను ఎలా పన్చాలి
+- కంపోనెంట్ల మధ్య డేటాను ఎలా పన్చాలి
 
 </YouWillLearn>
 
-## Creating and nesting components {/*components*/}
+## కంపోనెంట్లను సృష్టించడం మరియు వాటిని నెస్ట్ చేయడం {/*components*/}
 
-React apps are made out of *components*. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
+React యాప్స్ అనేవి *కంపోనెంట్లు* నుండి తయారయినవి.  ఒక కంపోనెంట్ అనేది యూజర్ ఇంటర్ఫేస్ (ఊఈ) లో భాగం. దానికన్టూ ఒక స్వంత లాజిక్ మరియు రూపాన్ని కలిగి ఉంటుంది. ఒక కంపోనెంట్ అనేది ఒక బటన్ గా అయినా ఉండవచ్చు, లేదా సంపూర్ణ పేజీ లాగా అయినా ఉండవచ్చు.
 
-React components are JavaScript functions that return markup:
+React కాంపోనెంట్‌లు మార్కప్‌ని return చేసే జావాస్క్రిప్ట్ ఫంక్షన్‌లు:
 
 ```js
 function MyButton() {
@@ -33,7 +33,7 @@ function MyButton() {
 }
 ```
 
-Now that you've declared `MyButton`, you can nest it into another component:
+ఇప్పుడు మీరు `MyButton`ని డిక్లేర్ చెసినట్టే, దానిని మరొక కాంపోనెంట్‌లో నెస్ట్ చెయ్యవచ్చు:
 
 ```js {5}
 export default function MyApp() {
@@ -46,9 +46,9 @@ export default function MyApp() {
 }
 ```
 
-Notice that `<MyButton />` starts with a capital letter. That's how you know it's a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.
+`<MyButton />` పెద్ద అక్షరంతో ప్రారంభమవుతుందని గమనించండి. అలా మీరు ఒక React కాంపోనెంట్ ని గుర్తించచ్ఛు. React కాంపోనెంట్ పేర్లు ఎల్లప్పుడూ పెద్ద అక్షరంతో ప్రారంభం కావాలి, అయితే HTML ట్యాగ్‌లు తప్పనిసరిగా చిన్న అక్షరంతో ఉండాలి.
 
-Have a look at the result:
+ఫలితాన్ని చూడండి:
 
 <Sandpack>
 
@@ -73,13 +73,13 @@ export default function MyApp() {
 
 </Sandpack>
 
-The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
+`export default` కీవర్డ్లు ఫైల్‌లో ముఖ్య కంపోనెంట్ ని నిర్దిష్టం చేస్తాయి. మీకు జావాస్క్రిప్ట్ సింటాక్స్‌లో ఏది అయినా తెలియకపోతే, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) మరియు [javascript.info](https://javascript.info/import-export) ని సంప్రదించండి. ఇవి వాడుకరికి మరింత సమాచారాన్ని అందిస్తాయి.
 
-## Writing markup with JSX {/*writing-markup-with-jsx*/}
+## JSX తో మార్కప్ రాయడం {/*writing-markup-with-jsx*/}
 
-The markup syntax you've seen above is called *JSX*. It is optional, but most React projects use JSX for its convenience. All of the [tools we recommend for local development](/learn/installation) support JSX out of the box.
+మీరు పైన చూసిన మార్కప్ సింటాక్స్‌ని *JSX* అంటారు. ఇది ఐచ్ఛికం, కానీ చాలా React ప్రాజెక్ట్‌లలో వాటి సౌలభ్యం కోసం JSX ని ఉపయోగిస్తారు. అన్నీ [లోకల్ డెవెలొప్మెంట్ కోసం మేము సిఫార్సు చేసే సాధనాలు](/learn/installation) JSX కి మద్దతు ని ఇస్తాయి.
 
-JSX is stricter than HTML. You have to close tags like `<br />`. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
+JSX HTML కంటే స్ట్రిక్ట్ గా ఉంటంది. మీరు `<br />` వంటి ట్యాగ్‌లను మూసివేయాలి. మీ కంపోనెంట్ బహుళ JSX ట్యాగ్‌లను కూడా అందించలేదు. మీరు వాటిని షేర్డ్ పేరెంట్ లో పెట్టాలి,`<div>...</div>` లేదా ఖాళీ `<>...</>` లాంటి ర్యాపర్ లో ర్యాప్ చెయ్యాలి:
 
 ```js {3,6}
 function AboutPage() {
@@ -92,17 +92,17 @@ function AboutPage() {
 }
 ```
 
-If you have a lot of HTML to port to JSX, you can use an [online converter.](https://transform.tools/html-to-jsx)
+ఒకవేళ​ JSX కి పోర్ట్ చేయడానికి మీ దగ్గర​ చాలా HTML ఉంటే, మీరు [ఆన్‌లైన్ కన్వర్టర్](https://transform.tools/html-to-jsx) ని ఉపయోగించవచ్చు.
 
-## Adding styles {/*adding-styles*/}
+## స్టైల్స్ జోడించటం {/*adding-styles*/}
 
-In React, you specify a CSS class with `className`. It works the same way as the HTML [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) attribute:
+React లో, మీరు `className` తో CSS class ని పేర్కొంటారు. ఇది HTML [`class`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class) అట్రిబ్యూట్ మాదిరిగానే పని చేస్తుంది:
 
 ```js
 <img className="avatar" />
 ```
 
-Then you write the CSS rules for it in a separate CSS file:
+తరువాత​ మీరు దాని CSS నియమాలను ప్రత్యేక CSS ఫైల్‌లో వ్రాస్తారు:
 
 ```css
 /* In your CSS */
@@ -111,7 +111,7 @@ Then you write the CSS rules for it in a separate CSS file:
 }
 ```
 
-React does not prescribe how you add CSS files. In the simplest case, you'll add a [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.
+మీరు CSS ఫైల్‌లను ఎలా జోడించాలో React సూచించదు. సింపుల్ గా, మీరు మీ HTML కి [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ట్యాగ్‌ని జోడిస్తారు. మీరు బిల్డ్ టూల్ లేదా ఫ్రేమ్‌వర్క్‌ని ఉపయోగిస్తుంటే, మీ ప్రాజెక్ట్‌ కి CSS ఫైల్‌ను ఎలా జోడించాలో తెలుసుకోవడానికి దాని డాక్యుమెంటేషన్‌ను సంప్రదించండి.
 
 ## Displaying data {/*displaying-data*/}
 
