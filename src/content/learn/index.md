@@ -4,18 +4,18 @@ title: Quick Start
 
 <Intro>
 
-Welcome to the React documentation! This page will give you an introduction to the 80% of React concepts that you will use on a daily basis.
+React డాక్యుమెంటేషన్‌కు స్వాగతం! ఈ పేజీ మీరు రోజూ ఉపయోగించే 80% React కాన్సెప్ట్‌లకు పరిచయాన్ని అందిస్తుంది.
 
 </Intro>
 
 <YouWillLearn>
 
-- How to create and nest components
-- How to add markup and styles
-- How to display data
-- How to render conditions and lists
-- How to respond to events and update the screen
-- How to share data between components
+- కంపోనెంట్లను ఎలా క్రియేట్ చెయ్యాలి మరియు వాటిని ఎలా నెస్ట్ చెయ్యాలి 
+- మార్కప్ మరియు స్టైలును ఎలా జోడిన్చాలి 
+- డేటాను ఎలా ప్రదర్శించాలి
+- కన్డిషన్లను మరియు లిస్ట్లను ఎలా రెండర్ చెయ్యాలి
+- ఈవెంట్‌లకు ప్రతిస్పందించడం మరియు స్క్రీన్‌ను ఎలా అప్‌డేట్ చెయ్యాలి
+- కమ్పోనెన్ట్స్ మధ్య డేటాను ఎలా పన్చాలి
 
 </YouWillLearn>
 
