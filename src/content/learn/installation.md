@@ -4,7 +4,7 @@ title: Installation
 
 <Intro>
 
-React has been designed from the start for gradual adoption. You can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to an HTML page, or start a complex React-powered app, this section will help you get started.
+React ప్రారంభం నుండి, క్రమంగా స్వీకరించుట​ కొరకు రూపొందించబడింది. మీకు అవసరమైనంత React ని ఉపయోగించవచ్చు. మీరు అసలైన React ని, HTML పేజీకి కొంత ఇంటరాక్టివిటీని జోడించాలనుకున్నా లేదా సంక్లిష్టమైన(complex) React పవర్డ్ యాప్‌ని ప్రారంభించాలనుకున్నా, ఈ విభాగం మీకు అందుకు సహయపడుతుంది.
 
 </Intro>
 
