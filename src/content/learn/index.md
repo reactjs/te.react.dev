@@ -223,6 +223,8 @@ return (
 
 You will rely on JavaScript features like [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and the [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to render lists of components.
 
+కంపోనెంట్లను రెండర్  మీరు [`for` లూప్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) మరియు [అరే `map()` ఫంక్షన్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) వంటి జావాస్క్రిప్ట్ ఫీచర్‌లపై ఆధారపడతారు.
+
 For example, let's say you have an array of products:
 
 ```js
