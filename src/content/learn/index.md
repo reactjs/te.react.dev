@@ -113,9 +113,9 @@ React లో, మీరు `className` తో CSS class ని పేర్క�
 
 మీరు CSS ఫైల్‌లను ఎలా జోడించాలో React సూచించదు. సింపుల్ గా, మీరు మీ HTML కి [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) ట్యాగ్‌ని జోడిస్తారు. మీరు బిల్డ్ టూల్ లేదా ఫ్రేమ్‌వర్క్‌ని ఉపయోగిస్తుంటే, మీ ప్రాజెక్ట్‌ కి CSS ఫైల్‌ను ఎలా జోడించాలో తెలుసుకోవడానికి దాని డాక్యుమెంటేషన్‌ను సంప్రదించండి.
 
-## Displaying data {/*displaying-data*/}
+## డేటాను ప్రదర్శించటం {/*displaying-data*/}
 
-JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
+JSX జావాస్క్రిప్ట్‌లో మార్కప్‌ని ఉంచడానికి మీకు అనుమతిస్తుంది. కర్లీ బ్రేస్‌లు మిమ్మల్ని జావాస్క్రిప్ట్‌లోకి "తిరిగి వెళ్ళడానికి" అనుమతిస్తాయి, తద్వారా మీరు మీ కోడ్ నుండి కొంత వేరియబుల్‌ను పొందుపరచవచ్చు మరియు దానిని వినియోగదారుకు (యూజర్ కు) ప్రదర్శించవచ్చు. ఉదాహరణకు, ఇది `user.name`ని ప్రదర్శిస్తుంది:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
+మీరు JSX ఆట్రిబ్యుట్ నుండి "తిరిగి జావాస్క్రిప్ట్‌లోకి వెళ్ళొచ్చు", కానీ మీరు *కోట్‌లకు("") బదులుగా* కర్లీ బ్రేస్‌లను({}) ఉపయోగించాలి. ఉదాహరణకు, `className="avatar"` అనేది `"avatar"` స్ట్రింగ్‌ను CSS class గా పాస్ చేస్తుంది, కానీ `src={user.imageUrl}` జావాస్క్రిప్ట్ `user.imageUrl` వేరియబుల్ విలువను చదివి, ఆపై ఆ విలువను `src` ఆట్రిబ్యుట్ గా పాస్ చేస్తుంది:
 
 ```js {3,4}
 return (
@@ -136,7 +136,7 @@ return (
 );
 ```
 
-You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
+మీరు JSX కర్లీ బ్రేస్‌ల లోపల కూడా చాలా క్లిష్టమైన ఎక్స్ప్రెషనులను  ఉంచవచ్చు, ఉదాహరణకు, [string కంకాటినేషన్](https://javascript.info/operators#string-concatenation-with-binary):
 
 <Sandpack>
 
@@ -177,11 +177,11 @@ export default function Profile() {
 
 </Sandpack>
 
-In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` JSX curly braces. You can use the `style` attribute when your styles depend on JavaScript variables.
+పై ఉదాహరణలో, `style={{}}` అనేది ప్రత్యేక సింటాక్స్ కాదు, కానీ `style={ }` JSX కర్లీ బ్రేస్‌ల లోపల సాధారణ `{}` ఆబ్జెక్ట్. మీ స్టైల్స్ జావాస్క్రిప్ట్‌ వేరియబుల్స్‌పై ఆధారపడి ఉన్నప్పుడు మీరు `style` ఆట్రిబ్యుట్ ని ఉపయోగించవచ్చు.
 
-## Conditional rendering {/*conditional-rendering*/}
+## కన్డీషనల్ రెండరింగ్ {/*conditional-rendering*/}
 
-In React, there is no special syntax for writing conditions. Instead, you'll use the same techniques as you use when writing regular JavaScript code. For example, you can use an [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement to conditionally include JSX:
+React లో,కండిషనులని వ్రాయటానికి ప్రత్యేక సింటాక్స్ లేదు. బదులుగా, మీరు సాధారణ జావాస్క్రిప్ట్ కోడ్‌ను వ్రాసేటప్పుడు ఉపయోగించే పద్ధతులనే ఉపయోగిస్తారు. ఉదాహరణకు, మీరు కండిషనల్ గా JSX చేర్చడానికి [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) స్టేట్‌మెంట్‌ను ఉపయోగించవచ్చు:
 
 ```js
 let content;
@@ -197,7 +197,7 @@ return (
 );
 ```
 
-If you prefer more compact code, you can use the [conditional `?` operator.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) Unlike `if`, it works inside JSX:
+మీరు మరింత కాంపాక్ట్ కోడ్‌ని ఇష్టపడితే, మీరు [కండిషనల్ `?` ఆపరేటర్‌](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ని ఉపయోగించవచ్చు.`if` వలె కాకుండా , ఇది JSX లోపల పనిచేస్తుంది:
 
 ```js
 <div>
@@ -209,7 +209,7 @@ If you prefer more compact code, you can use the [conditional `?` operator.](htt
 </div>
 ```
 
-When you don't need the `else` branch, you can also use a shorter [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation):
+మీకు `else` బ్రాంచ్ అవసరం లేనప్పుడు, మీరు చిన్నదైన [లాజికల్ `&&` సింటాక్స్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation) ని కూడా ఉపయోగించవచ్చు:
 
 ```js
 <div>
@@ -217,9 +217,9 @@ When you don't need the `else` branch, you can also use a shorter [logical `&&` 
 </div>
 ```
 
-All of these approaches also work for conditionally specifying attributes. If you're unfamiliar with some of this JavaScript syntax, you can start by always using `if...else`.
+ఈ విధానాలన్నీ కన్డీషన్లతో కూడిన ఆట్రిబ్యుట్లను పేర్కొనడానికి కూడా పని చేస్తాయి. మీకు ఈ జావాస్క్రిప్ట్ సింటాక్స్‌లో కొన్నింటి గురించి తెలియకుంటే, మీరు ఎప్పుడౖనా `if...else`ని ఉపయోగించి ప్రారంభించవచ్చు.
 
-## Rendering lists {/*rendering-lists*/}
+## లిస్ట్లను రెండర్ చెయ్యటం {/*rendering-lists*/}
 
 You will rely on JavaScript features like [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and the [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to render lists of components.
 
