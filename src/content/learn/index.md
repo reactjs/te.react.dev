@@ -221,11 +221,9 @@ return (
 
 ## లిస్ట్లను రెండర్ చెయ్యటం {/*rendering-lists*/}
 
-You will rely on JavaScript features like [`for` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) and the [array `map()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to render lists of components.
+కంపోనెంట్ల జాబితా ను మీరు రెండర్ చెయ్యడానికి  [`for` లూప్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) మరియు [అరే(array) `map()` ఫంక్షన్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) వంటి జావాస్క్రిప్ట్ ఫీచర్‌లపై ఆధారపడతారు.
 
-కంపోనెంట్లను రెండర్  మీరు [`for` లూప్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) మరియు [అరే `map()` ఫంక్షన్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) వంటి జావాస్క్రిప్ట్ ఫీచర్‌లపై ఆధారపడతారు.
-
-For example, let's say you have an array of products:
+ఉదాహరణకు, మీ దగ్గర ఒక అరే లో ప్రొడక్ట్స్(array of products) కలిగి ఉన్నాయని అనుకుందాం:
 
 ```js
 const products = [
@@ -235,7 +233,7 @@ const products = [
 ];
 ```
 
-Inside your component, use the `map()` function to transform an array of products into an array of `<li>` items:
+మీ కాంపోనెంట్ లోపల, అరే ఆఫ్ ప్రొడక్ట్స్ ని `<li>` అరే ఆఫ్ ఐటెమ్స్ గా మార్చడానికి `map()` ఫంక్షన్‌ని ఉపయోగించండి:
 
 ```js
 const listItems = products.map(product =>
