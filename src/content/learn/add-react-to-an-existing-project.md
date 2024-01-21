@@ -62,7 +62,7 @@ npm install react react-dom
 <html>
   <head><title>My app</title></head>
   <body>
-    <!-- Your existing page content (in this example, it gets replaced) -->
+    <!-- మీ ప్రస్తుత పేజీ కంటెంట్ (ఈ ఉదాహరణలో, ఇది రీప్లేస్ చేయబడుతుంది) -->
   </body>
 </html>
 ```
@@ -70,10 +70,10 @@ npm install react react-dom
 ```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// ఇప్పటికే ఉన్న HTML కంటెంట్‌ను క్లియర్ చేయండి
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// బదులుగా మీ React కాంపోనెంట్‌ను రెండర్ చేయండి
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
@@ -95,10 +95,10 @@ root.render(<h1>Hello, world</h1>);
 ```js
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// ఇప్పటికే ఉన్న HTML కంటెంట్‌ను క్లియర్ చేయండి
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// బదులుగా మీ React కాంపోనెంట్‌ను రెండర్ చేయండి
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
@@ -110,9 +110,9 @@ root.render(<h1>Hello, world</h1>);
 బదులుగా, మీరు బహుశా మీ HTML లోని నిర్దిష్ట ప్రదేశాలలో మీ React భాగాలను రెండర్ చేయాలనుకుంటున్నారు. మీ HTML పేజీని ఓపెన్ చేసి (లేదా దానిని రూపొందించే సర్వర్ టెంప్లేట్లను ఓపెన్ చేసి) మరియు ఏదైనా ట్యాగ్‌కి యూనిక్ [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) అట్రిబ్యూట్‌ని జోడించండి, ఉదాహరణకు:
 
 ```html
-<!-- ... somewhere in your html ... -->
+<!-- ... మీ HTML లో ఎక్కడో ఉంది ... -->
 <nav id="navigation"></nav>
-<!-- ... more html ... -->
+<!-- ... మరింత HTML ... -->
 ```
 
 ఇది [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) తో ఆ HTML ఎలిమెంట్‌ను కనుగొని, దాన్ని [`createRoot`](/reference/react-dom/client/createRoot) కి పంపుతుంది, తద్వారా మీరు లోపల మీ స్వంత React కాంపోనెంట్‌ను రెండర్ చేయవచ్చు:
@@ -135,7 +135,7 @@ root.render(<h1>Hello, world</h1>);
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Actually implement a navigation bar
+  // TODO: వాస్తవానికి నావిగేషన్ బార్‌ ని ఇంప్లీమెంట్ చేయండి
   return <h1>Hello from React!</h1>;
 }
 
