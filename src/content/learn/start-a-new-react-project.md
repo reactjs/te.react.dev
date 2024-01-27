@@ -1,121 +1,121 @@
 ---
-title: Start a New React Project
+title: కొత్త React ప్రాజెక్ట్‌ను ప్రారంభించండి
 ---
 
 <Intro>
 
-If you want to build a new app or a new website fully with React, we recommend picking one of the React-powered frameworks popular in the community. Frameworks provide features that most apps and sites eventually need, including routing, data fetching, and generating HTML.
+మీరు React తో పూర్తిగా కొత్త యాప్ లేదా కొత్త వెబ్‌సైట్‌ని బిల్డ్ చేయాలనుకొంటే, కమ్యూనిటీలో జనాదరణ పొందిన React-పవర్డ్ ఫ్రేమ్‌వర్క్‌లలో ఒకదాన్ని ఎంచుకోవాలని మేము సిఫార్సు చేస్తున్నాము. ఫ్రేమ్‌వర్క్‌లు రూటింగ్, డేటా ఫెట్చింగ్ మరియు HTML ని జెనరేట్ చేయడం వంటి అనేక యాప్‌లు మరియు సైట్‌లకు అవసరమైన ఫీచర్లను అందిస్తాయి.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** You can *also* choose to use Node.js in production, but you don't have to. Many React frameworks support export to a static HTML/CSS/JS folder.
+**మీరు React ను లోకల్ గా వాడాలి అనుకొంటే [Node.js](https://nodejs.org/en/) ను ఇన్స్టాల్ చేసుకోవాలి.** మీరు ప్రొడక్షన్ Node.js ని *కూడా* ఉపయోగించడానికి ఎంచుకోవచ్చు, కానీ మీరు చేయవలసిన అవసరం లేదు. అనేక React ఫ్రేమ్‌వర్క్‌లు స్టాటిక్ HTML/CSS/JS ఫోల్డర్‌కి ఎక్స్పోర్ట్ చేయడాన్ని సపోర్ట్ చేస్తాయి.
 
 </Note>
 
-## Production-grade React frameworks {/*production-grade-react-frameworks*/}
+## ప్రొడక్షన్-గ్రేడ్ React ఫ్రేంవర్క్స్ {/*production-grade-react-frameworks*/}
 
 ### Next.js {/*nextjs*/}
 
-**[Next.js](https://nextjs.org/) is a full-stack React framework.** It's versatile and lets you create React apps of any size--from a mostly static blog to a complex dynamic application. To create a new Next.js project, run in your terminal:
+**[Next.js](https://nextjs.org/) అనేది ఫుల్-స్టాక్ React ఫ్రేమ్‌వర్క్.** ఇది చాలా స్టాటిక్ బ్లాగ్ సైట్‌ల నుండి సంక్లిష్టమైన డైనమిక్ యాప్‌ల వరకు ఏదైనా పరిమాణంలో React యాప్‌లను క్రియేట్ చేయడానికి మిమ్మల్ని అనుమతించే వెర్సటైల్ ఫ్రేమ్‌వర్క్. కొత్త Next.js ప్రాజెక్ట్‌ని క్రియేట్ చేయడానికి, మీ టెర్మినల్‌లో కింది కమాండ్ను రన్ చేయండి:
 
 <TerminalBlock>
 npx create-next-app@latest
 </TerminalBlock>
 
-If you're new to Next.js, check out the [learn Next.js course.](https://nextjs.org/learn)
+మీరు Next.js కి కొత్త అయితే, [Next.js లెర్నింగ్ కోర్సును చూడండి.](https://nextjs.org/learn)
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/app/building-your-application/deploying) to any Node.js or serverless hosting, or to your own server. Next.js also supports a [static export](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports) which doesn't require a server.
+Next.js ను [Vercel](https://vercel.com/) మైంటైన్ చేస్తుంది. మీరు ఏదైనా Node.js లేదా సర్వర్‌లెస్ హోస్టింగ్‌కి లేదా మీ స్వంత సెర్వేర్లో [Next.js యాప్‌ని డిప్లొయ్ చేయవచ్చు](https://nextjs.org/docs/app/building-your-application/deploying). Next.js సర్వర్ అవసరం లేని [స్టాటిక్ ఎక్స్పోర్ట్](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports) కి కూడా సపోర్ట్ ఇస్తుంది.
 
 ### Remix {/*remix*/}
 
-**[Remix](https://remix.run/) is a full-stack React framework with nested routing.** It lets you break your app into nested parts that can load data in parallel and refresh in response to the user actions. To create a new Remix project, run:
+**[Remix](https://remix.run/) అనేది నెస్టెడ్ రూటింగ్‌తో కూడిన ఫుల్-స్టాక్ React ఫ్రేమ్‌వర్క్.** ఇది మీ యాప్‌ను సమూహ భాగాలుగా విభజించడానికి మిమ్మల్ని అనుమతిస్తుంది తద్వారా వాటిలోని డేటాను పారలెల్గా లోడ్ చేయవచ్చు మరియు యూసర్ యొక్క ఆక్షన్కు తగట్టు రెస్పాన్స్ను రిఫ్రెష్ చేయవచ్చు. కొత్త Remix ప్రాజెక్ట్‌ని క్రియేట్ చేయడానికి, మీ టెర్మినల్‌లో కింది కమాండ్ను రన్ చేయండి:
 
 <TerminalBlock>
 npx create-remix
 </TerminalBlock>
 
-If you're new to Remix, check out the Remix [blog tutorial](https://remix.run/docs/en/main/tutorials/blog) (short) and [app tutorial](https://remix.run/docs/en/main/tutorials/jokes) (long).
+మీరు Remix కి కొత్త అయితే, Remix యొక్క (చిన్న) [బ్లాగ్ క్రియేషన్ ట్యుటోరియల్](https://remix.run/docs/en/main/tutorials/blog) మరియు (లాంగ్) [యాప్ క్రియేషన్ ట్యుటోరియల్‌](https://remix.run/docs/en/main/tutorials/jokes) ని చూడండి.
 
-Remix is maintained by [Shopify](https://www.shopify.com/). When you create a Remix project, you need to [pick your deployment target](https://remix.run/docs/en/main/guides/deployment). You can deploy a Remix app to any Node.js or serverless hosting by using or writing an [adapter](https://remix.run/docs/en/main/other-api/adapter).
+Remix ను [Shopify](https://www.shopify.com/) మైంటైన్ చేస్తుంది. మీరు Remix ప్రాజెక్ట్‌ను క్రియేట్ చేసినపుడు, మీరు [మీ డిప్లొయిమెంట్ టార్గెట్ను ఎంచుకోవాలి](https://remix.run/docs/en/main/guides/deployment). మీరు [అడాప్టర్‌](https://remix.run/docs/en/main/other-api/adapter) ని ఉపయోగించడం లేదా వ్రాయడం ద్వారా ఏదైనా Node.js లేదా సర్వర్‌లెస్ హోస్టింగ్‌లో Remix యాప్‌ని డిప్లొయ్ చేయవచ్చు.
 
 ### Gatsby {/*gatsby*/}
 
-**[Gatsby](https://www.gatsbyjs.com/) is a React framework for fast CMS-backed websites.** Its rich plugin ecosystem and its GraphQL data layer simplify integrating content, APIs, and services into one website. To create a new Gatsby project, run:
+**[Gatsby](https://www.gatsbyjs.com/) అనేది ఫాస్ట్ CMS-బ్యాక్డ్ వెబ్‌సైట్‌ల కోసం React ఫ్రేమ్‌వర్క్.** దాని రిచ్ ప్లగ్ఇన్ ఎకోసిస్టమ్ మరియు దాని GraphQL డేటా లేయర్ ద్వారా కంటెంట్ను, APIలను మరియు సర్వీసులను ఒక వెబ్‌సైట్‌లోకి ఇంటిగ్రేట్ చేయడాన్ని సులభతరం చేస్తాయి. కొత్త Gatsby ప్రాజెక్ట్‌ని క్రియేట్ చేయడానికి, మీ టెర్మినల్‌లో కింది కమాండ్ను రన్ చేయండి:
 
 <TerminalBlock>
 npx create-gatsby
 </TerminalBlock>
 
-If you're new to Gatsby, check out the [Gatsby tutorial.](https://www.gatsbyjs.com/docs/tutorial/)
+మీరు Gatsby కి కొత్త అయితే, [Gatsby ట్యుటోరియల్‌](https://www.gatsbyjs.com/docs/tutorial/) ని చూడండి.
 
-Gatsby is maintained by [Netlify](https://www.netlify.com/). You can [deploy a fully static Gatsby site](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting) to any static hosting. If you opt into using server-only features, make sure your hosting provider supports them for Gatsby.
+Gatsby ను [Netlify](https://www.netlify.com/) మైంటైన్ చేస్తుంది. మీరు ఏదైనా స్టాటిక్ హోస్టింగ్‌లో [ఫుల్లీ స్టాటిక్ Gatsby సైట్‌ని డిప్లొయ్ చేయవచ్చు](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting). మీరు సర్వర్-ఓన్లీ ఫీచర్‌లను ఉపయోగించడాన్ని ఎంచుకుంటే, మీ హోస్టింగ్ ప్రొవైడర్ వాటిని Gatsby కోసం సపోర్ట్ చేస్తుందని నిర్ధారించుకోండి.
 
-### Expo (for native apps) {/*expo*/}
+### Expo (నేటివ్ యాప్‌ల కోసం) {/*expo*/}
 
-**[Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs.** It provides an SDK for [React Native](https://reactnative.dev/) that makes the native parts easier to use. To create a new Expo project, run:
+**[Expo](https://expo.dev/) అనేది React ఫ్రేమ్‌వర్క్, ఇది ట్రూలీ నేటివ్ UIలతో యూనివర్సల్ Android, iOS మరియు వెబ్ యాప్‌లను క్రియేట్ చేయడానికి మిమ్మల్ని అనుమతిస్తుంది.** ఇది నేటివ్ భాగాలను ఉపయోగించడాన్ని సులభతరం చేసే [React Native](https://reactnative.dev/) కోసం SDK ని అందిస్తుంది. కొత్త Expo ప్రాజెక్ట్‌ని సృష్టించడానికి, కింది కమాండ్ను రన్ చేయండి:
 
 <TerminalBlock>
 npx create-expo-app
 </TerminalBlock>
 
-If you're new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/).
+మీరు Expo కి కొత్త అయితే, [Expo ట్యుటోరియల్‌](https://docs.expo.dev/tutorial/introduction/) ని చూడండి.
 
-Expo is maintained by [Expo (the company)](https://expo.dev/about). Building apps with Expo is free, and you can submit them to the Google and Apple app stores without restrictions. Expo additionally provides opt-in paid cloud services.
+Expo ను [Expo (సంస్థ)](https://expo.dev/about) మైంటైన్ చేస్తుంది. Expo తో యాప్‌లను బిల్డ్ చేయడం ఉచితం మరియు మీరు వాటిని Google మరియు Apple యాప్ స్టోర్‌లకు పరిమితులు లేకుండా సబ్మిట్ చేయవచ్చు. Expo అదనంగా ఆప్షనల్ పెయిడ్ క్లౌడ్ సేవలను అందిస్తుంది.
 
 <DeepDive>
 
-#### Can I use React without a framework? {/*can-i-use-react-without-a-framework*/}
+#### నేను ఫ్రేమ్‌వర్క్ లేకుండా React ని ఉపయోగించవచ్చా? {/*can-i-use-react-without-a-framework*/}
 
-You can definitely use React without a framework--that's how you'd [use React for a part of your page.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **However, if you're building a new app or a site fully with React, we recommend using a framework.**
+మీరు ఫ్రేమ్‌వర్క్ లేకుండా కూడా React ని ఉపయోగించవచ్చు--మీ [పేజీలో కొంత భాగం కోసం మీరు React ని ఇలాగే ఉపయోగించాలి.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) **అయితే, మీరు పూర్తిగా React తో కొత్త యాప్ లేదా సైట్‌ని బిల్డ్ చేస్తున్నట్లైతే, ఫ్రేమ్‌వర్క్‌ని ఉపయోగించమని మేము సిఫార్సు చేస్తున్నాము.**
 
-Here's why.
+ఎందుకో ఇపుడు చూదాం.
 
-Even if you don't need routing or data fetching at first, you'll likely want to add some libraries for them. As your JavaScript bundle grows with every new feature, you might have to figure out how to split code for every route individually. As your data fetching needs get more complex, you are likely to encounter server-client network waterfalls that make your app feel very slow. As your audience includes more users with poor network conditions and low-end devices, you might need to generate HTML from your components to display content early--either on the server, or during the build time. Changing your setup to run some of your code on the server or during the build can be very tricky.
+మొదట్లో మీకు రౌటింగ్ లేదా డేటా ఫెట్చింగ్ అవసరం లేకపోయినా, మీరు వాటి కోసం కొన్ని లైబ్రరీలను వాడవలసి ఉంటుంది. ప్రతి కొత్త ఫీచర్తో మీ JavaScript బండిల్ పెరుగుతున్నందున, ప్రతి రూట్‌కి ఇండివిడ్యుఅల్గా కోడ్‌ను ఎలా స్ప్లిట్ చేయాలో మీరు గుర్తించాల్సి ఉంటుంది. మీ డేటా ఫెట్చింగ్ అవసరాలు మరింత క్లిష్టంగా మారుతున్నందున, మీరు మీ యాప్ చాలా నెమ్మదిగా ఉండేలా చేసే సర్వర్-క్లయింట్ నెట్‌వర్క్ జలపాతాలను ఎదుర్కొనే అవకాశం ఉంది. మీ ఆడియన్స్ లో ఎక్కువ మంది స్లో నెట్‌వర్క్ కండిషన్స్ మరియు లో-ఎండ్ డివైసెస్ ను వాడే యూజర్స్ ఉన్నందున, మీరు ఎర్లీగా కంటెంట్‌ని డిస్ప్లే చేయడానికి మీ కంపోనెంట్లనుండి నుండి HTML ని జెనరేట్ చేయాల్సి ఉంటుంది - ఇది సర్వర్‌లో చేయచ్చు లేదా బిల్డ్ టైంలో చేయచ్చు. సర్వర్‌లో లేదా బిల్డ్ టైంలో మీ కోడ్‌లో కొంత భాగాన్ని రన్ చేయడానికి మీ సెటప్‌ను మార్చడం చాలా క్లిష్టంగా ఉంటుంది.
 
-**These problems are not React-specific. This is why Svelte has SvelteKit, Vue has Nuxt, and so on.** To solve these problems on your own, you'll need to integrate your bundler with your router and with your data fetching library. It's not hard to get an initial setup working, but there are a lot of subtleties involved in making an app that loads quickly even as it grows over time. You'll want to send down the minimal amount of app code but do so in a single client–server roundtrip, in parallel with any data required for the page. You'll likely want the page to be interactive before your JavaScript code even runs, to support progressive enhancement. You may want to generate a folder of fully static HTML files for your marketing pages that can be hosted anywhere and still work with JavaScript disabled. Building these capabilities yourself takes real work.
+**ఈ సమస్యలు React-స్పెసిఫిక్ కావు. అందుకే Svelte కి SvelteKit ఉంది, Vue కి Nuxt ఉంది మరియు మొదలైనవి.** ఈ సమస్యలను మీ స్వంతంగా పరిష్కరించడానికి, మీరు మీ రౌటర్‌తో మరియు మీ డేటా ఫెట్చింగ్ లైబ్రరీతో మీ బండ్లర్‌ను ఇంటిగ్రేట్ చేయాలి. ఇనీటియల్ సెటప్ పని చేయడం కష్టం కాదు, కానీ కాలక్రమేణా పెరుగుతున్నప్పటికీ త్వరగా లోడ్ అయ్యే యాప్‌ను తయారు చేయడంలో చాలా సూక్ష్మబేధాలు ఉన్నాయి. మీరు కనీస మొత్తంలో యాప్ కోడ్‌ని పంపాలనుకుంటున్నారు, అయితే పేజీకి అవసరమైన ఏదైనా డేటాతో పారలెల్గా ఒకే క్లయింట్-సర్వర్ రౌండ్‌ట్రిప్‌లో అలా చేయండి. ప్రోగ్రెసివ్ ఏంహాన్సమెంట్ ను సపోర్ట్ చేయడానికి, మీ JavaScript కోడ్ రన్ కావడానికి ముందే పేజీ ఇంటరాక్టివ్‌గా ఉండాలని మీరు కోరుకోవచ్చు. మీరు మీ మార్కెటింగ్ పేజీల కోసం ఫుల్లీ స్టాటిక్ HTML ఫైల్‌ల ఫోల్డర్‌ను జెనరేట్ చేయాలనుకోవచ్చు, వాటిని ఎక్కడైనా హోస్ట్ చేయచ్చు మరియు వాటిలో JavaScript ని డిసేబుల్‌ చేసినప్పటికీ పని చేస్తాయి. ఈ ఫీచర్లను మీరే బిల్డ్ చేయడానికి చాలా కృషి అవసరం.
 
-**React frameworks on this page solve problems like these by default, with no extra work from your side.** They let you start very lean and then scale your app with your needs. Each React framework has a community, so finding answers to questions and upgrading tooling is easier. Frameworks also give structure to your code, helping you and others retain context and skills between different projects. Conversely, with a custom setup it's easier to get stuck on unsupported dependency versions, and you'll essentially end up creating your own framework—albeit one with no community or upgrade path (and if it's anything like the ones we've made in the past, more haphazardly designed).
+**ఈ పేజీలోని React ఫ్రేమ్‌వర్క్‌లు మీ వైపు నుండి ఎటువంటి అదనపు సహాయం లేకుండా డిఫాల్ట్‌గా ఇలాంటి సమస్యలను పరిష్కరిస్తాయి.** ఇవి చాలా నెమ్మదిగా ప్రారంభించి, ఆపై మీ అవసరాలకు అనుగుణంగా మీ యాప్‌ను స్కేల్ చేయడానికి అనుమతిస్తాయి. ప్రతి React ఫ్రేమ్‌వర్క్‌కు ఒక కమ్యూనిటీ ఉంటుంది, కాబట్టి మీ ప్రశ్నలకు సమాధానాలు కనుగొనడం మరియు టూల్స్ ని అప్‌గ్రేడ్ చేయడం సులభం. ఫ్రేమ్‌వర్క్‌లు మీ కోడ్‌కు స్ట్రక్చర్ ని అందిస్తాయి, మీకు మరియు ఇతరులకు విభిన్న ప్రాజెక్ట్‌ల మధ్య కాంటెక్స్ట్ మరియు స్కిల్స్ ను రిటైన్ చేసుకోవడంలో సహాయపడతాయి. మరోవైపు, మీరు కస్టమ్ సెటప్ చేస్తే, మీరు ఇకపై సపోర్ట్ చేయని డిపెండెన్సీ వెర్షన్‌లతో చిక్కుకుపోయే అవకాశం ఉంది మరియు తప్పనిసరిగా మీ స్వంత ఫ్రేమ్‌వర్క్‌ను సృష్టించే అవకాశం ఉంది. అయితే, అటువంటి ఫ్రేమ్‌వర్క్‌లకు కమ్యూనిటీ లేదా అప్‌గ్రేడ్ పాత్ లేదు (మరియు అవి గతంలో సృష్టించబడిన వాటికి దగ్గరగా ఉన్నప్పటికీ, అవి ఇప్పటికీ అస్థిరంగా డిజైన్ చేయబడ్డాయి).
 
-If you're still not convinced, or your app has unusual constraints not served well by these frameworks and you'd like to roll your own custom setup, we can't stop you--go for it! Grab `react` and `react-dom` from npm, set up your custom build process with a bundler like [Vite](https://vitejs.dev/) or [Parcel](https://parceljs.org/), and add other tools as you need them for routing, static generation or server-side rendering, and more.
+మీరు ఇప్పటికీ దీనితో సంతృప్తి చెందకపోతే, లేదా ఫ్రేమ్‌వర్క్ అందించలేని ప్రత్యేక పరిమితులను మీ యాప్ కలిగి ఉంటే మరియు మీ స్వంత కస్టమ్ సెటప్‌ని సృష్టించాలనుకుంటే, మేము అలా చేయకుండా మిమ్మల్ని ఆపము! npm నుండి `react` మరియు `react-dom` ను ఉపయోగించండి, [Vite](https://vitejs.dev/) లేదా [Parcel](https://parceljs.org/) వంటి బండ్లర్‌తో మీ కస్టమ్ బిల్డ్ ప్రాసెస్ను సెటప్ చేయండి మరియు రూటింగ్, స్టాటిక్ జనరేషన్ లేదా సర్వర్-సైడ్ రెండరింగ్ మరియు ఇలాంటి వాటి కోసం మీకు అవసరమైన ఇతర టూల్స్ ను జోడించండి.
 </DeepDive>
 
-## Bleeding-edge React frameworks {/*bleeding-edge-react-frameworks*/}
+## బ్లీడింగ్-ఎడ్జ్ React ఫ్రేమ్‌వర్క్‌లు {/*bleeding-edge-react-frameworks*/}
 
-As we've explored how to continue improving React, we realized that integrating React more closely with frameworks (specifically, with routing, bundling, and server technologies) is our biggest opportunity to help React users build better apps. The Next.js team has agreed to collaborate with us in researching, developing, integrating, and testing framework-agnostic bleeding-edge React features like [React Server Components.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+React ని ఇంప్రూవ్ చేయడం ఎలా కొనసాగించాలో మేము అన్వేషిస్తున్నప్పుడు, React ని ఫ్రేమ్‌వర్క్‌లతో (ప్రత్యేకంగా, రూటింగ్, బండ్లింగ్ మరియు సర్వర్ సాంకేతికతలతో) మరింత క్లోజ్గా ఇంటిగ్రేట్ చేయడం అనేది React యూజర్‌లకు మెరుగైన యాప్‌లను రూపొందించడంలో సహాయపడుతుంది కాబట్టి ఇది మా అతిపెద్ద అవకాశం అని మేము గ్రహించాము. Next.js బృందం ఫ్రేమ్‌వర్క్‌ను రీసెర్చ్ చేయడం, డెవలప్ చేయడం, ఇంటిగ్రేట్ చేయడం మరియు టెస్టింగ్లో మాతో సహకరించడానికి అంగీకరించింది తద్వారా బ్లీడింగ్-ఎడ్జ్ React ఫీచర్లను అందిస్తుంది ఉదాహరణకు [React Server Components.](/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
 
-These features are getting closer to being production-ready every day, and we've been in talks with other bundler and framework developers about integrating them. Our hope is that in a year or two, all frameworks listed on this page will have full support for these features. (If you're a framework author interested in partnering with us to experiment with these features, please let us know!)
+ఈ ఫీచర్‌లు ప్రతిరోజూ ప్రొడక్షన్-రెడీగా ఉండటానికి దగ్గరవుతున్నాయి మరియు మేము వాటిని ఇంటిగ్రేట్ చేయడం గురించి ఇతర బండ్లర్ మరియు ఫ్రేమ్‌వర్క్ డెవలపర్‌లతో చర్చలు జరుపుతున్నాము. ఒకటి లేదా రెండు సంవత్సరాలలో, ఈ పేజీలో జాబితా చేయబడిన అన్ని ఫ్రేమ్‌వర్క్‌లు ఈ ఫీచర్లకు పూర్తి సపోర్ట్ ఇస్తాయి అని మా ఆశ. (మీరు ఫ్రేమ్‌వర్క్ రచయిత అయితే మరియు ఈ ఫీచర్లను ఎక్స్పరిమెంట్ చేయడానికి మరియు మాతో సహకరించడానికి ఆసక్తి కలిగి ఉంటే, దయచేసి మమ్మల్ని సంప్రదించండి!)
 
 ### Next.js (App Router) {/*nextjs-app-router*/}
 
-**[Next.js's App Router](https://nextjs.org/docs) is a redesign of the Next.js APIs aiming to fulfill the React team’s full-stack architecture vision.** It lets you fetch data in asynchronous components that run on the server or even during the build.
+**[Next.js యొక్క App Router](https://nextjs.org/docs) అనేది React టీమ్ యొక్క ఫుల్-స్టాక్ ఆర్కిటెక్చర్ విజన్‌ని నెరవేర్చడానికి ఉద్దేశించిన Next.js APIల రీడిజైన్.** ఇది సర్వర్‌లో లేదా బిల్డ్ సమయంలో కూడా రన్ చేసే అసిన్క్రోనస్ కంపోనెంట్లలో డేటాను ఫెట్చ్ చేయడానికి మిమ్మల్ని అనుమతిస్తుంది.
 
-Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/app/building-your-application/deploying) to any Node.js or serverless hosting, or to your own server. Next.js also supports [static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) which doesn't require a server.
+Next.js ను [Vercel](https://vercel.com/) మైంటైన్ చేస్తుంది. మీరు ఏదైనా Node.js లేదా సర్వర్‌లెస్ హోస్టింగ్‌కి లేదా మీ స్వంత సర్వర్‌లో [Next.js యాప్‌ని డిప్లాయ్ చేయవచ్చు.](https://nextjs.org/docs/app/building-your-application/deploying) Next.js సర్వర్ అవసరం లేని [స్టాటిక్ ఎక్స్పోర్ట్](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) కి కూడా సపోర్ట్ ఇస్తుంది.
 
 <DeepDive>
 
-#### Which features make up the React team’s full-stack architecture vision? {/*which-features-make-up-the-react-teams-full-stack-architecture-vision*/}
+#### React టీమ్ ఫుల్-స్టాక్ ఆర్కిటెక్చర్ విజన్‌ను ఏ ఫీచర్లు రూపొందించాయి? {/*which-features-make-up-the-react-teams-full-stack-architecture-vision*/}
 
-Next.js's App Router bundler fully implements the official [React Server Components specification](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md). This lets you mix build-time, server-only, and interactive components in a single React tree.
+Next.js యొక్క App Router బండ్లర్ అఫీషియల్ [React Server Components స్పెసిఫికేషన్‌](https://github.com/reactjs/rfcs/blob/main/text/0188-server-components.md) ను పూర్తిగా ఇంప్లీమెంట్ చేస్తుంది. ఇది బిల్డ్-టైమ్, సర్వర్-ఓన్లీ మరియు ఇంటరాక్టివ్ కాంపోనెంట్‌లను ఒకే React ట్రీలో కలిపి వాడడానికి మిమ్మల్ని అనుమతిస్తుంది.
 
-For example, you can write a server-only React component as an `async` function that reads from a database or from a file. Then you can pass data down from it to your interactive components:
+ఉదాహరణకు, మీరు ఒక సర్వర్-ఓన్లీ React కాంపోనెంట్‌ను డేటాబేస్ నుండి లేదా ఫైల్ నుండి రీడ్ చేసే `async` ఫంక్షన్‌గా వ్రాయవచ్చు. అప్పుడు మీరు దాని నుండి మీ ఇంటరాక్టివ్ కంపోనెంట్లకు డేటాను పంపవచ్చు:
 
 ```js
-// This component runs *only* on the server (or during the build).
+// ఈ కంపోనెంట్ సర్వర్‌లో (లేదా బిల్డ్ సమయంలో) *మాత్రమే* రన్ అవుతుంది.
 async function Talks({ confId }) {
-  // 1. You're on the server, so you can talk to your data layer. API endpoint not required.
+  // 1. మీరు సర్వర్‌లో ఉన్నారు, కాబట్టి మీరు మీ డేటా లేయర్‌తో కమ్యూనికేట్ అవ్వచ్చు. API ఎండ్ పాయింట్ అవసరం లేదు.
   const talks = await db.Talks.findAll({ confId });
 
-  // 2. Add any amount of rendering logic. It won't make your JavaScript bundle larger.
+  // 2. ఎంత రెండరింగ్ లాజిక్ ని ఐనా యాడ్ చేయండి. ఇది మీ JavaScript బండిల్‌ను పెద్దదిగా చేయదు.
   const videos = talks.map(talk => talk.video);
 
-  // 3. Pass the data down to the components that will run in the browser.
+  // 3. బ్రౌజర్‌లో రన్ అయ్యే కంపోనెంట్లకు డేటాను పంపండి.
   return <SearchableVideoList videos={videos} />;
 }
 ```
 
-Next.js's App Router also integrates [data fetching with Suspense](/blog/2022/03/29/react-v18#suspense-in-data-frameworks). This lets you specify a loading state (like a skeleton placeholder) for different parts of your user interface directly in your React tree:
+Next.js యొక్క App Router [సస్పెన్స్ (Suspense) తో డేటా ఫెట్చింగ్ చేయడానికి](/blog/2022/03/29/react-v18#suspense-in-data-frameworks) సపోర్ట్ ఇస్తుంది. ఇది మీ React ట్రీలో డైరెక్టుగా UI లోని వివిధ భాగాల కోసం లోడింగ్ స్టేట్ని (ఉదాహరణకు స్కెలిటన్ ప్లేస్‌హోల్డర్) స్పెసిఫ్య్ చేయడానికి మిమ్మల్ని అనుమతిస్తుంది:
 
 ```js
 <Suspense fallback={<TalksLoading />}>
@@ -123,6 +123,6 @@ Next.js's App Router also integrates [data fetching with Suspense](/blog/2022/03
 </Suspense>
 ```
 
-Server Components and Suspense are React features rather than Next.js features. However, adopting them at the framework level requires buy-in and non-trivial implementation work. At the moment, the Next.js App Router is the most complete implementation. The React team is working with bundler developers to make these features easier to implement in the next generation of frameworks.
+సర్వర్ కంపోనెంట్స్ మరియు సస్పెన్స్ React యొక్క ఫీచర్లు, Next.js వి కావు. అయినప్పటికీ, వాటిని ఫ్రేమ్‌వర్క్ లెవెల్ లో అడాప్ట్ చేసుకోవడానికి కొనుగోలు మరియు నాన్-ట్రివియల్ ఇంప్లిమెంటేషన్ వర్క్ అవసరం. ప్రస్తుతానికి, Next.js యొక్క App Router అత్యంత పూర్తి ఇంప్లిమెంటేషన్. తదుపరి జనరేషన్ ఫ్రేమ్‌వర్క్‌లలో ఈ ఫీచర్‌లను సులభంగా అమలు చేయడానికి React బృందం బండ్లర్ డెవలపర్‌లతో కలిసి పని చేస్తోంది.
 
 </DeepDive>
