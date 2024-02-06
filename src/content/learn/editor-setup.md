@@ -1,29 +1,29 @@
 ---
-title: Editor Setup
+title: ఎడిటర్ సెటప్
 ---
 
 <Intro>
 
-A properly configured editor can make code clearer to read and faster to write. It can even help you catch bugs as you write them! If this is your first time setting up an editor or you're looking to tune up your current editor, we have a few recommendations.
+మీ ఎడిటర్‌ని ప్రొపెర్గా కాన్ఫిగర్ చేయడం వలన మీ కోడ్ ను సులభంగా చదవచ్చు మరియు వేగంగా కూడా వ్రాయవచ్చు. అదనంగా, మీరు కోడ్ను వ్రాస్తున్నప్పుడు బగ్‌లను గుర్తించడంలో ఇది మీకు సహాయపడుతుంది! మీరు ఎడిటర్‌ని సెటప్ చేయడం ఇదే మొదటిసారి అయితే లేదా మీరు మీ ప్రస్తుత ఎడిటర్‌ని ట్యూన్ అప్ చేయాలని అనుకొంటే, మేము వీటిని సిఫార్సు చేస్తాము.
 
 </Intro>
 
 <YouWillLearn>
 
-* What the most popular editors are
-* How to format your code automatically
+* అత్యంత ప్రజాదరణ పొందిన ఎడిటర్లు ఏమిటి
+* మీ కోడ్‌ను ఆటోమేటిక్ గా ఎలా ఫార్మాట్ చేయాలి
 
 </YouWillLearn>
 
-## Your editor {/*your-editor*/}
+## మీ ఎడిటర్ {/*your-editor*/}
 
-[VS Code](https://code.visualstudio.com/) is one of the most popular editors in use today. It has a large marketplace of extensions and integrates well with popular services like GitHub. Most of the features listed below can be added to VS Code as extensions as well, making it highly configurable!
+నేడు వాడుకలో ఉన్న అత్యంత ప్రజాదరణ పొందిన ఎడిటర్లలో [VS Code](https://code.visualstudio.com/) ఒకటి. ఇది ఎక్సటెన్షన్స్ యొక్క పెద్ద మార్కెట్‌ప్లేస్‌ను కలిగి ఉంది మరియు GitHub వంటి పాపులర్ సర్వీసులతో బాగా ఇంటిగ్రేట్ అవుతుంది. దిగువ జాబితా చేయబడిన చాలా ఫీచర్లను VS Code కి ఎక్సటెన్షన్స్ లాగా కూడా జోడించవచ్చు, తద్వారా దీన్ని చాలా వరకు కాన్ఫిగర్ చేయవచ్చు!
 
-Other popular text editors used in the React community include:
+React కమ్యూనిటీలో ఉపయోగించే ఇతర పాపులర్ టెక్స్ట్ ఎడిటర్‌లు:
 
-* [WebStorm](https://www.jetbrains.com/webstorm/) is an integrated development environment designed specifically for JavaScript.
-* [Sublime Text](https://www.sublimetext.com/) has support for JSX and TypeScript, [syntax highlighting](https://stackoverflow.com/a/70960574/458193) and autocomplete built in.
-* [Vim](https://www.vim.org/) is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems and with Apple OS X.
+* [WebStorm](https://www.jetbrains.com/webstorm/) అనేది JavaScript కోసం ప్రత్యేకంగా రూపొందించబడిన ఇంటిగ్రేటెడ్ డెవలప్మెంట్ ఎన్విరాన్మెంట్.
+* [Sublime Text](https://www.sublimetext.com/) ‌లో JSX మరియు TypeScript కోసం [సింటాక్స్ హైలైటింగ్](https://stackoverflow.com/a/70960574/458193) మరియు ఆటోకంప్లీట్ ఫీచర్లకు బిల్ట్ ఇన్ సపోర్ట్ ఉంది.
+* [Vim](https://www.vim.org/) అనేది అత్యంత కాన్ఫిగర్ చేయగల టెక్స్ట్ ఎడిటర్, ఇది ఎలాంటి టెక్స్ట్‌ని అయినా సృష్టించడం మరియు మార్చడం చాలా ఎఫిసియెంట్గా చేయడానికి నిర్మించబడింది. ఇది చాలా UNIX సిస్టమ్‌లతో మరియు Apple OS X తో "vi" గా ఇంక్లూడ్ చేయబడింది.
 
 ## Recommended text editor features {/*recommended-text-editor-features*/}
 
