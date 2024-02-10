@@ -4,22 +4,22 @@ title: 'ట్యుటోరియల్: టిక్-టాక్-టో'
 
 <Intro>
 
-ఈ ట్యుటోరియల్ లో మీరు ఒక చిన్న టిక్-టాక్-టో గేమ్ ని నిర్మించుతారు. ఈ ట్యుటోరియల్ మీకు ఎలాంటి React(రియాక్ట్) ఫ్రేమ్ వర్క్ పరిజ్ఞానం లేదని భావిస్తుంది . ఈ ట్యుటోరియల్ లో మీరు నేర్చుకునే విధాలు ఏవైనా React(రియాక్ట్) యాప్ ని నిర్మించడానికి మూలముగా ఉంటాయి, మరియు దానిని పూర్తిగా అర్థం చేసుకోవడం వల్ల React(రియాక్ట్) గురించి మీకు లోతైన అవగాహన లభిస్తుంది.
+ఈ ట్యుటోరియల్ లో మీరు ఒక చిన్న టిక్-టాక్-టో గేమ్ ని బిల్డ్ చేస్తారు. ఈ ట్యుటోరియల్ మీకు ఎలాంటి React ఫ్రేమ్ వర్క్ పరిజ్ఞానం లేదని భావిస్తుంది. ఈ ట్యుటోరియల్ లో మీరు నేర్చుకునే టెక్నిక్స్ ఏవైనా React యాప్ ని బిల్డ్ చేయడానికి ఫండమెంటల్గా ఉంటాయి, మరియు దానిని పూర్తిగా అర్థం చేసుకోవడం వల్ల React గురించి మీకు లోతైన అవగాహన లభిస్తుంది.
 
 </Intro>
 
 <Note>
 
-This tutorial is designed for people who prefer to **learn by doing** and want to quickly try making something tangible. If you prefer learning each concept step by step, start with [Describing the UI.](/learn/describing-the-ui)
+ఈ ట్యుటోరియల్ **చేయడం ద్వారా నేర్చుకోవడానికి** ఇష్టపడే వారికి మరియు త్వరగా ఏదైనా సృష్టించాలనుకునే వ్యక్తుల కోసం రూపొందించబడింది. మీరు ప్రతి కాన్సెప్ట్ ని స్టెప్ బై స్టెప్ గా నేర్చుకోవాలనుకుంటే, [UI ని వివరించడం](/learn/describing-the-ui) ద్వారా ప్రారంభించండి.
 
 </Note>
 
-The tutorial is divided into several sections:
+ఈ ట్యుటోరియల్ అనేక విభాగాలుగా విభజించబడింది:
 
-- [Setup for the tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-- [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-- [Completing the game](#completing-the-game) will teach you **the most common techniques** in React development.
-- [Adding time travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+- [ట్యుటోరియల్ కోసం సెటప్](#setup-for-the-tutorial) మీరు ట్యుటోరియల్‌ని అనుసరించడానికి **స్టార్టింగ్ పాయింట్** ని అందిస్తుంది.
+- [ఒవెర్వ్యూ](#overview) మీకు React యొక్క **ఫండమెంటల్స్** ను నేర్పుతుంది: కంపోనెంట్స్, props మరియు state.
+- [గేమ్‌ను పూర్తి చేయడం](#completing-the-game) మీకు React డెవలప్‌మెంట్‌లో వాడే **అత్యంత సాధారణ టెక్నిక్‌లను** నేర్పుతుంది.
+- [టైం ట్రావెల్ ని జోడించడం](#adding-time-travel) వలన React యొక్క ప్రత్యేక బలాలపై మీకు **లోతైన అంతర్దృష్టి** లభిస్తుంది.
 
 ### What are you building? {/*what-are-you-building*/}
 
