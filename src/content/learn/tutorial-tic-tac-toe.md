@@ -273,21 +273,21 @@ body {
 
 </Note>
 
-## Overview {/*overview*/}
+## ఒవెర్వ్యూ {/*overview*/}
 
-Now that you're set up, let's get an overview of React!
+సెటప్ పూర్తయింది కాబట్టి, ఇప్పుడు React యొక్క ఒవెర్వ్యూ ని చూద్దాం!
 
-### Inspecting the starter code {/*inspecting-the-starter-code*/}
+### స్టార్టర్ కోడ్‌ని ఇంస్పెక్ట్ చేయడం {/*inspecting-the-starter-code*/}
 
-In CodeSandbox you'll see three main sections:
+CodeSandbox లో మీరు మూడు ప్రధాన విభాగాలను చూస్తారు:
 
 ![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
 
-1. The _Files_ section with a list of files like `App.js`, `index.js`, `styles.css` and a folder called `public`
-1. The _code editor_ where you'll see the source code of your selected file
-1. The _browser_ section where you'll see how the code you've written will be displayed
+1. `App.js`, `index.js`, `styles.css` వంటి ఫైల్‌ల జాబితా మరియు `public` అనే ఫోల్డర్‌తో _Files_ విభాగం
+1. _కోడ్ ఎడిటర్_ ఇక్కడ మీరు ఎంచుకున్న ఫైల్ యొక్క సోర్స్ కోడ్‌ని మీరు చూస్తారు
+1. మీరు వ్రాసిన కోడ్ ఎలా ప్రదర్శించబడుతుందో మీరు చూసే _browser_ విభాగం
 
-The `App.js` file should be selected in the _Files_ section. The contents of that file in the _code editor_ should be:
+`App.js` ఫైల్ ని ఇప్పుడు _Files_ విభాగంలో సెలెక్ట్ చేయండి. _కోడ్ ఎడిటర్_ లో ఫైల్ యొక్క కంటెంట్‌ ఇలా ఉండాలి:
 
 ```jsx
 export default function Square() {
@@ -295,15 +295,15 @@ export default function Square() {
 }
 ```
 
-The _browser_ section should be displaying a square with a X in it like this:
+_బ్రౌసర్_ విభాగం ఇలా X తో కూడిన స్క్వేర్ ని ప్రదర్శించాలి:
 
 ![x-filled square](../images/tutorial/x-filled-square.png)
 
-Now let's have a look at the files in the starter code.
+ఇప్పుడు స్టార్టర్ కోడ్‌లోని ఫైల్‌లను చూద్దాం.
 
 #### `App.js` {/*appjs*/}
 
-The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. Let's look at the component line by line to see what's going on:
+`App.js` లోని కోడ్ _కాంపోనెంట్_ ని క్రియేట్ చేస్తుంది. React లో, ఒక కాంపోనెంట్ అనేది UI లో కొంత భాగాన్ని రిప్రజెంట్ చేసే రీయూజబుల్ కోడ్ యొక్క భాగం. మీ అప్లికేషన్‌లోని UI ఎలిమెంట్‌లను రెండర్ చేయడానికి, మేనేజ్ చేయడానికి మరియు అప్‌డేట్ చేయడానికి కాంపోనెంట్లు ఉపయోగించబడతాయి. కాంపోనెంట్ లో లైన్ బై లైన్ గా ఏం జరుగుతుందో చూద్దాం:
 
 ```js {1}
 export default function Square() {
@@ -311,7 +311,7 @@ export default function Square() {
 }
 ```
 
-The first line defines a function called `Square`. The `export` JavaScript keyword makes this function accessible outside of this file. The `default` keyword tells other files using your code that it's the main function in your file.
+మొదటి లైన్ `Square` అనే ఫంక్షన్‌ని డిఫైన్ చేస్తుంది. `export` JavaScript కీవర్డ్ ఈ ఫంక్షన్‌ని ఈ ఫైల్ బయట నుండి యాక్సెస్ చేయడానికి సహాయపడుతుంది. `default` కీవర్డ్ మీ కోడ్‌ని ఉపయోగించే ఇతర ఫైల్‌లకు ఇదే మీ ఫైల్‌లోని మెయిన్ ఫంక్షన్ అని చెబుతుంది.
 
 ```js {2}
 export default function Square() {
@@ -319,15 +319,15 @@ export default function Square() {
 }
 ```
 
-The second line returns a button. The `return` JavaScript keyword means whatever comes after is returned as a value to the caller of the function. `<button>` is a *JSX element*. A JSX element is a combination of JavaScript code and HTML tags that describes what you'd like to display. `className="square"` is a button property or *prop* that tells CSS how to style the button. `X` is the text displayed inside of the button and `</button>` closes the JSX element to indicate that any following content shouldn't be placed inside the button.
+రెండవ లైన్ బటన్‌ను అందిస్తుంది. `return` JavaScript కీవర్డ్ అంటే ఆ తర్వాత వచ్చేది ఫంక్షన్ కాలర్‌కు వేల్యూ గా అందించబడుతుంది. `<button>` అనేది *JSX ఎలిమెంట్*. JSX ఎలిమెంట్ అనేది JavaScript కోడ్ మరియు HTML ట్యాగ్‌ల కలయిక, ఇది మీరు ఏమి ప్రదర్శించాలనుకుంటున్నారో వివరిస్తుంది. `className="square"` అనేది బటన్ ప్రాపర్టీ లేదా *props* ఇది బటన్‌ను ఎలా స్టైల్ చేయాలో CSS కి తెలియజేస్తుంది. `X` అనేది బటన్ లోపల ప్రదర్శించబడే టెక్స్ట్ మరియు `</button>` కింది కంటెంట్‌ బటన్ లోపల ఉంచకూడదని సూచించడానికి JSX ఎలిమెంట్ ని మూసివేస్తుంది.
 
 #### `styles.css` {/*stylescss*/}
 
-Click on the file labeled `styles.css` in the _Files_ section of CodeSandbox. This file defines the styles for your React app. The first two _CSS selectors_ (`*` and `body`) define the style of large parts of your app while the `.square` selector defines the style of any component where the `className` property is set to `square`. In your code, that would match the button from your Square component in the `App.js` file.
+CodeSandbox యొక్క _Files_ విభాగంలో `styles.css` అని లేబుల్ చేయబడిన ఫైల్‌పై క్లిక్ చేయండి. ఈ ఫైల్ మీ React యాప్ కోసం స్టైల్‌లను డిఫైన్ చేస్తుంది. మొదటి రెండు _CSS సెలెక్టర్‌లు_ (`*` మరియు `body`) మీ యాప్‌లోని పెద్ద భాగాల స్టైల్ ని డిఫైన్ చేస్తాయి, అయితే `.square` సెలెక్టర్ `className` ప్రాపర్టీని `square` కి సెట్ చేసిన ఏదైనా కాంపోనెంట్ యొక్క స్టైల్‌ ని డిఫైన్ చేస్తుంది. మీ కోడ్‌లో, అది `App.js` ఫైల్‌లోని మీ Square కాంపోనెంట్ నుండి బటన్‌తో మ్యాచ్ అవుతుంది.
 
 #### `index.js` {/*indexjs*/}
 
-Click on the file labeled `index.js` in the _Files_ section of CodeSandbox. You won't be editing this file during the tutorial but it is the bridge between the component you created in the `App.js` file and the web browser.
+CodeSandbox యొక్క _Files_ విభాగంలో `index.js` అని లేబుల్ చేయబడిన ఫైల్‌పై క్లిక్ చేయండి. మీరు ట్యుటోరియల్ సమయంలో ఈ ఫైల్‌ని ఎడిట్ చేయరు కానీ మీరు `App.js` ఫైల్‌లో క్రియేట్ చేసిన కాంపోనెంట్ మరియు వెబ్ బ్రౌజర్‌కి మధ్య ఇది వంతెన లా పని చేస్తుంది.
 
 ```jsx
 import { StrictMode } from 'react';
@@ -337,20 +337,20 @@ import './styles.css';
 import App from './App';
 ```
 
-Lines 1-5 bring all the necessary pieces together: 
+1-5 లైన్స్ అవసరమైన అన్ని ముక్కలను ఒకచోట చేర్చాయి: 
 
 * React
-* React's library to talk to web browsers (React DOM)
-* the styles for your components
-* the component you created in `App.js`.
+* వెబ్ బ్రౌజర్‌లతో మాట్లాడటానికి React లైబ్రరీ (React DOM)
+* మీ కాంపోనెంట్ల కోసం స్టైల్స్
+* మీరు `App.js` లో క్రియేట్ చేసిన కాంపోనెంట్.
 
-The remainder of the file brings all the pieces together and injects the final product into `index.html` in the `public` folder.
+ఫైల్‌లోని మిగిలిన భాగం అన్ని ముక్కలను ఒకచోట చేర్చి, ఫైనల్ ప్రోడక్ట్ ని `public` ఫోల్డర్‌లోని `index.html` కి ఇంజెక్ట్ చేస్తుంది.
 
-### Building the board {/*building-the-board*/}
+### బోర్డును నిర్మించడం {/*building-the-board*/}
 
-Let's get back to `App.js`. This is where you'll spend the rest of the tutorial.
+మళ్లీ `App.js` కి వెళ్దాం. మీరు మిగిలిన ట్యుటోరియల్‌ని ఇక్కడే స్పెండ్ చేస్తారు.
 
-Currently the board is only a single square, but you need nine! If you just try and copy paste your square to make two squares like this:
+ప్రస్తుత బోర్డులో ఒక్క స్క్వేర్ మాత్రమే ఉంది, కానీ వాస్తవానికి మీకు తొమ్మిది అవసరం! మీరు రెండవ స్క్వేర్ ని సృష్టించడానికి కాపీ చేసి పేస్ట్ చేస్తే...
 
 ```js {2}
 export default function Square() {
@@ -358,7 +358,7 @@ export default function Square() {
 }
 ```
 
-You'll get this error:
+మీకు ఈ ఎర్రర్ వస్తుంది:
 
 <ConsoleBlock level="error">
 
@@ -366,7 +366,7 @@ You'll get this error:
 
 </ConsoleBlock>
 
-React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *Fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
+React కాంపోనెంట్‌లు ఈ బటన్ లాగా ఒకదానికొకటి పక్కన ఉన్న మల్టిపుల్ JSX ఎలిమెంట్‌లు కాకుండా ఒక్క JSX ఎలిమెంట్‌ని మాత్రమే రిటర్న్ చేయాలి. దీన్ని పరిష్కరించడానికి మీరు ఇలా ప్రక్కనే ఉన్న అనేక JSX ఎలిమెంట్లను చుట్టడానికి *ఫ్రాగ్మెంట్స్* (`<>` మరియు `</>`) ను ఉపయోగించవచ్చు:
 
 ```js {3-6}
 export default function Square() {
@@ -379,17 +379,17 @@ export default function Square() {
 }
 ```
 
-Now you should see:
+మీరు ఈ ఔట్పుట్ ని చూస్తారు:
 
 ![two x-filled squares](../images/tutorial/two-x-filled-squares.png)
 
-Great! Now you just need to copy-paste a few times to add nine squares and...
+గ్రేట్! మీరు చేయాల్సిందల్లా తొమ్మిది స్క్వేర్లు ఉండే వరకు కొన్ని సార్లు కాపీ చేసి పేస్ట్ చేయండి...
 
 ![nine x-filled squares in a line](../images/tutorial/nine-x-filled-squares.png)
 
-Oh no! The squares are all in a single line, not in a grid like you need for our board. To fix this you'll need to group your squares into rows with `div`s and add some CSS classes. While you're at it, you'll give each square a number to make sure you know where each square is displayed.
+అరెరే! స్క్వేర్లు అన్నీ ఒకే లైన్ లో ఉన్నాయి, మన బోర్డు కోసం మీకు అవసరమైన గ్రిడ్‌లో కాదు. దీన్ని పరిష్కరించడానికి మీరు మీ స్క్వేర్‌లను `div` లతో వరుసలుగా (rows) గ్రూప్ చేయాలి మరియు కొన్ని CSS క్లాస్లను జోడించాలి. మీరు దాని వద్ద ఉన్నప్పుడు, ప్రతి స్క్వేర్ ఎక్కడ ప్రదర్శించబడుతుందో మీకు తెలుసని నిర్ధారించుకోవడానికి మీరు ప్రతి స్క్వేర్‌కు ఒక సంఖ్యను ఇస్తారు.
 
-In the `App.js` file, update the `Square` component to look like this:
+`App.js` ఫైల్‌లో, ఇలా కనిపించేలా `Square` కాంపోనెంట్‌ని అప్‌డేట్ చేయండి:
 
 ```js {3-19}
 export default function Square() {
@@ -415,7 +415,7 @@ export default function Square() {
 }
 ```
 
-The CSS defined in `styles.css` styles the divs with the `className` of `board-row`. Now that you've grouped your components into rows with the styled `div`s you have your tic-tac-toe board:
+`styles.css` లో డిఫైన్ చేయబడిన CSS, `board-row` యొక్క `className` తో divs ని స్టైల్ చేస్తుంది. ఇప్పుడు మీరు మీ కాంపోనెంట్‌లను స్టైల్ చేసిన `div` లతో వరుసలుగా గ్రూప్ చేసారు కాబట్టి మీరు మీ టిక్-టాక్-టో బోర్డుని కలిగి ఉన్నారు:
 
 ![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
 
