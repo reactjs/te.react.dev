@@ -21,11 +21,11 @@ title: 'ట్యుటోరియల్: టిక్-టాక్-టో'
 - [గేమ్‌ను పూర్తి చేయడం](#completing-the-game) మీకు React డెవలప్‌మెంట్‌లో వాడే **అత్యంత సాధారణ టెక్నిక్‌లను** నేర్పుతుంది.
 - [టైం ట్రావెల్ ని జోడించడం](#adding-time-travel) వలన React యొక్క ప్రత్యేక బలాలపై మీకు **లోతైన అంతర్దృష్టి** లభిస్తుంది.
 
-### What are you building? {/*what-are-you-building*/}
+### మీరు ఏమి నిర్మించబోతున్నారు? {/*what-are-you-building*/}
 
-In this tutorial, you'll build an interactive tic-tac-toe game with React.
+ఈ ట్యుటోరియల్‌లో, మీరు React ‌తో ఇంటరాక్టివ్ టిక్-టాక్-టో గేమ్‌ని నిర్మిస్తారు.
 
-You can see what it will look like when you're finished here:
+మీరు పూర్తి చేసినప్పుడు అది ఎలా ఉంటుందో మీరు ఇక్కడ చూడవచ్చు:
 
 <Sandpack>
 
@@ -194,15 +194,15 @@ body {
 
 </Sandpack>
 
-If the code doesn't make sense to you yet, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+మీకు ఇంకా కోడ్ అర్థం కాకపోయినా లేదా ఈ కోడ్ యొక్క సింటాక్స్ గురించి తెలియకపోయినా, చింతించకండి! ఈ ట్యుటోరియల్ యొక్క లక్ష్యం React మరియు దాని సింటాక్స్‌ను అర్థం చేసుకోవడంలో మీకు సహాయం చేయడం.
 
-We recommend that you check out the tic-tac-toe game above before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+ట్యుటోరియల్‌తో కొనసాగడానికి ముందు మీరు పైన ఉన్న టిక్-టాక్-టో గేమ్‌ని తనిఖీ చేయాలని మేము సిఫార్సు చేస్తున్నాము. మీరు గమనించే ఫీచర్లలో ఒకటి గేమ్ బోర్డ్ యొక్క కుడి వైపున సంఖ్యా జాబితా ఉంది. ఈ జాబితా మీకు గేమ్‌లో జరిగిన అన్ని కదలికల చరిత్రను అందిస్తుంది మరియు గేమ్ అభివృద్ధి చెందుతున్నప్పుడు ఇది అప్డేట్ అవుతుంది.
 
-Once you've played around with the finished tic-tac-toe game, keep scrolling. You'll start with a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+మీరు పూర్తి చేసిన టిక్-టాక్-టో గేమ్‌ని ఆడిన తర్వాత, పేజీని స్క్రోల్ చేస్తూ ఉండండి. ఈ ట్యుటోరియల్ సింప్లెర్ టెంప్లేట్‌తో ప్రారంభమవుతుంది. తదుపరి దశ మీ గేమ్‌ను సెటప్ చేయడం, తద్వారా మీరు దీన్ని సృష్టించడం ప్రారంభించవచ్చు.
 
-## Setup for the tutorial {/*setup-for-the-tutorial*/}
+## ట్యుటోరియల్ కోసం సెటప్ {/*setup-for-the-tutorial*/}
 
-In the live code editor below, click **Fork** in the top-right corner to open the editor in a new tab using the website CodeSandbox. CodeSandbox lets you write code in your browser and preview how your users will see the app you've created. The new tab should display an empty square and the starter code for this tutorial.
+దిగువ లైవ్ కోడ్ ఎడిటర్‌లో, CodeSandbox వెబ్‌సైట్‌ని ఉపయోగించి కొత్త ట్యాబ్‌లో ఎడిటర్‌ను తెరవడానికి టాప్-రైట్ కార్నర్లో ఉన్న **Fork** ని క్లిక్ చేయండి. CodeSandbox మీ బ్రౌజర్‌లో కోడ్‌ను వ్రాయడానికి మరియు మీరు సృష్టించిన యాప్‌ని మీ యూజర్స్ ఎలా చూస్తారనే ప్రివ్యూని అందిస్తుంది. కొత్త ట్యాబ్‌లో ఈ ట్యుటోరియల్ కోసం ఖాళీ స్క్వేర్ మరియు స్టార్టర్ కోడ్‌ను చూస్తారు.
 
 <Sandpack>
 
@@ -261,15 +261,15 @@ body {
 
 <Note>
 
-You can also follow this tutorial using your local development environment. To do this, you need to:
+మీరు మీ లోకల్ డెవలప్మెంట్ ఎన్విరాన్మెంట్ ని ఉపయోగించి కూడా ఈ ట్యుటోరియల్‌ని అనుసరించవచ్చు. దీన్ని చేయడానికి, మీరు వీటిని చేయాలి:
 
-1. Install [Node.js](https://nodejs.org/en/)
-1. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **File > Export to ZIP** in that menu to download an archive of the files locally
-1. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
-1. Install the dependencies with `npm install`
-1. Run `npm start` to start a local server and follow the prompts to view the code running in a browser
+1. [Node.js](https://nodejs.org/en/) ని ఇన్‌స్టాల్ చేయండి
+1. మీరు ఇంతకు ముందు ఓపెన్ చేసిన CodeSandbox ట్యాబ్‌లో, మెనుని తెరవడానికి టాప్-లెఫ్ట్ కార్నర్ లో ఉన్న బటన్ను క్లిక్ చేయండి, ఆపై ఫైల్‌ల ఆర్కైవ్‌ను లోకల్ గా డౌన్‌లోడ్ చేయడానికి ఆ మెనులో **Download Sandbox** ని క్లిక్ చేయండి
+1. ఆర్కైవ్‌ను అన్జిప్ చేసి, ఆపై మీరు అన్జిప్ చేసిన డైరెక్టరీని టెర్మినల్ లో `cd` ని ఉపయోగించి తెరవండి
+1. `npm install` తో డిపెండెన్సీలను ఇన్‌స్టాల్ చేయండి
+1. లోకల్ సర్వర్‌ని స్టార్ట్ చేయడానికి `npm start` ని రన్ చేయండి మరియు బ్రౌజర్‌లో రన్ అవుతున్న కోడ్‌ను వీక్షించడానికి ప్రాంప్ట్‌లను అనుసరించండి
 
-If you get stuck, don't let this stop you! Follow along online instead and try a local setup again later.
+మీరు ఎక్కడైనా ఆగిపోయినట్లైతే, నిరుత్సాహపడకండి! దయచేసి ఆన్‌లైన్‌లో కొనసాగండి మరియు మీ లోకల్ ఎన్విరాన్మెంట్ని తర్వాత మళ్లీ సెటప్ చేయడానికి ప్రయత్నించండి.
 
 </Note>
 
