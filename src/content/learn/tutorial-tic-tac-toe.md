@@ -899,35 +899,35 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
-React DevTools let you check the props and the state of your React components. You can find the React DevTools tab at the bottom of the _browser_ section in CodeSandbox:
+React DevTools మీ React కాంపోనెంట్‌ల props మరియు state ని చెక్ చేయడానికి మిమ్మల్ని అనుమతిస్తాయి. CodeSandbox లోని _Browser_ విభాగం దిగువన మీరు React DevTools ట్యాబ్‌ను కనుగొనవచ్చు:
 
-![React DevTools in CodeSandbox](../images/tutorial/codesandbox-devtools.png)
+![CodeSandbox లోని React DevTools](../images/tutorial/codesandbox-devtools.png)
 
-To inspect a particular component on the screen, use the button in the top left corner of React DevTools:
+స్క్రీన్‌పై పర్టికులర్ కాంపోనెంట్ ని ఇన్స్పెక్ట చేయడానికి, React DevTools టాప్ లెఫ్ట్ కార్నర్లో ఉన్న బటన్‌ను ఉపయోగించండి:
 
-![Selecting components on the page with React DevTools](../images/tutorial/devtools-select.gif)
+![React DevTools తో పేజీలోని కాంపోనెంట్లను సెలెక్ట్ చేయడం](../images/tutorial/devtools-select.gif)
 
 <Note>
 
-For local development, React DevTools is available as a [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), and [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) browser extension. Install it, and the *Components* tab will appear in your browser Developer Tools for sites using React.
+లోకల్ డెవలప్మెంట్ కోసం, React DevTools [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), మరియు [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) బ్రౌజర్ ఎక్స్టెన్షన్ గా అందుబాటులో ఉంది. దీన్ని ఇన్‌స్టాల్ చేయండి మరియు React ని ఉపయోగించే సైట్‌ల కోసం మీ బ్రౌజర్ డెవలపర్ టూల్స్‌లో *Components* ట్యాబ్ కనిపిస్తుంది.
 
 </Note>
 
-## Completing the game {/*completing-the-game*/}
+## గేమ్‌ను పూర్తి చేయడం {/*completing-the-game*/}
 
-By this point, you have all the basic building blocks for your tic-tac-toe game. To have a complete game, you now need to alternate placing "X"s and "O"s on the board, and you need a way to determine a winner.
+ఈ సమయానికి, మీరు మీ టిక్-టాక్-టో గేమ్ కోసం అన్ని బేసిక్ బిల్డింగ్ బ్లాక్‌లను కలిగి ఉన్నారు. పూర్తి గేమ్‌ను కలిగి ఉండటానికి, మీరు ఇప్పుడు "X"లు మరియు "O"లను బోర్డ్‌లో ఆల్టర్నేట్గా ఉంచాలి మరియు విజేతను నిర్ణయించడానికి మీకు ఒక మార్గం అవసరం.
 
-### Lifting state up {/*lifting-state-up*/}
+### state ని లిఫ్ట్ చేయడం {/*lifting-state-up*/}
 
-Currently, each `Square` component maintains a part of the game's state. To check for a winner in a tic-tac-toe game, the `Board` would need to somehow know the state of each of the 9 `Square` components.
+ప్రస్తుతం, ప్రతి `Square` కాంపోనెంట్ గేమ్ state లో కొంత భాగాన్ని నిర్వహిస్తోంది. టిక్-టాక్-టో గేమ్‌లో విజేత ఎవరో చెక్ చేయడానికి, `Board` లోని 9 `Square` కాంపోనెంట్‌లలోని ప్రతి state ని తెలుసుకోవాలి.
 
-How would you approach that? At first, you might guess that the `Board` needs to "ask" each `Square` for that `Square`'s state. Although this approach is technically possible in React, we discourage it because the code becomes difficult to understand, susceptible to bugs, and hard to refactor. Instead, the best approach is to store the game's state in the parent `Board` component instead of in each `Square`. The `Board` component can tell each `Square` what to display by passing a prop, like you did when you passed a number to each Square.
+మీరు దానిని ఎలా చేరుకుంటారు? మొదట, మీరు `Board` ప్రతి `Square` ని ఆ `Square` state కోసం "అడగాలి" అని ఊహించవచ్చు. React లో ఈ విధానం టెక్నికల్గా సాధ్యమే అయినప్పటికీ, కోడ్ అర్థం చేసుకోవడం కష్టంగా మారడం, బగ్‌లకు గురికావడం మరియు రీఫ్యాక్టర్ చేయడం కష్టం కాబట్టి మేము దానిని సిఫార్సు చెయ్యట్లేదు. బదులుగా, ప్రతి `Square` లో కాకుండా పేరెంట్ `Board` కాంపోనెంట్‌లో గేమ్ state ని స్టోర్ చేయడం ఉత్తమ విధానం. మీరు ప్రతి స్క్వేర్‌కి ఒక నంబర్‌ను పాస్ చేసినప్పుడు, props ను పాస్ చేయడం ద్వారా ప్రతి `Square` కి ఏమి ప్రదర్శించాలో `Board` కాంపోనెంట్ తెలియజేస్తుంది.
 
-**To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.**
+**మల్టిపుల్ చైల్డ్ల నుండి డేటాను సేకరించడానికి లేదా ఇద్దరు చైల్డ్ కాంపోనెంట్లు ఒకదానితో ఒకటి కమ్యూనికేట్ చేయడానికి, వారి పేరెంట్ కాంపోనెంట్‌లో షేర్డ్ state ని డిక్లేర్ చేయండి. పేరెంట్ కాంపోనెంట్ ఆ state ని props ద్వారా చైల్డ్లకు తిరిగి పంపగలదు. ఇది చైల్డ్ కాంపోనెంట్లు ఒకదానితో ఒకటి మరియు వారి పేరెంట్ తో సింక్ (sync) లో ఉండేలా చేస్తుంది.**
 
-Lifting state into a parent component is common when React components are refactored.
+React కాంపోనెంట్‌లు రీఫ్యాక్టరేట్ చేయబడినప్పుడు state ని పేరెంట్ కాంపోనెంట్‌కి లిఫ్ట్ చేయడం సాధారణం.
 
-Let's take this opportunity to try it out. Edit the `Board` component so that it declares a state variable named `squares` that defaults to an array of 9 nulls corresponding to the 9 squares:
+దీనిని ప్రయత్నిద్దాం. `Board` కాంపోనెంట్‌ని ఎడిట్ చేయండి, తద్వారా ఇది 9 స్క్వేర్‌లకు కరెస్పాండింగ్ గా 9 null ల array కి డిఫాల్ట్‌గా ఉండే `squares` అనే state వేరియబుల్‌ను డిక్లేర్ చేస్తుంది:
 
 ```js {3}
 // ...
@@ -939,13 +939,13 @@ export default function Board() {
 }
 ```
 
-`Array(9).fill(null)` creates an array with nine elements and sets each of them to `null`. The `useState()` call around it declares a `squares` state variable that's initially set to that array. Each entry in the array corresponds to the value of a square. When you fill the board in later, the `squares` array will look like this:
+`Array(9).fill(null)` తొమ్మిది ఎలెమెంట్లతో ఒక array ని క్రియేట్ చేస్తుంది మరియు వాటిలో ప్రతి ఒక్కటి `null` కి సెట్ చేస్తుంది. దాని చుట్టూ ఉన్న `useState()` కాల్ ప్రారంభంలో ఆ array కి సెట్ చేయబడిన `squares` state వేరియబుల్‌ని డిక్లేర్ చేస్తుంది. array లోని ప్రతి ఎంట్రీ స్క్వేర్ వేల్యూ కు అనుగుణంగా ఉంటుంది. మీరు తర్వాత బోర్డ్‌ను ఫిల్ చేసినప్పుడు, `squares` array ఇలా కనిపిస్తుంది:
 
 ```jsx
 ['O', null, 'X', 'X', 'X', 'O', 'O', null, null]
 ```
 
-Now your `Board` component needs to pass the `value` prop down to each `Square` that it renders:
+ఇప్పుడు మీ `Board` కాంపోనెంట్ అది రెండర్ చేసే ప్రతి `Square` కి `value` props ని పాస్ చేయాలి:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -972,7 +972,7 @@ export default function Board() {
 }
 ```
 
-Next, you'll edit the `Square` component to receive the `value` prop from the Board component. This will require removing the Square component's own stateful tracking of `value` and the button's `onClick` prop:
+తర్వాత, మీరు `Board` కాంపోనెంట్ నుండి `value` ప్రాప్‌ను స్వీకరించడానికి `Square` కాంపోనెంట్‌ని ఎడిట్ చేస్తారు. దీనికి స్క్వేర్ కాంపోనెంట్ యొక్క సొంత స్టేట్‌ఫుల్ ట్రాకింగ్ `value` మరియు బటన్ యొక్క `onClick` ప్రాప్‌ని తీసివేయడం అవసరం:
 
 ```js {1,2}
 function Square({value}) {
@@ -980,11 +980,11 @@ function Square({value}) {
 }
 ```
 
-At this point you should see an empty tic-tac-toe board:
+ఈ సమయంలో మీరు ఖాళీ టిక్-టాక్-టో బోర్డుని చూడాలి:
 
-![empty board](../images/tutorial/empty-board.png)
+![ఖాళీ బోర్డు](../images/tutorial/empty-board.png)
 
-And your code should look like this:
+మరియు మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -1066,11 +1066,11 @@ body {
 
 </Sandpack>
 
-Each Square will now receive a `value` prop that will either be `'X'`, `'O'`, or `null` for empty squares.
+ప్రతి స్క్వేర్ ఇప్పుడు `value` ప్రాప్‌ని అందుకుంటుంది, అది `'X'`, `'O'` లేదా ఖాళీ స్క్వేర్‌ల కోసం `null`.
 
-Next, you need to change what happens when a `Square` is clicked. The `Board` component now maintains which squares are filled. You'll need to create a way for the `Square` to update the `Board`'s state. Since state is private to a component that defines it, you cannot update the `Board`'s state directly from `Square`.
+తర్వాత, మీరు `Square` ని క్లిక్ చేసినప్పుడు ఏమి జరుగుతుందో మార్చాలి. `Board` కాంపోనెంట్ ఇప్పుడు ఏ స్క్వేర్‌లను ఫిల్ చేయాలో మైంటైన్ చేస్తుంది. మీరు `Board` state ని అప్డేట్ చేయడానికి `Square` కోసం ఒక మార్గాన్ని సృష్టించాలి. state దానిని డిఫైన్ చేసే కాంపోనెంట్కి ప్రైవేట్‌గా ఉన్నందున, మీరు `Square` నుండి డైరెక్ట్గా `Board` state ని అప్డేట్ చేయలేరు.
 
-Instead, you'll pass down a function from the `Board` component to the `Square` component, and you'll have `Square` call that function when a square is clicked. You'll start with the function that the `Square` component will call when it is clicked. You'll call that function `onSquareClick`:
+బదులుగా, మీరు `Board` కాంపోనెంట్ నుండి `Square` కాంపోనెంట్‌కి ఒక ఫంక్షన్‌ను పాస్ చేస్తారు మరియు మీరు స్క్వేర్ ని క్లిక్ చేసినప్పుడు `Square` ఆ ఫంక్షన్‌ని కాల్ చేస్తుంది. మీరు క్లిక్ చేసినప్పుడు `Square` కాంపోనెంట్ కాల్ చేసే ఫంక్షన్‌తో ప్రారంభిస్తారు. మీరు ఆ ఫంక్షన్‌ని `onSquareClick` అని పిలుస్తారు:
 
 ```js {3}
 function Square({ value }) {
@@ -1082,7 +1082,7 @@ function Square({ value }) {
 }
 ```
 
-Next, you'll add the `onSquareClick` function to the `Square` component's props:
+తర్వాత, మీరు `onSquareClick` ఫంక్షన్‌ని `Square` కాంపోనెంట్ యొక్క props కు జోడిస్తారు:
 
 ```js {1}
 function Square({ value, onSquareClick }) {
@@ -1094,7 +1094,7 @@ function Square({ value, onSquareClick }) {
 }
 ```
 
-Now you'll connect the `onSquareClick` prop to a function in the `Board` component that you'll name `handleClick`. To connect `onSquareClick` to `handleClick` you'll pass a function to the `onSquareClick` prop of the first `Square` component: 
+ఇప్పుడు మీరు `onSquareClick` ప్రాప్‌ని `Board` కాంపోనెంట్‌లోని ఫంక్షన్‌కి కనెక్ట్ చేస్తారు, దానికి మీరు `handleClick` అని పేరు పెట్టారు. `onSquareClick` ని `handleClick` కి కనెక్ట్ చేయడానికి, మీరు మొదటి `Square` కాంపోనెంట్ యొక్క `onSquareClick` ప్రాప్‌కి ఒక ఫంక్షన్‌ని పాస్ చేస్తారు:
 
 ```js {7}
 export default function Board() {
@@ -1109,7 +1109,7 @@ export default function Board() {
 }
 ```
 
-Lastly, you will define the `handleClick` function inside the Board component to update the `squares` array holding your board's state:
+చివరగా, మీరు మీ బోర్డు state ని కలిగి ఉన్న `squares` array ని అప్డేట్ చేయడానికి `Board` కాంపోనెంట్ లోపల `handleClick` ఫంక్షన్‌ని డిఫైన్ చేస్తారు:
 
 ```js {4-8}
 export default function Board() {
@@ -1127,13 +1127,13 @@ export default function Board() {
 }
 ```
 
-The `handleClick` function creates a copy of the `squares` array (`nextSquares`) with the JavaScript `slice()` Array method. Then, `handleClick` updates the `nextSquares` array to add `X` to the first (`[0]` index) square.
+`handleClick` ఫంక్షన్ JavaScript `slice()` array మెథొద్స్ (methods) ని ఉపయోగించి `squares` array (`nextSquares`) యొక్క కాపీని క్రియేట్ చేస్తుంది. ఆపై, మొదటి (`[0]` ఇండెక్స్) స్క్వేర్‌కి `X` ని జోడించడానికి `handleClick` `nextSquares` array ని అప్డేట్ చేస్తుంది.
 
-Calling the `setSquares` function lets React know the state of the component has changed. This will trigger a re-render of the components that use the `squares` state (`Board`) as well as its child components (the `Square` components that make up the board).
+`setSquares` ఫంక్షన్‌ని కాల్ చేయడం వలన కాంపోనెంట్ యొక్క state మారిందని React తెలుసుకోవచ్చు. ఇది `squares` state (`Board`) అలాగే దాని చైల్డ్ కాంపోనెంట్‌లను (బోర్డ్‌ను రూపొందించే `Square` కాంపోనెంట్లు) ఉపయోగించే కాంపోనెంట్‌ల రీ-రెండర్‌ను ట్రిగ్గర్ చేస్తుంది.
 
 <Note>
 
-JavaScript supports [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) which means an inner function (e.g. `handleClick`) has access to variables and functions defined in a outer function (e.g. `Board`). The `handleClick` function can read the `squares` state and call the `setSquares` method because they are both defined inside of the `Board` function.
+JavaScript [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) ని సపోర్ట్ చేస్తుంది అంటే ఇన్నర్ ఫంక్షన్కు (ఉదా. `handleClick`) ఔటర్ ఫంక్షన్‌లో డిఫైన్ చేయబడిన వేరియబుల్స్ మరియు ఫంక్షన్‌లకు యాక్సెస్‌ను కలిగి ఉంటుంది (ఉదా. `Board`). `handleClick` ఫంక్షన్ `squares` state ని రీడ్ చేయగలదు మరియు `setSquares` మెథడ్ ని కాల్ చేయగలదు ఎందుకంటే అవి రెండూ `Board` ఫంక్షన్‌లో డిఫైన్ చేయబడ్డాయి.
 
 </Note>
 
