@@ -281,7 +281,7 @@ body {
 
 CodeSandbox లో మీరు మూడు ప్రధాన విభాగాలను చూస్తారు:
 
-![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
+![CodeSandbox స్టార్టర్ కోడ్](../images/tutorial/react-starter-code-codesandbox.png)
 
 1. `App.js`, `index.js`, `styles.css` వంటి ఫైల్‌ల జాబితా మరియు `public` అనే ఫోల్డర్‌తో _Files_ విభాగం
 1. _కోడ్ ఎడిటర్_ ఇక్కడ మీరు ఎంచుకున్న ఫైల్ యొక్క సోర్స్ కోడ్‌ని మీరు చూస్తారు
@@ -297,7 +297,7 @@ export default function Square() {
 
 _బ్రౌసర్_ విభాగం ఇలా X తో కూడిన స్క్వేర్ ని ప్రదర్శించాలి:
 
-![x-filled square](../images/tutorial/x-filled-square.png)
+![X నిండిన స్క్వేర్](../images/tutorial/x-filled-square.png)
 
 ఇప్పుడు స్టార్టర్ కోడ్‌లోని ఫైల్‌లను చూద్దాం.
 
@@ -381,11 +381,11 @@ export default function Square() {
 
 మీరు ఈ ఔట్పుట్ ని చూస్తారు:
 
-![two x-filled squares](../images/tutorial/two-x-filled-squares.png)
+![రెండు X నిండిన స్క్వేర్స్](../images/tutorial/two-x-filled-squares.png)
 
 గ్రేట్! మీరు చేయాల్సిందల్లా తొమ్మిది స్క్వేర్లు ఉండే వరకు కొన్ని సార్లు కాపీ చేసి పేస్ట్ చేయండి...
 
-![nine x-filled squares in a line](../images/tutorial/nine-x-filled-squares.png)
+![ఒక లైన్ లో తొమ్మిది X నిండిన స్క్వేర్స్](../images/tutorial/nine-x-filled-squares.png)
 
 అరెరే! స్క్వేర్లు అన్నీ ఒకే లైన్ లో ఉన్నాయి, మన బోర్డు కోసం మీకు అవసరమైన గ్రిడ్‌లో కాదు. దీన్ని పరిష్కరించడానికి మీరు మీ స్క్వేర్‌లను `div` లతో వరుసలుగా (rows) గ్రూప్ చేయాలి మరియు కొన్ని CSS క్లాస్లను జోడించాలి. మీరు దాని వద్ద ఉన్నప్పుడు, ప్రతి స్క్వేర్ ఎక్కడ ప్రదర్శించబడుతుందో మీకు తెలుసని నిర్ధారించుకోవడానికి మీరు ప్రతి స్క్వేర్‌కు ఒక సంఖ్యను ఇస్తారు.
 
@@ -417,9 +417,9 @@ export default function Square() {
 
 `styles.css` లో డిఫైన్ చేయబడిన CSS, `board-row` యొక్క `className` తో divs ని స్టైల్ చేస్తుంది. ఇప్పుడు మీరు మీ కాంపోనెంట్‌లను స్టైల్ చేసిన `div` లతో వరుసలుగా గ్రూప్ చేసారు కాబట్టి మీరు మీ టిక్-టాక్-టో బోర్డుని కలిగి ఉన్నారు:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![టిక్-టాక్-టో బోర్డు 1 నుండి 9 వరకు సంఖ్యలతో నిండి ఉంటుంది](../images/tutorial/number-filled-board.png)
 
-But you now have a problem. Your component named `Square`, really isn't a square anymore. Let's fix that by changing the name to `Board`:
+అయితే మరో సమస్య వచ్చింది. దీనిని `Square` కాంపోనెంట్ అని పిలిచినప్పటికీ, ఇది వాస్తవానికి ఇకపై స్క్వేర్ కాదు. దీన్ని పరిష్కరించడానికి, పేరును `Board` గా మార్చండి:
 
 ```js {1}
 export default function Board() {
@@ -427,7 +427,7 @@ export default function Board() {
 }
 ```
 
-At this point your code should look something like this:
+ఈ దశలో, మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -504,15 +504,15 @@ body {
 
 <Note>
 
-Psssst... That's a lot to type! It's okay to copy and paste code from this page. However, if you're up for a little challenge, we recommend only copying code that you've manually typed at least once yourself.
+అయ్యో, టైప్ చేయడానికి ఇది చాలా ఎక్కువ! ఈ పేజీ నుండి కోడ్‌ని కాపీ చేసి పేస్ట్ చేయడం సరైంది కాదు. అయితే, మీరు ఒక చిన్న సవాలు కోసం సిద్ధంగా ఉన్నట్లయితే, మీరు మాన్యువల్‌గా కనీసం ఒక్కసారైనా టైప్ చేసిన కోడ్‌ను మాత్రమే కాపీ చేయమని మేము సిఫార్సు చేస్తున్నాము.
 
 </Note>
 
-### Passing data through props {/*passing-data-through-props*/}
+### props ద్వారా డేటాను పంపడం {/*passing-data-through-props*/}
 
-Next, you'll want to change the value of a square from empty to "X" when the user clicks on the square. With how you've built the board so far you would need to copy-paste the code that updates the square nine times (once for each square you have)! Instead of copy-pasting, React's component architecture allows you to create a reusable component to avoid messy, duplicated code.
+తర్వాత, యూసర్ స్క్వేర్‌ పై క్లిక్ చేసినప్పుడు మీరు స్క్వేర్ వేల్యూ ను ఖాళీ నుండి "X" కి మార్చాలనుకుంటున్నారు. మీరు ఇప్పటివరకు బోర్డ్‌ను ఎలా నిర్మించారు అనే దానితో మీరు స్క్వేర్‌ను తొమ్మిది సార్లు అప్‌డేట్ చేసే కోడ్‌ను కాపీ-పేస్ట్ చేయాలి (మీ వద్ద ఉన్న ప్రతి స్క్వేర్‌కు ఒకసారి)! కాపీ-పేస్ట్ చేయడానికి బదులుగా, మీరు రీయూజబుల్ కాంపోనెంట్లను సృష్టించడానికి మరియు డూప్లికేట్‌లతో నిండిన చిందరవందరగా ఉన్న కోడ్‌ను వ్రాయకుండా నిరోధించడానికి React యొక్క కాంపోనెంట్ ఆర్కిటెక్చర్‌ని ఉపయోగించవచ్చు.
 
-First, you are going to copy the line defining your first square (`<button className="square">1</button>`) from your `Board` component into a new `Square` component:
+ముందుగా, మీరు మీ `Board` కాంపోనెంట్ నుండి మీ మొదటి స్క్వేర్ (`<button className="square">1</button>`) ని డిఫైన్ చేసే లైన్ ని కొత్త `Square` కాంపోనెంట్‌కి కాపీ చేయబోతున్నారు:
 
 ```js {1-3}
 function Square() {
@@ -524,7 +524,7 @@ export default function Board() {
 }
 ```
 
-Then you'll update the Board component to render that `Square` component using JSX syntax:
+JSX సింటాక్స్‌ని ఉపయోగించి ఆ `Square` కాంపోనెంట్‌ని రెండర్ చేయడానికి మీరు `Board` కాంపోనెంట్‌ని అప్‌డేట్ చేస్తారు:
 
 ```js {5-19}
 // ...
@@ -551,15 +551,15 @@ export default function Board() {
 }
 ```
 
-Note how unlike the browser `div`s, your own components `Board` and `Square` must start with a capital letter. 
+బ్రౌజర్ `div` ల మాదిరిగా కాకుండా, మీరు సృష్టించే కాంపోనెంట్లు `Board` మరియు `Square` తప్పనిసరిగా క్యాపిటల్ లెటర్ తో స్టార్ట్ అవ్వాలి.
 
-Let's take a look:
+ఏమి జరిగిందో చూద్దాం:
 
-![one-filled board](../images/tutorial/board-filled-with-ones.png)
+![1 తో నిండిన పూర్తి బోర్డు](../images/tutorial/board-filled-with-ones.png)
 
-Oh no! You lost the numbered squares you had before. Now each square says "1". To fix this, you will use *props* to pass the value each square should have from the parent component (`Board`) to its child (`Square`).
+అరెరే! మీరు ఇంతకు ముందు ఉన్న సంఖ్యా స్క్వేర్లను కోల్పోయారు. ఇప్పుడు ప్రతి స్క్వేర్ "1" అని చెబుతుంది. దీన్ని పరిష్కరించడానికి, మీరు ప్రతి స్క్వేర్ కలిగి ఉండవలసిన వేల్యూ ను పేరెంట్ కాంపోనెంట్ (`Board`) నుండి దాని చైల్డ్ (`Square`) కి పాస్ చేయడానికి *props* ని ఉపయోగిస్తారు.
 
-Update the `Square` component to read the `value` prop that you'll pass from the `Board`:
+మీరు `Board` నుండి పాస్ చేసే `value` ప్రాప్‌ని రీడ్ చేయడానికి `Square` కాంపోనెంట్‌ను అప్‌డేట్ చేయండి:
 
 ```js {1}
 function Square({ value }) {
@@ -567,9 +567,9 @@ function Square({ value }) {
 }
 ```
 
-`function Square({ value })` indicates the Square component can be passed a prop called `value`.
+`function Square({ value })` అనేది స్క్వేర్ కాంపోనెంట్‌ను `value` అనే ప్రాప్‌ని పాస్ చేయవచ్చని సూచిస్తుంది.
 
-Now you want to display that `value` instead of `1` inside every square. Try doing it like this:
+ఇప్పుడు మీరు ప్రతి స్క్వేర్ లోపల `1` కి బదులుగా ఆ `value` ని ప్రదర్శించాలనుకుంటున్నారు. ఈ విధంగా చేయడానికి ప్రయత్నించండి:
 
 ```js {2}
 function Square({ value }) {
@@ -577,11 +577,11 @@ function Square({ value }) {
 }
 ```
 
-Oops, this is not what you wanted:
+అయ్యో, ఇది మీరు అనుకున్న అవుట్పుట్ కాదు:
 
-![value-filled board](../images/tutorial/board-filled-with-value.png)
+!["value" నిండిన బోర్డు](../images/tutorial/board-filled-with-value.png)
 
-You wanted to render the JavaScript variable called `value` from your component, not the word "value". To "escape into JavaScript" from JSX, you need curly braces. Add curly braces around `value` in JSX like so:
+మీరు మీ కాంపోనెంట్ నుండి `value` అనే JavaScript వేరియబుల్‌ని రెండర్ చేయాలనుకుంటున్నారు, "value" పదం కాదు. JSX నుండి "JavaScript లోకి ఎస్కేప్ అవ్వడానికి", మీకు కర్లీ బ్రేస్‌లు అవసరం. JSX లో `value` చుట్టూ కర్లీ బ్రేస్‌లను ఇలా జోడించండి:
 
 ```js {2}
 function Square({ value }) {
@@ -589,11 +589,11 @@ function Square({ value }) {
 }
 ```
 
-For now, you should see an empty board:
+ప్రస్తుతానికి, మీరు ఖాళీ బోర్డుని చూడాలి:
 
-![empty board](../images/tutorial/empty-board.png)
+![ఖాళీ బోర్డు](../images/tutorial/empty-board.png)
 
-This is because the `Board` component hasn't passed the `value` prop to each `Square` component it renders yet. To fix it you'll add the `value` prop to each `Square` component rendered by the `Board` component:
+ఎందుకంటే, `Board` కాంపోనెంట్ అది రెండర్ చేసే ప్రతి `Square` కాంపోనెంట్‌కి `value` ప్రాప్‌ను ఇంకా పాస్ చేయలేదు. దాన్ని పరిష్కరించడానికి మీరు `Board` కాంపోనెంట్ ద్వారా రెండర్ చేయబడిన ప్రతి `Square` కాంపోనెంట్‌కి `value` ప్రాప్‌ని జోడిస్తారు:
 
 ```js {5-7,10-12,15-17}
 export default function Board() {
@@ -619,11 +619,11 @@ export default function Board() {
 }
 ```
 
-Now you should see a grid of numbers again:
+ఇప్పుడు మీరు మళ్లీ సంఖ్యల గ్రిడ్‌ని చూడాలి:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![టిక్-టాక్-టో బోర్డు 1 నుండి 9 వరకు సంఖ్యలతో నిండి ఉంటుంది](../images/tutorial/number-filled-board.png)
 
-Your updated code should look like this:
+మీ అప్డేటెడ్ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
