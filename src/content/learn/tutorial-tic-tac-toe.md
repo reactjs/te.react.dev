@@ -1133,11 +1133,11 @@ export default function Board() {
 
 <Note>
 
-JavaScript [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) ని సపోర్ట్ చేస్తుంది అంటే ఇన్నర్ ఫంక్షన్కు (ఉదా. `handleClick`) ఔటర్ ఫంక్షన్‌లో డిఫైన్ చేయబడిన వేరియబుల్స్ మరియు ఫంక్షన్‌లకు యాక్సెస్‌ను కలిగి ఉంటుంది (ఉదా. `Board`). `handleClick` ఫంక్షన్ `squares` state ని రీడ్ చేయగలదు మరియు `setSquares` మెథడ్ ని కాల్ చేయగలదు ఎందుకంటే అవి రెండూ `Board` ఫంక్షన్‌లో డిఫైన్ చేయబడ్డాయి.
+JavaScript [క్లోసురేష్స్ (closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) ని సపోర్ట్ చేస్తుంది అంటే ఇన్నర్ ఫంక్షన్కు (ఉదా. `handleClick`) ఔటర్ ఫంక్షన్‌లో డిఫైన్ చేయబడిన వేరియబుల్స్ మరియు ఫంక్షన్‌లకు యాక్సెస్‌ను కలిగి ఉంటుంది (ఉదా. `Board`). `handleClick` ఫంక్షన్ `squares` state ని రీడ్ చేయగలదు మరియు `setSquares` మెథడ్ ని కాల్ చేయగలదు ఎందుకంటే అవి రెండూ `Board` ఫంక్షన్‌లో డిఫైన్ చేయబడ్డాయి.
 
 </Note>
 
-Now you can add X's to the board...  but only to the upper left square. Your `handleClick` function is hardcoded to update the index for the upper left square (`0`). Let's update `handleClick` to be able to update any square. Add an argument `i` to the `handleClick` function that takes the index of the square to update:
+ఇప్పుడు మీరు X లను బోర్డ్‌కి జోడించవచ్చు... కానీ అప్పర్ లెఫ్ట్ స్క్వేర్కి మాత్రమే. అప్పర్ లెఫ్ట్ స్క్వేర్ (`0`) కోసం ఇండెక్స్ ను అప్డేట్ చేయడానికి మీ `handleClick` ఫంక్షన్ హార్డ్‌కోడ్ చేయబడింది. ఏదైనా స్క్వేర్‌ని అప్‌డేట్ చేయడానికి `handleClick` ని అప్‌డేట్ చేద్దాం. అప్‌డేట్ చేయడానికి స్క్వేర్ ఇండెక్స్‌ను తీసుకునే `handleClick` ఫంక్షన్‌కు ఆర్గ్యుమెంట్ `i` ని జోడించండి:
 
 ```js {4,6}
 export default function Board() {
@@ -1155,13 +1155,13 @@ export default function Board() {
 }
 ```
 
-Next, you will need to pass that `i` to `handleClick`. You could try to set the `onSquareClick` prop of square to be `handleClick(0)` directly in the JSX like this, but it won't work:
+తర్వాత, మీరు ఆ `i` ని `handleClick` కి పాస్ చేయాలి. మీరు స్క్వేర్ యొక్క `onSquareClick` ప్రాప్‌ని నేరుగా JSX లో `handleClick(0)` గా సెట్ చేయడానికి ప్రయత్నించవచ్చు, కానీ అది పని చేయదు:
 
 ```jsx
 <Square value={squares[0]} onSquareClick={handleClick(0)} />
 ```
 
-Here is why this doesn't work. The `handleClick(0)` call will be a part of rendering the board component. Because `handleClick(0)` alters the state of the board component by calling `setSquares`, your entire board component will be re-rendered again. But this runs `handleClick(0)` again, leading to an infinite loop:
+ఇది ఎందుకు పని చేయలేదని ఇక్కడ ఉంది. `handleClick(0)` కాల్ Board కాంపోనెంట్‌ను రెండరింగ్ చేయడంలో భాగంగా ఉంటుంది. `setSquares` ని కాల్ చేయడం ద్వారా `handleClick(0)` Board కాంపోనెంట్ యొక్క state ని మారుస్తుంది కాబట్టి, మీ మొత్తం Board కాంపోనెంట్ మళ్లీ రెండర్ చేయబడుతుంది. కానీ ఇది మళ్లీ `handleClick(0)` ని రన్ చేస్తుంది, ఇది ఇన్ఫైనైట్ లూప్‌కు దారి తీస్తుంది:
 
 <ConsoleBlock level="error">
 
@@ -1169,13 +1169,13 @@ Too many re-renders. React limits the number of renders to prevent an infinite l
 
 </ConsoleBlock>
 
-Why didn't this problem happen earlier?
+ఇంతకు ముందు ఈ సమస్య ఎందుకు రాలేదు?
 
-When you were passing `onSquareClick={handleClick}`, you were passing the `handleClick` function down as a prop. You were not calling it! But now you are *calling* that function right away--notice the parentheses in `handleClick(0)`--and that's why it runs too early. You don't *want* to call `handleClick` until the user clicks!
+మీరు `onSquareClick={handleClick}` ని పాస్ చేస్తున్నప్పుడు, మీరు `handleClick` ఫంక్షన్‌ను props గా పాస్ చేస్తున్నారు. అప్పుడు మీరు దానిని కాల్ చేయలేదు! కానీ ఇప్పుడు మీరు ఆ ఫంక్షన్‌ ని వెంటనే *కాల్* చేస్తున్నారు - `handleClick(0)` లో పారేన్తేసెస్ ని గమనించండి--అందుకే ఇది చాలా త్వరగా రన్ అవుతుంది. యూసర్ క్లిక్ చేసే వరకు మీరు `handleClick` ని కాల్ చేయకూడదు!
 
-You could fix this by creating a function like `handleFirstSquareClick` that calls `handleClick(0)`, a function like `handleSecondSquareClick` that calls `handleClick(1)`, and so on. You would pass (rather than call) these functions down as props like `onSquareClick={handleFirstSquareClick}`. This would solve the infinite loop.
+మీరు `handleClick(0)` ని కాల్ చేసే `handleFirstSquareClick`, `handleClick(1)` ని కాల్ చేసే `handleSecondSquareClick` వంటి ఫంక్షన్‌ని క్రియేట్ చేయడం ద్వారా దీన్ని పరిష్కరించవచ్చు. మీరు ఈ ఫంక్షన్‌లను `onSquareClick={handleFirstSquareClick}` వంటి props గా (కాల్ చేయకుండా) పాస్ చేస్తారు. ఇది ఇన్ఫైనైట్ లూప్‌ను సాల్వ్ చేస్తుంది.
 
-However, defining nine different functions and giving each of them a name is too verbose. Instead, let's do this:
+అయితే, తొమ్మిది వేర్వేరు ఫంక్షన్లను డిఫైన్ చేయడం మరియు వాటిలో ప్రతిదానికి పేరు ఇవ్వడం చాలా కష్టం. బదులుగా, ఇలా చేద్దాం:
 
 ```js {6}
 export default function Board() {
@@ -1189,9 +1189,9 @@ export default function Board() {
 }
 ```
 
-Notice the new `() =>` syntax. Here, `() => handleClick(0)` is an *arrow function,* which is a shorter way to define functions. When the square is clicked, the code after the `=>` "arrow" will run, calling `handleClick(0)`.
+కొత్త `() =>` సింటాక్స్‌ని గమనించండి. ఇక్కడ, `() => handleClick(0)` అనేది *ఆర్రౌ ఫంక్షన్*, ఇది ఫంక్షన్‌లను డిఫైన్ చేయడానికి ఒక చిన్న మార్గం. స్క్వేర్ ని క్లిక్ చేసినప్పుడు, `=>` "ఆర్రౌ" తర్వాత ఉన్న కోడ్ రన్ చేయబడుతుంది, `handleClick(0)` ని కాల్ చేస్తుంది.
 
-Now you need to update the other eight squares to call `handleClick` from the arrow functions you pass. Make sure that the argument for each call of the `handleClick` corresponds to the index of the correct square:
+మీరు పాస్ చేసే ఆర్రౌ ఫంక్షన్‌ల నుండి `handleClick` ని కాల్ చేయడానికి ఇప్పుడు మీరు ఇతర ఎనిమిది స్క్వేర్‌లను అప్‌డేట్ చేయాలి. `handleClick` యొక్క ప్రతి కాల్‌కు సంబంధించిన ఆర్గ్యుమెంట్ సరైన స్క్వేర్ యొక్క ఇండెక్స్కు అనుగుణంగా ఉందని నిర్ధారించుకోండి:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -1218,13 +1218,13 @@ export default function Board() {
 };
 ```
 
-Now you can again add X's to any square on the board by clicking on them:
+ఇప్పుడు మీరు వాటిపై క్లిక్ చేయడం ద్వారా బోర్డ్‌లోని ఏదైనా స్క్వేర్‌కి మళ్లీ X లను జోడించవచ్చు:
 
-![filling the board with X](../images/tutorial/tictac-adding-x-s.gif)
+![X తో బోర్డు నింపడం](../images/tutorial/tictac-adding-x-s.gif)
 
-But this time all the state management is handled by the `Board` component!
+కానీ ఈసారి state మేనేజ్మెంట్ అంతా `Board` కాంపోనెంట్ దే!
 
-This is what your code should look like:
+మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -1317,19 +1317,19 @@ body {
 
 </Sandpack>
 
-Now that your state handling is in the `Board` component, the parent `Board` component passes props to the child `Square` components so that they can be displayed correctly. When clicking on a `Square`, the child `Square` component now asks the parent `Board` component to update the state of the board. When the `Board`'s state changes, both the `Board` component and every child `Square` re-renders automatically. Keeping the state of all squares in the `Board` component will allow it to determine the winner in the future.
+ఇప్పుడు మీ state హ్యాండ్లింగ్ `Board` కాంపోనెంట్‌లో ఉంది, పేరెంట్ `Board` కాంపోనెంట్ చైల్డ్ `Square` కాంపోనెంట్‌లకు props ను పంపుతుంది, తద్వారా అవి సరిగ్గా ప్రదర్శించబడతాయి. `Square` పై క్లిక్ చేసినప్పుడు, చైల్డ్ `Square` కాంపోనెంట్ ఇప్పుడు బోర్డ్ state ని అప్‌డేట్ చేయమని పేరెంట్ `Board` కాంపోనెంట్‌ని అడుగుతుంది. `Board` యొక్క state మారినప్పుడు, `Board` కాంపోనెంట్ మరియు ప్రతి చైల్డ్ `Square` కాంపోనెంట్లు ఆటోమెటికల్గా రీ-రెండర్ అవుతాయి. అన్ని స్క్వేర్‌ల state ని `Board` కాంపోనెంట్‌లో ఉంచడం వల్ల భవిష్యత్తులో విజేతను గుర్తించడానికి ఇది అనుమతిస్తుంది.
 
-Let's recap what happens when a user clicks the top left square on your board to add an `X` to it:
+యూసర్ మీ బోర్డ్‌లో `X` ని జోడించడానికి టాప్ లెఫ్ట్ స్క్వేర్‌ను క్లిక్ చేసినప్పుడు ఏమి జరుగుతుందో మళ్ళీ చూద్దాం:
 
-1. Clicking on the upper left square runs the function that the `button` received as its `onClick` prop from the `Square`. The `Square` component received that function as its `onSquareClick` prop from the `Board`. The `Board` component defined that function directly in the JSX. It calls `handleClick` with an argument of `0`.
-1. `handleClick` uses the argument (`0`) to update the first element of the `squares` array from `null` to `X`.
-1. The `squares` state of the `Board` component was updated, so the `Board` and all of its children re-render. This causes the `value` prop of the `Square` component with index `0` to change from `null` to `X`.
+1. టాప్ లెఫ్ట్ స్క్వేర్‌పై క్లిక్ చేయడం ద్వారా `button` దాని `Square` నుండి `onClick` ప్రాప్‌గా స్వీకరించిన ఫంక్షన్‌ను రన్ చేస్తుంది. `Square` కాంపోనెంట్ ఆ ఫంక్షన్‌ను `Board` నుండి దాని `onSquareClick` ప్రాప్‌గా స్వీకరించింది. `Board` కాంపోనెంట్ ఆ ఫంక్షన్‌ని నేరుగా JSX లో డిఫైన్ చేసింది. ఇది `0` ఆర్గ్యుమెంట్‌తో `handleClick` ని కాల్ చేస్తుంది.
+1. `squares` array లోని మొదటి ఎలిమెంట్ ని `null` నుండి `X` కి అప్డేట్ చేయడానికి `handleClick` ఆర్గ్యుమెంట్ (`0`) ని ఉపయోగిస్తుంది.
+1. `Board` కాంపోనెంట్ యొక్క `squares` state అప్డేట్ చేయబడింది, కాబట్టి `Board` మరియు దాని చైల్డ్స్ అందరూ మళ్ళీ రెండర్ అవుతారు. ఇది `0` ఇండెక్స్తో ఉన్న `Square` కాంపోనెంట్ యొక్క `value` ప్రాప్‌ను `null` నుండి `X` కి మార్చడానికి కారణమవుతుంది.
 
-In the end the user sees that the upper left square has changed from empty to having a `X` after clicking it.
+చివరగా, యూసర్ టాప్ లెఫ్ట్ స్క్వేర్‌ని క్లిక్ చేసిన తర్వాత అది ఖాళీ నుండి `X` గా మారడం చూస్తారు.
 
 <Note>
 
-The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. You could give any name to the `Square`'s `onSquareClick` prop or `Board`'s `handleClick` function, and the code would work the same. In React, it's conventional to use `onSomething` names for props which represent events and `handleSomething` for the function definitions which handle those events.
+DOM `<button>` ఎలిమెంట్ యొక్క `onClick` అట్రిబ్యూట్ React కి ప్రత్యేక అర్ధాన్ని కలిగి ఉంది ఎందుకంటే ఇది బిల్ట్-ఇన్ కాంపోనెంట్. `Square` వంటి కస్టమ్ కాంపోనెంట్ల కోసం, పేరు పెట్టడం మీ ఇష్టం. మీరు `Square` యొక్క `onSquareClick` ప్రాప్ లేదా `Board` యొక్క `handleClick` ఫంక్షన్ కి ఏదైనా పేరు పెట్టవచ్చు మరియు కోడ్ అదే పని చేస్తుంది. React ‌లో, ఈవెంట్‌లను రెప్రెసెంత్ చేసే props కోసం `onSomething` పేర్లను ఉపయోగించడం మరియు ఆ ఈవెంట్‌లను హేండిల్ చేసే ఫంక్షన్ డెఫినిషన్‌ల కోసం `handleSomething` ని ఉపయోగించడం సంప్రదాయం.
 
 </Note>
 
