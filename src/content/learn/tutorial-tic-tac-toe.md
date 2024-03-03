@@ -1745,13 +1745,13 @@ body {
 ]
 ```
 
-### Lifting state up, again {/*lifting-state-up-again*/}
+### state ని మళ్లీ లిఫ్ట్ చేయడం {/*lifting-state-up-again*/}
 
-You will now write a new top-level component called `Game` to display a list of past moves. That's where you will place the `history` state that contains the entire game history.
+మీరు ఇప్పుడు గత కదలికల లిస్ట్ ను డిస్ప్లే చేయడానికి `Game` అనే కొత్త టాప్-లెవెల్ కాంపోనెంట్ ని వ్రాస్తారు. మీరు మొత్తం గేమ్ చరిత్రను కలిగి ఉన్న `history` state ని ఇక్కడ ఉంచుతారు.
 
-Placing the `history` state into the `Game` component will let you remove the `squares` state from its child `Board` component. Just like you "lifted state up" from the `Square` component into the `Board` component, you will now lift it up from the `Board` into the top-level `Game` component. This gives the `Game` component full control over the `Board`'s data and lets it instruct the `Board` to render previous turns from the `history`.
+`Game` కాంపోనెంట్‌లో `history` state ని ఉంచడం వలన మీరు దాని చైల్డ్ `Board` కాంపోనెంట్ నుండి `squares` state ని రిమూవ్ చేయవచ్చు. మీరు `Square` కాంపోనెంట్ నుండి `Board` కాంపోనెంట్‌లోకి "state ని లిఫ్ట్ అప్" చేసినట్లే, ఇప్పుడు మీరు దాన్ని `Board` నుండి టాప్-లెవల్ `Game` కాంపోనెంట్‌లోకి లిఫ్ట్ చేయండి. ఇది `Board` యొక్క డేటాపై `Game` కాంపోనెంట్‌కి పూర్తి కంట్రోల్ ను ఇస్తుంది మరియు `history` నుండి ప్రీవియస్ కదలికలను రెండర్ చేయడానికి `Board` ని సూచిస్తుంది.
 
-First, add a `Game` component with `export default`. Have it render the `Board` component and some markup:
+ముందుగా, `export default` తో `Game` కాంపోనెంట్ని జోడించండి. ఇది `Board` కాంపోనెంట్ మరియు కొంత మార్కప్‌ను రెండర్ చేస్తుంది:
 
 ```js {1,5-16}
 function Board() {
@@ -1772,9 +1772,9 @@ export default function Game() {
 }
 ```
 
-Note that you are removing the `export default` keywords before the `function Board() {` declaration and adding them before the `function Game() {` declaration. This tells your `index.js` file to use the `Game` component as the top-level component instead of your `Board` component. The additional `div`s returned by the `Game` component are making room for the game information you'll add to the board later.
+మీరు `function Board() {` డిక్లరేషన్‌కు ముందు `export default` కీవర్డ్స్ ను తీసివేసి, `function Game() {` డిక్లరేషన్‌కు ముందు వాటిని జోడిస్తున్నారని గమనించండి. ఇది మీ `Board` కాంపోనెంట్‌కు బదులుగా `Game` కాంపోనెంట్‌ను టాప్-లెవల్ కాంపోనెంట్‌గా ఉపయోగించమని మీ `index.js` ఫైల్‌కి చెబుతుంది. `Game` కాంపోనెంట్ రిటర్న్ చేసిన అదనపు `div`లు మీరు తర్వాత బోర్డ్‌కి జోడించే గేమ్ సమాచారానికి చోటు కల్పిస్తాయి.
 
-Add some state to the `Game` component to track which player is next and the history of moves:
+తదుపరి ఏ ప్లేయర్ మరియు కదలికల చరిత్రను ట్రాక్ చేయడానికి `Game` కాంపోనెంట్‌కు కొంత state ని జోడించండి:
 
 ```js {2-3}
 export default function Game() {
@@ -1783,9 +1783,9 @@ export default function Game() {
   // ...
 ```
 
-Notice how `[Array(9).fill(null)]` is an array with a single item, which itself is an array of 9 `null`s.
+`[Array(9).fill(null)]` అనేది ఒకే ఎలిమెంట్తో కూడిన array, అదే 9 `null` ల array.
 
-To render the squares for the current move, you'll want to read the last squares array from the `history`. You don't need `useState` for this--you already have enough information to calculate it during rendering:
+ప్రస్తుత కదలిక కోసం స్క్వేర్‌లను రెండర్ చేయడానికి, మీరు `history` నుండి చివరి స్క్వేర్‌ల array ని రీడ్ చేయాలనుకుంటున్నారు. దీని కోసం మీకు `useState` అవసరం లేదు--రెండరింగ్ సమయంలో దీన్ని కాల్కులేట్ చేయడానికి మీకు ఇప్పటికే తగినంత సమాచారం ఉంది:
 
 ```js {4}
 export default function Game() {
@@ -1795,7 +1795,7 @@ export default function Game() {
   // ...
 ```
 
-Next, create a `handlePlay` function inside the `Game` component that will be called by the `Board` component to update the game. Pass `xIsNext`, `currentSquares` and `handlePlay` as props to the `Board` component:
+తర్వాత, గేమ్‌ను అప్‌డేట్ చేయడానికి `Board` కాంపోనెంట్ ద్వారా కాల్ చేయబడే `Game` కాంపోనెంట్‌లో `handlePlay` ఫంక్షన్‌ను క్రియేట్ చేయండి. `xIsNext`, `currentSquares` మరియు `handlePlay` ని `Board` కాంపోనెంట్‌కు props గా పాస్ చేయండి:
 
 ```js {6-8,13}
 export default function Game() {
@@ -1816,7 +1816,7 @@ export default function Game() {
 }
 ```
 
-Let's make the `Board` component fully controlled by the props it receives. Change the `Board` component to take three props: `xIsNext`, `squares`, and a new `onPlay` function that `Board` can call with the updated squares array when a player makes a move. Next, remove the first two lines of the `Board` function that call `useState`:
+తర్వాత, `Board` కాంపోనెంట్‌ని ఎడిట్ చేద్దాం, తద్వారా పాస్ చేసిన props ఈ కాంపోనెంట్‌ని పూర్తిగా కంట్రోల్ చేస్తాయి. మూడు props ను తీసుకోవడానికి `Board` కాంపోనెంట్‌ను మార్చండి: `xIsNext`, `squares` మరియు ప్లేయర్ కదలికలు చేసినప్పుడు అప్‌డేట్ చేయబడిన స్క్వేర్‌ల array తో `Board` కాల్ చేయగల కొత్త `onPlay` ఫంక్షన్. తర్వాత, `useState` ని కాల్ చేసే `Board` ఫంక్షన్‌లోని మొదటి రెండు లైన్లను రిమూవ్ చేయండి:
 
 ```js {1}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1827,7 +1827,7 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-Now replace the `setSquares` and `setXIsNext` calls in `handleClick` in the `Board` component with a single call to your new `onPlay` function so the `Game` component can update the `Board` when the user clicks a square:
+ఇప్పుడు `setSquares` మరియు `setXIsNext` కాల్‌లను `handleClick` లోని `Board` కాంపోనెంట్‌లో మీ కొత్త `onPlay` ఫంక్షన్‌కి ఒకే కాల్‌తో రీప్లేస్ చేయండి, తద్వారా యూసర్ స్క్వేర్‌ని క్లిక్ చేసినప్పుడు `Game` కాంపోనెంట్‌ `Board` ని అప్‌డేట్ చేయగలదు:
 
 ```js {12}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1847,11 +1847,11 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-The `Board` component is fully controlled by the props passed to it by the `Game` component. You need to implement the `handlePlay` function in the `Game` component to get the game working again.
+`Board` కాంపోనెంట్ పూర్తిగా `Game` కాంపోనెంట్ ద్వారా పంపబడిన props ద్వారా కంట్రోల్ చేయబడుతుంది. గేమ్ మళ్లీ పని చేయడానికి మీరు `Game` కాంపోనెంట్‌లో `handlePlay` ఫంక్షన్‌ని ఇంప్లిమెంట్ చేయాలి.
 
-What should `handlePlay` do when called? Remember that Board used to call `setSquares` with an updated array; now it passes the updated `squares` array to `onPlay`.
+కాల్ చేసినప్పుడు `handlePlay` ఏమి చేయాలి? Board అప్‌డేట్ చేయబడిన array తో `setSquares` ని కాల్ చేస్తుంది అని గుర్తుంచుకోండి, ఇప్పుడు అది అప్డేట్ చేయబడిన `squares` array ని `onPlay` కి పాస్ చేస్తుంది.
 
-The `handlePlay` function needs to update `Game`'s state to trigger a re-render, but you don't have a `setSquares` function that you can call any more--you're now using the `history` state variable to store this information. You'll want to update `history` by appending the updated `squares` array as a new history entry. You also want to toggle `xIsNext`, just as Board used to do:
+రీ-రెండర్‌ ని ట్రిగ్గర్ చేయడానికి `handlePlay` ఫంక్షన్‌ `Game`యొక్క state ని అప్‌డేట్ చేయాలి, కానీ మీరు ఇకపై కాల్ చేయగల `setSquares` ఫంక్షన్‌ను కలిగి లేరు--మీరు ఇప్పుడు ఈ ఇన్ఫర్మేషన్ని స్టోర్ చేయడానికి `history` state వేరియబుల్ ని ఉపయోగిస్తున్నారు. మీరు అప్డేట్ చేయబడిన `squares` array ని కొత్త చరిత్ర ఎంట్రీగా జోడించడం ద్వారా `history` ని అప్డేట్ చేయాలి. Board ఉపయోగించిన విధంగానే మీరు కూడా `xIsNext` ని టోగుల్ చేయాలనుకుంటున్నారు:
 
 ```js {4-5}
 export default function Game() {
@@ -1864,11 +1864,11 @@ export default function Game() {
 }
 ```
 
-Here, `[...history, nextSquares]` creates a new array that contains all the items in `history`, followed by `nextSquares`. (You can read the `...history` [*spread syntax*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) as "enumerate all the items in `history`".)
+ఇక్కడ, `[...history, nextSquares]` అనేది `history` లోని అన్ని ఐటమ్స్ ను కలిగి ఉన్న కొత్త array ని క్రియేట్ చేస్తుంది, తర్వాత `nextSquares`. (మీరు `...history` [*స్ప్రెడ్ సింటాక్స్*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) ని ఉపయోగించి `history` లో ఉన్న "అన్ని ఐటమ్స్ ను ఎన్యుమరేట్ చేయవచ్చు".)
 
-For example, if `history` is `[[null,null,null], ["X",null,null]]` and `nextSquares` is `["X",null,"O"]`, then the new `[...history, nextSquares]` array will be `[[null,null,null], ["X",null,null], ["X",null,"O"]]`.
+ఉదాహరణకు, `history` అనేది `[[null,null,null], ["X",null,null]]` మరియు `nextSquares` అనేది `["X",null,"O"]` అయితే, అప్పుడు కొత్త `[...history, nextSquares]` array అనేది `[[null,null,null], ["X",null,null], ["X",null,"O"]]`.
 
-At this point, you've moved the state to live in the `Game` component, and the UI should be fully working, just as it was before the refactor. Here is what the code should look like at this point:
+ఈ సమయంలో, మీరు `Game` కాంపోనెంట్‌లో నివసించడానికి state ని మూవ్ చేసారు మరియు UI రిఫ్యాక్టర్‌కు ముందు ఉన్నట్లే పూర్తిగా పని చేస్తుంది. ఈ సమయంలో కోడ్ ఎలా ఉండాలో ఇక్కడ ఉంది:
 
 <Sandpack>
 
