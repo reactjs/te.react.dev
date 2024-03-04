@@ -2017,19 +2017,19 @@ body {
 
 </Sandpack>
 
-### Showing the past moves {/*showing-the-past-moves*/}
+### గత కదలికల ప్రదర్శన {/*showing-the-past-moves*/}
 
-Since you are recording the tic-tac-toe game's history, you can now display a list of past moves to the player.
+మీరు టిక్-టాక్-టో గేమ్ చరిత్రను రికార్డ్ చేస్తున్నందున, మీరు ఇప్పుడు ప్లేయర్‌కు గత కదలికల లిస్ట్ ను డిస్ప్లే చేయవచ్చు.
 
-React elements like `<button>` are regular JavaScript objects; you can pass them around in your application. To render multiple items in React, you can use an array of React elements.
+`<button>` వంటి React ఎలిమెంట్స్ సాధారణ JavaScript ఆబ్జెక్ట్స్, మీరు వాటిని మీ అప్లికేషన్‌లో ఎక్కడికి అయినా పాస్ చేయవచ్చు. React లో మల్టిపుల్ ఐటెమ్‌లను రెండర్ చేయడానికి, మీరు React ఎలిమెంట్‌ల array ని ఉపయోగించవచ్చు.
 
-You already have an array of `history` moves in state, so now you need to transform it to an array of React elements. In JavaScript, to transform one array into another, you can use the [array `map` method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+మీరు ఇప్పటికే state లో `history` కదలికల array ని కలిగి ఉన్నారు, కాబట్టి ఇప్పుడు మీరు దాన్ని React ఎలిమెంట్‌ల array కి మార్చాలి. JavaScript లో, ఒక array ని మరొకదానికి మార్చడానికి, మీరు [array `map` మెథడ్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ని ఉపయోగించవచ్చు:
 
 ```jsx
 [1, 2, 3].map((x) => x * 2) // [2, 4, 6]
 ```
 
-You'll use `map` to transform your `history` of moves into React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves. Let's `map` over the `history` in the Game component:
+మీరు మీ కదలికల `history` ని స్క్రీన్‌పై బటన్‌లను రిప్రజెంట్ చేసే React ఎలిమెంట్స్ గా మార్చడానికి `map` ని ఉపయోగిస్తారు మరియు గత కదలికలకు "జంప్" చేయడానికి బటన్‌ల లిస్ట్ ను డిస్ప్లే చేస్తారు. Game కాంపోనెంట్‌లోని `history` పై `map` చేద్దాం:
 
 ```js {11-13,15-27,35}
 export default function Game() {
@@ -2073,13 +2073,13 @@ export default function Game() {
 }
 ```
 
-You can see what your code should look like below. Note that you should see an error in the developer tools console that says: 
+మీ కోడ్ ఎలా ఉండాలో మీరు క్రింద చూడవచ్చు. మీరు డెవలపర్ టూల్స్ కన్సోల్‌లో ఇలా చెప్పే ఎర్రర్ ని చూడాలని గుర్తుంచుకోండి: 
 
 <ConsoleBlock level="warning">
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
 </ConsoleBlock>
   
-You'll fix this error in the next section.
+మీరు నెక్స్ట్ సెక్షన్లో ఈ ఎర్రర్ ని ఫిక్స్ చేస్తారు.
 
 <Sandpack>
 
@@ -2247,24 +2247,24 @@ body {
 
 </Sandpack>
 
-As you iterate through `history` array inside the function you passed to `map`, the `squares` argument goes through each element of `history`, and the `move` argument goes through each array index: `0`, `1`, `2`, …. (In most cases, you'd need the actual array elements, but to render a list of moves you will only need indexes.)
+మీరు `map` కి పంపిన ఫంక్షన్‌లోని `history` array ద్వారా ఇటరేట్ అవుతున్నపుడు, `squares` ఆర్గ్యుమెంట్ `history` లోని ప్రతి ఎలిమెంట్ గుండా వెళుతుంది మరియు `move` ఆర్గ్యుమెంట్ ప్రతి array ఇండెక్స్ ద్వారా వెళుతుంది: `0`, `1`, `2`, …. (చాలా సందర్భాలలో, మీకు యాక్చువల్ array ఎలిమెంట్లు అవసరం, కానీ కదలికల లిస్ట్ ను అందించడానికి మీకు ఇండెక్స్లు మాత్రమే అవసరం.)
 
-For each move in the tic-tac-toe game's history, you create a list item `<li>` which contains a button `<button>`. The button has an `onClick` handler which calls a function called `jumpTo` (that you haven't implemented yet).
+టిక్-టాక్-టో గేమ్ చరిత్రలో ప్రతి కదలిక కోసం, మీరు `<li>` లో ఒక బటన్‌ను కలిగి ఉన్న లిస్ట్ ఐటెం `<button>` ని క్రియేట్ చేస్తారు. బటన్‌లో `onClick` హ్యాండ్లర్ ఉంది, ఇది `jumpTo` (మీరు ఇంకా ఇంప్లిమెంట్ చేయలేదు) అనే ఫంక్షన్‌ని కాల్ చేస్తుంది.
 
-For now, you should see a list of the moves that occurred in the game and an error in the developer tools console. Let's discuss what the "key" error means.
+ప్రస్తుతానికి, మీరు గేమ్‌లో సంభవించిన కదలికల లిస్ట్ ను మరియు డెవలపర్ టూల్స్ కన్సోల్‌లో ఎర్రర్‌ను చూడాలి. "key" ఎర్రర్ అంటే ఏమిటో డిస్కస్ చేద్దాం.
 
-### Picking a key {/*picking-a-key*/}
+### key ని పిక్ చేసుకోవడం {/*picking-a-key*/}
 
-When you render a list, React stores some information about each rendered list item. When you update a list, React needs to determine what has changed. You could have added, removed, re-arranged, or updated the list's items.
+మీరు లిస్ట్ ను రెండర్ చేసినప్పుడు, ప్రతి రెండర్ చేయబడిన లిస్ట్ ఐటెం గురించిన కొంత ఇన్ఫర్మేషన్ ని React స్టోర్ చేస్తుంది. మీరు లిస్ట్ ను అప్‌డేట్ చేసినప్పుడు, React ఏమి చేంజ్ అయిందో గుర్తించాలి. మీరు లిస్ట్ ఐటెమ్‌లను జోడించి ఉండొచ్చు, రిమూవ్ చేసి ఉండొచ్చు, రీ-అరేంజ్ చేసి ఉండొచ్చు లేదా అప్డేట్ చేసి ఉండవచ్చు.
 
-Imagine transitioning from
+కింది పరిస్థితి నుండి:
 
 ```html
 <li>Alexa: 7 tasks left</li>
 <li>Ben: 5 tasks left</li>
 ```
 
-to
+మీరు దీనికి మారినట్లు ఊహించుకోండి:
 
 ```html
 <li>Ben: 9 tasks left</li>
@@ -2272,7 +2272,7 @@ to
 <li>Alexa: 5 tasks left</li>
 ```
 
-In addition to the updated counts, a human reading this would probably say that you swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and does not know what you intended, so you need to specify a _key_ property for each list item to differentiate each list item from its siblings. If your data was from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
+అప్‌డేట్ చేసిన కౌంట్లతో పాటు, దీన్ని చదివే వ్యక్తి మీరు Alexa మరియు Ben ల ఆర్డర్‌ను స్వాప్ చేశారని మరియు Alexa మరియు Ben మధ్య Claudia ని ఇన్సర్ట్ చేసారని బహుశా చెబుతారు. అయితే, React అనేది కంప్యూటర్ ప్రోగ్రామ్ మరియు మీరు ఉద్దేశించినది దానికి తెలియదు, కాబట్టి మీరు ప్రతి లిస్ట్ ఐటెమ్‌ను దాని తోబుట్టువుల నుండి డిఫ్ఫరెన్షిఏట్ చేయడానికి ప్రతి లిస్ట్ ఐటెమ్‌కు _key_ ప్రాపర్టీని స్పెసిఫ్య్ చేయాలి. మీ డేటా డేటాబేస్ నుండి వచ్చినట్లయితే, Alexa, Ben మరియు Claudia యొక్క డేటాబేస్ ID లు key లుగా ఉపయోగించబడతాయి.
 
 ```js {1}
 <li key={user.id}>
@@ -2280,17 +2280,17 @@ In addition to the updated counts, a human reading this would probably say that 
 </li>
 ```
 
-When a list is re-rendered, React takes each list item's key and searches the previous list's items for a matching key. If the current list has a key that didn't exist before, React creates a component. If the current list is missing a key that existed in the previous list, React destroys the previous component. If two keys match, the corresponding component is moved.
+లిస్ట్ రీ-రెండర్ చేయబడినప్పుడు, React ప్రతి లిస్ట్ ఐటెం యొక్క key ని తీసుకుంటుంది మరియు మ్యాచ్ అయ్యే key కోసం ప్రీవియస్ లిస్ట్ యొక్క ఐటెంలను సెర్చ్ చేస్తుంది. ప్రస్తుత లిస్ట్లో ఇంతకు ముందు లేని key ఉంటే, React ఆ కాంపోనెంట్ ని క్రియేట్ చేస్తుంది. ప్రస్తుత లిస్ట్లో ప్రీవియస్ లిస్ట్లో ఉన్న key మిస్ అయినట్లయితే, React ప్రీవియస్ కాంపోనెంట్ ని డిస్ట్రాయ్ చేస్తుంది. రెండు key లు మ్యాచ్ అయితే, కరెస్పాండింగ్ కాంపోనెంట్ మూవ్ చేయబడుతుంది.
 
-Keys tell React about the identity of each component, which allows React to maintain state between re-renders. If a component's key changes, the component will be destroyed and re-created with a new state.
+ప్రతి కాంపోనెంట్ యొక్క ఐడెంటిటీ గురించి key లు React కు తెలియజేస్తాయి, ఇది రీ-రెండర్‌ల మధ్య state ని మైంటైన్ చేయడానికి React ని అనుమతిస్తుంది. ఒక కాంపోనెంట్ యొక్క key మారినట్లయితే, కాంపోనెంట్ డిస్ట్రాయ్ చేయబడుతుంది మరియు కొత్త state తో రీ-క్రియేట్ చేయబడుతుంది.
 
-`key` is a special and reserved property in React. When an element is created, React extracts the `key` property and stores the key directly on the returned element. Even though `key` may look like it is passed as props, React automatically uses `key` to decide which components to update. There's no way for a component to ask what `key` its parent specified.
+`key` అనేది React ‌లో ప్రత్యేకమైన మరియు రిజర్వ్ చేయబడిన ప్రాపర్టీ. ఎలిమెంట్ క్రియేట్ చేయబడినపుడు, React `key` ప్రాపర్టీ ని ఎక్స్ట్రాక్ట్ చేస్తుంది మరియు రిటర్న్ అయిన ఎలిమెంట్ పై డైరెక్ట్గా key ని స్టోర్ చేస్తుంది. `key` అది props గా పాస్ అయినట్లు కనిపించినప్పటికీ, ఏ కాంపోనెంట్లను అప్‌డేట్ చేయాలో నిర్ణయించడానికి React ఆటోమేటిక్‌గా `key` ని ఉపయోగిస్తుంది. పేరెంట్ కాంపోనెంట్ ఏమి స్పెసిఫ్య్ చేసిందో తెలుసుకోవడానికి చైల్డ్ కాంపోనెంట్ `key` కి మార్గం లేదు.
 
-**It's strongly recommended that you assign proper keys whenever you build dynamic lists.** If you don't have an appropriate key, you may want to consider restructuring your data so that you do.
+**డైనమిక్ లిస్ట్లను బిల్డ్ చేస్తున్నప్పుడు ప్రొపెర్ key లను అసైన్ చేయాలని మేము గట్టిగా సిఫార్సు చేస్తున్నాము.** మీకు తగిన key లేకపోతే, మీరు మీ డేటాను రీస్ట్రక్చర్ చేయడం పరిగణించవచ్చు.
 
-If no key is specified, React will report an error and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list's items or inserting/removing list items. Explicitly passing `key={i}` silences the error but has the same problems as array indices and is not recommended in most cases.
+key ఏదీ స్పెసిఫ్య్ చేయబడకపోతే, React ఎర్రర్ ని రిపోర్ట్ చేస్తుంది మరియు డిఫాల్ట్‌గా array ఇండెక్స్ను key గా ఉపయోగిస్తుంది. లిస్ట్ ఐటెమ్‌లను రి-ఆర్డర్ చేయడానికి ప్రయత్నించినప్పుడు లేదా లిస్ట్ ఐటెమ్‌లను ఇన్‌సర్ట్ చేసేటప్పుడు/రిమూవ్ చేసేటప్పుడు array ఇండెక్స్ను key గా ఉపయోగించడం ప్రాబ్లెమ్గా మారవచ్చు. స్పష్టంగా `key={i}` ని పాస్ చేయడం వల్ల ఎర్రర్ ని నిశ్శబ్దం చేస్తుంది కానీ array ఇండెక్స్ మాదిరిగానే సమస్యలు ఉన్నాయి మరియు చాలా సందర్భాలలో సిఫార్సు చేయబడవు.
 
-Keys do not need to be globally unique; they only need to be unique between components and their siblings.
+key లు గ్లోబల్గా యూనిక్గా ఉండవలసిన అవసరం లేదు, వాటి కాంపోనెంట్లు మరియు వాటి తోబుట్టువుల మధ్య మాత్రమే యూనిక్గా ఉండాలి.
 
 ### Implementing time travel {/*implementing-time-travel*/}
 
