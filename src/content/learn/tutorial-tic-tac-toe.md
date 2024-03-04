@@ -2292,11 +2292,11 @@ key ఏదీ స్పెసిఫ్య్ చేయబడకపోతే, Rea
 
 key లు గ్లోబల్గా యూనిక్గా ఉండవలసిన అవసరం లేదు, వాటి కాంపోనెంట్లు మరియు వాటి తోబుట్టువుల మధ్య మాత్రమే యూనిక్గా ఉండాలి.
 
-### Implementing time travel {/*implementing-time-travel*/}
+### టైం ట్రావెల్ ని ఇంప్లిమెంట్ చేయడం {/*implementing-time-travel*/}
 
-In the tic-tac-toe game's history, each past move has a unique ID associated with it: it's the sequential number of the move. Moves will never be re-ordered, deleted, or inserted in the middle, so it's safe to use the move index as a key.
+టిక్-టాక్-టో గేమ్ చరిత్రలో, ప్రతి గత కదలిక దానితో అసోసియేట్ అయిన యూనిక్ ID ని కలిగి ఉంటుంది: ఇది కదలిక యొక్క క్రమ సంఖ్య. కదలికలు ఎప్పటికీ రి-ఆర్డర్ చేయబడవు, డిలీట్ చేయబడవు లేదా మధ్యలో ఇన్సర్ట్ చేయబడవు, కాబట్టి కదలిక ఇండెక్స్ను key గా ఉపయోగించడం సురక్షితం.
 
-In the `Game` function, you can add the key as `<li key={move}>`, and if you reload the rendered game, React's "key" error should disappear:
+`Game` ఫంక్షన్‌లో, మీరు key ని `<li key={move}>` గా జోడించవచ్చు మరియు మీరు రెండర్ చేసిన గేమ్‌ను రీ-లోడ్ చేస్తే, React యొక్క "key" ఎర్రర్ కనిపించదు:
 
 ```js {4}
 const moves = history.map((squares, move) => {
@@ -2476,7 +2476,7 @@ body {
 
 </Sandpack>
 
-Before you can implement `jumpTo`, you need the `Game` component to keep track of which step the user is currently viewing. To do this, define a new state variable called `currentMove`, defaulting to `0`:
+మీరు `jumpTo` ని ఇంప్లిమెంట్ చేయడానికి ముందు, యూసర్ ప్రస్తుతం ఏ స్టెప్ను చూస్తున్నారో ట్రాక్ చేయడానికి మీకు `Game` కాంపోనెంట్ అవసరం. దీన్ని చేయడానికి, `currentMove` అనే కొత్త state వేరియబుల్‌ని డిఫైన్ చేయండి, డిఫాల్ట్‌గా `0`:
 
 ```js {4}
 export default function Game() {
@@ -2488,7 +2488,7 @@ export default function Game() {
 }
 ```
 
-Next, update the `jumpTo` function inside `Game` to update that `currentMove`. You'll also set `xIsNext` to `true` if the number that you're changing `currentMove` to is even.
+తర్వాత, ఆ `currentMove` ని అప్‌డేట్ చేయడానికి `Game` లోపల `jumpTo` ఫంక్షన్‌ను అప్‌డేట్ చేయండి. మీరు `currentMove` ని మారుస్తున్న సంఖ్య ఈవెన్గా ఉంటే మీరు `xIsNext` ని `true` కి సెట్ చేస్తారు.
 
 ```js {4-5}
 export default function Game() {
@@ -2501,10 +2501,10 @@ export default function Game() {
 }
 ```
 
-You will now make two changes to the `Game`'s `handlePlay` function which is called when you click on a square.
+మీరు ఇప్పుడు స్క్వేర్‌పై క్లిక్ చేసినప్పుడు `Game` యొక్క `handlePlay` ఫంక్షన్‌కి రెండు మార్పులు చేస్తారు.
 
-- If you "go back in time" and then make a new move from that point, you only want to keep the history up to that point. Instead of adding `nextSquares` after all items (`...` spread syntax) in `history`, you'll add it after all items in `history.slice(0, currentMove + 1)` so that you're only keeping that portion of the old history.
-- Each time a move is made, you need to update `currentMove` to point to the latest history entry.
+- మీరు "సమయంలో వెనక్కి వెళ్లి" ఆపై ఆ పాయింట్ నుండి కొత్త కదలికను చేస్తే, మీరు చరిత్రను అప్పటి వరకు మాత్రమే ఉంచాలనుకుంటున్నారు. `history` లో అన్ని ఐటెమ్ల (`...` స్ప్రెడ్ సింటాక్స్) తర్వాత `nextSquares` ని జోడించే బదులు, మీరు దీన్ని `history.slice(0, currentMove + 1)` లో అన్ని ఐటెమ్ల తర్వాత జోడిస్తారు, తద్వారా మీరు పాత చరిత్రలో మాత్రమే ఆ భాగాన్ని ఉంచుతారు.
+- కదలిక జరిగిన ప్రతిసారి, తాజా చరిత్ర నమోదును పాయింట్ చేయడానికి మీరు `currentMove` ని అప్డేట్ చేయాలి.
 
 ```js {2-4}
 function handlePlay(nextSquares) {
@@ -2515,7 +2515,7 @@ function handlePlay(nextSquares) {
 }
 ```
 
-Finally, you will modify the `Game` component to render the currently selected move, instead of always rendering the final move:
+చివరగా, మీరు ఎల్లప్పుడూ ఫైనల్ కదలికను రెండరింగ్ చేయడానికి బదులుగా, ప్రస్తుతం ఎంచుకున్న కదలికను రెండర్ చేయడానికి `Game` కాంపోనెంట్ను మోడీఫ్య్ చేస్తారు:
 
 ```js {5}
 export default function Game() {
@@ -2528,7 +2528,7 @@ export default function Game() {
 }
 ```
 
-If you click on any step in the game's history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
+మీరు గేమ్ యొక్క చరిత్రలో ఏదైనా స్టెప్ పై క్లిక్ చేస్తే, ఆ స్టెప్ జరిగిన తర్వాత బోర్డు ఎలా ఉందో చూపించడానికి టిక్-టాక్-టో బోర్డు వెంటనే అప్‌డేట్ అవ్వాలి.
 
 <Sandpack>
 
@@ -2699,11 +2699,11 @@ body {
 
 </Sandpack>
 
-### Final cleanup {/*final-cleanup*/}
+### ఫైనల్ క్లీనప్ {/*final-cleanup*/}
 
-If you look at the code very closely, you may notice that `xIsNext === true` when `currentMove` is even and `xIsNext === false` when `currentMove` is odd. In other words, if you know the value of `currentMove`, then you can always figure out what `xIsNext` should be.
+మీరు కోడ్‌ను చాలా దగ్గరగా చూస్తే, `currentMove` ఈవెన్ అయినప్పుడు `xIsNext === true` మరియు `currentMove` ఆడ్గా ఉన్నప్పుడు `xIsNext === false` అని మీరు గమనించవచ్చు. మరో మాటలో చెప్పాలంటే, మీకు `currentMove` వేల్యూ తెలిస్తే, `xIsNext` ఎలా ఉండాలో మీరు ఎల్లప్పుడూ గుర్తించవచ్చు.
 
-There's no reason for you to store both of these in state. In fact, always try to avoid redundant state. Simplifying what you store in state reduces bugs and makes your code easier to understand. Change `Game` so that it doesn't store `xIsNext` as a separate state variable and instead figures it out based on the `currentMove`:
+మీరు ఈ రెండింటినీ state లో స్టోర్ చేయడానికి ఎటువంటి అవసరం లేదు. నిజానికి, ఎల్లప్పుడూ రిదండెంట్ state ని అవొఇద్ చేయడానికి ప్రయత్నించండి. మీరు state లో స్టోర్ చేసే వాటిని సింప్లిఫై చేయడం వలన బగ్‌లు తగ్గుతాయి మరియు మీ కోడ్‌ని సులభంగా అర్థం చేసుకోవచ్చు. `Game` ని మార్చండి, తద్వారా ఇది `xIsNext` ని ప్రత్యేక state వేరియబుల్‌గా స్టోర్ చేయదు మరియు బదులుగా `currentMove` ఆధారంగా దాన్ని గుర్తించండి:
 
 ```js {4,11,15}
 export default function Game() {
@@ -2725,20 +2725,20 @@ export default function Game() {
 }
 ```
 
-You no longer need the `xIsNext` state declaration or the calls to `setXIsNext`. Now, there's no chance for `xIsNext` to get out of sync with `currentMove`, even if you make a mistake while coding the components.
+మీకు ఇకపై `xIsNext` state డిక్లరేషన్ లేదా `setXIsNext` కి కాల్ చేయడం అవసరం లేదు. ఇప్పుడు, మీరు కాంపోనెంట్‌లను కోడింగ్ చేస్తున్నప్పుడు పొరపాటు చేసినప్పటికీ, `xIsNext` కి `currentMove` తో సింక్ (sync) నుండి విడిపోయే అవకాశం లేదు.
 
-### Wrapping up {/*wrapping-up*/}
+### సారాంశం {/*wrapping-up*/}
 
-Congratulations! You've created a tic-tac-toe game that:
+అభినందనలు! మీరు టిక్-టాక్-టో గేమ్‌ని క్రియేట్ చేశారు:
 
-- Lets you play tic-tac-toe,
-- Indicates when a player has won the game,
-- Stores a game's history as a game progresses,
-- Allows players to review a game's history and see previous versions of a game's board.
+- టిక్-టాక్-టో ఆడటానికి మిమ్మల్ని అనుమతిస్తుంది,
+- ప్లేయర్ గేమ్‌లో ఎప్పుడు గెలిచాడో సూచిస్తుంది,
+- గేమ్ ప్రోగ్రెస్ అవుతున్నపుడు గేమ్ చరిత్రను స్టోర్ చేస్తుంది,
+- ఆట చరిత్రను రివ్యూ చేయడానికి మరియు గేమ్ బోర్డ్ యొక్క ప్రీవియస్ వేరేషన్లను చూడటానికి ప్లేయర్స్ను అనుమతిస్తుంది.
 
-Nice work! We hope you now feel like you have a decent grasp of how React works.
+నైస్ వర్క్! React ఎలా పనిచేస్తుందనే దానిపై మీకు సరైన అవగాహన ఉన్నట్లు ఇప్పుడు మీరు భావిస్తున్నారని మేము ఆశిస్తున్నాము.
 
-Check out the final result here:
+ఫైనల్ రిజల్ట్ని ఇక్కడ చూడండి:
 
 <Sandpack>
 
@@ -2907,12 +2907,12 @@ body {
 
 </Sandpack>
 
-If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
+మీకు అదనపు సమయం ఉంటే లేదా మీ కొత్త React స్కిల్స్‌ను ప్రాక్టీస్ చేయాలనుకుంటే, టిక్-టాక్-టో గేమ్‌లో మీరు చేయగలిగిన మెరుగుదలల కోసం ఇక్కడ కొన్ని ఆలోచనలు ఉన్నాయి, ఇవి కష్టాన్ని పెంచే క్రమంలో జాబితా చేయబడ్డాయి:
 
-1. For the current move only, show "You are at move #..." instead of a button.
-1. Rewrite `Board` to use two loops to make the squares instead of hardcoding them.
-1. Add a toggle button that lets you sort the moves in either ascending or descending order.
-1. When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
-1. Display the location for each move in the format (row, col) in the move history list.
+1. ప్రస్తుత కదలిక కోసం మాత్రమే, బటన్‌కు బదులుగా "You are at move #..." ని చూపించండి.
+1. స్క్వేర్‌లను హార్డ్‌కోడ్ చేయడానికి బదులుగా వాటిని చేయడానికి రెండు లూప్‌లను ఉపయోగించడానికి `Board` ని రీరైట్ చేయండి.
+1. కదలికలను అసెండింగ్ లేదా డిసెండింగ్ ఆర్డర్లో సొర్త్ చేయడానికి మిమ్మల్ని అనుమతించే టోగుల్ బటన్‌ను జోడించండి.
+1. ఎవరైనా గెలిచినప్పుడు, విజయానికి కారణమైన మూడు స్క్వేర్‌లను హైలైట్ చేయండి (మరియు ఎవరూ గెలవనప్పుడు, ఫలితం డ్రా అని మెసేజ్ డిస్ప్లే చేయండి).
+1. కదలికల చరిత్ర లిస్ట్లోని ఫార్మాట్‌లో (row, col) ప్రతి కదలికకు లొకేషన్ ని డిస్ప్లే చేయండి.
 
-Throughout this tutorial, you've touched on React concepts including elements, components, props, and state. Now that you've seen how these concepts work when building a game, check out [Thinking in React](/learn/thinking-in-react) to see how the same React concepts work when build an app's UI.
+ఈ ట్యుటోరియల్ అంతటా, మీరు ఎలిమెంట్స్, కాంపోనెంట్‌లు, props మరియు state తో సహా React కాన్సెప్ట్‌లను టచ్ చేసారు. గేమ్‌ను బిల్డ్ చేసేటప్పుడు ఈ కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో ఇప్పుడు మీరు చూశారు, యాప్ UI ని బిల్డ్ చేసినప్పుడు అదే React కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో చూడటానికి [React లో ఆలోచించడం](/learn/thinking-in-react) చూడండి.
