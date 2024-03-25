@@ -1,59 +1,59 @@
 ---
-title: Add React to an Existing Project
+title: React ను ఇప్పటికే ఉన్న ప్రాజెక్ట్‌కు జోడించండి
 ---
 
 <Intro>
 
-If you want to add some interactivity to your existing project, you don't have to rewrite it in React. Add React to your existing stack, and render interactive React components anywhere.
+మీరు ఇప్పటికే ఉన్న మీ ప్రాజెక్ట్‌కి కొంత ఇంటరాక్టివిటీని జోడించాలనుకుంటే, దాన్ని React లో మళ్ళీ రాసే అవసరం లేదు. మీ ఉన్న స్టాక్‌లో React ను జోడించి, ఇంటరాక్టివ్ React కాంపోనెంట్లను మీరు ఎక్కడైనా రెండర్ చేయవచ్చు.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** Although you can [try React](/learn/installation#try-react) online or with a simple HTML page, realistically most JavaScript tooling you'll want to use for development requires Node.js.
+**మీరు React ను లోకల్ గా వాడాలి అనుకొంటే [Node.js](https://nodejs.org/en/) ను ఇన్స్టాల్ చేసుకోవలసి ఉంటుంది.** మీరు [React ను ఆన్‌లైన్‌లో ప్రయత్నించవచ్చు](/learn/installation#try-react) లేదా సాధారణ HTML పేజీతో ప్రయత్నించవచ్చు, కానీ వాస్తవానికి మీరు ప్రాజెక్ట్ డెవలప్మెంట్కు వాడాలనుకునే JavaScript టూలింగ్ కు Node.js అవసరం.
 
 </Note>
 
-## Using React for an entire subroute of your existing website {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
+## మీ ప్రస్తుత వెబ్‌సైట్ యొక్క మొత్తం సబ్‌రూట్ కోసం React ని ఉపయోగించడం {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Let's say you have an existing web app at `example.com` built with another server technology (like Rails), and you want to implement all routes starting with `example.com/some-app/` fully with React.
+అనుకొందాం మీకు ఇప్పటికే `example.com` లో ఒక వెబ్ యాప్‌ ఉంది, కానీ అది మరొక సర్వర్ టెక్నాలజీతో నిర్మించబడింది (ఉదాహరణకు Rails), మరియు మీరు `example.com/some-app/` లాంటి అన్ని మార్గాలను పూర్తిగా React తో అమలు చేయాలనుకుంటున్నారు.
 
-Here's how we recommend to set it up:
+దీన్ని సెటప్ చేయడానికి మీరు దిగువ స్టెప్స్ ను  అనుసరించాలని మేము సిఫార్సు చేస్తున్నాము:
 
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+1. [React ఆధారిత ఫ్రేమ్‌వర్క్‌లలో](/learn/start-a-new-react-project) ఒకదాన్ని ఉపయోగించి **మీ యాప్‌లోని React భాగాన్ని రూపొందించండి**.
+2. మీ ఫ్రేమ్‌వర్క్ యొక్క కాన్ఫిగరేషన్‌లో **`/some-app` ని *base path* గా స్పెసిఫ్య్ చేయండి** (ఉదాహరణకు: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. మీ React యాప్లోని `/some-app/` కింద ఉన్న అన్ని రిక్వెస్టులను స్వీకరించడానికి **మీ సర్వర్ లేదా ప్రాక్సీని కాన్ఫిగర్ చేయండి**.
 
-This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
+మీ యాప్‌లోని React భాగం ఆ ఫ్రేమ్‌వర్క్‌లలో రూపొందించిన [మాడ్యూల్లను వాడుకొని ప్రయోజనం పొందగలదని](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) ఇది నిర్ధారిస్తుంది.
 
-Many React-based frameworks are full-stack and let your React app take advantage of the server. However, you can use the same approach even if you can't or don't want to run JavaScript on the server. In that case, serve the HTML/CSS/JS export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) at `/some-app/` instead.
+చాలా వరకు React-ఆధారిత ఫ్రేమ్‌వర్క్‌లు ఫుల్-స్టాక్‌గా ఉంటాయి మరియు మీ React యాప్ ను సర్వర్ యొక్క ప్రయోజనాన్ని పొందేలా చేస్తాయి. అయినప్పటికీ, మీరు సర్వర్‌లో JavaScript ని అమలు చేయలేకపోయినా లేదా చేయకూడదనుకున్నా మీరు అదే విధానాన్ని ఉపయోగించవచ్చు. ఆ సందర్భంలో, `/some-app/` వద్ద HTML/CSS/JS (Next.js కోసం [`next export` అవుట్‌పుట్](https://nextjs.org/docs/advanced-features/static-html-export), Gatsby కోసం default) ని బదులుగా వాడండి.
 
-## Using React for a part of your existing page {/*using-react-for-a-part-of-your-existing-page*/}
+## మీ ప్రస్తుత పేజీలో కొంత భాగాన్ని React కోసం ఉపయోగించటం {/*using-react-for-a-part-of-your-existing-page*/}
 
-Let's say you have an existing page built with another technology (either a server one like Rails, or a client one like Backbone), and you want to render interactive React components somewhere on that page. That's a common way to integrate React--in fact, it's how most React usage looked at Meta for many years!
+అనుకొందాం మీకు ఇప్పటికే మరొక టెక్నాలజీతో బిల్డ్ చేయబడిన పేజ్ ఉంది (Rails వంటి సర్వర్ లేదా Backbone వంటి క్లయింట్), మరియు మీరు ఆ పేజీలో ఎక్కడైనా ఇంటరాక్టివ్ React కంపోనెంట్లను రెండర్ చేయాలనుకుంటున్నారు. React ని ఇంటిగ్రేట్ చేయడానికి ఇది ఒక సాధారణ పద్ధతి--వాస్తవానికి, చాలా సంవత్సరాలుగా Meta లో చాలా వరకు React వినియోగం ఇలాగే జరుగుతోంది!
 
-You can do this in two steps:
+మీరు దీన్ని రెండు స్టెప్స్ లో చేయవచ్చు:
 
-1. **Set up a JavaScript environment** that lets you use the [JSX syntax](/learn/writing-markup-with-jsx), split your code into modules with the [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) syntax, and use packages (for example, React) from the [npm](https://www.npmjs.com/) package registry.
-2. **Render your React components** where you want to see them on the page.
+1. [JSX సింటాక్స్‌](/learn/writing-markup-with-jsx) ని ఉపయోగించడానికి మిమ్మల్ని అనుమతించే **JavaScript ఎన్విరాన్‌మెంట్‌ను సెటప్ చేయండి**, మీ కోడ్‌ను [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) సింటాక్స్‌తో మాడ్యూల్స్‌గా విభజించండి మరియు [npm](https://www.npmjs.com/) ప్యాకేజీ రిజిస్ట్రీ నుండి ప్యాకేజీలను ఉపయోగించండి (ఉదాహరణకు, React).
+2. మీ React కాంపోనెంట్‌లను మీరు మీ పేజీలో ఎక్కడ చూడాలనుకుంటున్నారో **అక్కడ రెండర్ చేయండి**.
 
-The exact approach depends on your existing page setup, so let's walk through some details.
+ఖచ్చితమైన విధానం మాత్రం ఇప్పటికే ఉన్న మీ పేజీ సెటప్‌పై ఆధారపడి ఉంటుంది, కాబట్టి కొన్ని వివరాలను చూద్దాం.
 
-### Step 1: Set up a modular JavaScript environment {/*step-1-set-up-a-modular-javascript-environment*/}
+### స్టెప్ 1: మాడ్యులర్ JavaScript ఎన్విరాన్మెంట్ను సెటప్ చేయండి {/*step-1-set-up-a-modular-javascript-environment*/}
 
-A modular JavaScript environment lets you write your React components in individual files, as opposed to writing all of your code in a single file. It also lets you use all the wonderful packages published by other developers on the [npm](https://www.npmjs.com/) registry--including React itself! How you do this depends on your existing setup:
+మాడ్యులర్ JavaScript ఎన్విరాన్మెంట్ మీ React కాంపోనెంట్‌లను ఇండివిడ్యుఅల్ ఫైల్‌లలో వ్రాయడానికి మిమ్మల్ని అనుమతిస్తుంది, ఇది మీ కోడ్ మొత్తాన్ని ఒకే ఫైల్‌లో రాసే విధానానికి భిన్నంగా ఉంటుంది. [npm](https://www.npmjs.com/) రిజిస్ట్రీలో ఇతర డెవలపర్‌లు పబ్లిష్ చేసిన అన్ని అద్భుతమైన ప్యాకేజీలను ఉపయోగించడానికి కూడా ఇది మిమ్మల్ని అనుమతిస్తుంది—React‌ తో సహా! మీరు దీన్ని ఎలా చేస్తారు అనేది మీ ప్రస్తుత సెటప్‌పై ఆధారపడి ఉంటుంది:
 
-* **If your app is already split into files that use `import` statements,** try to use the setup you already have. Check whether writing `<div />` in your JS code causes a syntax error. If it causes a syntax error, you might need to [transform your JavaScript code with Babel](https://babeljs.io/setup), and enable the [Babel React preset](https://babeljs.io/docs/babel-preset-react) to use JSX.
+* **మీ యాప్ ఇప్పటికే `import` స్టేట్‌మెంట్‌లను ఉపయోగించే ఫైల్‌లుగా విభజించబడి ఉంటే**, మీరు ఇప్పటికే ఉన్న సెటప్‌ను ఉపయోగించడానికి ప్రయత్నించండి. మీ JS కోడ్‌లో `<div />` వ్రాయడం వలన సింటాక్స్ ఎర్రర్ ఏర్పడిందో లేదో తనిఖీ చేయండి. ఒకవేళ సింటాక్స్ ఎర్రర్ వచ్చిందంటే, మీరు [మీ JavaScript కోడ్‌ని Babel తో మార్చవలసి ఉంటుంది](https://babeljs.io/setup) మరియు JSX ని ఉపయోగించడానికి [Babel React ప్రీసెట్‌](https://babeljs.io/docs/babel-preset-react) ను వాడాలి.
 
-* **If your app doesn't have an existing setup for compiling JavaScript modules,** set it up with [Vite](https://vitejs.dev/). The Vite community maintains [many integrations with backend frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), including Rails, Django, and Laravel. If your backend framework is not listed, [follow this guide](https://vitejs.dev/guide/backend-integration.html) to manually integrate Vite builds with your backend.
+* **మీ యాప్‌లో JavaScript మాడ్యూల్‌లను కంపైల్ చేయడానికి సెటప్ లేకపోతే**, దానిని [Vite](https://vitejs.dev/) తో సెటప్ చేయండి. Vite కమ్యూనిటీలో Rails, Django మరియు Laravel తో సహా [అనేక బ్యాకెండ్ ఫ్రేమ్‌వర్క్‌లతో ఇంటెగ్రేషన్లను కలిగి ఉంది](https://github.com/vitejs/awesome-vite#integrations-with-backends). మీ బ్యాకెండ్ ఫ్రేమ్‌వర్క్ ఈ జాబితాలో లేకపోతే, మీ బ్యాకెండ్‌తో Vite బిల్డ్‌లను మాన్యువల్‌గా ఇంటిగ్రేట్ చేయడానికి [ఈ గైడ్‌ని అనుసరించండి](https://vitejs.dev/guide/backend-integration.html).
 
-To check whether your setup works, run this command in your project folder:
+మీ సెటప్ పని చేస్తుందో లేదో తెలుసుకోడానికి, ఈ కమాండ్ని మీ ప్రాజెక్ట్ ఫోల్డర్‌లో రన్ చేయండి:
 
 <TerminalBlock>
 npm install react react-dom
 </TerminalBlock>
 
-Then add these lines of code at the top of your main JavaScript file (it might be called `index.js` or `main.js`):
+ఆపై మీ మెయిన్ JavaScript ఫైల్ టాప్లో ఈ కోడ్ లైన్‌లను జోడించండి (ఇది `index.js` లేదా `main.js` అని ఉండొచ్చు):
 
 <Sandpack>
 
@@ -62,7 +62,7 @@ Then add these lines of code at the top of your main JavaScript file (it might b
 <html>
   <head><title>My app</title></head>
   <body>
-    <!-- Your existing page content (in this example, it gets replaced) -->
+    <!-- మీ ప్రస్తుత పేజీ కంటెంట్ (ఈ ఉదాహరణలో, ఇది రీప్లేస్ చేయబడుతుంది) -->
   </body>
 </html>
 ```
@@ -70,52 +70,52 @@ Then add these lines of code at the top of your main JavaScript file (it might b
 ```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// ఇప్పటికే ఉన్న HTML కంటెంట్‌ను క్లియర్ చేయండి
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// బదులుగా మీ React కాంపోనెంట్‌ను రెండర్ చేయండి
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
 </Sandpack>
 
-If the entire content of your page was replaced by a "Hello, world!", everything worked! Keep reading.
+ఒకవేళ మీ పేజ్ మొత్తం లోని కంటెంట్‌ "Hello, World!" తో రిప్లేస్ చేయబడినట్లయితే, ప్రతిదీ అనుకొన్నట్లే పనిచేస్తున్నట్టు! దయచేసి చదువుతూ ఉండండి.
 
 <Note>
 
-Integrating a modular JavaScript environment into an existing project for the first time can feel intimidating, but it's worth it! If you get stuck, try our [community resources](/community) or the [Vite Chat](https://chat.vitejs.dev/).
+మాడ్యులర్ JavaScript ఎన్విరాన్మెంట్‌ని ఇప్పటికే ఉన్న ప్రాజెక్ట్‌లో మొదటిసారిగా ఇంటిగ్రేట్ చేయడం కొంచెం భయంగా అనిపించవచ్చు, కానీ అది విలువైనదే! మీరు ఎక్కడైనా చిక్కుకుపోయినట్లయితే, మా [కమ్యూనిటీ రిసోర్సెస్](/community) లేదా [Vite Chat](https://chat.vitejs.dev/) ని ఉపయోగించండి.
 
 </Note>
 
-### Step 2: Render React components anywhere on the page {/*step-2-render-react-components-anywhere-on-the-page*/}
+### స్టెప్ 2: పేజీలో ఎక్కడైనా React కంపోనెంట్లను రెండర్ చేయండి {/*step-2-render-react-components-anywhere-on-the-page*/}
 
-In the previous step, you put this code at the top of your main file:
+మునుపటి స్టెప్లో, మీరు ఈ కోడ్‌ని మీ ప్రధాన ఫైల్లో టాప్లో ఉంచారు:
 
 ```js
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// ఇప్పటికే ఉన్న HTML కంటెంట్‌ను క్లియర్ చేయండి
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// బదులుగా మీ React కాంపోనెంట్‌ను రెండర్ చేయండి
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
-Of course, you don't actually want to clear the existing HTML content!
+మీరు ఇప్పటికే ఉన్న HTML కంటెంట్‌ ని క్లియర్ చేయకండి!
 
-Delete this code.
+ఈ కోడ్‌ని తొలగించండి.
 
-Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) attribute to any tag, for example:
+బదులుగా, మీరు మీ HTML లోని నిర్దిష్ట ప్రదేశాలలో మీ React కంపోనెంట్లను రెండర్ చేయాలనుకుంటున్నారు. మీ HTML పేజీని ఓపెన్ చేసి (లేదా దానిని జెనరేట్ చేసే సర్వర్ టెంప్లేట్లను ఓపెన్ చేసి) మరియు ఏదైనా ట్యాగ్‌కి యూనిక్ [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) అట్రిబ్యూట్‌ని జోడించండి, ఉదాహరణకు:
 
 ```html
-<!-- ... somewhere in your html ... -->
+<!-- ... ఎక్కడో మీ HTML పేజ్ మధ్యలో ... -->
 <nav id="navigation"></nav>
-<!-- ... more html ... -->
+<!-- ... మరింత HTML ... -->
 ```
 
-This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](/reference/react-dom/client/createRoot) so that you can render your own React component inside:
+ఇది [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) తో ఆ HTML ఎలిమెంట్‌ను కనుగొని, దాన్ని [`createRoot`](/reference/react-dom/client/createRoot) కి పంపుతుంది, తద్వారా మీరు లోపల మీ స్వంత React కాంపోనెంట్‌ను రెండర్ చేయవచ్చు:
 
 <Sandpack>
 
@@ -135,7 +135,7 @@ This lets you find that HTML element with [`document.getElementById`](https://de
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Actually implement a navigation bar
+  // TODO: వాస్తవానికి నావిగేషన్ బార్‌ ని ఇంప్లీమెంట్ చేయాలి
   return <h1>Hello from React!</h1>;
 }
 
@@ -146,10 +146,10 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
+`index.html` నుండి అసలు HTML కంటెంట్ ఎలా భద్రపరచబడిందో గమనించండి, కానీ మీ స్వంత `NavigationBar` React కంపోనెంట్ ఇప్పుడు మీ HTML నుండి `<nav id="navigation">` లో కనిపిస్తుంది. ఇప్పటికే ఉన్న HTML పేజీలో React కంపోనెంట్లను రెండరింగ్ చేయడం గురించి మరింత తెలుసుకోవడానికి [`createRoot` వినియోగ డాక్యుమెంటేషన్‌ను](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) చదవండి.
 
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
+మీరు ఇప్పటికే ఉన్న ప్రాజెక్ట్‌లో React ని స్వీకరించినప్పుడు, చిన్న ఇంటరాక్టివ్ కాంపోనెంట్‌లతో (ఉదాహరణకు బటన్లు) ప్రారంభించడం సాధారణం, ఆపై మీ పేజీ మొత్తం React తో నిర్మించబడే వరకు క్రమంగా “పైకి వెళ్తూ ఉండండి”. మీరు ఎప్పుడైనా ఆ పాయింట్కి చేరుకున్నట్లయితే, React నుండి ఎక్కువ ప్రయోజనం పొందడానికి వెంటనే [React ఫ్రేమ్‌వర్క్‌కి](/learn/start-a-new-react-project) మైగ్రేట్ అవ్వమని మేము సిఫార్సు చేస్తున్నాము.
 
-## Using React Native in an existing native mobile app {/*using-react-native-in-an-existing-native-mobile-app*/}
+## ఇప్పటికే ఉన్న నేటివ్ మొబైల్ యాప్‌లో React Native‌ ని ఉపయోగించడం {/*using-react-native-in-an-existing-native-mobile-app*/}
 
-[React Native](https://reactnative.dev/) can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), [follow this guide](https://reactnative.dev/docs/integration-with-existing-apps) to add a React Native screen to it.
+[React Native](https://reactnative.dev/) ను ఇప్పటికే ఉన్న నేటివ్ యాప్‌లలో కూడా క్రమంగా ఇంటిగ్రేట్ చేయవచ్చు. మీరు Android (Java లేదా Kotlin) లేదా iOS (Objective-C లేదా Swift) లో ఇప్పటికే నేటివ్ యాప్‌ని కలిగి ఉంటే, దానికి React Native స్క్రీన్‌ని జోడించడానికి [ఈ గైడ్‌ని అనుసరించండి](https://reactnative.dev/docs/integration-with-existing-apps).
