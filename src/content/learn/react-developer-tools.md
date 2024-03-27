@@ -1,33 +1,33 @@
 ---
-title: React Developer Tools
+title: React డెవలపర్ టూల్స్
 ---
 
 <Intro>
 
-Use React Developer Tools to inspect React [components](/learn/your-first-component), edit [props](/learn/passing-props-to-a-component) and [state](/learn/state-a-components-memory), and identify performance problems.
+React [కాంపోనెంట్‌లను](/learn/your-first-component) తనిఖీ చేయడానికి, [props](/learn/passing-props-to-a-component) మరియు [state](/learn/state-a-components-memory) ని ఎడిట్ చేయడానికి మరియు పెర్ఫార్మన్స్ సమస్యలను గుర్తించడానికి React డెవలపర్ టూల్స్ ను ఉపయోగించండి.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to install React Developer Tools
+* React డెవలపర్ టూల్స్ ను ఎలా ఇన్‌స్టాల్ చేయాలి
 
 </YouWillLearn>
 
-## Browser extension {/*browser-extension*/}
+## బ్రౌజర్ ఎక్సటెన్షన్ {/*browser-extension*/}
 
-The easiest way to debug websites built with React is to install the React Developer Tools browser extension. It is available for several popular browsers:
+React తో నిర్మించిన వెబ్‌సైట్‌లను డీబగ్ చేయడానికి సులభమైన మార్గం React డెవలపర్ టూల్స్ బ్రౌజర్ ఎక్సటెన్షన్ ను ఇన్‌స్టాల్ చేయడం. ఇది అనేక ప్రసిద్ధ బ్రౌజర్‌లకు అందుబాటులో ఉంది:
 
-* [Install for **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-* [Install for **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-* [Install for **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
+* [**Chrome** కోసం ఇన్‌స్టాల్ చేయండి](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+* [**Firefox** కోసం ఇన్‌స్టాల్ చేయండి](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* [**Edge** కోసం ఇన్‌స్టాల్ చేయండి](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
 
-Now, if you visit a website **built with React,** you will see the _Components_ and _Profiler_ panels.
+ఇప్పుడు, మీరు **React తో నిర్మించిన వెబ్‌సైట్‌** ను సందర్శిస్తే, మీరు _Components_ మరియు _Profiler_ ప్యానెల్‌లను చూస్తారు.
 
-![React Developer Tools extension](/images/docs/react-devtools-extension.png)
+![React డెవలపర్ టూల్స్ ఎక్స్టెన్షన్](/images/docs/react-devtools-extension.png)
 
-### Safari and other browsers {/*safari-and-other-browsers*/}
-For other browsers (for example, Safari), install the [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package:
+### Safari మరియు ఇతర బ్రౌజర్‌లు {/*safari-and-other-browsers*/}
+ఇతర బ్రౌజర్‌ల కోసం (ఉదాహరణకు, Safari), [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm ప్యాకేజీని ఇన్‌స్టాల్ చేయండి:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -36,26 +36,26 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal:
+తరువాత టెర్మినల్ నుండి డెవలపర్ టూల్స్ ను ఓపెన్ చేయండి:
 ```bash
 react-devtools
 ```
 
-Then connect your website by adding the following `<script>` tag to the beginning of your website's `<head>`:
+ఆపై మీ వెబ్‌సైట్ యొక్క `<head>` ప్రారంభంలో క్రింది `<script>` ట్యాగ్‌ని జోడించడం ద్వారా మీ వెబ్‌సైట్‌ను కనెక్ట్ చేయండి:
 ```html {3}
 <html>
   <head>
     <script src="http://localhost:8097"></script>
 ```
 
-Reload your website in the browser now to view it in developer tools.
+ఇప్పుడు మీ బ్రౌజర్‌లో వెబ్‌సైట్‌ను రీలోడ్ చేయండి, తద్వారా మీరు దీన్ని డెవలపర్ టూల్స్ లో వీక్షించవచ్చు.
 
-![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
+![React డెవలపర్ టూల్స్ స్టాండ్ అలొనె](/images/docs/react-devtools-standalone.png)
 
-## Mobile (React Native) {/*mobile-react-native*/}
-React Developer Tools can be used to inspect apps built with [React Native](https://reactnative.dev/) as well.
+## మొబైల్ (React Native) {/*mobile-react-native*/}
+[React Native](https://reactnative.dev/) తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి కూడా  React డెవలపర్ టూల్స్ ను ఉపయోగించవచ్చు.
 
-The easiest way to use React Developer Tools is to install it globally:
+React డెవలపర్ టూల్స్ ను ఉపయోగించడానికి సులభమైన మార్గం దీన్ని గ్లోబల్గా ఇన్‌స్టాల్ చేయడం:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -64,13 +64,13 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal.
+తరువాత టెర్మినల్ నుండి డెవలపర్ టూల్స్ ను ఓపెన్ చేయండి.
 ```bash
 react-devtools
 ```
 
-It should connect to any local React Native app that's running.
+దీన్ని రన్నింగ్లో ఉన్న ఏదైనా లోకల్ React Native యాప్‌కి కనెక్ట్ చేయాలి.
 
-> Try reloading the app if developer tools doesn't connect after a few seconds.
+> డెవలపర్ టూల్స్ కొన్ని సెకన్ల తర్వాత కనెక్ట్ కాకపోతే యాప్‌ని రీలోడ్ చేయడానికి ప్రయత్నించండి.
 
-[Learn more about debugging React Native.](https://reactnative.dev/docs/debugging)
+[React Native డీబగ్గింగ్ గురించి మరింత తెలుసుకోండి.](https://reactnative.dev/docs/debugging)
