@@ -4,28 +4,28 @@ title: 'ట్యుటోరియల్: టిక్-టాక్-టో'
 
 <Intro>
 
-ఈ ట్యుటోరియల్ లో మీరు ఒక చిన్న టిక్-టాక్-టో గేమ్ ని నిర్మించుతారు. ఈ ట్యుటోరియల్ మీకు ఎలాంటి React(రియాక్ట్) ఫ్రేమ్ వర్క్ పరిజ్ఞానం లేదని భావిస్తుంది . ఈ ట్యుటోరియల్ లో మీరు నేర్చుకునే విధాలు ఏవైనా React(రియాక్ట్) యాప్ ని నిర్మించడానికి మూలముగా ఉంటాయి, మరియు దానిని పూర్తిగా అర్థం చేసుకోవడం వల్ల React(రియాక్ట్) గురించి మీకు లోతైన అవగాహన లభిస్తుంది.
+ఈ ట్యుటోరియల్ లో మీరు ఒక చిన్న టిక్-టాక్-టో గేమ్ ని బిల్డ్ చేస్తారు. ఈ ట్యుటోరియల్ మీకు ఎలాంటి React ఫ్రేమ్ వర్క్ పరిజ్ఞానం లేదని భావిస్తుంది. ఈ ట్యుటోరియల్ లో మీరు నేర్చుకునే టెక్నిక్స్ ఏవైనా React యాప్ ని బిల్డ్ చేయడానికి ఫండమెంటల్గా ఉంటాయి, మరియు దానిని పూర్తిగా అర్థం చేసుకోవడం వల్ల React గురించి మీకు లోతైన అవగాహన లభిస్తుంది.
 
 </Intro>
 
 <Note>
 
-This tutorial is designed for people who prefer to **learn by doing** and want to quickly try making something tangible. If you prefer learning each concept step by step, start with [Describing the UI.](/learn/describing-the-ui)
+ఈ ట్యుటోరియల్ **చేయడం ద్వారా నేర్చుకోవడానికి** ఇష్టపడే వారికి మరియు త్వరగా ఏదైనా సృష్టించాలనుకునే వ్యక్తుల కోసం రూపొందించబడింది. మీరు ప్రతి కాన్సెప్ట్ ని స్టెప్ బై స్టెప్ గా నేర్చుకోవాలనుకుంటే, [UI ని వివరించడం](/learn/describing-the-ui) ద్వారా ప్రారంభించండి.
 
 </Note>
 
-The tutorial is divided into several sections:
+ఈ ట్యుటోరియల్ అనేక విభాగాలుగా విభజించబడింది:
 
-- [Setup for the tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-- [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-- [Completing the game](#completing-the-game) will teach you **the most common techniques** in React development.
-- [Adding time travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+- [ట్యుటోరియల్ కోసం సెటప్](#setup-for-the-tutorial) మీరు ట్యుటోరియల్‌ని అనుసరించడానికి **స్టార్టింగ్ పాయింట్** ని అందిస్తుంది.
+- [ఒవెర్వ్యూ](#overview) మీకు React యొక్క **ఫండమెంటల్స్** ను నేర్పుతుంది: కంపోనెంట్స్, props మరియు state.
+- [గేమ్‌ను పూర్తి చేయడం](#completing-the-game) మీకు React డెవలప్‌మెంట్‌లో వాడే **అత్యంత సాధారణ టెక్నిక్‌లను** నేర్పుతుంది.
+- [టైం ట్రావెల్ ని జోడించడం](#adding-time-travel) వలన React యొక్క ప్రత్యేక బలాలపై మీకు **లోతైన అంతర్దృష్టి** లభిస్తుంది.
 
-### What are you building? {/*what-are-you-building*/}
+### మీరు ఏమి నిర్మించబోతున్నారు? {/*what-are-you-building*/}
 
-In this tutorial, you'll build an interactive tic-tac-toe game with React.
+ఈ ట్యుటోరియల్‌లో, మీరు React ‌తో ఇంటరాక్టివ్ టిక్-టాక్-టో గేమ్‌ని నిర్మిస్తారు.
 
-You can see what it will look like when you're finished here:
+మీరు పూర్తి చేసినప్పుడు అది ఎలా ఉంటుందో మీరు ఇక్కడ చూడవచ్చు:
 
 <Sandpack>
 
@@ -57,9 +57,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = 'విజేత: ' + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = 'నెక్స్ట్ ప్లేయర్: ' + (xIsNext ? 'X' : 'O');
   }
 
   return (
@@ -103,9 +103,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li key={move}>
@@ -194,15 +194,15 @@ body {
 
 </Sandpack>
 
-If the code doesn't make sense to you yet, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+మీకు ఇంకా కోడ్ అర్థం కాకపోయినా లేదా ఈ కోడ్ యొక్క సింటాక్స్ గురించి తెలియకపోయినా, చింతించకండి! ఈ ట్యుటోరియల్ యొక్క లక్ష్యం React మరియు దాని సింటాక్స్‌ను అర్థం చేసుకోవడంలో మీకు సహాయం చేయడం.
 
-We recommend that you check out the tic-tac-toe game above before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+ట్యుటోరియల్‌తో కొనసాగడానికి ముందు మీరు పైన ఉన్న టిక్-టాక్-టో గేమ్‌ని తనిఖీ చేయాలని మేము సిఫార్సు చేస్తున్నాము. మీరు గమనించే ఫీచర్లలో ఒకటి గేమ్ బోర్డ్ యొక్క కుడి వైపున సంఖ్యా జాబితా ఉంది. ఈ జాబితా మీకు గేమ్‌లో జరిగిన అన్ని కదలికల చరిత్రను అందిస్తుంది మరియు గేమ్ అభివృద్ధి చెందుతున్నప్పుడు ఇది అప్డేట్ అవుతుంది.
 
-Once you've played around with the finished tic-tac-toe game, keep scrolling. You'll start with a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+మీరు పూర్తి చేసిన టిక్-టాక్-టో గేమ్‌ని ఆడిన తర్వాత, పేజీని స్క్రోల్ చేస్తూ ఉండండి. ఈ ట్యుటోరియల్ సింప్లెర్ టెంప్లేట్‌తో ప్రారంభమవుతుంది. తదుపరి దశ మీ గేమ్‌ను సెటప్ చేయడం, తద్వారా మీరు దీన్ని సృష్టించడం ప్రారంభించవచ్చు.
 
-## Setup for the tutorial {/*setup-for-the-tutorial*/}
+## ట్యుటోరియల్ కోసం సెటప్ {/*setup-for-the-tutorial*/}
 
-In the live code editor below, click **Fork** in the top-right corner to open the editor in a new tab using the website CodeSandbox. CodeSandbox lets you write code in your browser and preview how your users will see the app you've created. The new tab should display an empty square and the starter code for this tutorial.
+దిగువ లైవ్ కోడ్ ఎడిటర్‌లో, CodeSandbox వెబ్‌సైట్‌ని ఉపయోగించి కొత్త ట్యాబ్‌లో ఎడిటర్‌ను తెరవడానికి టాప్-రైట్ కార్నర్లో ఉన్న **Fork** ని క్లిక్ చేయండి. CodeSandbox మీ బ్రౌజర్‌లో కోడ్‌ను వ్రాయడానికి మరియు మీరు సృష్టించిన యాప్‌ని మీ యూజర్స్ ఎలా చూస్తారనే ప్రివ్యూని అందిస్తుంది. కొత్త ట్యాబ్‌లో ఈ ట్యుటోరియల్ కోసం ఖాళీ స్క్వేర్ మరియు స్టార్టర్ కోడ్‌ను చూస్తారు.
 
 <Sandpack>
 
@@ -261,33 +261,33 @@ body {
 
 <Note>
 
-You can also follow this tutorial using your local development environment. To do this, you need to:
+మీరు మీ లోకల్ డెవలప్మెంట్ ఎన్విరాన్మెంట్ ని ఉపయోగించి కూడా ఈ ట్యుటోరియల్‌ని అనుసరించవచ్చు. దీన్ని చేయడానికి, మీరు వీటిని చేయాలి:
 
-1. Install [Node.js](https://nodejs.org/en/)
-1. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **Download Sandbox** in that menu to download an archive of the files locally
-1. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
-1. Install the dependencies with `npm install`
-1. Run `npm start` to start a local server and follow the prompts to view the code running in a browser
+1. [Node.js](https://nodejs.org/en/) ని ఇన్‌స్టాల్ చేయండి
+1. మీరు ఇంతకు ముందు ఓపెన్ చేసిన CodeSandbox ట్యాబ్‌లో, మెనుని తెరవడానికి టాప్-లెఫ్ట్ కార్నర్ లో ఉన్న బటన్ను క్లిక్ చేయండి, ఆపై ఫైల్‌ల ఆర్కైవ్‌ను లోకల్ గా డౌన్‌లోడ్ చేయడానికి ఆ మెనులో **Download Sandbox** ని క్లిక్ చేయండి
+1. ఆర్కైవ్‌ను అన్జిప్ చేసి, ఆపై మీరు అన్జిప్ చేసిన డైరెక్టరీని టెర్మినల్ లో `cd` ని ఉపయోగించి తెరవండి
+1. `npm install` తో డిపెండెన్సీలను ఇన్‌స్టాల్ చేయండి
+1. లోకల్ సర్వర్‌ని స్టార్ట్ చేయడానికి `npm start` ని రన్ చేయండి మరియు బ్రౌజర్‌లో రన్ అవుతున్న కోడ్‌ను వీక్షించడానికి ప్రాంప్ట్‌లను అనుసరించండి
 
-If you get stuck, don't let this stop you! Follow along online instead and try a local setup again later.
+మీరు ఎక్కడైనా ఆగిపోయినట్లైతే, నిరుత్సాహపడకండి! దయచేసి ఆన్‌లైన్‌లో కొనసాగండి మరియు మీ లోకల్ ఎన్విరాన్మెంట్ని తర్వాత మళ్లీ సెటప్ చేయడానికి ప్రయత్నించండి.
 
 </Note>
 
-## Overview {/*overview*/}
+## ఒవెర్వ్యూ {/*overview*/}
 
-Now that you're set up, let's get an overview of React!
+సెటప్ పూర్తయింది కాబట్టి, ఇప్పుడు React యొక్క ఒవెర్వ్యూ ని చూద్దాం!
 
-### Inspecting the starter code {/*inspecting-the-starter-code*/}
+### స్టార్టర్ కోడ్‌ని ఇంస్పెక్ట్ చేయడం {/*inspecting-the-starter-code*/}
 
-In CodeSandbox you'll see three main sections:
+CodeSandbox లో మీరు మూడు ప్రధాన విభాగాలను చూస్తారు:
 
-![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
+![CodeSandbox స్టార్టర్ కోడ్](../images/tutorial/react-starter-code-codesandbox.png)
 
-1. The _Files_ section with a list of files like `App.js`, `index.js`, `styles.css` and a folder called `public`
-1. The _code editor_ where you'll see the source code of your selected file
-1. The _browser_ section where you'll see how the code you've written will be displayed
+1. `App.js`, `index.js`, `styles.css` వంటి ఫైల్‌ల జాబితా మరియు `public` అనే ఫోల్డర్‌తో _Files_ విభాగం
+1. _కోడ్ ఎడిటర్_ ఇక్కడ మీరు ఎంచుకున్న ఫైల్ యొక్క సోర్స్ కోడ్‌ని మీరు చూస్తారు
+1. మీరు వ్రాసిన కోడ్ ఎలా ప్రదర్శించబడుతుందో మీరు చూసే _browser_ విభాగం
 
-The `App.js` file should be selected in the _Files_ section. The contents of that file in the _code editor_ should be:
+`App.js` ఫైల్ ని ఇప్పుడు _Files_ విభాగంలో సెలెక్ట్ చేయండి. _కోడ్ ఎడిటర్_ లో ఫైల్ యొక్క కంటెంట్‌ ఇలా ఉండాలి:
 
 ```jsx
 export default function Square() {
@@ -295,15 +295,15 @@ export default function Square() {
 }
 ```
 
-The _browser_ section should be displaying a square with a X in it like this:
+_బ్రౌసర్_ విభాగం ఇలా X తో కూడిన స్క్వేర్ ని ప్రదర్శించాలి:
 
-![x-filled square](../images/tutorial/x-filled-square.png)
+![X నిండిన స్క్వేర్](../images/tutorial/x-filled-square.png)
 
-Now let's have a look at the files in the starter code.
+ఇప్పుడు స్టార్టర్ కోడ్‌లోని ఫైల్‌లను చూద్దాం.
 
 #### `App.js` {/*appjs*/}
 
-The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. Let's look at the component line by line to see what's going on:
+`App.js` లోని కోడ్ _కాంపోనెంట్_ ని క్రియేట్ చేస్తుంది. React లో, ఒక కాంపోనెంట్ అనేది UI లో కొంత భాగాన్ని రిప్రజెంట్ చేసే రీయూజబుల్ కోడ్ యొక్క భాగం. మీ అప్లికేషన్‌లోని UI ఎలిమెంట్‌లను రెండర్ చేయడానికి, మేనేజ్ చేయడానికి మరియు అప్‌డేట్ చేయడానికి కాంపోనెంట్లు ఉపయోగించబడతాయి. కాంపోనెంట్ లో లైన్ బై లైన్ గా ఏం జరుగుతుందో చూద్దాం:
 
 ```js {1}
 export default function Square() {
@@ -311,7 +311,7 @@ export default function Square() {
 }
 ```
 
-The first line defines a function called `Square`. The `export` JavaScript keyword makes this function accessible outside of this file. The `default` keyword tells other files using your code that it's the main function in your file.
+మొదటి లైన్ `Square` అనే ఫంక్షన్‌ని డిఫైన్ చేస్తుంది. `export` JavaScript కీవర్డ్ ఈ ఫంక్షన్‌ని ఈ ఫైల్ బయట నుండి యాక్సెస్ చేయడానికి సహాయపడుతుంది. `default` కీవర్డ్ మీ కోడ్‌ని ఉపయోగించే ఇతర ఫైల్‌లకు ఇదే మీ ఫైల్‌లోని మెయిన్ ఫంక్షన్ అని చెబుతుంది.
 
 ```js {2}
 export default function Square() {
@@ -319,15 +319,15 @@ export default function Square() {
 }
 ```
 
-The second line returns a button. The `return` JavaScript keyword means whatever comes after is returned as a value to the caller of the function. `<button>` is a *JSX element*. A JSX element is a combination of JavaScript code and HTML tags that describes what you'd like to display. `className="square"` is a button property or *prop* that tells CSS how to style the button. `X` is the text displayed inside of the button and `</button>` closes the JSX element to indicate that any following content shouldn't be placed inside the button.
+రెండవ లైన్ బటన్‌ను అందిస్తుంది. `return` JavaScript కీవర్డ్ అంటే ఆ తర్వాత వచ్చేది ఫంక్షన్ కాలర్‌కు వేల్యూ గా అందించబడుతుంది. `<button>` అనేది *JSX ఎలిమెంట్*. JSX ఎలిమెంట్ అనేది JavaScript కోడ్ మరియు HTML ట్యాగ్‌ల కలయిక, ఇది మీరు ఏమి ప్రదర్శించాలనుకుంటున్నారో వివరిస్తుంది. `className="square"` అనేది బటన్ ప్రాపర్టీ లేదా *props* ఇది బటన్‌ను ఎలా స్టైల్ చేయాలో CSS కి తెలియజేస్తుంది. `X` అనేది బటన్ లోపల ప్రదర్శించబడే టెక్స్ట్ మరియు `</button>` కింది కంటెంట్‌ బటన్ లోపల ఉంచకూడదని సూచించడానికి JSX ఎలిమెంట్ ని మూసివేస్తుంది.
 
 #### `styles.css` {/*stylescss*/}
 
-Click on the file labeled `styles.css` in the _Files_ section of CodeSandbox. This file defines the styles for your React app. The first two _CSS selectors_ (`*` and `body`) define the style of large parts of your app while the `.square` selector defines the style of any component where the `className` property is set to `square`. In your code, that would match the button from your Square component in the `App.js` file.
+CodeSandbox యొక్క _Files_ విభాగంలో `styles.css` అని లేబుల్ చేయబడిన ఫైల్‌పై క్లిక్ చేయండి. ఈ ఫైల్ మీ React యాప్ కోసం స్టైల్‌లను డిఫైన్ చేస్తుంది. మొదటి రెండు _CSS సెలెక్టర్‌లు_ (`*` మరియు `body`) మీ యాప్‌లోని పెద్ద భాగాల స్టైల్ ని డిఫైన్ చేస్తాయి, అయితే `.square` సెలెక్టర్ `className` ప్రాపర్టీని `square` కి సెట్ చేసిన ఏదైనా కాంపోనెంట్ యొక్క స్టైల్‌ ని డిఫైన్ చేస్తుంది. మీ కోడ్‌లో, అది `App.js` ఫైల్‌లోని మీ Square కాంపోనెంట్ నుండి బటన్‌తో మ్యాచ్ అవుతుంది.
 
 #### `index.js` {/*indexjs*/}
 
-Click on the file labeled `index.js` in the _Files_ section of CodeSandbox. You won't be editing this file during the tutorial but it is the bridge between the component you created in the `App.js` file and the web browser.
+CodeSandbox యొక్క _Files_ విభాగంలో `index.js` అని లేబుల్ చేయబడిన ఫైల్‌పై క్లిక్ చేయండి. మీరు ట్యుటోరియల్ సమయంలో ఈ ఫైల్‌ని ఎడిట్ చేయరు కానీ మీరు `App.js` ఫైల్‌లో క్రియేట్ చేసిన కాంపోనెంట్ మరియు వెబ్ బ్రౌజర్‌కి మధ్య ఇది వంతెన లా పని చేస్తుంది.
 
 ```jsx
 import { StrictMode } from 'react';
@@ -337,20 +337,20 @@ import './styles.css';
 import App from './App';
 ```
 
-Lines 1-5 bring all the necessary pieces together: 
+1-5 లైన్స్ అవసరమైన అన్ని ముక్కలను ఒకచోట చేర్చాయి: 
 
 * React
-* React's library to talk to web browsers (React DOM)
-* the styles for your components
-* the component you created in `App.js`.
+* వెబ్ బ్రౌజర్‌లతో మాట్లాడటానికి React లైబ్రరీ (React DOM)
+* మీ కాంపోనెంట్ల కోసం స్టైల్స్
+* మీరు `App.js` లో క్రియేట్ చేసిన కాంపోనెంట్.
 
-The remainder of the file brings all the pieces together and injects the final product into `index.html` in the `public` folder.
+ఫైల్‌లోని మిగిలిన భాగం అన్ని ముక్కలను ఒకచోట చేర్చి, ఫైనల్ ప్రోడక్ట్ ని `public` ఫోల్డర్‌లోని `index.html` కి ఇంజెక్ట్ చేస్తుంది.
 
-### Building the board {/*building-the-board*/}
+### బోర్డును నిర్మించడం {/*building-the-board*/}
 
-Let's get back to `App.js`. This is where you'll spend the rest of the tutorial.
+మళ్లీ `App.js` కి వెళ్దాం. మీరు మిగిలిన ట్యుటోరియల్‌ని ఇక్కడే స్పెండ్ చేస్తారు.
 
-Currently the board is only a single square, but you need nine! If you just try and copy paste your square to make two squares like this:
+ప్రస్తుత బోర్డులో ఒక్క స్క్వేర్ మాత్రమే ఉంది, కానీ వాస్తవానికి మీకు తొమ్మిది అవసరం! మీరు రెండవ స్క్వేర్ ని సృష్టించడానికి కాపీ చేసి పేస్ట్ చేస్తే...
 
 ```js {2}
 export default function Square() {
@@ -358,7 +358,7 @@ export default function Square() {
 }
 ```
 
-You'll get this error:
+మీకు ఈ ఎర్రర్ వస్తుంది:
 
 <ConsoleBlock level="error">
 
@@ -366,7 +366,7 @@ You'll get this error:
 
 </ConsoleBlock>
 
-React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *Fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
+React కాంపోనెంట్‌లు ఈ బటన్ లాగా ఒకదానికొకటి పక్కన ఉన్న మల్టిపుల్ JSX ఎలిమెంట్‌లు కాకుండా ఒక్క JSX ఎలిమెంట్‌ని మాత్రమే రిటర్న్ చేయాలి. దీన్ని పరిష్కరించడానికి మీరు ఇలా ప్రక్కనే ఉన్న అనేక JSX ఎలిమెంట్లను చుట్టడానికి *ఫ్రాగ్మెంట్స్* (`<>` మరియు `</>`) ను ఉపయోగించవచ్చు:
 
 ```js {3-6}
 export default function Square() {
@@ -379,17 +379,17 @@ export default function Square() {
 }
 ```
 
-Now you should see:
+మీరు ఈ ఔట్పుట్ ని చూస్తారు:
 
-![two x-filled squares](../images/tutorial/two-x-filled-squares.png)
+![రెండు X నిండిన స్క్వేర్స్](../images/tutorial/two-x-filled-squares.png)
 
-Great! Now you just need to copy-paste a few times to add nine squares and...
+గ్రేట్! మీరు చేయాల్సిందల్లా తొమ్మిది స్క్వేర్లు ఉండే వరకు కొన్ని సార్లు కాపీ చేసి పేస్ట్ చేయండి...
 
-![nine x-filled squares in a line](../images/tutorial/nine-x-filled-squares.png)
+![ఒక లైన్ లో తొమ్మిది X నిండిన స్క్వేర్స్](../images/tutorial/nine-x-filled-squares.png)
 
-Oh no! The squares are all in a single line, not in a grid like you need for our board. To fix this you'll need to group your squares into rows with `div`s and add some CSS classes. While you're at it, you'll give each square a number to make sure you know where each square is displayed.
+అరెరే! స్క్వేర్లు అన్నీ ఒకే లైన్ లో ఉన్నాయి, మన బోర్డు కోసం మీకు అవసరమైన గ్రిడ్‌లో కాదు. దీన్ని పరిష్కరించడానికి మీరు మీ స్క్వేర్‌లను `div` లతో వరుసలుగా (rows) గ్రూప్ చేయాలి మరియు కొన్ని CSS క్లాస్లను జోడించాలి. మీరు దాని వద్ద ఉన్నప్పుడు, ప్రతి స్క్వేర్ ఎక్కడ ప్రదర్శించబడుతుందో మీకు తెలుసని నిర్ధారించుకోవడానికి మీరు ప్రతి స్క్వేర్‌కు ఒక సంఖ్యను ఇస్తారు.
 
-In the `App.js` file, update the `Square` component to look like this:
+`App.js` ఫైల్‌లో, ఇలా కనిపించేలా `Square` కాంపోనెంట్‌ని అప్‌డేట్ చేయండి:
 
 ```js {3-19}
 export default function Square() {
@@ -415,11 +415,11 @@ export default function Square() {
 }
 ```
 
-The CSS defined in `styles.css` styles the divs with the `className` of `board-row`. Now that you've grouped your components into rows with the styled `div`s you have your tic-tac-toe board:
+`styles.css` లో డిఫైన్ చేయబడిన CSS, `board-row` యొక్క `className` తో divs ని స్టైల్ చేస్తుంది. ఇప్పుడు మీరు మీ కాంపోనెంట్‌లను స్టైల్ చేసిన `div` లతో వరుసలుగా గ్రూప్ చేసారు కాబట్టి మీరు మీ టిక్-టాక్-టో బోర్డుని కలిగి ఉన్నారు:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![టిక్-టాక్-టో బోర్డు 1 నుండి 9 వరకు సంఖ్యలతో నిండి ఉంటుంది](../images/tutorial/number-filled-board.png)
 
-But you now have a problem. Your component named `Square`, really isn't a square anymore. Let's fix that by changing the name to `Board`:
+అయితే మరో సమస్య వచ్చింది. దీనిని `Square` కాంపోనెంట్ అని పిలిచినప్పటికీ, ఇది వాస్తవానికి ఇకపై స్క్వేర్ కాదు. దీన్ని పరిష్కరించడానికి, పేరును `Board` గా మార్చండి:
 
 ```js {1}
 export default function Board() {
@@ -427,7 +427,7 @@ export default function Board() {
 }
 ```
 
-At this point your code should look something like this:
+ఈ దశలో, మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -504,15 +504,15 @@ body {
 
 <Note>
 
-Psssst... That's a lot to type! It's okay to copy and paste code from this page. However, if you're up for a little challenge, we recommend only copying code that you've manually typed at least once yourself.
+అయ్యో, టైప్ చేయడానికి ఇది చాలా ఎక్కువ! ఈ పేజీ నుండి కోడ్‌ని కాపీ చేసి పేస్ట్ చేయడం సరైంది కాదు. అయితే, మీరు ఒక చిన్న సవాలు కోసం సిద్ధంగా ఉన్నట్లయితే, మీరు మాన్యువల్‌గా కనీసం ఒక్కసారైనా టైప్ చేసిన కోడ్‌ను మాత్రమే కాపీ చేయమని మేము సిఫార్సు చేస్తున్నాము.
 
 </Note>
 
-### Passing data through props {/*passing-data-through-props*/}
+### props ద్వారా డేటాను పంపడం {/*passing-data-through-props*/}
 
-Next, you'll want to change the value of a square from empty to "X" when the user clicks on the square. With how you've built the board so far you would need to copy-paste the code that updates the square nine times (once for each square you have)! Instead of copy-pasting, React's component architecture allows you to create a reusable component to avoid messy, duplicated code.
+తర్వాత, యూసర్ స్క్వేర్‌ పై క్లిక్ చేసినప్పుడు మీరు స్క్వేర్ వేల్యూ ను ఖాళీ నుండి "X" కి మార్చాలనుకుంటున్నారు. మీరు ఇప్పటివరకు బోర్డ్‌ను ఎలా నిర్మించారు అనే దానితో మీరు స్క్వేర్‌ను తొమ్మిది సార్లు అప్‌డేట్ చేసే కోడ్‌ను కాపీ-పేస్ట్ చేయాలి (మీ వద్ద ఉన్న ప్రతి స్క్వేర్‌కు ఒకసారి)! కాపీ-పేస్ట్ చేయడానికి బదులుగా, మీరు రీయూజబుల్ కాంపోనెంట్లను సృష్టించడానికి మరియు డూప్లికేట్‌లతో నిండిన చిందరవందరగా ఉన్న కోడ్‌ను వ్రాయకుండా నిరోధించడానికి React యొక్క కాంపోనెంట్ ఆర్కిటెక్చర్‌ని ఉపయోగించవచ్చు.
 
-First, you are going to copy the line defining your first square (`<button className="square">1</button>`) from your `Board` component into a new `Square` component:
+ముందుగా, మీరు మీ `Board` కాంపోనెంట్ నుండి మీ మొదటి స్క్వేర్ (`<button className="square">1</button>`) ని డిఫైన్ చేసే లైన్ ని కొత్త `Square` కాంపోనెంట్‌కి కాపీ చేయబోతున్నారు:
 
 ```js {1-3}
 function Square() {
@@ -524,7 +524,7 @@ export default function Board() {
 }
 ```
 
-Then you'll update the Board component to render that `Square` component using JSX syntax:
+JSX సింటాక్స్‌ని ఉపయోగించి ఆ `Square` కాంపోనెంట్‌ని రెండర్ చేయడానికి మీరు `Board` కాంపోనెంట్‌ని అప్‌డేట్ చేస్తారు:
 
 ```js {5-19}
 // ...
@@ -551,15 +551,15 @@ export default function Board() {
 }
 ```
 
-Note how unlike the browser `div`s, your own components `Board` and `Square` must start with a capital letter. 
+బ్రౌజర్ `div` ల మాదిరిగా కాకుండా, మీరు సృష్టించే కాంపోనెంట్లు `Board` మరియు `Square` తప్పనిసరిగా క్యాపిటల్ లెటర్ తో స్టార్ట్ అవ్వాలి.
 
-Let's take a look:
+ఏమి జరిగిందో చూద్దాం:
 
-![one-filled board](../images/tutorial/board-filled-with-ones.png)
+![1 తో నిండిన పూర్తి బోర్డు](../images/tutorial/board-filled-with-ones.png)
 
-Oh no! You lost the numbered squares you had before. Now each square says "1". To fix this, you will use *props* to pass the value each square should have from the parent component (`Board`) to its child (`Square`).
+అరెరే! మీరు ఇంతకు ముందు ఉన్న సంఖ్యా స్క్వేర్లను కోల్పోయారు. ఇప్పుడు ప్రతి స్క్వేర్ "1" అని చెబుతుంది. దీన్ని పరిష్కరించడానికి, మీరు ప్రతి స్క్వేర్ కలిగి ఉండవలసిన వేల్యూ ను పేరెంట్ కాంపోనెంట్ (`Board`) నుండి దాని చైల్డ్ (`Square`) కి పాస్ చేయడానికి *props* ని ఉపయోగిస్తారు.
 
-Update the `Square` component to read the `value` prop that you'll pass from the `Board`:
+మీరు `Board` నుండి పాస్ చేసే `value` ప్రాప్‌ని రీడ్ చేయడానికి `Square` కాంపోనెంట్‌ను అప్‌డేట్ చేయండి:
 
 ```js {1}
 function Square({ value }) {
@@ -567,9 +567,9 @@ function Square({ value }) {
 }
 ```
 
-`function Square({ value })` indicates the Square component can be passed a prop called `value`.
+`function Square({ value })` అనేది స్క్వేర్ కాంపోనెంట్‌ను `value` అనే ప్రాప్‌ని పాస్ చేయవచ్చని సూచిస్తుంది.
 
-Now you want to display that `value` instead of `1` inside every square. Try doing it like this:
+ఇప్పుడు మీరు ప్రతి స్క్వేర్ లోపల `1` కి బదులుగా ఆ `value` ని ప్రదర్శించాలనుకుంటున్నారు. ఈ విధంగా చేయడానికి ప్రయత్నించండి:
 
 ```js {2}
 function Square({ value }) {
@@ -577,11 +577,11 @@ function Square({ value }) {
 }
 ```
 
-Oops, this is not what you wanted:
+అయ్యో, ఇది మీరు అనుకున్న అవుట్పుట్ కాదు:
 
-![value-filled board](../images/tutorial/board-filled-with-value.png)
+!["value" నిండిన బోర్డు](../images/tutorial/board-filled-with-value.png)
 
-You wanted to render the JavaScript variable called `value` from your component, not the word "value". To "escape into JavaScript" from JSX, you need curly braces. Add curly braces around `value` in JSX like so:
+మీరు మీ కాంపోనెంట్ నుండి `value` అనే JavaScript వేరియబుల్‌ని రెండర్ చేయాలనుకుంటున్నారు, "value" పదం కాదు. JSX నుండి "JavaScript లోకి ఎస్కేప్ అవ్వడానికి", మీకు కర్లీ బ్రేస్‌లు అవసరం. JSX లో `value` చుట్టూ కర్లీ బ్రేస్‌లను ఇలా జోడించండి:
 
 ```js {2}
 function Square({ value }) {
@@ -589,11 +589,11 @@ function Square({ value }) {
 }
 ```
 
-For now, you should see an empty board:
+ప్రస్తుతానికి, మీరు ఖాళీ బోర్డుని చూడాలి:
 
-![empty board](../images/tutorial/empty-board.png)
+![ఖాళీ బోర్డు](../images/tutorial/empty-board.png)
 
-This is because the `Board` component hasn't passed the `value` prop to each `Square` component it renders yet. To fix it you'll add the `value` prop to each `Square` component rendered by the `Board` component:
+ఎందుకంటే, `Board` కాంపోనెంట్ అది రెండర్ చేసే ప్రతి `Square` కాంపోనెంట్‌కి `value` ప్రాప్‌ను ఇంకా పాస్ చేయలేదు. దాన్ని పరిష్కరించడానికి మీరు `Board` కాంపోనెంట్ ద్వారా రెండర్ చేయబడిన ప్రతి `Square` కాంపోనెంట్‌కి `value` ప్రాప్‌ని జోడిస్తారు:
 
 ```js {5-7,10-12,15-17}
 export default function Board() {
@@ -619,11 +619,11 @@ export default function Board() {
 }
 ```
 
-Now you should see a grid of numbers again:
+ఇప్పుడు మీరు మళ్లీ సంఖ్యల గ్రిడ్‌ని చూడాలి:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![టిక్-టాక్-టో బోర్డు 1 నుండి 9 వరకు సంఖ్యలతో నిండి ఉంటుంది](../images/tutorial/number-filled-board.png)
 
-Your updated code should look like this:
+మీ అప్డేటెడ్ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -702,9 +702,9 @@ body {
 
 </Sandpack>
 
-### Making an interactive component {/*making-an-interactive-component*/}
+### ఇంటరాక్టివ్ కాంపోనెంట్ ని తయారు చేయడం {/*making-an-interactive-component*/}
 
-Let's fill the `Square` component with an `X` when you click it. Declare a function called `handleClick` inside of the `Square`. Then, add `onClick` to the props of the button JSX element returned from the `Square`:
+మీరు క్లిక్ చేసినప్పుడు `Square` కాంపోనెంట్‌ను `X` తో నింపండి. `Square` లోపల `handleClick` అనే ఫంక్షన్‌ను డిక్లేర్ చేయండి. ఆపై, `Square` నుండి రిటర్న్ అయిన బటన్ JSX ఎలిమెంట్ యొక్క ప్రాప్‌లకు `onClick` ని జోడించండి:
 
 ```js {2-4,9}
 function Square({ value }) {
@@ -723,19 +723,19 @@ function Square({ value }) {
 }
 ```
 
-If you click on a square now, you should see a log saying `"clicked!"` in the _Console_ tab at the bottom of the _Browser_ section in CodeSandbox. Clicking the square more than once will log `"clicked!"` again. Repeated console logs with the same message will not create more lines in the console. Instead, you will see an incrementing counter next to your first `"clicked!"` log.
+మీరు ఇప్పుడు స్క్వేర్‌పై క్లిక్ చేస్తే, CodeSandbox లోని _Browser_ విభాగం దిగువన ఉన్న _Console_ ట్యాబ్‌లో `"clicked!"` అని చెప్పే లాగ్ మీకు కనిపిస్తుంది. స్క్వేర్‌ని ఒకటి కంటే ఎక్కువసార్లు క్లిక్ చేయడం వలన `"clicked!"` మళ్లీ లాగ్ అవుతుంది. ఒకే మెసేజ్ తో రిపీట్ అయ్యే కన్సోల్ లాగ్‌లు కన్సోల్‌లో మరిన్ని లైన్‌లను సృష్టించవు. బదులుగా, మీరు మీ మొదటి `"clicked!"` లాగ్ పక్కన ఇంక్రిమెంటింగ్ కౌంటర్‌ని చూస్తారు.
 
 <Note>
 
-If you are following this tutorial using your local development environment, you need to open your browser's Console. For example, if you use the Chrome browser, you can view the Console with the keyboard shortcut **Shift + Ctrl + J** (on Windows/Linux) or **Option + ⌘ + J** (on macOS).
+మీరు మీ లోకల్ డెవలప్మెంట్ ఎన్విరాన్మెంట్ ని ఉపయోగించి ఈ ట్యుటోరియల్‌ని అనుసరిస్తుంటే, మీరు మీ బ్రౌజర్ కన్సోల్‌ను తెరవాలి. ఉదాహరణకు, మీరు Chrome బ్రౌజర్‌ని ఉపయోగిస్తుంటే, మీరు కన్సోల్‌ను కీబోర్డ్ షార్ట్‌కట్‌తో **Shift + Ctrl + J** (Windows/Linux లో) లేదా **Option + ⌘ + J** (macOS లో) వీక్షించవచ్చు.
 
 </Note>
 
-As a next step, you want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use *state*.
+తదుపరి దశగా, మీరు `Square` కాంపోనెంట్ అది క్లిక్ చేయబడిందని "గుర్తుంచుకోవాలి" మరియు దానిని "X" గుర్తుతో నింపాలని మీరు కోరుకుంటారు. విషయాలను "గుర్తుంచుకోవడానికి", కాంపోనెంట్లు *state* ని ఉపయోగిస్తాయి.
 
-React provides a special function called `useState` that you can call from your component to let it "remember" things. Let's store the current value of the `Square` in state, and change it when the `Square` is clicked.
+React అనేది `useState` అనే ప్రత్యేక ఫంక్షన్‌ని అందిస్తుంది, మీరు దాన్ని మీ కాంపోనెంట్ నుండి కాల్ చేయడం ద్వారా ఇది విషయాలను "గుర్తుపెట్టుకొంటుంది". `Square` కరెంట్ వేల్యూ ను state లో స్టోర్ చేసి, `Square` క్లిక్ చేసినప్పుడు దాన్ని మారుద్దాం.
 
-Import `useState` at the top of the file. Remove the `value` prop from the `Square` component. Instead, add a new line at the start of the `Square` that calls `useState`. Have it return a state variable called `value`:
+ఫైల్ టాప్ లో `useState` ని ఇంపోర్ట్ చేయండి. `Square` కాంపోనెంట్ నుండి `value` ప్రాప్‌ను రిమూవ్ చేయండి. బదులుగా, `Square` ప్రారంభానికి కొత్త లైన్ ని జోడించి, `useState` ని కాల్ చేయండి. `value` అనే state వేరియబుల్ రిటర్న్ అయింది అని ఇది నిర్ధారిస్తుంది.
 
 ```js {1,3,4}
 import { useState } from 'react';
@@ -747,9 +747,9 @@ function Square() {
     //...
 ```
 
-`value` stores the value and `setValue` is a function that can be used to change the value. The `null` passed to `useState` is used as the initial value for this state variable, so `value` here starts off equal to `null`.
+`value` state యొక్క కరెంట్ వేల్యూ ని స్టోర్ చేస్తుంది మరియు `setValue` అనేది ఆ వేల్యూ ను అప్డేట్ చేయడానికి ఉపయోగించే ఫంక్షన్. `useState` కి పంపబడిన `null` వేల్యూ ఈ state వేరియబుల్‌కు ఇనీటియాల్ వేల్యూ గా ఉపయోగించబడుతుంది, కాబట్టి `value` అనేది `null` వేల్యూ తో ప్రారంభమవుతుంది.
 
-Since the `Square` component no longer accepts props anymore, you'll remove the `value` prop from all nine of the Square components created by the Board component:
+`Square` కాంపోనెంట్ ఇకపై props ను యాక్సెప్ట్ చేయడు కాబట్టి, మీరు `Board` కాంపోనెంట్ సృష్టించిన మొత్తం తొమ్మిది స్క్వేర్ కాంపోనెంట్ల నుండి `value` ప్రాప్‌ను రిమూవ్ చేస్తారు:
 
 ```js {6-8,11-13,16-18}
 // ...
@@ -776,7 +776,7 @@ export default function Board() {
 }
 ```
 
-Now you'll change `Square` to display an "X" when clicked. Replace the `console.log("clicked!");` event handler with `setValue('X');`. Now your `Square` component looks like this:
+ఇప్పుడు మీరు క్లిక్ చేసినప్పుడు "X" ని ప్రదర్శించడానికి `Square` ని మారుస్తారు. `console.log("clicked!");` ఈవెంట్ హ్యాండ్లర్‌ను `setValue('X');` తో రీప్లేస్ చేయండి. ఇప్పుడు మీ `Square` కాంపోనెంట్ ఇలా కనిపిస్తుంది:
 
 ```js {5}
 function Square() {
@@ -797,13 +797,13 @@ function Square() {
 }
 ```
 
-By calling this `set` function from an `onClick` handler, you're telling React to re-render that `Square` whenever its `<button>` is clicked. After the update, the `Square`'s `value` will be `'X'`, so you'll see the "X" on the game board. Click on any Square, and "X" should show up:
+`onClick` హ్యాండ్లర్ నుండి ఈ `set` ఫంక్షన్‌ ని కాల్ చేయడం ద్వారా, మీరు దాని `<button>` ని క్లిక్ చేసినప్పుడల్లా ఆ `Square` ని రీ-రెండర్ చేయమని React కి చెబుతున్నారు. అప్డేట్ తర్వాత, `Square` యొక్క `value` `'X'` అవుతుంది, కాబట్టి మీరు గేమ్ బోర్డ్‌లో "X" ని చూస్తారు. ఏదైనా స్క్వేర్‌పై క్లిక్ చేయండి మరియు "X" ని చూడండి:
 
-![adding xes to board](../images/tutorial/tictac-adding-x-s.gif)
+![బోర్డ్‌కు మల్టిపుల్ "X" లని జోడించండి](../images/tutorial/tictac-adding-x-s.gif)
 
-Each Square has its own state: the `value` stored in each Square is completely independent of the others. When you call a `set` function in a component, React automatically updates the child components inside too.
+ప్రతి స్క్వేర్ దాని స్వంత state ని కలిగి ఉంటుంది: ప్రతి స్క్వేర్‌లో స్టోర్ చేయబడిన `value` ఇతర వాటితో సంబంధం లేకుండా ఉంటుంది. మీరు కాంపోనెంట్‌లో `set` ఫంక్షన్‌ ని కాల్ చేసినప్పుడు, React ఆటోమేటిక్‌గా లోపల ఉన్న చైల్డ్ కాంపోనెంట్‌లను కూడా అప్‌డేట్ చేస్తుంది.
 
-After you've made the above changes, your code will look like this:
+మీరు పైన చెప్పిన మార్పులు చేసిన తర్వాత, మీ కోడ్ ఇలా కనిపిస్తుంది:
 
 <Sandpack>
 
@@ -899,35 +899,35 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
-React DevTools let you check the props and the state of your React components. You can find the React DevTools tab at the bottom of the _browser_ section in CodeSandbox:
+React DevTools మీ React కాంపోనెంట్‌ల props మరియు state ని చెక్ చేయడానికి మిమ్మల్ని అనుమతిస్తాయి. CodeSandbox లోని _Browser_ విభాగం దిగువన మీరు React DevTools ట్యాబ్‌ను కనుగొనవచ్చు:
 
-![React DevTools in CodeSandbox](../images/tutorial/codesandbox-devtools.png)
+![CodeSandbox లోని React DevTools](../images/tutorial/codesandbox-devtools.png)
 
-To inspect a particular component on the screen, use the button in the top left corner of React DevTools:
+స్క్రీన్‌పై పర్టికులర్ కాంపోనెంట్ ని ఇన్స్పెక్ట చేయడానికి, React DevTools టాప్ లెఫ్ట్ కార్నర్లో ఉన్న బటన్‌ను ఉపయోగించండి:
 
-![Selecting components on the page with React DevTools](../images/tutorial/devtools-select.gif)
+![React DevTools తో పేజీలోని కాంపోనెంట్లను సెలెక్ట్ చేయడం](../images/tutorial/devtools-select.gif)
 
 <Note>
 
-For local development, React DevTools is available as a [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), and [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) browser extension. Install it, and the *Components* tab will appear in your browser Developer Tools for sites using React.
+లోకల్ డెవలప్మెంట్ కోసం, React DevTools [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), మరియు [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) బ్రౌజర్ ఎక్స్టెన్షన్ గా అందుబాటులో ఉంది. దీన్ని ఇన్‌స్టాల్ చేయండి మరియు React ని ఉపయోగించే సైట్‌ల కోసం మీ బ్రౌజర్ డెవలపర్ టూల్స్‌లో *Components* ట్యాబ్ కనిపిస్తుంది.
 
 </Note>
 
-## Completing the game {/*completing-the-game*/}
+## గేమ్‌ను పూర్తి చేయడం {/*completing-the-game*/}
 
-By this point, you have all the basic building blocks for your tic-tac-toe game. To have a complete game, you now need to alternate placing "X"s and "O"s on the board, and you need a way to determine a winner.
+ఈ సమయానికి, మీరు మీ టిక్-టాక్-టో గేమ్ కోసం అన్ని బేసిక్ బిల్డింగ్ బ్లాక్‌లను కలిగి ఉన్నారు. పూర్తి గేమ్‌ను కలిగి ఉండటానికి, మీరు ఇప్పుడు "X"లు మరియు "O"లను బోర్డ్‌లో ఆల్టర్నేట్గా ఉంచాలి మరియు విజేతను నిర్ణయించడానికి మీకు ఒక మార్గం అవసరం.
 
-### Lifting state up {/*lifting-state-up*/}
+### state ని లిఫ్ట్ చేయడం {/*lifting-state-up*/}
 
-Currently, each `Square` component maintains a part of the game's state. To check for a winner in a tic-tac-toe game, the `Board` would need to somehow know the state of each of the 9 `Square` components.
+ప్రస్తుతం, ప్రతి `Square` కాంపోనెంట్ గేమ్ state లో కొంత భాగాన్ని నిర్వహిస్తోంది. టిక్-టాక్-టో గేమ్‌లో విజేత ఎవరో చెక్ చేయడానికి, `Board` లోని 9 `Square` కాంపోనెంట్‌లలోని ప్రతి state ని తెలుసుకోవాలి.
 
-How would you approach that? At first, you might guess that the `Board` needs to "ask" each `Square` for that `Square`'s state. Although this approach is technically possible in React, we discourage it because the code becomes difficult to understand, susceptible to bugs, and hard to refactor. Instead, the best approach is to store the game's state in the parent `Board` component instead of in each `Square`. The `Board` component can tell each `Square` what to display by passing a prop, like you did when you passed a number to each Square.
+మీరు దానిని ఎలా చేరుకుంటారు? మొదట, మీరు `Board` ప్రతి `Square` ని ఆ `Square` state కోసం "అడగాలి" అని ఊహించవచ్చు. React లో ఈ విధానం టెక్నికల్గా సాధ్యమే అయినప్పటికీ, కోడ్ అర్థం చేసుకోవడం కష్టంగా మారడం, బగ్‌లకు గురికావడం మరియు రీఫ్యాక్టర్ చేయడం కష్టం కాబట్టి మేము దానిని సిఫార్సు చెయ్యట్లేదు. బదులుగా, ప్రతి `Square` లో కాకుండా పేరెంట్ `Board` కాంపోనెంట్‌లో గేమ్ state ని స్టోర్ చేయడం ఉత్తమ విధానం. మీరు ప్రతి స్క్వేర్‌కి ఒక నంబర్‌ను పాస్ చేసినప్పుడు, props ను పాస్ చేయడం ద్వారా ప్రతి `Square` కి ఏమి ప్రదర్శించాలో `Board` కాంపోనెంట్ తెలియజేస్తుంది.
 
-**To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.**
+**మల్టిపుల్ చైల్డ్ల నుండి డేటాను సేకరించడానికి లేదా ఇద్దరు చైల్డ్ కాంపోనెంట్లు ఒకదానితో ఒకటి కమ్యూనికేట్ చేయడానికి, వారి పేరెంట్ కాంపోనెంట్‌లో షేర్డ్ state ని డిక్లేర్ చేయండి. పేరెంట్ కాంపోనెంట్ ఆ state ని props ద్వారా చైల్డ్లకు తిరిగి పంపగలదు. ఇది చైల్డ్ కాంపోనెంట్లు ఒకదానితో ఒకటి మరియు వారి పేరెంట్ తో సింక్ (sync) లో ఉండేలా చేస్తుంది.**
 
-Lifting state into a parent component is common when React components are refactored.
+React కాంపోనెంట్‌లు రీఫ్యాక్టరేట్ చేయబడినప్పుడు state ని పేరెంట్ కాంపోనెంట్‌కి లిఫ్ట్ చేయడం సాధారణం.
 
-Let's take this opportunity to try it out. Edit the `Board` component so that it declares a state variable named `squares` that defaults to an array of 9 nulls corresponding to the 9 squares:
+దీనిని ప్రయత్నిద్దాం. `Board` కాంపోనెంట్‌ని ఎడిట్ చేయండి, తద్వారా ఇది 9 స్క్వేర్‌లకు కరెస్పాండింగ్ గా 9 null ల array కి డిఫాల్ట్‌గా ఉండే `squares` అనే state వేరియబుల్‌ను డిక్లేర్ చేస్తుంది:
 
 ```js {3}
 // ...
@@ -939,13 +939,13 @@ export default function Board() {
 }
 ```
 
-`Array(9).fill(null)` creates an array with nine elements and sets each of them to `null`. The `useState()` call around it declares a `squares` state variable that's initially set to that array. Each entry in the array corresponds to the value of a square. When you fill the board in later, the `squares` array will look like this:
+`Array(9).fill(null)` తొమ్మిది ఎలెమెంట్లతో ఒక array ని క్రియేట్ చేస్తుంది మరియు వాటిలో ప్రతి ఒక్కటి `null` కి సెట్ చేస్తుంది. దాని చుట్టూ ఉన్న `useState()` కాల్ ప్రారంభంలో ఆ array కి సెట్ చేయబడిన `squares` state వేరియబుల్‌ని డిక్లేర్ చేస్తుంది. array లోని ప్రతి ఎంట్రీ స్క్వేర్ వేల్యూ కు అనుగుణంగా ఉంటుంది. మీరు తర్వాత బోర్డ్‌ను ఫిల్ చేసినప్పుడు, `squares` array ఇలా కనిపిస్తుంది:
 
 ```jsx
 ['O', null, 'X', 'X', 'X', 'O', 'O', null, null]
 ```
 
-Now your `Board` component needs to pass the `value` prop down to each `Square` that it renders:
+ఇప్పుడు మీ `Board` కాంపోనెంట్ అది రెండర్ చేసే ప్రతి `Square` కి `value` props ని పాస్ చేయాలి:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -972,7 +972,7 @@ export default function Board() {
 }
 ```
 
-Next, you'll edit the `Square` component to receive the `value` prop from the Board component. This will require removing the Square component's own stateful tracking of `value` and the button's `onClick` prop:
+తర్వాత, మీరు `Board` కాంపోనెంట్ నుండి `value` ప్రాప్‌ను స్వీకరించడానికి `Square` కాంపోనెంట్‌ని ఎడిట్ చేస్తారు. దీనికి స్క్వేర్ కాంపోనెంట్ యొక్క సొంత స్టేట్‌ఫుల్ ట్రాకింగ్ `value` మరియు బటన్ యొక్క `onClick` ప్రాప్‌ని తీసివేయడం అవసరం:
 
 ```js {1,2}
 function Square({value}) {
@@ -980,11 +980,11 @@ function Square({value}) {
 }
 ```
 
-At this point you should see an empty tic-tac-toe board:
+ఈ సమయంలో మీరు ఖాళీ టిక్-టాక్-టో బోర్డుని చూడాలి:
 
-![empty board](../images/tutorial/empty-board.png)
+![ఖాళీ బోర్డు](../images/tutorial/empty-board.png)
 
-And your code should look like this:
+మరియు మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -1066,11 +1066,11 @@ body {
 
 </Sandpack>
 
-Each Square will now receive a `value` prop that will either be `'X'`, `'O'`, or `null` for empty squares.
+ప్రతి స్క్వేర్ ఇప్పుడు `value` ప్రాప్‌ని అందుకుంటుంది, అది `'X'`, `'O'` లేదా ఖాళీ స్క్వేర్‌ల కోసం `null`.
 
-Next, you need to change what happens when a `Square` is clicked. The `Board` component now maintains which squares are filled. You'll need to create a way for the `Square` to update the `Board`'s state. Since state is private to a component that defines it, you cannot update the `Board`'s state directly from `Square`.
+తర్వాత, మీరు `Square` ని క్లిక్ చేసినప్పుడు ఏమి జరుగుతుందో మార్చాలి. `Board` కాంపోనెంట్ ఇప్పుడు ఏ స్క్వేర్‌లను ఫిల్ చేయాలో మైంటైన్ చేస్తుంది. మీరు `Board` state ని అప్డేట్ చేయడానికి `Square` కోసం ఒక మార్గాన్ని సృష్టించాలి. state దానిని డిఫైన్ చేసే కాంపోనెంట్కి ప్రైవేట్‌గా ఉన్నందున, మీరు `Square` నుండి డైరెక్ట్గా `Board` state ని అప్డేట్ చేయలేరు.
 
-Instead, you'll pass down a function from the `Board` component to the `Square` component, and you'll have `Square` call that function when a square is clicked. You'll start with the function that the `Square` component will call when it is clicked. You'll call that function `onSquareClick`:
+బదులుగా, మీరు `Board` కాంపోనెంట్ నుండి `Square` కాంపోనెంట్‌కి ఒక ఫంక్షన్‌ను పాస్ చేస్తారు మరియు మీరు స్క్వేర్ ని క్లిక్ చేసినప్పుడు `Square` ఆ ఫంక్షన్‌ని కాల్ చేస్తుంది. మీరు క్లిక్ చేసినప్పుడు `Square` కాంపోనెంట్ కాల్ చేసే ఫంక్షన్‌తో ప్రారంభిస్తారు. మీరు ఆ ఫంక్షన్‌ని `onSquareClick` అని పిలుస్తారు:
 
 ```js {3}
 function Square({ value }) {
@@ -1082,7 +1082,7 @@ function Square({ value }) {
 }
 ```
 
-Next, you'll add the `onSquareClick` function to the `Square` component's props:
+తర్వాత, మీరు `onSquareClick` ఫంక్షన్‌ని `Square` కాంపోనెంట్ యొక్క props కు జోడిస్తారు:
 
 ```js {1}
 function Square({ value, onSquareClick }) {
@@ -1094,7 +1094,7 @@ function Square({ value, onSquareClick }) {
 }
 ```
 
-Now you'll connect the `onSquareClick` prop to a function in the `Board` component that you'll name `handleClick`. To connect `onSquareClick` to `handleClick` you'll pass a function to the `onSquareClick` prop of the first `Square` component: 
+ఇప్పుడు మీరు `onSquareClick` ప్రాప్‌ని `Board` కాంపోనెంట్‌లోని ఫంక్షన్‌కి కనెక్ట్ చేస్తారు, దానికి మీరు `handleClick` అని పేరు పెట్టారు. `onSquareClick` ని `handleClick` కి కనెక్ట్ చేయడానికి, మీరు మొదటి `Square` కాంపోనెంట్ యొక్క `onSquareClick` ప్రాప్‌కి ఒక ఫంక్షన్‌ని పాస్ చేస్తారు:
 
 ```js {7}
 export default function Board() {
@@ -1109,7 +1109,7 @@ export default function Board() {
 }
 ```
 
-Lastly, you will define the `handleClick` function inside the Board component to update the `squares` array holding your board's state:
+చివరగా, మీరు మీ బోర్డు state ని కలిగి ఉన్న `squares` array ని అప్డేట్ చేయడానికి `Board` కాంపోనెంట్ లోపల `handleClick` ఫంక్షన్‌ని డిఫైన్ చేస్తారు:
 
 ```js {4-8}
 export default function Board() {
@@ -1127,17 +1127,17 @@ export default function Board() {
 }
 ```
 
-The `handleClick` function creates a copy of the `squares` array (`nextSquares`) with the JavaScript `slice()` Array method. Then, `handleClick` updates the `nextSquares` array to add `X` to the first (`[0]` index) square.
+`handleClick` ఫంక్షన్ JavaScript `slice()` array మెథొద్స్ (methods) ని ఉపయోగించి `squares` array (`nextSquares`) యొక్క కాపీని క్రియేట్ చేస్తుంది. ఆపై, మొదటి (`[0]` ఇండెక్స్) స్క్వేర్‌కి `X` ని జోడించడానికి `handleClick` `nextSquares` array ని అప్డేట్ చేస్తుంది.
 
-Calling the `setSquares` function lets React know the state of the component has changed. This will trigger a re-render of the components that use the `squares` state (`Board`) as well as its child components (the `Square` components that make up the board).
+`setSquares` ఫంక్షన్‌ని కాల్ చేయడం వలన కాంపోనెంట్ యొక్క state మారిందని React తెలుసుకోవచ్చు. ఇది `squares` state (`Board`) అలాగే దాని చైల్డ్ కాంపోనెంట్‌లను (బోర్డ్‌ను రూపొందించే `Square` కాంపోనెంట్లు) ఉపయోగించే కాంపోనెంట్‌ల రీ-రెండర్‌ను ట్రిగ్గర్ చేస్తుంది.
 
 <Note>
 
-JavaScript supports [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) which means an inner function (e.g. `handleClick`) has access to variables and functions defined in a outer function (e.g. `Board`). The `handleClick` function can read the `squares` state and call the `setSquares` method because they are both defined inside of the `Board` function.
+JavaScript [క్లోసురేష్స్ (closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) ని సపోర్ట్ చేస్తుంది అంటే ఇన్నర్ ఫంక్షన్కు (ఉదా. `handleClick`) ఔటర్ ఫంక్షన్‌లో డిఫైన్ చేయబడిన వేరియబుల్స్ మరియు ఫంక్షన్‌లకు యాక్సెస్‌ను కలిగి ఉంటుంది (ఉదా. `Board`). `handleClick` ఫంక్షన్ `squares` state ని రీడ్ చేయగలదు మరియు `setSquares` మెథడ్ ని కాల్ చేయగలదు ఎందుకంటే అవి రెండూ `Board` ఫంక్షన్‌లో డిఫైన్ చేయబడ్డాయి.
 
 </Note>
 
-Now you can add X's to the board...  but only to the upper left square. Your `handleClick` function is hardcoded to update the index for the upper left square (`0`). Let's update `handleClick` to be able to update any square. Add an argument `i` to the `handleClick` function that takes the index of the square to update:
+ఇప్పుడు మీరు X లను బోర్డ్‌కి జోడించవచ్చు... కానీ అప్పర్ లెఫ్ట్ స్క్వేర్కి మాత్రమే. అప్పర్ లెఫ్ట్ స్క్వేర్ (`0`) కోసం ఇండెక్స్ ను అప్డేట్ చేయడానికి మీ `handleClick` ఫంక్షన్ హార్డ్‌కోడ్ చేయబడింది. ఏదైనా స్క్వేర్‌ని అప్‌డేట్ చేయడానికి `handleClick` ని అప్‌డేట్ చేద్దాం. అప్‌డేట్ చేయడానికి స్క్వేర్ ఇండెక్స్‌ను తీసుకునే `handleClick` ఫంక్షన్‌కు ఆర్గ్యుమెంట్ `i` ని జోడించండి:
 
 ```js {4,6}
 export default function Board() {
@@ -1155,13 +1155,13 @@ export default function Board() {
 }
 ```
 
-Next, you will need to pass that `i` to `handleClick`. You could try to set the `onSquareClick` prop of square to be `handleClick(0)` directly in the JSX like this, but it won't work:
+తర్వాత, మీరు ఆ `i` ని `handleClick` కి పాస్ చేయాలి. మీరు స్క్వేర్ యొక్క `onSquareClick` ప్రాప్‌ని నేరుగా JSX లో `handleClick(0)` గా సెట్ చేయడానికి ప్రయత్నించవచ్చు, కానీ అది పని చేయదు:
 
 ```jsx
 <Square value={squares[0]} onSquareClick={handleClick(0)} />
 ```
 
-Here is why this doesn't work. The `handleClick(0)` call will be a part of rendering the board component. Because `handleClick(0)` alters the state of the board component by calling `setSquares`, your entire board component will be re-rendered again. But this runs `handleClick(0)` again, leading to an infinite loop:
+ఇది ఎందుకు పని చేయలేదని ఇక్కడ ఉంది. `handleClick(0)` కాల్ Board కాంపోనెంట్‌ను రెండరింగ్ చేయడంలో భాగంగా ఉంటుంది. `setSquares` ని కాల్ చేయడం ద్వారా `handleClick(0)` Board కాంపోనెంట్ యొక్క state ని మారుస్తుంది కాబట్టి, మీ మొత్తం Board కాంపోనెంట్ మళ్లీ రెండర్ చేయబడుతుంది. కానీ ఇది మళ్లీ `handleClick(0)` ని రన్ చేస్తుంది, ఇది ఇన్ఫైనైట్ లూప్‌కు దారి తీస్తుంది:
 
 <ConsoleBlock level="error">
 
@@ -1169,13 +1169,13 @@ Too many re-renders. React limits the number of renders to prevent an infinite l
 
 </ConsoleBlock>
 
-Why didn't this problem happen earlier?
+ఇంతకు ముందు ఈ సమస్య ఎందుకు రాలేదు?
 
-When you were passing `onSquareClick={handleClick}`, you were passing the `handleClick` function down as a prop. You were not calling it! But now you are *calling* that function right away--notice the parentheses in `handleClick(0)`--and that's why it runs too early. You don't *want* to call `handleClick` until the user clicks!
+మీరు `onSquareClick={handleClick}` ని పాస్ చేస్తున్నప్పుడు, మీరు `handleClick` ఫంక్షన్‌ను props గా పాస్ చేస్తున్నారు. అప్పుడు మీరు దానిని కాల్ చేయలేదు! కానీ ఇప్పుడు మీరు ఆ ఫంక్షన్‌ ని వెంటనే *కాల్* చేస్తున్నారు - `handleClick(0)` లో పారేన్తేసెస్ ని గమనించండి--అందుకే ఇది చాలా త్వరగా రన్ అవుతుంది. యూసర్ క్లిక్ చేసే వరకు మీరు `handleClick` ని కాల్ చేయకూడదు!
 
-You could fix this by creating a function like `handleFirstSquareClick` that calls `handleClick(0)`, a function like `handleSecondSquareClick` that calls `handleClick(1)`, and so on. You would pass (rather than call) these functions down as props like `onSquareClick={handleFirstSquareClick}`. This would solve the infinite loop.
+మీరు `handleClick(0)` ని కాల్ చేసే `handleFirstSquareClick`, `handleClick(1)` ని కాల్ చేసే `handleSecondSquareClick` వంటి ఫంక్షన్‌ని క్రియేట్ చేయడం ద్వారా దీన్ని పరిష్కరించవచ్చు. మీరు ఈ ఫంక్షన్‌లను `onSquareClick={handleFirstSquareClick}` వంటి props గా (కాల్ చేయకుండా) పాస్ చేస్తారు. ఇది ఇన్ఫైనైట్ లూప్‌ను సాల్వ్ చేస్తుంది.
 
-However, defining nine different functions and giving each of them a name is too verbose. Instead, let's do this:
+అయితే, తొమ్మిది వేర్వేరు ఫంక్షన్లను డిఫైన్ చేయడం మరియు వాటిలో ప్రతిదానికి పేరు ఇవ్వడం చాలా కష్టం. బదులుగా, ఇలా చేద్దాం:
 
 ```js {6}
 export default function Board() {
@@ -1189,9 +1189,9 @@ export default function Board() {
 }
 ```
 
-Notice the new `() =>` syntax. Here, `() => handleClick(0)` is an *arrow function,* which is a shorter way to define functions. When the square is clicked, the code after the `=>` "arrow" will run, calling `handleClick(0)`.
+కొత్త `() =>` సింటాక్స్‌ని గమనించండి. ఇక్కడ, `() => handleClick(0)` అనేది *ఆర్రౌ ఫంక్షన్*, ఇది ఫంక్షన్‌లను డిఫైన్ చేయడానికి ఒక చిన్న మార్గం. స్క్వేర్ ని క్లిక్ చేసినప్పుడు, `=>` "ఆర్రౌ" తర్వాత ఉన్న కోడ్ రన్ చేయబడుతుంది, `handleClick(0)` ని కాల్ చేస్తుంది.
 
-Now you need to update the other eight squares to call `handleClick` from the arrow functions you pass. Make sure that the argument for each call of the `handleClick` corresponds to the index of the correct square:
+మీరు పాస్ చేసే ఆర్రౌ ఫంక్షన్‌ల నుండి `handleClick` ని కాల్ చేయడానికి ఇప్పుడు మీరు ఇతర ఎనిమిది స్క్వేర్‌లను అప్‌డేట్ చేయాలి. `handleClick` యొక్క ప్రతి కాల్‌కు సంబంధించిన ఆర్గ్యుమెంట్ సరైన స్క్వేర్ యొక్క ఇండెక్స్కు అనుగుణంగా ఉందని నిర్ధారించుకోండి:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -1218,13 +1218,13 @@ export default function Board() {
 };
 ```
 
-Now you can again add X's to any square on the board by clicking on them:
+ఇప్పుడు మీరు వాటిపై క్లిక్ చేయడం ద్వారా బోర్డ్‌లోని ఏదైనా స్క్వేర్‌కి మళ్లీ X లను జోడించవచ్చు:
 
-![filling the board with X](../images/tutorial/tictac-adding-x-s.gif)
+![X తో బోర్డు నింపడం](../images/tutorial/tictac-adding-x-s.gif)
 
-But this time all the state management is handled by the `Board` component!
+కానీ ఈసారి state మేనేజ్మెంట్ అంతా `Board` కాంపోనెంట్ దే!
 
-This is what your code should look like:
+మీ కోడ్ ఇలా ఉండాలి:
 
 <Sandpack>
 
@@ -1317,53 +1317,53 @@ body {
 
 </Sandpack>
 
-Now that your state handling is in the `Board` component, the parent `Board` component passes props to the child `Square` components so that they can be displayed correctly. When clicking on a `Square`, the child `Square` component now asks the parent `Board` component to update the state of the board. When the `Board`'s state changes, both the `Board` component and every child `Square` re-renders automatically. Keeping the state of all squares in the `Board` component will allow it to determine the winner in the future.
+ఇప్పుడు మీ state హ్యాండ్లింగ్ `Board` కాంపోనెంట్‌లో ఉంది, పేరెంట్ `Board` కాంపోనెంట్ చైల్డ్ `Square` కాంపోనెంట్‌లకు props ను పంపుతుంది, తద్వారా అవి సరిగ్గా ప్రదర్శించబడతాయి. `Square` పై క్లిక్ చేసినప్పుడు, చైల్డ్ `Square` కాంపోనెంట్ ఇప్పుడు బోర్డ్ state ని అప్‌డేట్ చేయమని పేరెంట్ `Board` కాంపోనెంట్‌ని అడుగుతుంది. `Board` యొక్క state మారినప్పుడు, `Board` కాంపోనెంట్ మరియు ప్రతి చైల్డ్ `Square` కాంపోనెంట్లు ఆటోమెటికల్గా రీ-రెండర్ అవుతాయి. అన్ని స్క్వేర్‌ల state ని `Board` కాంపోనెంట్‌లో ఉంచడం వల్ల భవిష్యత్తులో విజేతను గుర్తించడానికి ఇది అనుమతిస్తుంది.
 
-Let's recap what happens when a user clicks the top left square on your board to add an `X` to it:
+యూసర్ మీ బోర్డ్‌లో `X` ని జోడించడానికి టాప్ లెఫ్ట్ స్క్వేర్‌ను క్లిక్ చేసినప్పుడు ఏమి జరుగుతుందో మళ్ళీ చూద్దాం:
 
-1. Clicking on the upper left square runs the function that the `button` received as its `onClick` prop from the `Square`. The `Square` component received that function as its `onSquareClick` prop from the `Board`. The `Board` component defined that function directly in the JSX. It calls `handleClick` with an argument of `0`.
-1. `handleClick` uses the argument (`0`) to update the first element of the `squares` array from `null` to `X`.
-1. The `squares` state of the `Board` component was updated, so the `Board` and all of its children re-render. This causes the `value` prop of the `Square` component with index `0` to change from `null` to `X`.
+1. టాప్ లెఫ్ట్ స్క్వేర్‌పై క్లిక్ చేయడం ద్వారా `button` దాని `Square` నుండి `onClick` ప్రాప్‌గా స్వీకరించిన ఫంక్షన్‌ను రన్ చేస్తుంది. `Square` కాంపోనెంట్ ఆ ఫంక్షన్‌ను `Board` నుండి దాని `onSquareClick` ప్రాప్‌గా స్వీకరించింది. `Board` కాంపోనెంట్ ఆ ఫంక్షన్‌ని నేరుగా JSX లో డిఫైన్ చేసింది. ఇది `0` ఆర్గ్యుమెంట్‌తో `handleClick` ని కాల్ చేస్తుంది.
+1. `squares` array లోని మొదటి ఎలిమెంట్ ని `null` నుండి `X` కి అప్డేట్ చేయడానికి `handleClick` ఆర్గ్యుమెంట్ (`0`) ని ఉపయోగిస్తుంది.
+1. `Board` కాంపోనెంట్ యొక్క `squares` state అప్డేట్ చేయబడింది, కాబట్టి `Board` మరియు దాని చైల్డ్స్ అందరూ మళ్ళీ రెండర్ అవుతారు. ఇది `0` ఇండెక్స్తో ఉన్న `Square` కాంపోనెంట్ యొక్క `value` ప్రాప్‌ను `null` నుండి `X` కి మార్చడానికి కారణమవుతుంది.
 
-In the end the user sees that the upper left square has changed from empty to having a `X` after clicking it.
+చివరగా, యూసర్ టాప్ లెఫ్ట్ స్క్వేర్‌ని క్లిక్ చేసిన తర్వాత అది ఖాళీ నుండి `X` గా మారడం చూస్తారు.
 
 <Note>
 
-The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. You could give any name to the `Square`'s `onSquareClick` prop or `Board`'s `handleClick` function, and the code would work the same. In React, it's conventional to use `onSomething` names for props which represent events and `handleSomething` for the function definitions which handle those events.
+DOM `<button>` ఎలిమెంట్ యొక్క `onClick` అట్రిబ్యూట్ React కి ప్రత్యేక అర్ధాన్ని కలిగి ఉంది ఎందుకంటే ఇది బిల్ట్-ఇన్ కాంపోనెంట్. `Square` వంటి కస్టమ్ కాంపోనెంట్ల కోసం, పేరు పెట్టడం మీ ఇష్టం. మీరు `Square` యొక్క `onSquareClick` ప్రాప్ లేదా `Board` యొక్క `handleClick` ఫంక్షన్ కి ఏదైనా పేరు పెట్టవచ్చు మరియు కోడ్ అదే పని చేస్తుంది. React ‌లో, ఈవెంట్‌లను రెప్రెసెంత్ చేసే props కోసం `onSomething` పేర్లను ఉపయోగించడం మరియు ఆ ఈవెంట్‌లను హేండిల్ చేసే ఫంక్షన్ డెఫినిషన్‌ల కోసం `handleSomething` ని ఉపయోగించడం సంప్రదాయం.
 
 </Note>
 
-### Why immutability is important {/*why-immutability-is-important*/}
+### ఎందుకు ఇమ్ముటబిలిటీ ముఖ్యం {/*why-immutability-is-important*/}
 
-Note how in `handleClick`, you call `.slice()` to create a copy of the `squares` array instead of modifying the existing array. To explain why, we need to discuss immutability and why immutability is important to learn.
+ఇప్పటికే ఉన్న array ని అప్డేట్ చేయడానికి బదులుగా `squares` array యొక్క కాపీని సృష్టించడానికి `handleClick` లో మీరు `.slice()` అని ఎలా కాల్ చేస్తారో గమనించండి. ఎందుకు అని వివరించడానికి, మనం ఇమ్ముటబిలిటీ గురించి చర్చించాలి మరియు ఇమ్ముటబిలిటీ ఎందుకు ముఖ్యమో నేర్చుకోవాలి.
 
-There are generally two approaches to changing data. The first approach is to _mutate_ the data by directly changing the data's values. The second approach is to replace the data with a new copy which has the desired changes. Here is what it would look like if you mutated the `squares` array:
+డేటాను మార్చడానికి సాధారణంగా రెండు విధానాలు ఉన్నాయి. డేటా వేల్యూ ను నేరుగా మార్చడం ద్వారా డేటాను _మ్యుటేట్_ చేయడం మొదటి విధానం. కావలసిన మార్పులను కలిగి ఉన్న కొత్త కాపీతో డేటాను రీప్లేస్ చేయడం రెండవ విధానం. మీరు `squares` array ని మ్యుటేట్ చేసినట్లయితే అది ఎలా ఉంటుందో ఇక్కడ ఉంది:
 
 ```jsx
 const squares = [null, null, null, null, null, null, null, null, null];
 squares[0] = 'X';
-// Now `squares` is ["X", null, null, null, null, null, null, null, null];
+// ఇప్పుడు `squares` ["X", null, null, null, null, null, null, null, null];
 ```
 
-And here is what it would look like if you changed data without mutating the `squares` array:
+మీరు `squares` array ని మ్యుటేట్ చేయకుండా డేటాను చేంజ్ చేసినట్లయితే అది ఎలా ఉంటుందో ఇక్కడ ఉంది:
 
 ```jsx
 const squares = [null, null, null, null, null, null, null, null, null];
 const nextSquares = ['X', null, null, null, null, null, null, null, null];
-// Now `squares` is unchanged, but `nextSquares` first element is 'X' rather than `null`
+// ఇప్పుడు `squares` మారలేదు, కానీ `nextSquares` మొదటి ఎలిమెంట్ `null` కాకుండా 'X' అయ్యింది
 ```
 
-The result is the same but by not mutating (changing the underlying data) directly, you gain several benefits.
+ఫలితం ఒకే విధంగా ఉంటుంది కానీ డైరెక్ట్ గా మ్యుటేట్ చేయకుండా ఉండటం (లోపల ఉన్న డేటాను మార్చడం) ద్వారా, మీరు అనేక ప్రయోజనాలను పొందుతారు.
 
-Immutability makes complex features much easier to implement. Later in this tutorial, you will implement a "time travel" feature that lets you review the game's history and "jump back" to past moves. This functionality isn't specific to games--an ability to undo and redo certain actions is a common requirement for apps. Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.
+ఇమ్ముటబిలిటీ కాంప్లెక్స్ ఫీచర్లను ఇంప్లిమెంట్ చేయడం చాలా సులభం చేస్తుంది. ఈ ట్యుటోరియల్‌లో తర్వాత, మీరు గేమ్ చరిత్రను రివ్యూ చేయడానికి మరియు గత కదలికలకు "జంప్ బ్యాక్" అవ్వడానికి మిమ్మల్ని అనుమతించే "టైమ్ ట్రావెల్" ఫీచర్‌ను అమలు చేస్తారు. ఈ ఫంక్షనాలిటీ గేమ్‌లకు ప్రత్యేకమైనది కాదు--నిర్దిష్ట చర్యలను అన్డు మరియు రీడు చేయడం అనేది యాప్‌లకు సాధారణ అవసరం. డైరెక్ట్ డేటా మ్యుటేషన్‌ను నివారించడం వలన డేటా యొక్క మునుపటి వెర్షన్‌లను అలాగే ఉంచడానికి మరియు వాటిని తర్వాత మళ్లీ ఉపయోగించుకోవడానికి మిమ్మల్ని అనుమతిస్తుంది.
 
-There is also another benefit of immutability. By default, all child components re-render automatically when the state of a parent component changes. This includes even the child components that weren't affected by the change. Although re-rendering is not by itself noticeable to the user (you shouldn't actively try to avoid it!), you might want to skip re-rendering a part of the tree that clearly wasn't affected by it for performance reasons. Immutability makes it very cheap for components to compare whether their data has changed or not. You can learn more about how React chooses when to re-render a component in [the `memo` API reference](/reference/react/memo).
+ఇమ్ముటబిలిటీ వల్ల మరో ప్రయోజనం కూడా ఉంది. డిఫాల్ట్‌గా, పేరెంట్ కాంపోనెంట్ state మారినప్పుడు అన్ని చైల్డ్ కాంపోనెంట్‌లు ఆటోమేటిక్‌గా రీ-రెండర్ అవుతాయి. మార్పు వల్ల ప్రభావితం కాని చైల్డ్ కాంపోనెంట్‌లు కూడా ఇందులో ఉన్నాయి. రీ-రెండరింగ్ అనేది యూసర్ నోటీస్ చేయనప్పటికీ (మీరు దానిని అవొఇద్ చేయడానికి యాక్టివ్ గా ట్రై చేయకూడదు!), మీరు పెర్ఫార్మన్స్ ఇస్సుఎస్ వల్ల ట్రీ లో క్లియర్గా అఫక్ట్ అవ్వని కొంత భాగాన్ని రీ-రెండరింగ్ చేయడం స్కిప్ చేయవచ్చు. ఇమ్యుటబిలిటీ వారి డేటా మారినదా లేదా అనేదానిని పోల్చడానికి కాంపోనెంట్లను చాలా చౌకగా చేస్తుంది. మీరు [`memo` API రిఫరెన్స్](/reference/react/memo) లో కాంపోనెంట్‌ను ఎప్పుడు రీ-రెండర్ చేయాలో React ఎలా ఎంచుకుంటుంది అనే దాని గురించి మరింత తెలుసుకోవచ్చు.
 
-### Taking turns {/*taking-turns*/}
+### టర్న్స్ తీసుకోవడం {/*taking-turns*/}
 
-It's now time to fix a major defect in this tic-tac-toe game: the "O"s cannot be marked on the board.
+ఇప్పుడు, ఈ టిక్-టాక్-టో గేమ్‌లోని ప్రధాన లోపాన్ని సరిదిద్దడానికి ఇది సమయం: "O"లు ఇప్పటికీ బోర్డుపై కనిపించలేదు.
 
-You'll set the first move to be "X" by default. Let's keep track of this by adding another piece of state to the Board component:
+మీరు డిఫాల్ట్‌గా మొదటి కదలికను "X" గా సెట్ చేస్తారు. Board కాంపోనెంట్‌కు state యొక్క మరొక భాగాన్ని జోడించడం ద్వారా దీన్ని ట్రాక్ చేద్దాం:
 
 ```js {2}
 function Board() {
@@ -1374,7 +1374,7 @@ function Board() {
 }
 ```
 
-Each time a player moves, `xIsNext` (a boolean) will be flipped to determine which player goes next and the game's state will be saved. You'll update the `Board`'s `handleClick` function to flip the value of `xIsNext`:
+ప్లేయర్ మూవ్ చేసిన ప్రతిసారీ, ఏ ప్లేయర్ నెక్స్ట్ ఆడాలో నిర్ణయించడానికి `xIsNext` (బూలియన్) ఫ్లిప్ చేయబడుతుంది మరియు గేమ్ యొక్క state సేవ్ చేయబడుతుంది. మీరు `xIsNext` వేల్యూ ను ఫ్లిప్ చేయడానికి `Board` యొక్క `handleClick` ఫంక్షన్‌ను అప్‌డేట్ చేస్తారు:
 
 ```js {7,8,9,10,11,13}
 export default function Board() {
@@ -1398,15 +1398,15 @@ export default function Board() {
 }
 ```
 
-Now, as you click on different squares, they will alternate between `X` and `O`, as they should!
+ఇప్పుడు, మీరు వేర్వేరు స్క్వేర్‌లపై క్లిక్ చేసినప్పుడు, అవి తప్పనిసరిగా `X` మరియు `O` మధ్య అల్తెర్నతివె గా ఉంటాయి!
 
-But wait, there's a problem. Try clicking on the same square multiple times:
+కానీ వేచి ఉండండి, సమస్య ఉంది. ఒకే స్క్వేర్ పై అనేకసార్లు క్లిక్ చేసి ప్రయత్నించండి:
 
-![O overwriting an X](../images/tutorial/o-replaces-x.gif)
+![O ఓవర్‌రైటింగ్ X](../images/tutorial/o-replaces-x.gif)
 
-The `X` is overwritten by an `O`! While this would add a very interesting twist to the game, we're going to stick to the original rules for now.
+`X` ఒక `O` ద్వారా ఒవెర్రైట్ చేయబడింది! ఇది గేమ్‌కు చాలా ఆసక్తికరమైన ట్విస్ట్‌ని జోడిస్తుంది, మనం ప్రస్తుతానికి ఒరిజినల్ రూల్స్ కు కట్టుబడి ఉందాము.
 
-When you mark a square with a `X` or an `O` you aren't first checking to see if the square already has a `X` or `O` value. You can fix this by *returning early*. You'll check to see if the square already has a `X` or an `O`. If the square is already filled, you will `return` in the `handleClick` function early--before it tries to update the board state.
+మీరు స్క్వేర్‌ను `X` లేదా `O` తో మార్క్ చేసినప్పుడు, స్క్వేర్‌లో ఇప్పటికే `X` లేదా `O` వేల్యూ ఉందో లేదో తనిఖీ చేయడం లేదు. మీరు *ఎర్లీగా రిటర్న్ చేయడం* ద్వారా దీన్ని పరిష్కరించవచ్చు. స్క్వేర్‌లో ఇప్పటికే `X` లేదా `O` ఉందో లేదో మీరు తనిఖీ చేస్తారు. స్క్వేర్ ఇప్పటికే ఫిల్ అయి ఉంటే, మీరు ముందుగా `handleClick` ఫంక్షన్‌లో `return` అవుతారు--ఇది బోర్డ్ state ని అప్డేట్ చేయడానికి ప్రయత్నించే ముందు.
 
 ```js {2,3,4}
 function handleClick(i) {
@@ -1418,7 +1418,7 @@ function handleClick(i) {
 }
 ```
 
-Now you can only add `X`'s or `O`'s to empty squares! Here is what your code should look like at this point:
+ఇప్పుడు మీరు ఖాళీ స్క్వేర్‌లకు `X` లేదా `O`లను మాత్రమే జోడించగలరు! ఈ సమయంలో మీ కోడ్ ఎలా ఉండాలో ఇక్కడ ఉంది:
 
 <Sandpack>
 
@@ -1520,9 +1520,9 @@ body {
 
 </Sandpack>
 
-### Declaring a winner {/*declaring-a-winner*/}
+### విన్నర్ ను డిక్లేర్ చేయడం {/*declaring-a-winner*/}
 
-Now that the players can take turns, you'll want to show when the game is won and there are no more turns to make. To do this you'll add a helper function called `calculateWinner` that takes an array of 9 squares, checks for a winner and returns `'X'`, `'O'`, or `null` as appropriate. Don't worry too much about the `calculateWinner` function; it's not specific to React:
+ఇప్పుడు ప్లేయర్స్ టర్న్‌లు తీసుకోవచ్చు, విజేతను నిర్ణయించినప్పుడు లేదా గేమ్ ఇకపై ప్రోగ్రెస్ అవ్వనప్పుడు దీన్ని ప్రదర్శిస్తాము. దీన్ని చేయడానికి మీరు 9 స్క్వేర్‌ల array ని తీసుకుని, విజేత కోసం తనిఖీ చేసి, తగిన విధంగా `'X'`, `'O'` లేదా `null` ని రిటర్న్ చేసే `calculateWinner` అనే హెల్పర్ ఫంక్షన్‌ని జోడిస్తారు. `calculateWinner` ఫంక్షన్ గురించి ఎక్కువగా వర్రీ అవ్వకండి, React కి ఇది ప్రత్యేకమైనది కాదు:
 
 ```js src/App.js
 export default function Board() {
@@ -1552,11 +1552,11 @@ function calculateWinner(squares) {
 
 <Note>
 
-It does not matter whether you define `calculateWinner` before or after the `Board`. Let's put it at the end so that you don't have to scroll past it every time you edit your components.
+మీరు `Board` కి ముందు లేదా తర్వాత `calculateWinner` ని డిఫైన్ చేయాలి అనే పట్టింపు లేదు. మీరు మీ కాంపోనెంట్లను అప్డేట్ చేసిన ప్రతిసారీ దాన్ని స్క్రోల్ చేయనవసరం లేదు కాబట్టి దాన్ని చివరలో ఉంచుదాం.
 
 </Note>
 
-You will call `calculateWinner(squares)` in the `Board` component's `handleClick` function to check if a player has won. You can perform this check at the same time you check if a user has clicked a square that already has a `X` or and `O`. We'd like to return early in both cases:
+ప్లేయర్ గెలిచాడో లేదో తనిఖీ చేయడానికి మీరు `Board` కాంపోనెంట్ యొక్క `handleClick` ఫంక్షన్‌లో `calculateWinner(squares)` ని కాల్ చేస్తారు. యూసర్ ఇప్పటికే `X` లేదా `O` ని కలిగి ఉన్న స్క్వేర్‌ని క్లిక్ చేశారో లేదో తనిఖీ చేసే సమయంలోనే మీరు ఈ తనిఖీని పెర్ఫర్మ్ చేయవచ్చు. మేము రెండు సందర్భాల్లో ఎర్లీగా రిటర్న్ చేయాలనుకుంటున్నాను:
 
 ```js {2}
 function handleClick(i) {
@@ -1568,7 +1568,7 @@ function handleClick(i) {
 }
 ```
 
-To let the players know when the game is over, you can display text such as "Winner: X" or "Winner: O". To do that you'll add a `status` section to the `Board` component. The status will display the winner if the game is over and if the game is ongoing you'll display which player's turn is next:
+ఆట ముగిసినప్పుడు ప్లేయర్స్కు తెలియజేయడానికి, మీరు "విజేత: X" లేదా "విజేత: O" వంటి టెక్స్ట్ ని డిస్ప్లే చేయవచ్చు. అలా చేయడానికి మీరు `Board` కాంపోనెంట్‌కి `status` సెక్షన్ ని జోడిస్తారు. గేమ్ ముగిసినట్లయితే స్టేటస్ విజేతను డిస్ప్లే చేస్తుంది మరియు గేమ్ కొనసాగుతున్నట్లయితే, నెక్స్ట్ ఏ ప్లేయర్ టర్న్ ఉందో మీరు డిస్ప్లే చేస్తారు:
 
 ```js {3-9,13}
 export default function Board() {
@@ -1576,9 +1576,9 @@ export default function Board() {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = "Winner: " + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -1590,7 +1590,7 @@ export default function Board() {
 }
 ```
 
-Congratulations! You now have a working tic-tac-toe game. And you've just learned the basics of React too. So _you_ are the real winner here. Here is what the code should look like:
+అభినందనలు! మీరు ఇప్పుడు పని చేసే టిక్-టాక్-టో గేమ్‌ని కలిగి ఉన్నారు. మరియు మీరు React యొక్క బేసిక్స్ ని కూడా నేర్చుకున్నారు. కాబట్టి _మీరే_ ఇక్కడ నిజమైన విజేత. కోడ్ ఎలా ఉండాలో ఇక్కడ ఉంది:
 
 <Sandpack>
 
@@ -1626,9 +1626,9 @@ export default function Board() {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -1721,37 +1721,37 @@ body {
 
 </Sandpack>
 
-## Adding time travel {/*adding-time-travel*/}
+## టైం ట్రావెల్ ని జోడించడం {/*adding-time-travel*/}
 
-As a final exercise, let's make it possible to "go back in time" to the previous moves in the game.
+చివరి వ్యాయామంగా, గేమ్‌లోని మునుపటి కదలికలకు "వెనక్కి వెళ్లడం" సాధ్యం చేద్దాం.
 
-### Storing a history of moves {/*storing-a-history-of-moves*/}
+### కదలికల చరిత్రను స్టోర్ చేయడం {/*storing-a-history-of-moves*/}
 
-If you mutated the `squares` array, implementing time travel would be very difficult.
+మీరు `squares` array ని మ్యుటేట్ చేసినట్లయితే, టైం ట్రావెల్ ను అమలు చేయడం చాలా కష్టం.
 
-However, you used `slice()` to create a new copy of the `squares` array after every move, and treated it as immutable. This will allow you to store every past version of the `squares` array, and navigate between the turns that have already happened.
+అయితే, మీరు ప్రతి కదలిక తర్వాత `squares` array యొక్క కొత్త కాపీని సృష్టించడానికి `slice()` ని ఉపయోగించారు మరియు దానిని ఇమ్ముటబుల్గా పరిగణించారు. ఇది `squares` array యొక్క ప్రతి గత వెర్షన్ ను స్టోర్ చేయడానికి మరియు ఇప్పటికే జరిగిన కదలికల మధ్య నావిగేట్ అవ్వడానికి మిమ్మల్ని అనుమతిస్తుంది.
 
-You'll store the past `squares` arrays in another array called `history`, which you'll store as a new state variable. The `history` array represents all board states, from the first to the last move, and has a shape like this:
+మీరు గత `squares` array లను `history` అనే మరొక array లో స్టోర్ చేస్తారు, వీటిని మీరు కొత్త state వేరియబుల్‌గా స్టోర్ చేస్తారు. `history` array అన్ని బోర్డు state లను రెప్రెసెంత్ చేస్తుంది, మొదటి నుండి చివరి కదలిక వరకు మరియు ఇలాంటి షేప్ ని కలిగి ఉంటుంది:
 
 ```jsx
 [
-  // Before first move
+  // మొదటి కదలికకు ముందు
   [null, null, null, null, null, null, null, null, null],
-  // After first move
+  // మొదటి కదలికకు తర్వాత
   [null, null, null, null, 'X', null, null, null, null],
-  // After second move
+  // రెండవ కదలికకు తర్వాత
   [null, null, null, null, 'X', null, null, null, 'O'],
   // ...
 ]
 ```
 
-### Lifting state up, again {/*lifting-state-up-again*/}
+### state ని మళ్లీ లిఫ్ట్ చేయడం {/*lifting-state-up-again*/}
 
-You will now write a new top-level component called `Game` to display a list of past moves. That's where you will place the `history` state that contains the entire game history.
+మీరు ఇప్పుడు గత కదలికల లిస్ట్ ను డిస్ప్లే చేయడానికి `Game` అనే కొత్త టాప్-లెవెల్ కాంపోనెంట్ ని వ్రాస్తారు. మీరు మొత్తం గేమ్ చరిత్రను కలిగి ఉన్న `history` state ని ఇక్కడ ఉంచుతారు.
 
-Placing the `history` state into the `Game` component will let you remove the `squares` state from its child `Board` component. Just like you "lifted state up" from the `Square` component into the `Board` component, you will now lift it up from the `Board` into the top-level `Game` component. This gives the `Game` component full control over the `Board`'s data and lets it instruct the `Board` to render previous turns from the `history`.
+`Game` కాంపోనెంట్‌లో `history` state ని ఉంచడం వలన మీరు దాని చైల్డ్ `Board` కాంపోనెంట్ నుండి `squares` state ని రిమూవ్ చేయవచ్చు. మీరు `Square` కాంపోనెంట్ నుండి `Board` కాంపోనెంట్‌లోకి "state ని లిఫ్ట్ అప్" చేసినట్లే, ఇప్పుడు మీరు దాన్ని `Board` నుండి టాప్-లెవల్ `Game` కాంపోనెంట్‌లోకి లిఫ్ట్ చేయండి. ఇది `Board` యొక్క డేటాపై `Game` కాంపోనెంట్‌కి పూర్తి కంట్రోల్ ను ఇస్తుంది మరియు `history` నుండి ప్రీవియస్ కదలికలను రెండర్ చేయడానికి `Board` ని సూచిస్తుంది.
 
-First, add a `Game` component with `export default`. Have it render the `Board` component and some markup:
+ముందుగా, `export default` తో `Game` కాంపోనెంట్ని జోడించండి. ఇది `Board` కాంపోనెంట్ మరియు కొంత మార్కప్‌ను రెండర్ చేస్తుంది:
 
 ```js {1,5-16}
 function Board() {
@@ -1772,9 +1772,9 @@ export default function Game() {
 }
 ```
 
-Note that you are removing the `export default` keywords before the `function Board() {` declaration and adding them before the `function Game() {` declaration. This tells your `index.js` file to use the `Game` component as the top-level component instead of your `Board` component. The additional `div`s returned by the `Game` component are making room for the game information you'll add to the board later.
+మీరు `function Board() {` డిక్లరేషన్‌కు ముందు `export default` కీవర్డ్స్ ను తీసివేసి, `function Game() {` డిక్లరేషన్‌కు ముందు వాటిని జోడిస్తున్నారని గమనించండి. ఇది మీ `Board` కాంపోనెంట్‌కు బదులుగా `Game` కాంపోనెంట్‌ను టాప్-లెవల్ కాంపోనెంట్‌గా ఉపయోగించమని మీ `index.js` ఫైల్‌కి చెబుతుంది. `Game` కాంపోనెంట్ రిటర్న్ చేసిన అదనపు `div`లు మీరు తర్వాత బోర్డ్‌కి జోడించే గేమ్ సమాచారానికి చోటు కల్పిస్తాయి.
 
-Add some state to the `Game` component to track which player is next and the history of moves:
+తదుపరి ఏ ప్లేయర్ మరియు కదలికల చరిత్రను ట్రాక్ చేయడానికి `Game` కాంపోనెంట్‌కు కొంత state ని జోడించండి:
 
 ```js {2-3}
 export default function Game() {
@@ -1783,9 +1783,9 @@ export default function Game() {
   // ...
 ```
 
-Notice how `[Array(9).fill(null)]` is an array with a single item, which itself is an array of 9 `null`s.
+`[Array(9).fill(null)]` అనేది ఒకే ఎలిమెంట్తో కూడిన array, అదే 9 `null` ల array.
 
-To render the squares for the current move, you'll want to read the last squares array from the `history`. You don't need `useState` for this--you already have enough information to calculate it during rendering:
+ప్రస్తుత కదలిక కోసం స్క్వేర్‌లను రెండర్ చేయడానికి, మీరు `history` నుండి చివరి స్క్వేర్‌ల array ని రీడ్ చేయాలనుకుంటున్నారు. దీని కోసం మీకు `useState` అవసరం లేదు--రెండరింగ్ సమయంలో దీన్ని కాల్కులేట్ చేయడానికి మీకు ఇప్పటికే తగినంత సమాచారం ఉంది:
 
 ```js {4}
 export default function Game() {
@@ -1795,7 +1795,7 @@ export default function Game() {
   // ...
 ```
 
-Next, create a `handlePlay` function inside the `Game` component that will be called by the `Board` component to update the game. Pass `xIsNext`, `currentSquares` and `handlePlay` as props to the `Board` component:
+తర్వాత, గేమ్‌ను అప్‌డేట్ చేయడానికి `Board` కాంపోనెంట్ ద్వారా కాల్ చేయబడే `Game` కాంపోనెంట్‌లో `handlePlay` ఫంక్షన్‌ను క్రియేట్ చేయండి. `xIsNext`, `currentSquares` మరియు `handlePlay` ని `Board` కాంపోనెంట్‌కు props గా పాస్ చేయండి:
 
 ```js {6-8,13}
 export default function Game() {
@@ -1816,7 +1816,7 @@ export default function Game() {
 }
 ```
 
-Let's make the `Board` component fully controlled by the props it receives. Change the `Board` component to take three props: `xIsNext`, `squares`, and a new `onPlay` function that `Board` can call with the updated squares array when a player makes a move. Next, remove the first two lines of the `Board` function that call `useState`:
+తర్వాత, `Board` కాంపోనెంట్‌ని ఎడిట్ చేద్దాం, తద్వారా పాస్ చేసిన props ఈ కాంపోనెంట్‌ని పూర్తిగా కంట్రోల్ చేస్తాయి. మూడు props ను తీసుకోవడానికి `Board` కాంపోనెంట్‌ను మార్చండి: `xIsNext`, `squares` మరియు ప్లేయర్ కదలికలు చేసినప్పుడు అప్‌డేట్ చేయబడిన స్క్వేర్‌ల array తో `Board` కాల్ చేయగల కొత్త `onPlay` ఫంక్షన్. తర్వాత, `useState` ని కాల్ చేసే `Board` ఫంక్షన్‌లోని మొదటి రెండు లైన్లను రిమూవ్ చేయండి:
 
 ```js {1}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1827,7 +1827,7 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-Now replace the `setSquares` and `setXIsNext` calls in `handleClick` in the `Board` component with a single call to your new `onPlay` function so the `Game` component can update the `Board` when the user clicks a square:
+ఇప్పుడు `setSquares` మరియు `setXIsNext` కాల్‌లను `handleClick` లోని `Board` కాంపోనెంట్‌లో మీ కొత్త `onPlay` ఫంక్షన్‌కి ఒకే కాల్‌తో రీప్లేస్ చేయండి, తద్వారా యూసర్ స్క్వేర్‌ని క్లిక్ చేసినప్పుడు `Game` కాంపోనెంట్‌ `Board` ని అప్‌డేట్ చేయగలదు:
 
 ```js {12}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1847,11 +1847,11 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-The `Board` component is fully controlled by the props passed to it by the `Game` component. You need to implement the `handlePlay` function in the `Game` component to get the game working again.
+`Board` కాంపోనెంట్ పూర్తిగా `Game` కాంపోనెంట్ ద్వారా పంపబడిన props ద్వారా కంట్రోల్ చేయబడుతుంది. గేమ్ మళ్లీ పని చేయడానికి మీరు `Game` కాంపోనెంట్‌లో `handlePlay` ఫంక్షన్‌ని ఇంప్లిమెంట్ చేయాలి.
 
-What should `handlePlay` do when called? Remember that Board used to call `setSquares` with an updated array; now it passes the updated `squares` array to `onPlay`.
+కాల్ చేసినప్పుడు `handlePlay` ఏమి చేయాలి? Board అప్‌డేట్ చేయబడిన array తో `setSquares` ని కాల్ చేస్తుంది అని గుర్తుంచుకోండి, ఇప్పుడు అది అప్డేట్ చేయబడిన `squares` array ని `onPlay` కి పాస్ చేస్తుంది.
 
-The `handlePlay` function needs to update `Game`'s state to trigger a re-render, but you don't have a `setSquares` function that you can call any more--you're now using the `history` state variable to store this information. You'll want to update `history` by appending the updated `squares` array as a new history entry. You also want to toggle `xIsNext`, just as Board used to do:
+రీ-రెండర్‌ ని ట్రిగ్గర్ చేయడానికి `handlePlay` ఫంక్షన్‌ `Game` యొక్క state ని అప్‌డేట్ చేయాలి, కానీ మీరు ఇకపై కాల్ చేయగల `setSquares` ఫంక్షన్‌ను కలిగి లేరు--మీరు ఇప్పుడు ఈ ఇన్ఫర్మేషన్ని స్టోర్ చేయడానికి `history` state వేరియబుల్ ని ఉపయోగిస్తున్నారు. మీరు అప్డేట్ చేయబడిన `squares` array ని కొత్త చరిత్ర ఎంట్రీగా జోడించడం ద్వారా `history` ని అప్డేట్ చేయాలి. Board ఉపయోగించిన విధంగానే మీరు కూడా `xIsNext` ని టోగుల్ చేయాలనుకుంటున్నారు:
 
 ```js {4-5}
 export default function Game() {
@@ -1864,11 +1864,11 @@ export default function Game() {
 }
 ```
 
-Here, `[...history, nextSquares]` creates a new array that contains all the items in `history`, followed by `nextSquares`. (You can read the `...history` [*spread syntax*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) as "enumerate all the items in `history`".)
+ఇక్కడ, `[...history, nextSquares]` అనేది `history` లోని అన్ని ఐటమ్స్ ను కలిగి ఉన్న కొత్త array ని క్రియేట్ చేస్తుంది, తర్వాత `nextSquares`. (మీరు `...history` [*స్ప్రెడ్ సింటాక్స్*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) ని ఉపయోగించి `history` లో ఉన్న "అన్ని ఐటమ్స్ ను ఎన్యుమరేట్ చేయవచ్చు".)
 
-For example, if `history` is `[[null,null,null], ["X",null,null]]` and `nextSquares` is `["X",null,"O"]`, then the new `[...history, nextSquares]` array will be `[[null,null,null], ["X",null,null], ["X",null,"O"]]`.
+ఉదాహరణకు, `history` అనేది `[[null,null,null], ["X",null,null]]` మరియు `nextSquares` అనేది `["X",null,"O"]` అయితే, అప్పుడు కొత్త `[...history, nextSquares]` array అనేది `[[null,null,null], ["X",null,null], ["X",null,"O"]]`.
 
-At this point, you've moved the state to live in the `Game` component, and the UI should be fully working, just as it was before the refactor. Here is what the code should look like at this point:
+ఈ సమయంలో, మీరు `Game` కాంపోనెంట్‌లో నివసించడానికి state ని మూవ్ చేసారు మరియు UI రిఫ్యాక్టర్‌కు ముందు ఉన్నట్లే పూర్తిగా పని చేస్తుంది. ఈ సమయంలో కోడ్ ఎలా ఉండాలో ఇక్కడ ఉంది:
 
 <Sandpack>
 
@@ -1900,9 +1900,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -2017,19 +2017,19 @@ body {
 
 </Sandpack>
 
-### Showing the past moves {/*showing-the-past-moves*/}
+### గత కదలికల ప్రదర్శన {/*showing-the-past-moves*/}
 
-Since you are recording the tic-tac-toe game's history, you can now display a list of past moves to the player.
+మీరు టిక్-టాక్-టో గేమ్ చరిత్రను రికార్డ్ చేస్తున్నందున, మీరు ఇప్పుడు ప్లేయర్‌కు గత కదలికల లిస్ట్ ను డిస్ప్లే చేయవచ్చు.
 
-React elements like `<button>` are regular JavaScript objects; you can pass them around in your application. To render multiple items in React, you can use an array of React elements.
+`<button>` వంటి React ఎలిమెంట్స్ సాధారణ JavaScript ఆబ్జెక్ట్స్, మీరు వాటిని మీ అప్లికేషన్‌లో ఎక్కడికి అయినా పాస్ చేయవచ్చు. React లో మల్టిపుల్ ఐటెమ్‌లను రెండర్ చేయడానికి, మీరు React ఎలిమెంట్‌ల array ని ఉపయోగించవచ్చు.
 
-You already have an array of `history` moves in state, so now you need to transform it to an array of React elements. In JavaScript, to transform one array into another, you can use the [array `map` method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+మీరు ఇప్పటికే state లో `history` కదలికల array ని కలిగి ఉన్నారు, కాబట్టి ఇప్పుడు మీరు దాన్ని React ఎలిమెంట్‌ల array కి మార్చాలి. JavaScript లో, ఒక array ని మరొకదానికి మార్చడానికి, మీరు [array `map` మెథడ్](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) ని ఉపయోగించవచ్చు:
 
 ```jsx
 [1, 2, 3].map((x) => x * 2) // [2, 4, 6]
 ```
 
-You'll use `map` to transform your `history` of moves into React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves. Let's `map` over the `history` in the Game component:
+మీరు మీ కదలికల `history` ని స్క్రీన్‌పై బటన్‌లను రిప్రజెంట్ చేసే React ఎలిమెంట్స్ గా మార్చడానికి `map` ని ఉపయోగిస్తారు మరియు గత కదలికలకు "జంప్" చేయడానికి బటన్‌ల లిస్ట్ ను డిస్ప్లే చేస్తారు. Game కాంపోనెంట్‌లోని `history` పై `map` చేద్దాం:
 
 ```js {11-13,15-27,35}
 export default function Game() {
@@ -2049,9 +2049,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li>
@@ -2073,13 +2073,13 @@ export default function Game() {
 }
 ```
 
-You can see what your code should look like below. Note that you should see an error in the developer tools console that says: 
+మీ కోడ్ ఎలా ఉండాలో మీరు క్రింద చూడవచ్చు. మీరు డెవలపర్ టూల్స్ కన్సోల్‌లో ఇలా చెప్పే ఎర్రర్ ని చూడాలని గుర్తుంచుకోండి: 
 
 <ConsoleBlock level="warning">
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
 </ConsoleBlock>
   
-You'll fix this error in the next section.
+మీరు నెక్స్ట్ సెక్షన్లో ఈ ఎర్రర్ ని ఫిక్స్ చేస్తారు.
 
 <Sandpack>
 
@@ -2111,9 +2111,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -2155,9 +2155,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li>
@@ -2247,24 +2247,24 @@ body {
 
 </Sandpack>
 
-As you iterate through `history` array inside the function you passed to `map`, the `squares` argument goes through each element of `history`, and the `move` argument goes through each array index: `0`, `1`, `2`, …. (In most cases, you'd need the actual array elements, but to render a list of moves you will only need indexes.)
+మీరు `map` కి పంపిన ఫంక్షన్‌లోని `history` array ద్వారా ఇటరేట్ అవుతున్నపుడు, `squares` ఆర్గ్యుమెంట్ `history` లోని ప్రతి ఎలిమెంట్ గుండా వెళుతుంది మరియు `move` ఆర్గ్యుమెంట్ ప్రతి array ఇండెక్స్ ద్వారా వెళుతుంది: `0`, `1`, `2`, …. (చాలా సందర్భాలలో, మీకు యాక్చువల్ array ఎలిమెంట్లు అవసరం, కానీ కదలికల లిస్ట్ ను అందించడానికి మీకు ఇండెక్స్లు మాత్రమే అవసరం.)
 
-For each move in the tic-tac-toe game's history, you create a list item `<li>` which contains a button `<button>`. The button has an `onClick` handler which calls a function called `jumpTo` (that you haven't implemented yet).
+టిక్-టాక్-టో గేమ్ చరిత్రలో ప్రతి కదలిక కోసం, మీరు `<li>` లో ఒక బటన్‌ను కలిగి ఉన్న లిస్ట్ ఐటెం `<button>` ని క్రియేట్ చేస్తారు. బటన్‌లో `onClick` హ్యాండ్లర్ ఉంది, ఇది `jumpTo` (మీరు ఇంకా ఇంప్లిమెంట్ చేయలేదు) అనే ఫంక్షన్‌ని కాల్ చేస్తుంది.
 
-For now, you should see a list of the moves that occurred in the game and an error in the developer tools console. Let's discuss what the "key" error means.
+ప్రస్తుతానికి, మీరు గేమ్‌లో సంభవించిన కదలికల లిస్ట్ ను మరియు డెవలపర్ టూల్స్ కన్సోల్‌లో ఎర్రర్‌ను చూడాలి. "key" ఎర్రర్ అంటే ఏమిటో డిస్కస్ చేద్దాం.
 
-### Picking a key {/*picking-a-key*/}
+### key ని పిక్ చేసుకోవడం {/*picking-a-key*/}
 
-When you render a list, React stores some information about each rendered list item. When you update a list, React needs to determine what has changed. You could have added, removed, re-arranged, or updated the list's items.
+మీరు లిస్ట్ ను రెండర్ చేసినప్పుడు, ప్రతి రెండర్ చేయబడిన లిస్ట్ ఐటెం గురించిన కొంత ఇన్ఫర్మేషన్ ని React స్టోర్ చేస్తుంది. మీరు లిస్ట్ ను అప్‌డేట్ చేసినప్పుడు, React ఏమి చేంజ్ అయిందో గుర్తించాలి. మీరు లిస్ట్ ఐటెమ్‌లను జోడించి ఉండొచ్చు, రిమూవ్ చేసి ఉండొచ్చు, రీ-అరేంజ్ చేసి ఉండొచ్చు లేదా అప్డేట్ చేసి ఉండవచ్చు.
 
-Imagine transitioning from
+కింది పరిస్థితి నుండి:
 
 ```html
 <li>Alexa: 7 tasks left</li>
 <li>Ben: 5 tasks left</li>
 ```
 
-to
+మీరు దీనికి మారినట్లు ఊహించుకోండి:
 
 ```html
 <li>Ben: 9 tasks left</li>
@@ -2272,7 +2272,7 @@ to
 <li>Alexa: 5 tasks left</li>
 ```
 
-In addition to the updated counts, a human reading this would probably say that you swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and does not know what you intended, so you need to specify a _key_ property for each list item to differentiate each list item from its siblings. If your data was from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
+అప్‌డేట్ చేసిన కౌంట్లతో పాటు, దీన్ని చదివే వ్యక్తి మీరు Alexa మరియు Ben ల ఆర్డర్‌ను స్వాప్ చేశారని మరియు Alexa మరియు Ben మధ్య Claudia ని ఇన్సర్ట్ చేసారని బహుశా చెబుతారు. అయితే, React అనేది కంప్యూటర్ ప్రోగ్రామ్ మరియు మీరు ఉద్దేశించినది దానికి తెలియదు, కాబట్టి మీరు ప్రతి లిస్ట్ ఐటెమ్‌ను దాని తోబుట్టువుల నుండి డిఫ్ఫరెన్షిఏట్ చేయడానికి ప్రతి లిస్ట్ ఐటెమ్‌కు _key_ ప్రాపర్టీని స్పెసిఫ్య్ చేయాలి. మీ డేటా డేటాబేస్ నుండి వచ్చినట్లయితే, Alexa, Ben మరియు Claudia యొక్క డేటాబేస్ ID లు key లుగా ఉపయోగించబడతాయి.
 
 ```js {1}
 <li key={user.id}>
@@ -2280,23 +2280,23 @@ In addition to the updated counts, a human reading this would probably say that 
 </li>
 ```
 
-When a list is re-rendered, React takes each list item's key and searches the previous list's items for a matching key. If the current list has a key that didn't exist before, React creates a component. If the current list is missing a key that existed in the previous list, React destroys the previous component. If two keys match, the corresponding component is moved.
+లిస్ట్ రీ-రెండర్ చేయబడినప్పుడు, React ప్రతి లిస్ట్ ఐటెం యొక్క key ని తీసుకుంటుంది మరియు మ్యాచ్ అయ్యే key కోసం ప్రీవియస్ లిస్ట్ యొక్క ఐటెంలను సెర్చ్ చేస్తుంది. ప్రస్తుత లిస్ట్లో ఇంతకు ముందు లేని key ఉంటే, React ఆ కాంపోనెంట్ ని క్రియేట్ చేస్తుంది. ప్రస్తుత లిస్ట్లో ప్రీవియస్ లిస్ట్లో ఉన్న key మిస్ అయినట్లయితే, React ప్రీవియస్ కాంపోనెంట్ ని డిస్ట్రాయ్ చేస్తుంది. రెండు key లు మ్యాచ్ అయితే, కరెస్పాండింగ్ కాంపోనెంట్ మూవ్ చేయబడుతుంది.
 
-Keys tell React about the identity of each component, which allows React to maintain state between re-renders. If a component's key changes, the component will be destroyed and re-created with a new state.
+ప్రతి కాంపోనెంట్ యొక్క ఐడెంటిటీ గురించి key లు React కు తెలియజేస్తాయి, ఇది రీ-రెండర్‌ల మధ్య state ని మైంటైన్ చేయడానికి React ని అనుమతిస్తుంది. ఒక కాంపోనెంట్ యొక్క key మారినట్లయితే, కాంపోనెంట్ డిస్ట్రాయ్ చేయబడుతుంది మరియు కొత్త state తో రీ-క్రియేట్ చేయబడుతుంది.
 
-`key` is a special and reserved property in React. When an element is created, React extracts the `key` property and stores the key directly on the returned element. Even though `key` may look like it is passed as props, React automatically uses `key` to decide which components to update. There's no way for a component to ask what `key` its parent specified.
+`key` అనేది React ‌లో ప్రత్యేకమైన మరియు రిజర్వ్ చేయబడిన ప్రాపర్టీ. ఎలిమెంట్ క్రియేట్ చేయబడినపుడు, React `key` ప్రాపర్టీ ని ఎక్స్ట్రాక్ట్ చేస్తుంది మరియు రిటర్న్ అయిన ఎలిమెంట్ పై డైరెక్ట్గా key ని స్టోర్ చేస్తుంది. `key` అది props గా పాస్ అయినట్లు కనిపించినప్పటికీ, ఏ కాంపోనెంట్లను అప్‌డేట్ చేయాలో నిర్ణయించడానికి React ఆటోమేటిక్‌గా `key` ని ఉపయోగిస్తుంది. పేరెంట్ కాంపోనెంట్ ఏమి స్పెసిఫ్య్ చేసిందో తెలుసుకోవడానికి చైల్డ్ కాంపోనెంట్ `key` కి మార్గం లేదు.
 
-**It's strongly recommended that you assign proper keys whenever you build dynamic lists.** If you don't have an appropriate key, you may want to consider restructuring your data so that you do.
+**డైనమిక్ లిస్ట్లను బిల్డ్ చేస్తున్నప్పుడు ప్రొపెర్ key లను అసైన్ చేయాలని మేము గట్టిగా సిఫార్సు చేస్తున్నాము.** మీకు తగిన key లేకపోతే, మీరు మీ డేటాను రీస్ట్రక్చర్ చేయడం పరిగణించవచ్చు.
 
-If no key is specified, React will report an error and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list's items or inserting/removing list items. Explicitly passing `key={i}` silences the error but has the same problems as array indices and is not recommended in most cases.
+key ఏదీ స్పెసిఫ్య్ చేయబడకపోతే, React ఎర్రర్ ని రిపోర్ట్ చేస్తుంది మరియు డిఫాల్ట్‌గా array ఇండెక్స్ను key గా ఉపయోగిస్తుంది. లిస్ట్ ఐటెమ్‌లను రి-ఆర్డర్ చేయడానికి ప్రయత్నించినప్పుడు లేదా లిస్ట్ ఐటెమ్‌లను ఇన్‌సర్ట్ చేసేటప్పుడు/రిమూవ్ చేసేటప్పుడు array ఇండెక్స్ను key గా ఉపయోగించడం ప్రాబ్లెమ్గా మారవచ్చు. స్పష్టంగా `key={i}` ని పాస్ చేయడం వల్ల ఎర్రర్ ని నిశ్శబ్దం చేస్తుంది కానీ array ఇండెక్స్ మాదిరిగానే సమస్యలు ఉన్నాయి మరియు చాలా సందర్భాలలో సిఫార్సు చేయబడవు.
 
-Keys do not need to be globally unique; they only need to be unique between components and their siblings.
+key లు గ్లోబల్గా యూనిక్గా ఉండవలసిన అవసరం లేదు, వాటి కాంపోనెంట్లు మరియు వాటి తోబుట్టువుల మధ్య మాత్రమే యూనిక్గా ఉండాలి.
 
-### Implementing time travel {/*implementing-time-travel*/}
+### టైం ట్రావెల్ ని ఇంప్లిమెంట్ చేయడం {/*implementing-time-travel*/}
 
-In the tic-tac-toe game's history, each past move has a unique ID associated with it: it's the sequential number of the move. Moves will never be re-ordered, deleted, or inserted in the middle, so it's safe to use the move index as a key.
+టిక్-టాక్-టో గేమ్ చరిత్రలో, ప్రతి గత కదలిక దానితో అసోసియేట్ అయిన యూనిక్ ID ని కలిగి ఉంటుంది: ఇది కదలిక యొక్క క్రమ సంఖ్య. కదలికలు ఎప్పటికీ రి-ఆర్డర్ చేయబడవు, డిలీట్ చేయబడవు లేదా మధ్యలో ఇన్సర్ట్ చేయబడవు, కాబట్టి కదలిక ఇండెక్స్ను key గా ఉపయోగించడం సురక్షితం.
 
-In the `Game` function, you can add the key as `<li key={move}>`, and if you reload the rendered game, React's "key" error should disappear:
+`Game` ఫంక్షన్‌లో, మీరు key ని `<li key={move}>` గా జోడించవచ్చు మరియు మీరు రెండర్ చేసిన గేమ్‌ను రీ-లోడ్ చేస్తే, React యొక్క "key" ఎర్రర్ కనిపించదు:
 
 ```js {4}
 const moves = history.map((squares, move) => {
@@ -2339,9 +2339,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -2383,9 +2383,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li key={move}>
@@ -2476,7 +2476,7 @@ body {
 
 </Sandpack>
 
-Before you can implement `jumpTo`, you need the `Game` component to keep track of which step the user is currently viewing. To do this, define a new state variable called `currentMove`, defaulting to `0`:
+మీరు `jumpTo` ని ఇంప్లిమెంట్ చేయడానికి ముందు, యూసర్ ప్రస్తుతం ఏ స్టెప్ను చూస్తున్నారో ట్రాక్ చేయడానికి మీకు `Game` కాంపోనెంట్ అవసరం. దీన్ని చేయడానికి, `currentMove` అనే కొత్త state వేరియబుల్‌ని డిఫైన్ చేయండి, డిఫాల్ట్‌గా `0`:
 
 ```js {4}
 export default function Game() {
@@ -2488,7 +2488,7 @@ export default function Game() {
 }
 ```
 
-Next, update the `jumpTo` function inside `Game` to update that `currentMove`. You'll also set `xIsNext` to `true` if the number that you're changing `currentMove` to is even.
+తర్వాత, ఆ `currentMove` ని అప్‌డేట్ చేయడానికి `Game` లోపల `jumpTo` ఫంక్షన్‌ను అప్‌డేట్ చేయండి. మీరు `currentMove` ని మారుస్తున్న సంఖ్య ఈవెన్గా ఉంటే మీరు `xIsNext` ని `true` కి సెట్ చేస్తారు.
 
 ```js {4-5}
 export default function Game() {
@@ -2501,10 +2501,10 @@ export default function Game() {
 }
 ```
 
-You will now make two changes to the `Game`'s `handlePlay` function which is called when you click on a square.
+మీరు ఇప్పుడు స్క్వేర్‌పై క్లిక్ చేసినప్పుడు `Game` యొక్క `handlePlay` ఫంక్షన్‌కి రెండు మార్పులు చేస్తారు.
 
-- If you "go back in time" and then make a new move from that point, you only want to keep the history up to that point. Instead of adding `nextSquares` after all items (`...` spread syntax) in `history`, you'll add it after all items in `history.slice(0, currentMove + 1)` so that you're only keeping that portion of the old history.
-- Each time a move is made, you need to update `currentMove` to point to the latest history entry.
+- మీరు "సమయంలో వెనక్కి వెళ్లి" ఆపై ఆ పాయింట్ నుండి కొత్త కదలికను చేస్తే, మీరు చరిత్రను అప్పటి వరకు మాత్రమే ఉంచాలనుకుంటున్నారు. `history` లో అన్ని ఐటెమ్ల (`...` స్ప్రెడ్ సింటాక్స్) తర్వాత `nextSquares` ని జోడించే బదులు, మీరు దీన్ని `history.slice(0, currentMove + 1)` లో అన్ని ఐటెమ్ల తర్వాత జోడిస్తారు, తద్వారా మీరు పాత చరిత్రలో మాత్రమే ఆ భాగాన్ని ఉంచుతారు.
+- కదలిక జరిగిన ప్రతిసారి, తాజా చరిత్ర నమోదును పాయింట్ చేయడానికి మీరు `currentMove` ని అప్డేట్ చేయాలి.
 
 ```js {2-4}
 function handlePlay(nextSquares) {
@@ -2515,7 +2515,7 @@ function handlePlay(nextSquares) {
 }
 ```
 
-Finally, you will modify the `Game` component to render the currently selected move, instead of always rendering the final move:
+చివరగా, మీరు ఎల్లప్పుడూ ఫైనల్ కదలికను రెండరింగ్ చేయడానికి బదులుగా, ప్రస్తుతం ఎంచుకున్న కదలికను రెండర్ చేయడానికి `Game` కాంపోనెంట్ను మోడీఫ్య్ చేస్తారు:
 
 ```js {5}
 export default function Game() {
@@ -2528,7 +2528,7 @@ export default function Game() {
 }
 ```
 
-If you click on any step in the game's history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
+మీరు గేమ్ యొక్క చరిత్రలో ఏదైనా స్టెప్ పై క్లిక్ చేస్తే, ఆ స్టెప్ జరిగిన తర్వాత బోర్డు ఎలా ఉందో చూపించడానికి టిక్-టాక్-టో బోర్డు వెంటనే అప్‌డేట్ అవ్వాలి.
 
 <Sandpack>
 
@@ -2560,9 +2560,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -2608,9 +2608,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li key={move}>
@@ -2699,11 +2699,11 @@ body {
 
 </Sandpack>
 
-### Final cleanup {/*final-cleanup*/}
+### ఫైనల్ క్లీనప్ {/*final-cleanup*/}
 
-If you look at the code very closely, you may notice that `xIsNext === true` when `currentMove` is even and `xIsNext === false` when `currentMove` is odd. In other words, if you know the value of `currentMove`, then you can always figure out what `xIsNext` should be.
+మీరు కోడ్‌ను చాలా దగ్గరగా చూస్తే, `currentMove` ఈవెన్ అయినప్పుడు `xIsNext === true` మరియు `currentMove` ఆడ్గా ఉన్నప్పుడు `xIsNext === false` అని మీరు గమనించవచ్చు. మరో మాటలో చెప్పాలంటే, మీకు `currentMove` వేల్యూ తెలిస్తే, `xIsNext` ఎలా ఉండాలో మీరు ఎల్లప్పుడూ గుర్తించవచ్చు.
 
-There's no reason for you to store both of these in state. In fact, always try to avoid redundant state. Simplifying what you store in state reduces bugs and makes your code easier to understand. Change `Game` so that it doesn't store `xIsNext` as a separate state variable and instead figures it out based on the `currentMove`:
+మీరు ఈ రెండింటినీ state లో స్టోర్ చేయడానికి ఎటువంటి అవసరం లేదు. నిజానికి, ఎల్లప్పుడూ రిదండెంట్ state ని అవొఇద్ చేయడానికి ప్రయత్నించండి. మీరు state లో స్టోర్ చేసే వాటిని సింప్లిఫై చేయడం వలన బగ్‌లు తగ్గుతాయి మరియు మీ కోడ్‌ని సులభంగా అర్థం చేసుకోవచ్చు. `Game` ని మార్చండి, తద్వారా ఇది `xIsNext` ని ప్రత్యేక state వేరియబుల్‌గా స్టోర్ చేయదు మరియు బదులుగా `currentMove` ఆధారంగా దాన్ని గుర్తించండి:
 
 ```js {4,11,15}
 export default function Game() {
@@ -2725,20 +2725,20 @@ export default function Game() {
 }
 ```
 
-You no longer need the `xIsNext` state declaration or the calls to `setXIsNext`. Now, there's no chance for `xIsNext` to get out of sync with `currentMove`, even if you make a mistake while coding the components.
+మీకు ఇకపై `xIsNext` state డిక్లరేషన్ లేదా `setXIsNext` కి కాల్ చేయడం అవసరం లేదు. ఇప్పుడు, మీరు కాంపోనెంట్‌లను కోడింగ్ చేస్తున్నప్పుడు పొరపాటు చేసినప్పటికీ, `xIsNext` కి `currentMove` తో సింక్ (sync) నుండి విడిపోయే అవకాశం లేదు.
 
-### Wrapping up {/*wrapping-up*/}
+### సారాంశం {/*wrapping-up*/}
 
-Congratulations! You've created a tic-tac-toe game that:
+అభినందనలు! మీరు టిక్-టాక్-టో గేమ్‌ని క్రియేట్ చేశారు:
 
-- Lets you play tic-tac-toe,
-- Indicates when a player has won the game,
-- Stores a game's history as a game progresses,
-- Allows players to review a game's history and see previous versions of a game's board.
+- టిక్-టాక్-టో ఆడటానికి మిమ్మల్ని అనుమతిస్తుంది,
+- ప్లేయర్ గేమ్‌లో ఎప్పుడు గెలిచాడో సూచిస్తుంది,
+- గేమ్ ప్రోగ్రెస్ అవుతున్నపుడు గేమ్ చరిత్రను స్టోర్ చేస్తుంది,
+- ఆట చరిత్రను రివ్యూ చేయడానికి మరియు గేమ్ బోర్డ్ యొక్క ప్రీవియస్ వేరేషన్లను చూడటానికి ప్లేయర్స్ను అనుమతిస్తుంది.
 
-Nice work! We hope you now feel like you have a decent grasp of how React works.
+నైస్ వర్క్! React ఎలా పనిచేస్తుందనే దానిపై మీకు సరైన అవగాహన ఉన్నట్లు ఇప్పుడు మీరు భావిస్తున్నారని మేము ఆశిస్తున్నాము.
 
-Check out the final result here:
+ఫైనల్ రిజల్ట్ని ఇక్కడ చూడండి:
 
 <Sandpack>
 
@@ -2770,9 +2770,9 @@ function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Winner: ' + winner;
+    status = "విజేత: " + winner;
   } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+    status = "నెక్స్ట్ ప్లేయర్: " + (xIsNext ? "X" : "O");
   }
 
   return (
@@ -2816,9 +2816,9 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
-      description = 'Go to move #' + move;
+      description = '#' + move + ' కదలికకు వెళ్లండి';
     } else {
-      description = 'Go to game start';
+      description = 'ఆట ప్రారంభానికి వెళ్లండి';
     }
     return (
       <li key={move}>
@@ -2907,12 +2907,12 @@ body {
 
 </Sandpack>
 
-If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
+మీకు అదనపు సమయం ఉంటే లేదా మీ కొత్త React స్కిల్స్‌ను ప్రాక్టీస్ చేయాలనుకుంటే, టిక్-టాక్-టో గేమ్‌లో మీరు చేయగలిగిన మెరుగుదలల కోసం ఇక్కడ కొన్ని ఆలోచనలు ఉన్నాయి, ఇవి కష్టాన్ని పెంచే క్రమంలో జాబితా చేయబడ్డాయి:
 
-1. For the current move only, show "You are at move #..." instead of a button.
-1. Rewrite `Board` to use two loops to make the squares instead of hardcoding them.
-1. Add a toggle button that lets you sort the moves in either ascending or descending order.
-1. When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
-1. Display the location for each move in the format (row, col) in the move history list.
+1. ప్రస్తుత కదలిక కోసం మాత్రమే, బటన్‌కు బదులుగా "You are at move #..." ని చూపించండి.
+1. స్క్వేర్‌లను హార్డ్‌కోడ్ చేయడానికి బదులుగా వాటిని చేయడానికి రెండు లూప్‌లను ఉపయోగించడానికి `Board` ని రీరైట్ చేయండి.
+1. కదలికలను అసెండింగ్ లేదా డిసెండింగ్ ఆర్డర్లో సొర్త్ చేయడానికి మిమ్మల్ని అనుమతించే టోగుల్ బటన్‌ను జోడించండి.
+1. ఎవరైనా గెలిచినప్పుడు, విజయానికి కారణమైన మూడు స్క్వేర్‌లను హైలైట్ చేయండి (మరియు ఎవరూ గెలవనప్పుడు, ఫలితం డ్రా అని మెసేజ్ డిస్ప్లే చేయండి).
+1. కదలికల చరిత్ర లిస్ట్లోని ఫార్మాట్‌లో (row, col) ప్రతి కదలికకు లొకేషన్ ని డిస్ప్లే చేయండి.
 
-Throughout this tutorial, you've touched on React concepts including elements, components, props, and state. Now that you've seen how these concepts work when building a game, check out [Thinking in React](/learn/thinking-in-react) to see how the same React concepts work when build an app's UI.
+ఈ ట్యుటోరియల్ అంతటా, మీరు ఎలిమెంట్స్, కాంపోనెంట్‌లు, props మరియు state తో సహా React కాన్సెప్ట్‌లను టచ్ చేసారు. గేమ్‌ను బిల్డ్ చేసేటప్పుడు ఈ కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో ఇప్పుడు మీరు చూశారు, యాప్ UI ని బిల్డ్ చేసినప్పుడు అదే React కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో చూడటానికి [React లో ఆలోచించడం](/learn/thinking-in-react) చూడండి.
