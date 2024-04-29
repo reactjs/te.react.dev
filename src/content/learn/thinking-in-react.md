@@ -1,18 +1,18 @@
 ---
-title: Thinking in React
+title: React లాగా ఆలోచించడం
 ---
 
 <Intro>
 
-React can change how you think about the designs you look at and the apps you build. When you build a user interface with React, you will first break it apart into pieces called *components*. Then, you will describe the different visual states for each of your components. Finally, you will connect your components together so that the data flows through them. In this tutorial, we’ll guide you through the thought process of building a searchable product data table with React.
+మీరు చూసే డిజైన్‌లు మరియు మీరు రూపొందించే యాప్‌ల గురించి మీరు ఏమనుకుంటున్నారో React మార్చగలదు. మీరు React తో UI ను రూపొందించినప్పుడు, మీరు ముందుగా దాన్ని *కాంపోనెంట్స్* అని పిలిచే ముక్కలుగా విడదీస్తారు. అప్పుడు, మీరు మీ ప్రతి కాంపోనెంట్కి సంబంధించిన విభిన్న విసువల్ స్టేట్లను వివరిస్తారు. చివరగా, మీరు మీ కాంపోనెంట్లను ఒకదానితో ఒకటి కనెక్ట్ చేస్తారు, తద్వారా డేటా వాటి ద్వారా ప్రవహిస్తుంది. ఈ ట్యుటోరియల్‌లో, React తో సెర్చ్ చేయగల ప్రోడక్ట్ డేటా టేబుల్ ను రూపొందించే ఆలోచన ప్రక్రియ ద్వారా మేము మీకు మార్గనిర్దేశం చేస్తాము.
 
 </Intro>
 
-## Start with the mockup {/*start-with-the-mockup*/}
+## మోకప్‌తో ప్రారంభించండి {/*start-with-the-mockup*/}
 
-Imagine that you already have a JSON API and a mockup from a designer.
+మీరు ఇప్పటికే JSON API ని మరియు డిజైనర్ నుండి ఒక మోకప్ ని కలిగి ఉన్నారని ఊహించుకోండి.
 
-The JSON API returns some data that looks like this:
+JSON API ఇలా కనిపించే కొంత డేటాను రిటర్న్ చేస్తుంది:
 
 ```json
 [
@@ -25,25 +25,25 @@ The JSON API returns some data that looks like this:
 ]
 ```
 
-The mockup looks like this:
+మోకప్ ఇలా కనిపిస్తుంది:
 
 <img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
-To implement a UI in React, you will usually follow the same five steps.
+React లో UI ని ఇంప్లిమెంట్ చేయడానికి, మీరు సాధారణంగా అదే ఐదు దశలను అనుసరిస్తారు.
 
-## Step 1: Break the UI into a component hierarchy {/*step-1-break-the-ui-into-a-component-hierarchy*/}
+## స్టెప్ 1: UI ని కాంపోనెంట్ హైరార్కి గా విభజించండి {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
-Start by drawing boxes around every component and subcomponent in the mockup and naming them. If you work with a designer, they may have already named these components in their design tool. Ask them!
+మోకప్‌లోని ప్రతి కాంపోనెంట్ మరియు సబ్ కాంపోనెంట్ల చుట్టూ బాక్స్లను గీయడం మరియు వాటికి పేరు పెట్టడం ద్వారా ప్రారంభించండి. మీరు డిజైనర్‌తో పని చేస్తే, వారు తమ డిజైన్ టూల్‌లో ఈ కాంపోనెంట్లకు ఇప్పటికే పేరు పేరుపెట్టి ఉండవచ్చు. వాళ్ళని అడగండి!
 
-Depending on your background, you can think about splitting up a design into components in different ways:
+మీ నేపథ్యాన్ని బట్టి, మీరు డిజైన్‌ను వివిధ మార్గాల్లో కాంపోనెంట్లుగా విభజించడం గురించి ఆలోచించవచ్చు:
 
-* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
+* **ప్రోగ్రామింగ్**--మీరు కొత్త ఫంక్షన్ లేదా ఆబ్జెక్ట్‌ని క్రియేట్ చేయాలా వద్దా అని నిర్ణయించడానికి అదే టెక్నిక్లను ఉపయోగించండి. అటువంటి టెక్నాలజీ అనేది [సింగిల్ రెస్పాన్సిబిలిటీ ప్రిన్సిపుల్](https://en.wikipedia.org/wiki/Single_responsibility_principle), అంటే, ఒక కాంపోనెంట్ ఐడియల్ గా ఒక పనిని మాత్రమే చేయాలి. అది పెద్ద కాంపోనెంట్గా పెరుగుతూ ఉంటే, దానిని చిన్న సబ్ కాంపోనెంట్లుగా డీకంపోస్ చేయాలి.
+* **CSS**--మీరు క్లాస్ సెలెక్టర్‌లను దేని కోసం తయారు చేస్తారో పరిగణించండి. (అయినప్పటికీ, కాంపోనెంట్లు కొద్దిగా తక్కువగా ఉంటాయి)
+* **డిజైన్**--మీరు డిజైన్ యొక్క లేయర్‌లను ఎలా ఆర్గనైజ్ చేయాలో పరిశీలించండి.
 
-If your JSON is well-structured, you'll often find that it naturally maps to the component structure of your UI. That's because UI and data models often have the same information architecture--that is, the same shape. Separate your UI into components, where each component matches one piece of your data model.
+మీ JSON బాగా స్ట్రక్చర్ చేయబడినట్లయితే, అది మీ UI యొక్క కాంపోనెంట్ స్ట్రక్చర్‌కు సహజంగా మ్యాప్ చేయబడుతుందని మీరు తరచుగా కనుగొంటారు. ఎందుకంటే UI మరియు డేటా మోడల్‌లు తరచుగా ఒకే రకమైన ఇన్ఫర్మేషన్ ఆర్కిటెక్చర్ ని కలిగి ఉంటాయి--అంటే, సేమ్ షేప్. మీ UI ని కాంపోనెంట్లుగా విభజించండి, ఇక్కడ ప్రతి కాంపోనెంట్ మీ డేటా మోడల్‌లోని ఒక కాంపోనెంట్కి మ్యాచ్ అవుతుంది.
 
-There are five components on this screen:
+ఈ స్క్రీన్‌లో ఐదు కాంపోనెంట్లు ఉన్నాయి:
 
 <FullWidth>
 
@@ -51,19 +51,19 @@ There are five components on this screen:
 
 <img src="/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
 
-1. `FilterableProductTable` (grey) contains the entire app.
-2. `SearchBar` (blue) receives the user input.
-3. `ProductTable` (lavender) displays and filters the list according to the user input.
-4. `ProductCategoryRow` (green) displays a heading for each category.
-5. `ProductRow`	(yellow) displays a row for each product.
+1. `FilterableProductTable` (గ్రెయ్) మొత్తం యాప్‌ను కలిగి ఉంది.
+2. `SearchBar` (నీలం) యూజర్ ఇన్‌పుట్ ను రిసీవ్ చేసుకుంటుంది.
+3. `ProductTable` (లావెండర్) యూజర్ ఇన్‌పుట్ ప్రకారం లిస్ట్ ను ప్రదర్శిస్తుంది మరియు ఫిల్టర్ చేస్తుంది.
+4. `ProductCategoryRow` (ఆకుపచ్చ) ప్రతి కెటిగోరి కి హెడ్డింగ్ ను ప్రదర్శిస్తుంది.
+5. `ProductRow`	(పసుపు) ప్రతి ప్రోడక్ట్ కి రో (row) ను ప్రదర్శిస్తుంది.
 
 </CodeDiagram>
 
 </FullWidth>
 
-If you look at `ProductTable` (lavender), you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and you could go either way. For this example, it is a part of `ProductTable` because it appears inside the `ProductTable`'s list. However, if this header grows to be complex (e.g., if you add sorting), you can move it into its own `ProductTableHeader` component.
+మీరు `ProductTable` (లావెండర్) ని చూస్తే, టేబుల్ హెడర్ ("Name" మరియు "Price" లేబుల్‌లను కలిగి ఉంటుంది) దాని స్వంత కాంపోనెంట్ కాదని మీరు చూస్తారు. ఇది ప్రాధాన్యతకు సంబంధించిన విషయం మరియు మీరు ఏ విధంగానైనా వెళ్ళవచ్చు. ఈ ఉదాహరణ కోసం, ఇది `ProductTable` లో ఒక కాంపోనెంట్ ఎందుకంటే ఇది `ProductTable` యొక్క లిస్ట్ లో కనిపిస్తుంది. అయితే, ఈ హెడర్ సంక్లిష్టంగా పెరిగితే (ఉదా., మీరు సార్టింగ్‌ని జోడిస్తే), మీరు దానిని దాని స్వంత `ProductTableHeader` కాంపోనెంట్లోకి తరలించవచ్చు.
 
-Now that you've identified the components in the mockup, arrange them into a hierarchy. Components that appear within another component in the mockup should appear as a child in the hierarchy:
+ఇప్పుడు మీరు మోకప్‌లోని కాంపోనెంట్లను గుర్తించారు, వాటిని హైరార్కి పరంగా అమర్చండి. మోకప్‌లోని మరొక కాంపోనెంట్లో కనిపించే కాంపోనెంట్లు హైరార్కి లో చైల్డ్ గా కనిపించాలి:
 
 * `FilterableProductTable`
     * `SearchBar`
@@ -71,13 +71,13 @@ Now that you've identified the components in the mockup, arrange them into a hie
         * `ProductCategoryRow`
         * `ProductRow`
 
-## Step 2: Build a static version in React {/*step-2-build-a-static-version-in-react*/}
+## స్టెప్ 2: React లో స్టాటిక్ వెర్షన్‌ను బిల్డ్ చేయండి {/*step-2-build-a-static-version-in-react*/}
 
-Now that you have your component hierarchy, it's time to implement your app. The most straightforward approach is to build a version that renders the UI from your data model without adding any interactivity... yet! It's often easier to build the static version first and add interactivity later. Building a static version requires a lot of typing and no thinking, but adding interactivity requires a lot of thinking and not a lot of typing.
+ఇప్పుడు మీరు మీ కాంపోనెంట్ హైరార్కి ని కలిగి ఉన్నారు, మీ యాప్‌ని ఇంప్లిమెంట్ చేయడానికి ఇది సమయం. ఎటువంటి ఇంటరాక్టివిటీని జోడించకుండానే మీ డేటా మోడల్ నుండి UI ని అందించే వెర్షన్ ను బిల్డ్ చేయడం చాలా సరళమైన విధానం. మొదట స్టాటిక్ వెర్షన్‌ను బిల్డ్ చేయడం మరియు తర్వాత ఇంటరాక్టివిటీని జోడించడం చాలా సులభం. స్టాటిక్ వెర్షన్‌ను రూపొందించడానికి చాలా టైపింగ్ అవసరం మరియు ఆలోచన అవసరం లేదు, కానీ ఇంటరాక్టివిటీని జోడించడానికి చాలా ఆలోచన అవసరం మరియు ఎక్కువ టైపింగ్ కాదు.
 
-To build a static version of your app that renders your data model, you'll want to build [components](/learn/your-first-component) that reuse other components and pass data using [props.](/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
+మీ డేటా మోడల్‌ను రెండర్ చేసే మీ యాప్ యొక్క స్టాటిక్ వెర్షన్‌ను రూపొందించడానికి, మీరు ఇతర కాంపోనెంట్లను రీయూస్ చేయాలి మరియు [props](/learn/passing-props-to-a-component) ను ఉపయోగించి డేటాను పాస్ చేసే [కాంపోనెంట్లను](/learn/your-first-component) బిల్డ్ చేయాలనుకుంటున్నారు. props అనేది పేరెంట్ నుండి చైల్డ్ కు డేటాను పంపే మార్గం. (మీకు [state](/learn/state-a-components-memory) అనే కాన్సెప్ట్ బాగా తెలిసి ఉంటే, ఈ స్టాటిక్ వెర్షన్‌ని బిల్డ్ చేయడానికి స్టేట్‌ని అస్సలు ఉపయోగించవద్దు. state ఇంటరాక్టివిటీకి మాత్రమే రిజర్వ్ చేయబడింది, అంటే కాలక్రమేణా మారే డేటా. ఈ యాప్ స్టాటిక్ వెర్షన్ కాబట్టి, మీకు state అవసరం లేదు.)
 
-You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
+మీరు హైరార్కి లో (`FilterableProductTable` వంటి) టాప్ కాంపోనెంట్లను బిడ్ల్ చేయడం ప్రారంభించడం ద్వారా "టాప్ డౌన్" లేదా దిగువ కాంపోనెంట్ల నుండి (`ProductRow` వంటివి) పని చేయడం ద్వారా "బాటమ్ అప్" నిర్మించవచ్చు. సింపుల్ ఉదాహరణలలో, సాధారణంగా పైకి-క్రిందికి వెళ్లడం సులభం మరియు పెద్ద ప్రాజెక్ట్‌లలో, దిగువ నుండి పైకి వెళ్లడం సులభం.
 
 <Sandpack>
 
@@ -195,85 +195,85 @@ td {
 
 </Sandpack>
 
-(If this code looks intimidating, go through the [Quick Start](/learn/) first!)
+(ఈ కోడ్ కష్టంగా అనిపిస్తే, ముందుగా [క్విక్ స్టార్ట్](/learn/) ద్వారా వెళ్లండి!)
 
-After building your components, you'll have a library of reusable components that render your data model. Because this is a static app, the components will only return JSX. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. This is called _one-way data flow_ because the data flows down from the top-level component to the ones at the bottom of the tree.
+మీ కాంపోనెంట్లను బిల్డ్ చేసిన తర్వాత, మీ డేటా మోడల్‌ను రెండర్ చేసే రీయూజబుల్ కాంపోనెంట్ల లైబ్రరీని మీరు కలిగి ఉంటారు. ఇది స్టాటిక్ యాప్ అయినందున, కాంపోనెంట్‌లు JSX ని మాత్రమే రిటర్న్ చేస్తాయి. హైరార్కి టాప్ లో ఉన్న కాంపోనెంట్ (`FilterableProductTable`) మీ డేటా మోడల్‌ను props గా తీసుకుంటుంది. దీన్నే _వన్-వే డేటా ఫ్లో_ అంటారు ఎందుకంటే డేటా టాప్-లెవల్ కాంపోనెంట్ నుండి ట్రీ లో దిగువన ఉన్న వాటికి ప్రవహిస్తుంది.
 
 <Pitfall>
 
-At this point, you should not be using any state values. That’s for the next step!
+ఈ సమయంలో, మీరు ఎటువంటి state వాల్యూస్ ను ఉపయోగించకూడదు. అది తదుపరి దశ కోసం!
 
 </Pitfall>
 
-## Step 3: Find the minimal but complete representation of UI state {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
+## స్టెప్ 3: మీ UI state ని కనిష్టంగా మరియు పూర్తిగా రిప్రసెంట్ చేయడానికి ఒక మార్గాన్ని కనుగొనండి {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
 
-To make the UI interactive, you need to let users change your underlying data model. You will use *state* for this.
+UI ఇంటరాక్టివ్‌గా చేయడానికి, మీరు మీ అండర్లయింగ్ డేటా మోడల్‌ని మార్చడానికి యూసర్లను అనుమతించాలి. మీరు దీని కోసం *state* ని ఉపయోగిస్తారు.
 
-Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it [DRY (Don't Repeat Yourself).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you're building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don't store the number of items as another state value--instead, read the length of your array.
+మీ యాప్ గుర్తుంచుకోవాల్సిన డేటాను మార్చే మినిమల్ సెట్‌గా state గురించి ఆలోచించండి. state ని స్ట్రక్చర్ చేయడానికి అత్యంత ముఖ్యమైన సూత్రం దానిని [DRY (డోంట్ రిపీట్ యూర్సెల్ఫ్)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) గా ఉంచడం. మీ అప్లికేషన్‌కు అవసరమైన state యొక్క అబ్సొల్యూట్ మినిమల్ రిప్రజెంటేషన్ ను గుర్తించండి మరియు మిగతావన్నీ డిమాండ్‌పై కంప్యూట్ చేయండి. ఉదాహరణకు, మీరు షాపింగ్ లిస్ట్ ను బిల్డ్ చేస్తున్నట్లైతే, మీరు ఐటమ్స్ ను state లో array గా స్టోర్ చేయవచ్చు. మీరు లిస్ట్ లోని ఐటెమ్‌ల సంఖ్యను కూడా డిస్ప్లే చేయాలనుకుంటే, ఐటెమ్‌ల సంఖ్యను మరొక state వేల్యూ గా స్టోర్ చేయవద్దు - బదులుగా, మీ array లెన్త్ ను చదవండి.
 
-Now think of all of the pieces of data in this example application:
+ఇప్పుడు ఈ ఉదాహరణ అప్లికేషన్‌లోని అన్ని డేటా ముక్కల గురించి ఆలోచించండి:
 
-1. The original list of products
-2. The search text the user has entered
-3. The value of the checkbox
-4. The filtered list of products
+1. ప్రొడక్టుల ఒరిజినల్ లిస్ట్
+2. యూజర్ ఎంటర్ చేసిన సెర్చ్ టెక్స్ట్
+3. చెక్‌బాక్స్ వేల్యూ
+4. ఫిల్టర్ చేసిన ప్రొడక్ట్స్ లిస్ట్
 
-Which of these are state? Identify the ones that are not:
+వీటిలో state ఏది? దయచేసి state కానిది ఏమిటో గుర్తించండి:
 
-* Does it **remain unchanged** over time? If so, it isn't state.
-* Is it **passed in from a parent** via props? If so, it isn't state.
-* **Can you compute it** based on existing state or props in your component? If so, it *definitely* isn't state!
+* ఇది కాలక్రమేణా **మారకుండా** ఉంటుందా? అలా అయితే, అది state కాదు.
+* ఇది **పేరెంట్ నుండి** props ద్వారా పంపబడిందా? అలా అయితే, అది state కాదు.
+* **మీరు దీన్ని కంప్యూట్ చేయగలరా** ఇప్పటికే ఉన్న state లేదా మీ కాంపోనెంట్‌లోని props ఆధారంగా? అలా అయితే, ఇది *ఖచ్చితంగా* state కాదు!
 
-What's left is probably state.
+మిగిలి ఉన్నది బహుశా state మాత్రమే.
 
-Let's go through them one by one again:
+వాటిని ఒక్కొక్కటిగా మళ్లీ చూద్దాం:
 
-1. The original list of products is **passed in as props, so it's not state.** 
-2. The search text seems to be state since it changes over time and can't be computed from anything.
-3. The value of the checkbox seems to be state since it changes over time and can't be computed from anything.
-4. The filtered list of products **isn't state because it can be computed** by taking the original list of products and filtering it according to the search text and value of the checkbox.
+1. ప్రొడక్ట్స్ యొక్క ఒరిజినల్ లిస్ట్ **props గా పాస్ చేయబడింది, కనుక ఇది state కాదు.** 
+2. కాలక్రమేణా మారుతున్నందున సెర్చ్ టెక్స్ట్ state గా కనిపిస్తోంది మరియు దేని నుండి కంప్యూట్ చేయబడదు.
+3. చెక్‌బాక్స్ వేల్యూ కాలానుగుణంగా మారుతూ ఉంటుంది మరియు దేని నుండి కంప్యూట్ చేయబడదు కాబట్టి దాని వేల్యూ state గా కనిపిస్తోంది.
+4. ప్రొడక్ట్స్ యొక్క ఫిల్టర్ చేయబడిన లిస్ట్ **state కాదు ఎందుకంటే ఇది ప్రొడక్ట్స్ యొక్క అసలు లిస్ట్ను తీసుకొని, సెర్చ్ టెక్స్ట్ మరియు చెక్‌బాక్స్ వేల్యూ ప్రకారం ఫిల్టర్ చేయడం ద్వారా కంప్యూట్ చేయబడుతుంది**.
 
-This means only the search text and the value of the checkbox are state! Nicely done!
+దీని అర్థం సెర్చ్ టెక్స్ట్ మరియు చెక్‌బాక్స్ వేల్యూ మాత్రమే state! చక్కగా చేసారు!
 
 <DeepDive>
 
-#### Props vs State {/*props-vs-state*/}
+#### props వర్సెస్ state {/*props-vs-state*/}
 
-There are two types of "model" data in React: props and state. The two are very different:
+React ‌లో రెండు రకాల "మోడల్" డేటా ఉన్నాయి: props మరియు state. రెండూ చాలా భిన్నమైనవి:
 
-* [**Props** are like arguments you pass](/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
-* [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
+* [**props** మీరు ఒక ఫంక్షన్‌కు పంపే ఆర్గుమెంట్ల వంటివి](/learn/passing-props-to-a-component). అవి పేరెంట్ కాంపోనెంట్‌ నుండి చైల్డ్ కాంపోనెంట్‌కి డేటాను పాస్ చేయడానికి మరియు దాని అప్పీరెన్స్ ని కస్టమైజ్ చేసుకోవడానికి అనుమతిస్తాయి. ఉదాహరణకు, `Form` కాంపోనెంట్‌ `Button` కాంపోనెంట్‌ కి `color` prop ని పంపగలదు.
+* [**state** అనేది కాంపోనెంట్ యొక్క జ్ఞాపకశక్తి లాంటిది](/learn/state-a-components-memory). ఇది కొంత సమాచారాన్ని ట్రాక్ చేయడానికి మరియు పరస్పర చర్యలకు ప్రతిస్పందనగా మార్చడానికి ఒక కాంపోనెంట్ని అనుమతిస్తుంది. ఉదాహరణకు, ఒక `Button` `isHovered` state ని ట్రాక్ చేయవచ్చు.
 
-Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
+props మరియు state భిన్నంగా ఉంటాయి, కానీ అవి కలిసి పనిచేస్తాయి. ఒక పేరెంట్ కాంపోనెంట్ తరచుగా కొంత సమాచారాన్ని state లో ఉంచుతుంది (తద్వారా అది మార్చగలదు), మరియు *దాని చైల్డ్ కాంపోనెంట్‌లకు* వాటి props గా పంపుతుంది. ఒక్కసారి చదివినా తేడాలు ఇంకా అస్పష్టంగా ఉన్నా పర్వాలేదు. కొంచెం ప్రాక్టీస్‌తో మీరు సరిగ్గా అర్థం చేసుకోవచ్చు!
 
 </DeepDive>
 
-## Step 4: Identify where your state should live {/*step-4-identify-where-your-state-should-live*/}
+## స్టెప్ 4: మీ state ఎక్కడ నివసించాలో గుర్తించండి {/*step-4-identify-where-your-state-should-live*/}
 
-After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or *owns* the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state. This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
+మీ యాప్ యొక్క మినిమల్ state డేటాను గుర్తించిన తర్వాత, ఈ state ని మార్చడానికి ఏ కాంపోనెంట్ బాధ్యత వహిస్తుందో లేదా state ని *స్వంతం* చేసుకుంటుందో మీరు గుర్తించాలి. గుర్తుంచుకోండి: React వన్-వే డేటా ఫ్లోను ఉపయోగిస్తుంది, పేరెంట్ నుండి చైల్డ్ కాంపోనెంట్‌కు కాంపోనెంట్ హైరార్కి నుండి డేటాను పంపుతుంది. ఏ కాంపోనెంట్ ఏ state ని కలిగి ఉండాలో వెంటనే స్పష్టంగా తెలియకపోవచ్చు. మీరు ఈ కాన్సెప్ట్‌కు కొత్త అయితే ఇది సవాలుగా ఉంటుంది, కానీ మీరు ఈ స్టెప్స్ అనుసరించడం ద్వారా దాన్ని గుర్తించవచ్చు!
 
-For each piece of state in your application:
+మీ అప్లికేషన్‌లోని ప్రతి state కోసం:
 
-1. Identify *every* component that renders something based on that state.
-2. Find their closest common parent component--a component above them all in the hierarchy.
-3. Decide where the state should live:
-    1. Often, you can put the state directly into their common parent.
-    2. You can also put the state into some component above their common parent.
-    3. If you can't find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common parent component.
+1. ఆ state ఆధారంగా ఏదైనా రెండర్ చేసే *ప్రతి* కాంపోనెంట్ని గుర్తించండి.
+2. వారి అత్యంత క్లోసెస్ట్ కామన్ పేరెంట్ కాంపోనెంట్‌ను కనుగొనండి--హైరార్కి క్రమంలో అన్నింటి కంటే పైన ఉన్న కాంపోనెంట్.
+3. state ఎక్కడ నివసించాలో నిర్ణయించండి:
+    1. తరచుగా, మీరు state ని వారి కామన్ పేరెంట్స్కు డైరెక్ట్ గా ఉంచవచ్చు.
+    2. మీరు state ని వారి కామన్ పేరెంట్ పైన కొంత కాంపోనెంటు గా కూడా ఉంచవచ్చు.
+    3. మీరు state ని స్వంతం చేసుకోవడంలో అర్ధవంతమైన కాంపోనెంట్‌ను కనుగొనలేకపోతే, state ని హోల్డ్ చేసుకోవడం కోసం మాత్రమే కొత్త కాంపోనెంట్‌ని సృష్టించండి మరియు కామన్ పేరెంట్ కాంపోనెంట్ పైన ఉన్న హైరార్కిలో ఎక్కడో జోడించండి.
 
-In the previous step, you found two pieces of state in this application: the search input text, and the value of the checkbox. In this example, they always appear together, so it makes sense to put them into the same place.
+మునుపటి స్టెప్లో, మీరు ఈ అప్లికేషన్‌లో state కి సంబంధించిన రెండు కాంపోనెంట్లను కనుగొన్నారు: సెర్చ్ ఇన్‌పుట్ టెక్స్ట్ మరియు చెక్‌బాక్స్ వేల్యూ. ఈ ఉదాహరణలో, అవి ఎల్లప్పుడూ కలిసి కనిపిస్తాయి, కాబట్టి వాటిని ఒకే ప్లేసులో ఉంచడం అర్ధమే.
 
-Now let's run through our strategy for them:
+ఇప్పుడు వాటి కోసం మన వ్యూహాన్ని అమలు చేద్దాం:
 
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
-    * `SearchBar` needs to display that state (search text and checkbox value).
-1. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-2. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+1. **state ని ఉపయోగించే కాంపోనెంట్లను గుర్తించండి:**
+    * `ProductTable` ఆ state (సెర్చ్ టెక్స్ట్ మరియు చెక్‌బాక్స్ వేల్యూ) ఆధారంగా ప్రోడక్ట్ లిస్ట్ను ఫిల్టర్ చేయాలి. 
+    * `SearchBar` ఆ state ని ప్రదర్శించాలి (సెర్చ్ టెక్స్ట్ మరియు చెక్‌బాక్స్ వేల్యూ).
+1. **వారి కామన్ పేరెంట్ను కనుగొనండి:** రెండు కాంపోనెంట్లు పంచుకునే మొదటి పేరెంట్ కాంపోనెంట్ `FilterableProductTable`.
+2. **state ఎక్కడ నివసిస్తుందో నిర్ణయించండి**: మేము ఫిల్టర్ టెక్స్ట్ మరియు చెక్ చేసిన state వేల్యూలను `FilterableProductTable` లో ఉంచుతాము.
 
-So the state values will live in `FilterableProductTable`. 
+కాబట్టి state వేల్యూలు `FilterableProductTable` లో ఉంటాయి. 
 
-Add state to the component with the [`useState()` Hook.](/reference/react/useState) Hooks are special functions that let you "hook into" React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
+[`useState() హుక్‌`](/reference/react/useState) తో కాంపోనెంట్‌కు state ను జోడించండి. హుక్స్ అనేవి మిమల్ని React కి "హుక్ ఇన్" చేసే ప్రత్యేక ఫంక్షన్స్. `FilterableProductTable` ఎగువన రెండు state వేరియబుల్‌లను జోడించి, వాటి ఇనీటియాల్ state ని పేర్కొనండి:
 
 ```js
 function FilterableProductTable({ products }) {
@@ -281,7 +281,7 @@ function FilterableProductTable({ products }) {
   const [inStockOnly, setInStockOnly] = useState(false);  
 ```
 
-Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
+ఆపై, `filterText` మరియు `inStockOnly` ని `ProductTable` మరియు `SearchBar` కి props గా పాస్ చేయండి:
 
 ```js
 <div>
@@ -295,7 +295,7 @@ Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as p
 </div>
 ```
 
-You can start seeing how your application will behave. Edit the `filterText` initial value from `useState('')` to `useState('fruit')` in the sandbox code below. You'll see both the search input text and the table update:
+మీ అప్లికేషన్ ఎలా ప్రవర్తిస్తుందో మీరు చూడటం ప్రారంభించవచ్చు. దిగువ శాండ్‌బాక్స్ కోడ్‌లో `filterText` ఇనీటియాల్ వేల్యూను `useState('')` నుండి `useState('fruit')` కి ఎడిట్ చేయండి. మీరు సెర్చ్ ఇన్‌పుట్ టెక్స్ట్ మరియు టేబుల్ అప్‌డేట్ రెండింటినీ చూస్తారు:
 
 <Sandpack>
 
@@ -437,7 +437,7 @@ td {
 
 </Sandpack>
 
-Notice that editing the form doesn't work yet. There is a console error in the sandbox above explaining why:
+ఫోర్మ్ను ఎడిట్ చేయడం ఇంకా పని చేయలేదని గమనించండి. పైన ఉన్న శాండ్‌బాక్స్‌లో కన్సోల్ ఎర్రర్ ఎందుకు ఉంది అని వివరిస్తుంది:
 
 <ConsoleBlock level="error">
 
@@ -445,7 +445,7 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 
 </ConsoleBlock>
 
-In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
+ఎగువ శాండ్‌బాక్స్‌లో, `ProductTable` మరియు `SearchBar` టేబుల్, ఇన్‌పుట్ మరియు చెక్‌బాక్స్‌ను రెండర్ చేయడానికి `filterText` మరియు `inStockOnly` prop లను చదవండి. ఉదాహరణకు, ఇన్‌పుట్ వేల్యూను `SearchBar` ఎలా పోపులేట్ చేస్తుందో ఇక్కడ ఉంది:
 
 ```js {1,6}
 function SearchBar({ filterText, inStockOnly }) {
@@ -457,16 +457,16 @@ function SearchBar({ filterText, inStockOnly }) {
         placeholder="Search..."/>
 ```
 
-However, you haven't added any code to respond to the user actions like typing yet. This will be your final step.
+అయినప్పటికీ, టైపింగ్ వంటి యూజర్ ఆక్షన్లకు రెస్పొంద్ అవ్వడానికి మీరు ఇంకా ఏ కోడ్‌ను జోడించలేదు. ఇది మీ చివరి దశ అవుతుంది.
 
 
-## Step 5: Add inverse data flow {/*step-5-add-inverse-data-flow*/}
+## స్టెప్ 5: ఇన్వెర్సె డేటా ఫ్లో ని జోడించండి {/*step-5-add-inverse-data-flow*/}
 
-Currently your app renders correctly with props and state flowing down the hierarchy. But to change the state according to user input, you will need to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`. 
+ప్రస్తుతం మీ యాప్ props మరియు క్రిందికి ప్రవహించే హైరార్కి state తో సరిగ్గా అందించబడుతుంది. కానీ యూసర్ ఇన్‌పుట్ ప్రకారం state ని మార్చడానికి, మీరు ఇతర మార్గంలో ప్రవహించే డేటాకు సపోర్ట్ ఇవ్వాలి: హైరార్కి లో లోతైన ఫారమ్ కాంపోనెంట్లు `FilterableProductTable` లో state ని అప్డేట్ చేయాలి.
 
-React makes this data flow explicit, but it requires a little more typing than two-way data binding. If you try to type or check the box in the example above, you'll see that React ignores your input. This is intentional. By writing `<input value={filterText} />`, you've set the `value` prop of the `input` to always be equal to the `filterText` state passed in from `FilterableProductTable`. Since `filterText` state is never set, the input never changes.
+React ఈ డేటా ఫ్లో ని స్పష్టంగా చేస్తుంది, అయితే దీనికి రెండు-మార్గాల డేటా బైండింగ్ కంటే కొంచెం ఎక్కువ టైపింగ్ అవసరం. మీరు ఎగువ ఉదాహరణలో బాక్స్ను టైప్ చేయడానికి లేదా చెక్ చేయడానికి ప్రయత్నిస్తే, React మీ ఇన్‌పుట్‌ను ఇగ్నోర్ చేస్తుంది అని మీరు గమనిస్తారు. ఇది ఉద్దేశపూర్వకం. `<input value={filterText} />` ని వ్రాయడం ద్వారా, మీరు `input` యొక్క `value` prop ని ఎల్లప్పుడూ `FilterableProductTable` నుండి అందించిన `filterText` state కి సమానంగా ఉండేలా సెట్ చేసారు. `filterText` state ఎప్పుడూ సెట్ చేయబడనందున, ఇన్‌పుట్ ఎప్పటికీ మారదు.
 
-You want to make it so whenever the user changes the form inputs, the state updates to reflect those changes. The state is owned by `FilterableProductTable`, so only it can call `setFilterText` and `setInStockOnly`. To let `SearchBar` update the `FilterableProductTable`'s state, you need to pass these functions down to `SearchBar`:
+యూసర్ ఫోర్మ్ ఇన్‌పుట్‌లను మార్చినప్పుడల్లా, ఆ మార్పులను రిఫ్లెక్ట్ చేసేలా state అప్డేట్ చేయబడుతుంది అని మీరు దీన్ని చేయాలనుకుంటున్నారు. state `FilterableProductTable` యాజమాన్యంలో ఉంది, కనుక ఇది మాత్రమే `setFilterText` మరియు `setInStockOnly` ని కాల్ చేయగలదు. `SearchBar` ని `FilterableProductTable` state ని అప్‌డేట్ చేయడానికి, మీరు ఈ ఫంక్షన్‌లను `SearchBar` కి పంపాలి:
 
 ```js {2,3,10,11}
 function FilterableProductTable({ products }) {
@@ -482,7 +482,7 @@ function FilterableProductTable({ products }) {
         onInStockOnlyChange={setInStockOnly} />
 ```
 
-Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
+`SearchBar` లోపల, మీరు `onChange` ఈవెంట్ హ్యాండ్లర్‌లను జోడించి, వాటి నుండి పేరెంట్ state ని సెట్ చేస్తారు:
 
 ```js {4,5,13,19}
 function SearchBar({
@@ -506,7 +506,7 @@ function SearchBar({
           onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
-Now the application fully works!
+ఇప్పుడు అప్లికేషన్ పూర్తిగా పనిచేస్తుంది!
 
 <Sandpack>
 
@@ -656,8 +656,8 @@ td {
 
 </Sandpack>
 
-You can learn all about handling events and updating state in the [Adding Interactivity](/learn/adding-interactivity) section.
+మీరు ఈవెంట్‌లను హేండిల్ చేయడం మరియు state ని అప్డేట్ చేయడం గురించి [ఇంటరాక్టివిటీని జోడించడం](/learn/adding-interactivity) విభాగంలో తెలుసుకోవచ్చు.
 
-## Where to go from here {/*where-to-go-from-here*/}
+## ఇక్కడి నుంచి ఎక్కడికి వెళ్లాలి {/*where-to-go-from-here*/}
 
-This was a very brief introduction to how to think about building components and applications with React. You can [start a React project](/learn/installation) right now or [dive deeper on all the syntax](/learn/describing-the-ui) used in this tutorial.
+React తో కాంపోనెంట్లను బిల్డ్ చేయడం మరియు అప్లికేషన్లను తయారు చేయడం గురించి ఎలా ఆలోచించాలో ఇది చాలా బ్రీఫ్ పరిచయం. మీరు ఇప్పుడే [React ప్రాజెక్ట్‌ను ప్రారంభించవచ్చు](/learn/installation) లేదా ఈ ట్యుటోరియల్‌లో ఉపయోగించిన [అన్ని సింటాక్స్‌పై లోతుగా డైవ్ చేయండి](/learn/describing-the-ui).
