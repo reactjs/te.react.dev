@@ -2915,4 +2915,8 @@ body {
 1. ఎవరైనా గెలిచినప్పుడు, విజయానికి కారణమైన మూడు స్క్వేర్‌లను హైలైట్ చేయండి (మరియు ఎవరూ గెలవనప్పుడు, ఫలితం డ్రా అని మెసేజ్ డిస్ప్లే చేయండి).
 1. కదలికల చరిత్ర లిస్ట్లోని ఫార్మాట్‌లో (row, col) ప్రతి కదలికకు లొకేషన్ ని డిస్ప్లే చేయండి.
 
+<<<<<<< HEAD
 ఈ ట్యుటోరియల్ అంతటా, మీరు ఎలిమెంట్స్, కాంపోనెంట్‌లు, props మరియు state తో సహా React కాన్సెప్ట్‌లను టచ్ చేసారు. గేమ్‌ను బిల్డ్ చేసేటప్పుడు ఈ కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో ఇప్పుడు మీరు చూశారు, యాప్ UI ని బిల్డ్ చేసినప్పుడు అదే React కాన్సెప్ట్‌లు ఎలా పని చేస్తాయో చూడటానికి [React లో ఆలోచించడం](/learn/thinking-in-react) చూడండి.
+=======
+Throughout this tutorial, you've touched on React concepts including elements, components, props, and state. Now that you've seen how these concepts work when building a game, check out [Thinking in React](/learn/thinking-in-react) to see how the same React concepts work when building an app's UI.
+>>>>>>> b7bf6c16fb3152626a71c115b3242df6eb93bc6e
