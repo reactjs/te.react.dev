@@ -1,57 +1,57 @@
 ---
-title: Using TypeScript
+title: TypeScript ను ఉపయోగించి
 re: https://github.com/reactjs/react.dev/issues/5960
 ---
 
 <Intro>
 
-TypeScript is a popular way to add type definitions to JavaScript codebases. Out of the box, TypeScript [supports JSX](/learn/writing-markup-with-jsx) and you can get full React Web support by adding [`@types/react`](https://www.npmjs.com/package/@types/react) and [`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) to your project.
+TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు టైప్ నిర్వచనాలను చేర్చడానికి ప్రాచుర్యం పొందిన విధానం. TypeScript [JSX ని మద్దతు ఇస్తుంది](/learn/writing-markup-with-jsx) మరియు మీరు మీ ప్రాజెక్ట్‌కి [`@types/react`](https://www.npmjs.com/package/@types/react) మరియు [`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) ను చేర్చడం ద్వారా పూర్తి React Web మద్దతు పొందవచ్చు.
 
 </Intro>
 
 <YouWillLearn>
 
-* [TypeScript with React Components](/learn/typescript#typescript-with-react-components)
-* [Examples of typing with Hooks](/learn/typescript#example-hooks)
-* [Common types from `@types/react`](/learn/typescript/#useful-types)
-* [Further learning locations](/learn/typescript/#further-learning)
+* [React Components తో TypeScript](/learn/typescript#typescript-with-react-components)
+* [Hooks తో typing examples](/learn/typescript#example-hooks)
+* [`@types/react` నుండి సాధారణ types](/learn/typescript/#useful-types)
+* [మరింత తెలుసుకోడానికి స్థానాలు](/learn/typescript/#further-learning)
 
 </YouWillLearn>
 
-## Installation {/*installation*/}
 
-All [production-grade React frameworks](/learn/start-a-new-react-project#production-grade-react-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
+
+## ఇన్‌స్టాలేషన్ {/*installation*/}
+
+అన్ని [production-grade React frameworks](/learn/start-a-new-react-project#production-grade-react-frameworks) TypeScript ఉపయోగాన్ని సపోర్ట్ చేస్తాయి. ఇన్‌స్టాలేషన్ కోసం ఫ్రేమ్‌వర్క్ ప్రత్యేక గైడ్‌ను అనుసరించండి:
 
 - [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
 - [Gatsby](https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/)
 - [Expo](https://docs.expo.dev/guides/typescript/)
+### ఉన్న React ప్రాజెక్ట్‌కు TypeScript ను చేర్చడం {/*adding-typescript-to-an-existing-react-project*/}
 
-### Adding TypeScript to an existing React project {/*adding-typescript-to-an-existing-react-project*/}
-
-To install the latest version of React's type definitions:
+React యొక్క type నిర్వచనాల తాజా వెర్షన్ ఇన్‌స్టాల్ చేయడానికి:
 
 <TerminalBlock>
 npm install @types/react @types/react-dom
 </TerminalBlock>
 
-The following compiler options need to be set in your `tsconfig.json`:
+మీ `tsconfig.json` లో, క్రింది compiler ఆప్షన్స్ సెట్ చేయాలి:
 
-1. `dom` must be included in [`lib`](https://www.typescriptlang.org/tsconfig/#lib) (Note: If no `lib` option is specified, `dom` is included by default).
-1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) must be set to one of the valid options. `preserve` should suffice for most applications.
-  If you're publishing a library, consult the [`jsx` documentation](https://www.typescriptlang.org/tsconfig/#jsx) on what value to choose.
-
-## TypeScript with React Components {/*typescript-with-react-components*/}
+1. [`lib`](https://www.typescriptlang.org/tsconfig/#lib) లో `dom` ఉండాలి (గమనిక: ఎలాంటి `lib` ఆప్షన్ పేర్కొనబడలేదు అంటే, `dom` డిఫాల్ట్ గా ఉంటుంది).
+1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) ని సరైన ఆప్షన్‌లలో ఒకదానిపై సెట్ చేయాలి. చాలా అప్లికేషన్స్‌కి `preserve` సరిపోతుంది.
+  మీరు లైబ్రరీని publish చేస్తున్నట్లు అయితే, ఎలాంటి విలువను ఎంచుకోవాలో [`jsx` డాక్యుమెంటేషన్](https://www.typescriptlang.org/tsconfig/#jsx) ను సంప్రదించండి.
+## React Components తో TypeScript {/*typescript-with-react-components*/}
 
 <Note>
 
-Every file containing JSX must use the `.tsx` file extension. This is a TypeScript-specific extension that tells TypeScript that this file contains JSX.
+JSX కలిగి ఉన్న ప్రతి ఫైల్ `.tsx` ఫైల్ విస్తరణను ఉపయోగించాలి. ఇది TypeScript-extension, ఈ ఫైల్ లో JSX ఉందని TypeScript కి తెలియజేస్తుంది.
 
 </Note>
 
-Writing TypeScript with React is very similar to writing JavaScript with React. The key difference when working with a component is that you can provide types for your component's props. These types can be used for correctness checking and providing inline documentation in editors.
+React తో TypeScript వ్రాయడం, React తో JavaScript వ్రాయడముతో చాలా సమానం. ఒక కాంపోనెంట్‌తో పని చేస్తున్నప్పుడు ముఖ్యమైన తేడా మీరు మీ కాంపోనెంట్ యొక్క props కోసం types అందించవచ్చు. ఈ types సరిగ్గా ఉన్నాయో లేదో చెక్ చేయడానికి మరియు editor లో inline documentation అందించడానికి ఉపయోగించవచ్చు.
 
-Taking the [`MyButton` component](/learn#components) from the [Quick Start](/learn) guide, we can add a type describing the `title` for the button:
+[Quick Start](/learn) గైడ్ నుండి [`MyButton` కాంపోనెంట్](/learn#components) తీసుకుని, బటన్ కోసం `title` ను వివరిస్తున్న type ని జోడించవచ్చు:
 
 <Sandpack>
 
@@ -80,11 +80,12 @@ export default App = AppTSX;
 
  <Note>
 
-These sandboxes can handle TypeScript code, but they do not run the type-checker. This means you can amend the TypeScript sandboxes to learn, but you won't get any type errors or warnings. To get type-checking, you can use the [TypeScript Playground](https://www.typescriptlang.org/play) or use a more fully-featured online sandbox.
+ఈ sandboxes TypeScript code ను handle చేయగలవు, కానీ type-checker ను run చేయలేవు. అంటే, మీరు TypeScript sandboxes లో సవరణలు చేయవచ్చు, కానీ మీకు ఏదైనా type errors లేదా హెచ్చరికలు రావు. type-checking పొందడానికి, మీరు [TypeScript Playground](https://www.typescriptlang.org/play) ను లేదా మరింత సర్వసన్నద్ధమైన online sandbox ను ఉపయోగించవచ్చు.
 
 </Note>
 
-This inline syntax is the simplest way to provide types for a component, though once you start to have a few fields to describe it can become unwieldy. Instead, you can use an `interface` or `type` to describe the component's props:
+ఈ inline syntax ఒక కాంపోనెంట్‌కు types అందించడానికి అత్యంత సులభమైన మార్గం, కానీ మీరు కొన్ని ఫీల్డ్స్‌ను వివరిస్తూ ప్రారంభించినప్పుడు ఇది గందరగోళంగా మారవచ్చు. దీనికి బదులుగా, మీరు కాంపోనెంట్ యొక్క props ను వివరిచేందుకు `interface` లేదా `type` ఉపయోగించవచ్చు:
+
 
 <Sandpack>
 
@@ -119,32 +120,31 @@ export default App = AppTSX;
 
 </Sandpack>
 
-The type describing your component's props can be as simple or as complex as you need, though they should be an object type described with either a `type` or `interface`. You can learn about how TypeScript describes objects in [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html) but you may also be interested in using [Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) to describe a prop that can be one of a few different types and the [Creating Types from Types](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) guide for more advanced use cases.
+మీ కాంపోనెంట్ యొక్క props ను వివరిస్తున్న type అవసరమున్నంత సులభంగా లేదా క్లిష్టంగా ఉండవచ్చు, కానీ అవి `type` లేదా `interface` తో వివరిస్తే ఒక object type గా ఉండాలి. TypeScript objects ను ఎలా వివరిస్తుందో మీరు [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html) లో నేర్చుకోవచ్చు కానీ మీరు [Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) ను కూడా props వివరిస్తూ ఉపయోగించడం గురించి ఆసక్తి చూపవచ్చు, ఇది కొన్ని విభిన్న type లలో ఒకటి కావచ్చు మరియు మరింత ఆధునిక ఉపయోగకేసులకు [Creating Types from Types](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) గైడ్ ఉపయోగపడుతుంది.
 
+## ఉదాహరణ Hooks {/*example-hooks*/}
 
-## Example Hooks {/*example-hooks*/}
+`@types/react` నుండి type నిర్వచనలు బిల్ట్-ఇన్ Hooks కోసం types కలిగి ఉంటాయి, కాబట్టి మీరు వాటిని మీ కంపోనెంట్లలో ఎలాంటి అదనపు సెటప్ లేకుండా ఉపయోగించవచ్చు. అవి మీ కంపోనెంట్ లో మీరు వ్రాసే కోడ్ ను పరిగణనలోకి తీసుకుంటాయి, కాబట్టి చాలా సార్లు మీరు [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) పొందుతారు మరియు సాధారణంగా types ను ఇవ్వడానికి ఎటువంటి సమస్యలు ఎదుర్కొనవలసిన అవసరం లేదు.
 
-The type definitions from `@types/react` include types for the built-in Hooks, so you can use them in your components without any additional setup. They are built to take into account the code you write in your component, so you will get [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) a lot of the time and ideally do not need to handle the minutiae of providing the types. 
-
-However, we can look at a few examples of how to provide types for Hooks.
+అయితే, హుక్స్ కోసం types ను అందించే కొన్ని ఉదాహరణలను చూడవచ్చు.
 
 ### `useState` {/*typing-usestate*/}
 
-The [`useState` Hook](/reference/react/useState) will re-use the value passed in as the initial state to determine what the type of the value should be. For example:
+[`useState` Hook](/reference/react/useState) initial state గా ఇవ్వబడిన value ను తిరిగి ఉపయోగించి ఆ value యొక్క type ఏమిటి అని నిర్ధారిస్తుంది. ఉదాహరణకు:
 
 ```ts
 // Infer the type as "boolean"
 const [enabled, setEnabled] = useState(false);
 ```
 
-This will assign the type of `boolean` to `enabled`, and `setEnabled` will be a function accepting either a `boolean` argument, or a function that returns a `boolean`. If you want to explicitly provide a type for the state, you can do so by providing a type argument to the `useState` call:
+ఇది `enabled` కు `boolean` type ను కేటాయిస్తుంది, మరియు `setEnabled` `boolean` argument ను లేదా `boolean` ను రిటర్న్ చేసే function ను స్వీకరించే function అవుతుంది. మీరు state కోసం type ను స్పష్టంగా ఇవ్వాలనుకుంటే, మీరు `useState` కాల్ కు type argument ను ఇవ్వవచ్చు:
 
 ```ts 
 // Explicitly set the type to "boolean"
 const [enabled, setEnabled] = useState<boolean>(false);
 ```
 
-This isn't very useful in this case, but a common case where you may want to provide a type is when you have a union type. For example, `status` here can be one of a few different strings:
+ఇది ఈ సందర్భంలో అంతగా ఉపయోగకరమైనది కాదు, కానీ మీరు type ను ఇవ్వాలనుకునే సాధారణ సందర్భం యూనియన్ type ఉన్నప్పుడు. ఉదాహరణకు, `status` ఇక్కడ కొన్ని వేర్వేరు strings లో ఒకటి కావచ్చు:
 
 ```ts
 type Status = "idle" | "loading" | "success" | "error";
@@ -152,7 +152,7 @@ type Status = "idle" | "loading" | "success" | "error";
 const [status, setStatus] = useState<Status>("idle");
 ```
 
-Or, as recommended in [Principles for structuring state](/learn/choosing-the-state-structure#principles-for-structuring-state), you can group related state as an object and describe the different possibilities via object types:
+లేదా, [Principles for structuring state](/learn/choosing-the-state-structure#principles-for-structuring-state) లో సిఫారసు చేసినట్లు, మీరు సంబంధిత state ను ఒక object గా కలిపి, వేర్వేరు అవకాశాలను object types ద్వారా వివరించవచ్చు:
 
 ```ts
 type RequestState =
@@ -166,7 +166,7 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 
 ### `useReducer` {/*typing-usereducer*/}
 
-The [`useReducer` Hook](/reference/react/useReducer) is a more complex Hook that takes a reducer function and an initial state. The types for the reducer function are inferred from the initial state. You can optionally provide a type argument to the `useReducer` call to provide a type for the state, but it is often better to set the type on the initial state instead:
+[`useReducer` Hook](/reference/react/useReducer) ఒక కాంప్లెక్స్ Hook, ఇది ఒక reducer function మరియు ఒక initial state ను తీసుకుంటుంది. reducer function కోసం types initial state నుండి అంచనా వేయబడతాయి. మీరు `useReducer` కాల్ కు type argument ను ఇస్తూ state కోసం type అందించవచ్చు, కానీ initial state పై type సెట్ చేయడం మంచిది:
 
 <Sandpack>
 
@@ -221,14 +221,14 @@ export default App = AppTSX;
 </Sandpack>
 
 
-We are using TypeScript in a few key places:
+మేము TypeScript ను కొన్ని కీలక ప్రదేశాలలో ఉపయోగిస్తున్నాము:
 
- - `interface State` describes the shape of the reducer's state.
- - `type CounterAction` describes the different actions which can be dispatched to the reducer.
- - `const initialState: State` provides a type for the initial state, and also the type which is used by `useReducer` by default.
- - `stateReducer(state: State, action: CounterAction): State` sets the types for the reducer function's arguments and return value.
+ - `interface State` reducer యొక్క state యొక్క ఆకారాన్ని వర్ణిస్తుంది.
+ - `type CounterAction` reducer కు పంపవచ్చే వేర్వేరు actions ను వర్ణిస్తుంది.
+ - `const initialState: State` initial state కు type ను అందిస్తుంది, మరియు అదే type `useReducer` ద్వారా డిఫాల్ట్ గా ఉపయోగించబడుతుంది.
+ - `stateReducer(state: State, action: CounterAction): State` reducer function యొక్క arguments మరియు return value కు types ను సెట్ చేస్తుంది.
 
-A more explicit alternative to setting the type on `initialState` is to provide a type argument to `useReducer`:
+`initialState` పై type సెట్ చేయడానికి మరింత స్పష్టమైన ప్రత్యామ్నాయం `useReducer` కు type argument ను అందించడం:
 
 ```ts
 import { stateReducer, State } from './your-reducer-implementation';
@@ -242,9 +242,9 @@ export default function App() {
 
 ### `useContext` {/*typing-usecontext*/}
 
-The [`useContext` Hook](/reference/react/useContext) is a technique for passing data down the component tree without having to pass props through components. It is used by creating a provider component and often by creating a Hook to consume the value in a child component.
+[`useContext` Hook](/reference/react/useContext) props ను components ద్వారా పంపకుండా, డేటా ను component tree లోకి పంపించడానికి ఒక పద్ధతి. ఇది ఒక provider component ను సృష్టించడం ద్వారా ఉపయోగించబడుతుంది మరియు తరచుగా ఒక Hook ను సృష్టించడం ద్వారా చైల్డ్ component లో value ను వినియోగించడానికి ఉపయోగించబడుతుంది.
 
-The type of the value provided by the context is inferred from the value passed to the `createContext` call:
+context ద్వారా అందించబడిన value యొక్క type, `createContext` కాల్ కు పంపబడిన value నుండి అంచనా వేయబడుతుంది:
 
 <Sandpack>
 
@@ -284,9 +284,9 @@ export default App = AppTSX;
 
 </Sandpack>
 
-This technique works when you have a default value which makes sense - but there are occasionally cases when you do not, and in those cases `null` can feel reasonable as a default value. However, to allow the type-system to understand your code, you need to explicitly set `ContextShape | null` on the `createContext`. 
+ఈ పద్ధతి మీకు అర్థం చేసే డిఫాల్ట్ value ఉన్నప్పుడు పనిచేస్తుంది - కానీ అప్పుడప్పుడు మీరు డిఫాల్ట్ value లేని సందర్భాలు ఉంటాయి, మరియు ఆ సందర్భాలలో `null` ఒక డిఫాల్ట్ value గా సరైనదిగా భావించవచ్చు. అయితే, type-system మీ కోడ్‌ను అర్థం చేసుకునేలా చేయడానికి, మీరు `createContext` లో `ContextShape | null` ను స్పష్టంగా సెట్ చేయాలి.
 
-This causes the issue that you need to eliminate the `| null` in the type for context consumers. Our recommendation is to have the Hook do a runtime check for it's existence and throw an error when not present:
+ఇది `| null` ను context వినియోగదారుల type లో నుండి తొలగించాల్సిన సమస్యను కలిగిస్తుంది. మా సిఫారసు ఏమిటంటే, Hook ఒక రన్‌టైమ్ చెక్ చేసి, అది లేకపోతే ఒక తప్పును చూపిస్తుంది:
 
 ```js {5, 16-20}
 import { createContext, useContext, useState, useMemo } from 'react';
@@ -329,7 +329,7 @@ function MyComponent() {
 
 ### `useMemo` {/*typing-usememo*/}
 
-The [`useMemo`](/reference/react/useMemo) Hooks will create/re-access a memorized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed. The result of calling the Hook is inferred from the return value from the function in the first parameter. You can be more explicit by providing a type argument to the Hook.
+[`useMemo`](/reference/react/useMemo) Hook ఒక function కాల్ నుండి ఒక మేమోరైజ్డ్ value ను సృష్టిస్తుంది/తిరిగి యాక్సెస్ చేస్తుంది, dependencies (2వ పరామితి) మారినప్పుడు మాత్రమే function ను మళ్ళీ నడుపుతుంది. Hook ను కాల్ చేయడం వలన వచ్చిన ఫలితం మొదటి పరామితిలోని function నుండి తిరిగి వచ్చిన value నుండి అంచనా వేయబడుతుంది. మీరు type argument ను Hook కు అందించడం ద్వారా మరింత స్పష్టంగా చేయవచ్చు.
 
 ```ts
 // The type of visibleTodos is inferred from the return value of filterTodos
@@ -339,7 +339,7 @@ const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 ### `useCallback` {/*typing-usecallback*/}
 
-The [`useCallback`](/reference/react/useCallback) provide a stable reference to a function as long as the dependencies passed into the second parameter are the same. Like `useMemo`, the function's type is inferred from the return value of the function in the first parameter, and you can be more explicit by providing a type argument to the Hook.
+[`useCallback`](/reference/react/useCallback) ఒక function కు dependencies  మారకుండా ఉంటే స్థిరమైన రిఫరెన్స్ ను అందిస్తుంది. `useMemo` లాగా, function యొక్క type మొదటి పరామితిలోని function యొక్క return value నుండి అంచనా వేయబడుతుంది, మరియు మీరు type argument ను Hook కు అందించడం ద్వారా మరింత స్పష్టంగా చేయవచ్చు.
 
 
 ```ts
@@ -348,9 +348,9 @@ const handleClick = useCallback(() => {
 }, [todos]);
 ```
 
-When working in TypeScript strict mode `useCallback` requires adding types for the parameters in your callback. This is because the type of the callback is inferred from the return value of the function, and without parameters the type cannot be fully understood.
+TypeScript strict mode లో పని చేస్తున్నప్పుడు `useCallback` లో మీ callback లోని parameters కు types ను చేర్చాలి. ఇది callback యొక్క type function యొక్క return value నుండి అంచనా వేయబడుతుంది, మరియు parameters లేకుండా type పూర్తిగా అర్థం కాలేదు.
 
-Depending on your code-style preferences, you could use the `*EventHandler` functions from the React types to provide the type for the event handler at the same time as defining the callback: 
+మీ కోడ్-స్టైల్ ప్రాధాన్యతలపై ఆధారపడి, callback ను నిర్వచించే సమయంలో event handler కోసం type ను అందించడానికి React types నుండి `*EventHandler` functions ను ఉపయోగించవచ్చు: 
 
 ```ts
 import { useState, useCallback } from 'react';
@@ -371,14 +371,12 @@ export default function Form() {
 }
 ```
 
-## Useful Types {/*useful-types*/}
+## ఉపయోగకరమైన Types {/*useful-types*/}
 
-There is quite an expansive set of types which come from the `@types/react` package, it is worth a read when you feel comfortable with how React and TypeScript interact. You can find them [in React's folder in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts). We will cover a few of the more common types here.
+`@types/react` ప్యాకేజ్ నుండి చాలా విస్తృతమైన types సెట్ వస్తుంది, React మరియు TypeScript ఎలా పరస్పర చర్యలో ఉంటాయో మీరు సౌకర్యంగా భావించినప్పుడు ఇది చదవడం విలువైనది. మీరు వాటిని [DefinitelyTyped లో React యొక్క ఫోల్డర్ లో](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts) కనుగొనవచ్చు. ఇక్కడ మేము కొన్ని సాధారణంగా ఉపయోగించే types ను కవర్ చేస్తాము.
+### DOM ఈవెంట్స్ {/*typing-dom-events*/}
 
-### DOM Events {/*typing-dom-events*/}
-
-When working with DOM events in React, the type of the event can often be inferred from the event handler. However, when you want to extract a function to be passed to an event handler, you will need to explicitly set the type of the event.
-
+React లో DOM ఈవెంట్స్ తో పని చేస్తున్నప్పుడు, ఈవెంట్ యొక్క type ఈవెంట్ హ్యాండ్లర్ నుండి తరచుగా అంచనా వేయబడుతుంది. అయితే, ఒక function ను ఈవెంట్ హ్యాండ్లర్ కు పంపించడానికి extraction చేయాలనుకుంటే, మీరు ఈవెంట్ యొక్క type ను స్పష్టంగా సెట్ చేయాలి.
 <Sandpack>
 
 ```tsx src/App.tsx active
@@ -407,15 +405,15 @@ export default App = AppTSX;
 
 </Sandpack>
 
-There are many types of events provided in the React types - the full list can be found [here](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b580df54c0819ec9df62b0835a315dd48b8594a9/types/react/index.d.ts#L1247C1-L1373) which is based on the [most popular events from the DOM](https://developer.mozilla.org/en-US/docs/Web/Events).
+React types లో చాలా రకాల ఈవెంట్స్ అందుబాటులో ఉన్నాయి - పూర్తి జాబితాను [ఇక్కడ](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b580df54c0819ec9df62b0835a315dd48b8594a9/types/react/index.d.ts#L1247C1-L1373) చూడవచ్చు, ఇది [DOM నుండి ప్రసిద్ధమైన ఈవెంట్స్](https://developer.mozilla.org/en-US/docs/Web/Events) పై ఆధారపడి ఉంటుంది.
 
-When determining the type you are looking for you can first look at the hover information for the event handler you are using, which will show the type of the event.
+మీరు అవసరమైన type ను నిర్ణయిస్తున్నప్పుడు, మీరు ఉపయోగిస్తున్న ఈవెంట్ హ్యాండ్లర్ కోసం హోవర్ సమాచారాన్ని మొదట చూడవచ్చు, ఇది ఈవెంట్ యొక్క type ను చూపిస్తుంది.
 
-If you need to use an event that is not included in this list, you can use the `React.SyntheticEvent` type, which is the base type for all events.
+ఈ జాబితాలో లేని ఈవెంట్ ను ఉపయోగించాల్సి వస్తే, మీరు `React.SyntheticEvent` type ను ఉపయోగించవచ్చు, ఇది అన్ని ఈవెంట్స్ కోసం బేస్ type.
 
 ### Children {/*typing-children*/}
 
-There are two common paths to describing the children of a component. The first is to use the `React.ReactNode` type, which is a union of all the possible types that can be passed as children in JSX:
+ఒక కంపోనెంట్ యొక్క children ను వివరించడానికి రెండు సాధారణ మార్గాలు ఉన్నాయి. మొదటిది `React.ReactNode` type ను ఉపయోగించడం, ఇది JSX లో children గా పంపబడగల అన్ని సంభావ్య type ల యొక్క యూనియన్:
 
 ```ts
 interface ModalRendererProps {
@@ -424,7 +422,7 @@ interface ModalRendererProps {
 }
 ```
 
-This is a very broad definition of children. The second is to use the `React.ReactElement` type, which is only JSX elements and not JavaScript primitives like strings or numbers:
+ఇది children యొక్క విస్తృత నిర్వచనం. రెండవది `React.ReactElement` type ను ఉపయోగించడం, ఇది కేవలం JSX elements మాత్రమే, JavaScript primitives వంటి strings లేదా numbers కాదు:
 
 ```ts
 interface ModalRendererProps {
@@ -433,13 +431,13 @@ interface ModalRendererProps {
 }
 ```
 
-Note, that you cannot use TypeScript to describe that the children are a certain type of JSX elements, so you cannot use the type-system to describe a component which only accepts `<li>` children. 
+గమనించండి, మీరు TypeScript ను children ఒక నిర్దిష్ట రకం JSX elements అని వివరించడానికి ఉపయోగించలేరు, కాబట్టి కేవలం `<li>` children మాత్రమే అంగీకరించే ఒక కంపోనెంట్ ను type-system ద్వారా వివరించలేరు.
 
-You can see an example of both `React.ReactNode` and `React.ReactElement` with the type-checker in [this TypeScript playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA).
+`React.ReactNode` మరియు `React.ReactElement` రెండింటి ఉదాహరణను type-checker తో సహా [ఈ TypeScript playground](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA) లో చూడవచ్చు.
 
 ### Style Props {/*typing-style-props*/}
 
-When using inline styles in React, you can use `React.CSSProperties` to describe the object passed to the `style` prop. This type is a union of all the possible CSS properties, and is a good way to ensure you are passing valid CSS properties to the `style` prop, and to get auto-complete in your editor.
+React లో inline styles ఉపయోగిస్తున్నప్పుడు, `style` prop కు పంపబడే object ను వర్ణించడానికి మీరు `React.CSSProperties` ను ఉపయోగించవచ్చు. ఈ type అన్ని సంభావ్య CSS properties యొక్క యూనియన్, మరియు ఇది మీరు `style` prop కు సరైన CSS properties పంపిస్తున్నారని నిర్ధారించడానికి మరియు మీ ఎడిటర్ లో auto-complete పొందడానికి మంచి మార్గం.
 
 ```ts
 interface MyComponentProps {
@@ -447,17 +445,17 @@ interface MyComponentProps {
 }
 ```
 
-## Further learning {/*further-learning*/}
+## మరింత నేర్చుకోవడానికి {/*further-learning*/}
 
-This guide has covered the basics of using TypeScript with React, but there is a lot more to learn.
-Individual API pages on the docs may contain more in-depth documentation on how to use them with TypeScript.
+ఈ గైడ్ React తో TypeScript ఉపయోగించడం గురించి ప్రాథమికాలను కవర్ చేసింది, కానీ ఇంకా నేర్చుకోవడానికి చాలా ఉంది.
+Docs లోని వ్యక్తిగత API పేజీలు TypeScript తో వాటిని ఎలా ఉపయోగించాలో గురించి మరింత లోతైన డాక్యుమెంటేషన్ కలిగి ఉండవచ్చు.
 
-We recommend the following resources:
+మేము ఈ కింది వనరులను సిఫారసు చేస్తున్నాము:
 
- - [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/) is the official documentation for TypeScript, and covers most key language features.
+ - [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/) TypeScript కోసం అధికారిక డాక్యుమెంటేషన్, మరియు అధిక భాగం కీలక భాషా లక్షణాలను కవర్ చేస్తుంది.
 
- - [The TypeScript release notes](https://devblogs.microsoft.com/typescript/) cover new features in depth.
+ - [The TypeScript release notes](https://devblogs.microsoft.com/typescript/) కొత్త లక్షణాలను లోతుగా కవర్ చేస్తాయి.
 
- - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) is a community-maintained cheatsheet for using TypeScript with React, covering a lot of useful edge cases and providing more breadth than this document.
+ - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) TypeScript తో React ఉపయోగించడానికి కమ్యూనిటీ-నిర్వహిత చీట్ షీట్, చాలా ఉపయోగకరమైన ఎడ్జ్ కేసులను కవర్ చేస్తూ ఈ డాక్యుమెంట్ కంటే మరింత విస్తృతతనాన్ని అందిస్తుంది.
 
- - [TypeScript Community Discord](https://discord.com/invite/typescript) is a great place to ask questions and get help with TypeScript and React issues.
+ - [TypeScript Community Discord](https://discord.com/invite/typescript) TypeScript మరియు React సమస్యలతో సహాయం కోసం ప్రశ్నలు అడగడానికి మరియు సహాయం పొందడానికి గొప్ప ప్రదేశం.
