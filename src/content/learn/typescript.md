@@ -153,7 +153,7 @@ type Status = "idle" | "loading" | "success" | "error";
 const [status, setStatus] = useState<Status>("idle");
 ```
 
-లేదా, [Principles for structuring state](/learn/choosing-the-state-structure#principles-for-structuring-state) లో సిఫారసు చేసినట్లు, మీరు సంబంధిత state ను ఒక object గా కలిపి, వేర్వేరు అవకాశాలను object types ద్వారా వివరించవచ్చు:
+లేదా, [ప్రిన్సిపుల్స్ ఫర్ స్తృక్చరింగ్ state](/learn/choosing-the-state-structure#principles-for-structuring-state) లో సిఫారసు చేసినట్లు, మీరు సంబంధిత state ను ఒక ఆబ్జెక్ట్ గా గ్రూప్ చేసి, వేర్వేరు అవకాశాలను ఆబ్జెక్ట్ టైప్స్ ద్వారా వివరించవచ్చు:
 
 ```ts
 type RequestState =
