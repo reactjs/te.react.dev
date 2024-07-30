@@ -138,7 +138,7 @@ export default App = AppTSX;
 const [enabled, setEnabled] = useState(false);
 ```
 
-ఇది `enabled` కు `boolean` type ను కేటాయిస్తుంది, మరియు `setEnabled` `boolean` argument ను లేదా `boolean` ను రిటర్న్ చేసే function ను స్వీకరించే function అవుతుంది. మీరు state కోసం type ను స్పష్టంగా ఇవ్వాలనుకుంటే, మీరు `useState` కాల్ కు type argument ను ఇవ్వవచ్చు:
+ఇది `enabled` కు `boolean` టైప్ ను అసైన్ చేస్తుంది, మరియు `setEnabled` `boolean` ఆర్గుమెంట్ ను స్వీకరించే ఫంక్షన్ లేదా `boolean` ను రిటర్న్ చేసే ఫంక్షన్ అవుతుంది. మీరు state కోసం టైప్ ను ఎక్సప్లిసిట్ గా ఇవ్వాలనుకుంటే, మీరు `useState` కాల్ కు టైప్ ఆర్గుమెంట్ ను ఇవ్వవచ్చు:
 
 ```ts 
 // Explicitly set the type to "boolean"
