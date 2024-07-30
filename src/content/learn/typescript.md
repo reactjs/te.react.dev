@@ -1,5 +1,5 @@
 ---
-title: TypeScript ను ఉపయోగించి
+title: TypeScript ని ఉపయోగించడం
 re: https://github.com/reactjs/react.dev/issues/5960
 ---
 
