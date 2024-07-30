@@ -437,7 +437,7 @@ interface ModalRendererProps {
 
 `React.ReactNode` మరియు `React.ReactElement` రెండింటి ఉదాహరణను టైప్-చెక్కర్ తో సహా [ఈ TypeScript ప్లేగ్రౌండ్](https://www.typescriptlang.org/play?#code/JYWwDg9gTgLgBAJQKYEMDG8BmUIjgIilQ3wChSB6CxYmAOmXRgDkIATJOdNJMGAZzgwAFpxAR+8YADswAVwGkZMJFEzpOjDKw4AFHGEEBvUnDhphwADZsi0gFw0mDWjqQBuUgF9yaCNMlENzgAXjgACjADfkctFnYkfQhDAEpQgD44AB42YAA3dKMo5P46C2tbJGkvLIpcgt9-QLi3AEEwMFCItJDMrPTTbIQ3dKywdIB5aU4kKyQQKpha8drhhIGzLLWODbNs3b3s8YAxKBQAcwXpAThMaGWDvbH0gFloGbmrgQfBzYpd1YjQZbEYARkB6zMwO2SHSAAlZlYIBCdtCRkZpHIrFYahQYQD8UYYFA5EhcfjyGYqHAXnJAsIUHlOOUbHYhMIIHJzsI0Qk4P9SLUBuRqXEXEwAKKfRZcNA8PiCfxWACecAAUgBlAAacFm80W-CU11U6h4TgwUv11yShjgJjMLMqDnN9Dilq+nh8pD8AXgCHdMrCkWisVoAet0R6fXqhWKhjKllZVVxMcavpd4Zg7U6Qaj+2hmdG4zeRF10uu-Aeq0LBfLMEe-V+T2L7zLVu+FBWLdLeq+lc7DYFf39deFVOotMCACNOCh1dq219a+30uC8YWoZsRyuEdjkevR8uvoVMdjyTWt4WiSSydXD4NqZP4AymeZE072ZzuUeZQKheQgA) లో చూడవచ్చు.
 
-### Style Props {/*typing-style-props*/}
+### స్టైల్ props {/*typing-style-props*/}
 
 React లో inline styles ఉపయోగిస్తున్నప్పుడు, `style` prop కు పంపబడే object ను వర్ణించడానికి మీరు `React.CSSProperties` ను ఉపయోగించవచ్చు. ఈ type అన్ని సంభావ్య CSS properties యొక్క యూనియన్, మరియు ఇది మీరు `style` prop కు సరైన CSS properties పంపిస్తున్నారని నిర్ధారించడానికి మరియు మీ ఎడిటర్ లో auto-complete పొందడానికి మంచి మార్గం.
 
