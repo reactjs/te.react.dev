@@ -243,7 +243,7 @@ export default function App() {
 
 ### `useContext` {/*typing-usecontext*/}
 
-[`useContext` Hook](/reference/react/useContext) props ను components ద్వారా పంపకుండా, డేటా ను component tree లోకి పంపించడానికి ఒక పద్ధతి. ఇది ఒక provider component ను సృష్టించడం ద్వారా ఉపయోగించబడుతుంది మరియు తరచుగా ఒక Hook ను సృష్టించడం ద్వారా చైల్డ్ component లో value ను వినియోగించడానికి ఉపయోగించబడుతుంది.
+[`useContext` Hook](/reference/react/useContext) props ను కాంపోనెంట్స్ ద్వారా పంపకుండా, డేటా ను కాంపోనెంట్ ట్రీ లోకి పంపించడానికి ఒక పద్ధతి. ఇది ఒక provider కాంపోనెంట్ ను సృష్టించడం ద్వారా ఉపయోగించబడుతుంది మరియు తరచుగా ఒక Hook ను సృష్టించడం ద్వారా చైల్డ్ కాంపోనెంట్లో వేల్యూ ను వినియోగించడానికి ఉపయోగించబడుతుంది.
 
 context ద్వారా అందించబడిన value యొక్క type, `createContext` కాల్ కు పంపబడిన value నుండి అంచనా వేయబడుతుంది:
 
