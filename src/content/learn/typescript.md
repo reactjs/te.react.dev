@@ -424,7 +424,7 @@ interface ModalRendererProps {
 }
 ```
 
-ఇది children యొక్క విస్తృత నిర్వచనం. రెండవది `React.ReactElement` type ను ఉపయోగించడం, ఇది కేవలం JSX elements మాత్రమే, JavaScript primitives వంటి strings లేదా numbers కాదు:
+ఇది చైల్డ్ ఎలిమెంట్ యొక్క బ్రాడ్ డెఫినిషన్. రెండవది `React.ReactElement` టైప్ ను ఉపయోగించడం, ఇది కేవలం JSX ఎలెమెంట్స్ మాత్రమే, JavaScript primitives వంటి strings లేదా numbers కాదు:
 
 ```ts
 interface ModalRendererProps {
