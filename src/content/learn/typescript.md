@@ -134,7 +134,7 @@ export default App = AppTSX;
 [`useState` Hook](/reference/react/useState) ఇనీషియల్ state గా ఇవ్వబడిన వేల్యూ ను రీ-యూజ్ చేసుకొని ఆ వేల్యూ యొక్క టైప్ ఏమిటి అని నిర్ధారిస్తుంది. ఉదాహరణకు:
 
 ```ts
-// Infer the type as "boolean"
+// టైప్ని "boolean" గా సూచిస్తుంది
 const [enabled, setEnabled] = useState(false);
 ```
 
