@@ -38,10 +38,11 @@ npm install @types/react @types/react-dom
 
 మీ `tsconfig.json` లో, క్రింది compiler ఆప్షన్స్ సెట్ చేయాలి:
 
-1. [`lib`](https://www.typescriptlang.org/tsconfig/#lib) లో `dom` ఉండాలి (గమనిక: ఎలాంటి `lib` ఆప్షన్ పేర్కొనబడలేదు అంటే, `dom` డిఫాల్ట్ గా ఉంటుంది).
-1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) ని సరైన ఆప్షన్‌లలో ఒకదానిపై సెట్ చేయాలి. చాలా అప్లికేషన్స్‌కి `preserve` సరిపోతుంది.
-  మీరు లైబ్రరీని publish చేస్తున్నట్లు అయితే, ఎలాంటి విలువను ఎంచుకోవాలో [`jsx` డాక్యుమెంటేషన్](https://www.typescriptlang.org/tsconfig/#jsx) ను సంప్రదించండి.
-## React Components తో TypeScript {/*typescript-with-react-components*/}
+1. [`lib`](https://www.typescriptlang.org/tsconfig/#lib) లో `dom` ఉండాలి (గమనిక: ఎలాంటి `lib` ఆప్షన్ స్పెసిఫ్య్ చేయలేదు అంటే, `dom` డిఫాల్ట్ గా ఉంటుంది).
+1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) ని తప్పనిసరిగా వెలిడ్ అయ్యే ఆప్షన్లలో ఒకదానికి సెట్ చేయాలి. చాలా అప్లికేషన్స్‌కి `preserve` సరిపోతుంది.
+  మీరు లైబ్రరీని పబ్లిష్ చేస్తున్నట్లు అయితే, ఎలాంటి వేల్యూ ను ఎంచుకోవాలో తెలుసుకోవడానికి [`jsx` డాక్యుమెంటేషన్](https://www.typescriptlang.org/tsconfig/#jsx) ను సంప్రదించండి.
+
+## TypeScript లో React కాంపోనెంట్లను ఎలా రాయడం {/*typescript-with-react-components*/}
 
 <Note>
 
