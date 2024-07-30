@@ -5,7 +5,7 @@ re: https://github.com/reactjs/react.dev/issues/5960
 
 <Intro>
 
-TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు టైప్ నిర్వచనాలను చేర్చడానికి ప్రాచుర్యం పొందిన విధానం. TypeScript [JSX ని మద్దతు ఇస్తుంది](/learn/writing-markup-with-jsx) మరియు మీరు మీ ప్రాజెక్ట్‌కి [`@types/react`](https://www.npmjs.com/package/@types/react) మరియు [`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) ను చేర్చడం ద్వారా పూర్తి React Web మద్దతు పొందవచ్చు.
+TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు టైప్ డెఫినిషన్‌లను జోడించడానికి ఒక ప్రసిద్ధ మార్గం. TypeScript [JSX ని సపోర్ట్ చేస్తుంది](/learn/writing-markup-with-jsx) మరియు మీరు మీ ప్రాజెక్ట్‌కి [`@types/react`](https://www.npmjs.com/package/@types/react) మరియు [`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom) ను చేర్చడం ద్వారా పూర్తి React Web సపోర్ట్ని పొందవచ్చు.
 
 </Intro>
 
