@@ -439,7 +439,7 @@ interface ModalRendererProps {
 
 ### స్టైల్ props {/*typing-style-props*/}
 
-React లో inline styles ఉపయోగిస్తున్నప్పుడు, `style` prop కు పంపబడే object ను వర్ణించడానికి మీరు `React.CSSProperties` ను ఉపయోగించవచ్చు. ఈ type అన్ని సంభావ్య CSS properties యొక్క యూనియన్, మరియు ఇది మీరు `style` prop కు సరైన CSS properties పంపిస్తున్నారని నిర్ధారించడానికి మరియు మీ ఎడిటర్ లో auto-complete పొందడానికి మంచి మార్గం.
+React లో ఇన్లైన్ స్టైల్స్ ఉపయోగిస్తున్నప్పుడు, `style` prop కు పంపబడే ఆబ్జెక్ట్ ను డిస్క్రైబ్ చేయడానికి మీరు `React.CSSProperties` ను ఉపయోగించవచ్చు. ఈ టైప్ అన్ని పాసిబుల్ CSS ప్రాపర్టీస్ యొక్క యూనియన్, మరియు ఇది మీరు `style` prop కు సరైన CSS ప్రాపర్టీస్ పంపిస్తున్నారని నిర్ధారించడానికి మరియు మీ ఎడిటర్ లో ఆటో-కంప్లీట్ పొందడానికి మంచి మార్గం.
 
 ```ts
 interface MyComponentProps {
