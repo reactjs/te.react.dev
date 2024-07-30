@@ -123,7 +123,7 @@ export default App = AppTSX;
 
 మీ కాంపోనెంట్ యొక్క props ను వివరిస్తున్న type అవసరమున్నంత సులభంగా లేదా క్లిష్టంగా ఉండవచ్చు, కానీ అవి `type` లేదా `interface` తో వివరిస్తే ఒక object type గా ఉండాలి. TypeScript objects ను ఎలా వివరిస్తుందో మీరు [Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html) లో నేర్చుకోవచ్చు కానీ మీరు [Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) ను కూడా props వివరిస్తూ ఉపయోగించడం గురించి ఆసక్తి చూపవచ్చు, ఇది కొన్ని విభిన్న type లలో ఒకటి కావచ్చు మరియు మరింత ఆధునిక ఉపయోగకేసులకు [Creating Types from Types](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) గైడ్ ఉపయోగపడుతుంది.
 
-## ఉదాహరణ Hooks {/*example-hooks*/}
+## Hooks తో టైప్ ఉదాహరణలు {/*example-hooks*/}
 
 `@types/react` నుండి type నిర్వచనలు బిల్ట్-ఇన్ Hooks కోసం types కలిగి ఉంటాయి, కాబట్టి మీరు వాటిని మీ కంపోనెంట్లలో ఎలాంటి అదనపు సెటప్ లేకుండా ఉపయోగించవచ్చు. అవి మీ కంపోనెంట్ లో మీరు వ్రాసే కోడ్ ను పరిగణనలోకి తీసుకుంటాయి, కాబట్టి చాలా సార్లు మీరు [inferred types](https://www.typescriptlang.org/docs/handbook/type-inference.html) పొందుతారు మరియు సాధారణంగా types ను ఇవ్వడానికి ఎటువంటి సమస్యలు ఎదుర్కొనవలసిన అవసరం లేదు.
 
