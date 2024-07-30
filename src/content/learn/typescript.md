@@ -374,7 +374,8 @@ export default function Form() {
 
 ## ఉపయోగకరమైన టైప్స్ {/*useful-types*/}
 
-`@types/react` ప్యాకేజ్ నుండి చాలా విస్తృతమైన types సెట్ వస్తుంది, React మరియు TypeScript ఎలా పరస్పర చర్యలో ఉంటాయో మీరు సౌకర్యంగా భావించినప్పుడు ఇది చదవడం విలువైనది. మీరు వాటిని [DefinitelyTyped లో React యొక్క ఫోల్డర్ లో](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts) కనుగొనవచ్చు. ఇక్కడ మేము కొన్ని సాధారణంగా ఉపయోగించే types ను కవర్ చేస్తాము.
+`@types/react` ప్యాకేజ్ నుండి చాలా విస్తృతమైన టైప్స్ సెట్ వస్తుంది, React మరియు TypeScript ఎలా ఇంటరాక్ట్ అవుతాయి అనే దాని గురించి మీరు సౌకర్యంగా భావించినప్పుడు ఇది చదవడం విలువైనది. మీరు వాటిని [DefinitelyTyped లో React యొక్క ఫోల్డర్ లో](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts) కనుగొనవచ్చు. ఇక్కడ మేము కొన్ని సాధారణంగా ఉపయోగించే టైప్స్ ను కవర్ చేస్తాము.
+
 ### DOM ఈవెంట్స్ {/*typing-dom-events*/}
 
 React లో DOM ఈవెంట్స్ తో పని చేస్తున్నప్పుడు, ఈవెంట్ యొక్క type ఈవెంట్ హ్యాండ్లర్ నుండి తరచుగా అంచనా వేయబడుతుంది. అయితే, ఒక function ను ఈవెంట్ హ్యాండ్లర్ కు పంపించడానికి extraction చేయాలనుకుంటే, మీరు ఈవెంట్ యొక్క type ను స్పష్టంగా సెట్ చేయాలి.
