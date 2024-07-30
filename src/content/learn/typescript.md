@@ -453,7 +453,7 @@ Docs లోని వ్యక్తిగత API పేజీలు TypeScript 
 
 మేము ఈ కింది రిసోర్సెస్ ను సిఫార్సు చేస్తున్నాము:
 
- - [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/) TypeScript కోసం అధికారిక డాక్యుమెంటేషన్, మరియు అధిక భాగం కీలక భాషా లక్షణాలను కవర్ చేస్తుంది.
+ - [TypeScript హ్యాండ్‌బుక్](https://www.typescriptlang.org/docs/handbook/) TypeScript కోసం ఆఫిసిఅల్ డాక్యుమెంటేషన్, మరియు అధిక భాగం కీలక లాంగ్వేజ్ ఫీచర్లను కవర్ చేస్తుంది.
 
  - [The TypeScript release notes](https://devblogs.microsoft.com/typescript/) కొత్త లక్షణాలను లోతుగా కవర్ చేస్తాయి.
 
