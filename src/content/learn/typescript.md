@@ -460,4 +460,4 @@ interface MyComponentProps {
 
  - [React TypeScript చీట్ షీట్](https://react-typescript-cheatsheet.netlify.app/) TypeScript తో React ఉపయోగించడానికి కమ్యూనిటీ-మైన్టైన్డ్ చీట్ షీట్, చాలా ఉపయోగకరమైన ఎడ్జ్ కేసులను కవర్ చేస్తూ ఈ డాక్యుమెంట్ కంటే మరింత విస్తృత తనాన్ని అందిస్తుంది.
 
- - [TypeScript Community Discord](https://discord.com/invite/typescript) TypeScript మరియు React సమస్యలతో సహాయం కోసం ప్రశ్నలు అడగడానికి మరియు సహాయం పొందడానికి గొప్ప ప్రదేశం.
+ - [TypeScript కమ్యూనిటీ Discord](https://discord.com/invite/typescript) TypeScript మరియు React సమస్యలతో సహాయం కోసం ప్రశ్నలు అడగడానికి మరియు సహాయం పొందడానికి గొప్ప ప్రదేశం.
