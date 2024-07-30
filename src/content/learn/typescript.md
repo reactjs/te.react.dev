@@ -131,7 +131,7 @@ export default App = AppTSX;
 
 ### `useState` {/*typing-usestate*/}
 
-[`useState` Hook](/reference/react/useState) initial state గా ఇవ్వబడిన value ను తిరిగి ఉపయోగించి ఆ value యొక్క type ఏమిటి అని నిర్ధారిస్తుంది. ఉదాహరణకు:
+[`useState` Hook](/reference/react/useState) ఇనీషియల్ state గా ఇవ్వబడిన వేల్యూ ను రీ-యూజ్ చేసుకొని ఆ వేల్యూ యొక్క టైప్ ఏమిటి అని నిర్ధారిస్తుంది. ఉదాహరణకు:
 
 ```ts
 // Infer the type as "boolean"
