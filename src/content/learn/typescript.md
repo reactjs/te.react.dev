@@ -340,7 +340,7 @@ const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 ### `useCallback` {/*typing-usecallback*/}
 
-[`useCallback`](/reference/react/useCallback) ఒక function కు dependencies  మారకుండా ఉంటే స్థిరమైన రిఫరెన్స్ ను అందిస్తుంది. `useMemo` లాగా, function యొక్క type మొదటి పరామితిలోని function యొక్క return value నుండి అంచనా వేయబడుతుంది, మరియు మీరు type argument ను Hook కు అందించడం ద్వారా మరింత స్పష్టంగా చేయవచ్చు.
+[`useCallback`](/reference/react/useCallback) రెండవ పారామీటర్లోకి పంపబడిన డిపెండెన్సీలు ఒకేలా ఉన్నంత వరకు ఒక ఫంక్షన్‌కు స్టేబుల్ రిఫరెన్స్ ను అందిస్తాయి. `useMemo` లాగా, ఫంక్షన్ యొక్క టైప్ మొదటి పారామీటర్లోని ఫంక్షన్ యొక్క రిటర్న్ వేల్యూ నుండి అంచనా వేయబడుతుంది, మరియు మీరు మరింత ఎక్స్ప్లిసిట్ గా టైప్ ఆర్గుమెంట్ ను Hook కు ప్రొవైడ్ చేయవచ్చు.
 
 
 ```ts
