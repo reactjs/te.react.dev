@@ -456,7 +456,7 @@ interface MyComponentProps {
 
  - [TypeScript హ్యాండ్‌బుక్](https://www.typescriptlang.org/docs/handbook/) TypeScript కోసం ఆఫిసిఅల్ డాక్యుమెంటేషన్, మరియు అధిక భాగం కీలక లాంగ్వేజ్ ఫీచర్లను కవర్ చేస్తుంది.
 
- - [The TypeScript release notes](https://devblogs.microsoft.com/typescript/) కొత్త లక్షణాలను లోతుగా కవర్ చేస్తాయి.
+ - [TypeScript రిలీజ్ నోట్స్](https://devblogs.microsoft.com/typescript/) కొత్త ఫీచర్లను ఇన్-డెప్త్ గా కవర్ చేస్తాయి.
 
  - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) TypeScript తో React ఉపయోగించడానికి కమ్యూనిటీ-నిర్వహిత చీట్ షీట్, చాలా ఉపయోగకరమైన ఎడ్జ్ కేసులను కవర్ చేస్తూ ఈ డాక్యుమెంట్ కంటే మరింత విస్తృతతనాన్ని అందిస్తుంది.
 
