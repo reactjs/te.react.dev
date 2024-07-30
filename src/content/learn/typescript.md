@@ -141,7 +141,7 @@ const [enabled, setEnabled] = useState(false);
 ఇది `enabled` కు `boolean` టైప్ ను అసైన్ చేస్తుంది, మరియు `setEnabled` `boolean` ఆర్గుమెంట్ ను స్వీకరించే ఫంక్షన్ లేదా `boolean` ను రిటర్న్ చేసే ఫంక్షన్ అవుతుంది. మీరు state కోసం టైప్ ను ఎక్సప్లిసిట్ గా ఇవ్వాలనుకుంటే, మీరు `useState` కాల్ కు టైప్ ఆర్గుమెంట్ ను ఇవ్వవచ్చు:
 
 ```ts 
-// Explicitly set the type to "boolean"
+// టైప్ని "boolean" కి ఎక్సప్లిసిట్ గా సెట్ చేయండి
 const [enabled, setEnabled] = useState<boolean>(false);
 ```
 
