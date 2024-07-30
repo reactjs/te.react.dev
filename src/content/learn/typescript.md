@@ -167,7 +167,7 @@ const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' 
 
 ### `useReducer` {/*typing-usereducer*/}
 
-[`useReducer` Hook](/reference/react/useReducer) ఒక కాంప్లెక్స్ Hook, ఇది ఒక reducer function మరియు ఒక initial state ను తీసుకుంటుంది. reducer function కోసం types initial state నుండి అంచనా వేయబడతాయి. మీరు `useReducer` కాల్ కు type argument ను ఇస్తూ state కోసం type అందించవచ్చు, కానీ initial state పై type సెట్ చేయడం మంచిది:
+[`useReducer` Hook](/reference/react/useReducer) ఒక కాంప్లెక్స్ Hook, ఇది ఒక reducer ఫంక్షన్ మరియు ఒక ఇనీషియల్ state ను తీసుకుంటుంది. reducer ఫంక్షన్ కోసం టైప్స్ అనేవి ఇనీషియల్ state నుండి అంచనా వేయబడతాయి. మీరు `useReducer` కాల్ కు టైప్ ఆర్గుమెంట్ ను ఇస్తూ state కోసం టైప్ ను ప్రొవైడ్ చేయవచ్చు, కానీ ఇనీషియల్ state పై టైప్ సెట్ చేయడం మంచిది:
 
 <Sandpack>
 
