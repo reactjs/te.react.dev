@@ -407,7 +407,7 @@ export default App = AppTSX;
 
 </Sandpack>
 
-React types లో చాలా రకాల ఈవెంట్స్ అందుబాటులో ఉన్నాయి - పూర్తి జాబితాను [ఇక్కడ](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b580df54c0819ec9df62b0835a315dd48b8594a9/types/react/index.d.ts#L1247C1-L1373) చూడవచ్చు, ఇది [DOM నుండి ప్రసిద్ధమైన ఈవెంట్స్](https://developer.mozilla.org/en-US/docs/Web/Events) పై ఆధారపడి ఉంటుంది.
+React టైప్స్ లో చాలా రకాల ఈవెంట్స్ అందుబాటులో ఉన్నాయి - పూర్తి లిస్ట్ ను [ఇక్కడ](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/b580df54c0819ec9df62b0835a315dd48b8594a9/types/react/index.d.ts#L1247C1-L1373) చూడవచ్చు, ఇవి [DOM నుండి పాపులర్ ఈవెంట్స్](https://developer.mozilla.org/en-US/docs/Web/Events) పై ఆధారపడి ఉంటాయి.
 
 మీరు అవసరమైన type ను నిర్ణయిస్తున్నప్పుడు, మీరు ఉపయోగిస్తున్న ఈవెంట్ హ్యాండ్లర్ కోసం హోవర్ సమాచారాన్ని మొదట చూడవచ్చు, ఇది ఈవెంట్ యొక్క type ను చూపిస్తుంది.
 
