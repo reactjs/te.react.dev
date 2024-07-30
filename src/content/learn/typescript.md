@@ -349,7 +349,7 @@ const handleClick = useCallback(() => {
 }, [todos]);
 ```
 
-TypeScript strict mode లో పని చేస్తున్నప్పుడు `useCallback` లో మీ callback లోని parameters కు types ను చేర్చాలి. ఇది callback యొక్క type function యొక్క return value నుండి అంచనా వేయబడుతుంది, మరియు parameters లేకుండా type పూర్తిగా అర్థం కాలేదు.
+TypeScript strict mode లో పని చేస్తున్నప్పుడు `useCallback` లో మీ కాల్ బ్యాక్ లోని పారామీటర్స్ కు టైప్స్ ను చేర్చాలి. ఇది ఎందుకంటే కాల్ బ్యాక్ యొక్క టైప్ అనేది ఫంక్షన్ యొక్క రిటర్న్ వేల్యూ నుండి అంచనా వేయబడుతుంది, మరియు పారామీటర్స్ లేకుండా టైప్ అనేది పూర్తిగా అర్థం కాదు.
 
 మీ కోడ్-స్టైల్ ప్రాధాన్యతలపై ఆధారపడి, callback ను నిర్వచించే సమయంలో event handler కోసం type ను అందించడానికి React types నుండి `*EventHandler` functions ను ఉపయోగించవచ్చు: 
 
