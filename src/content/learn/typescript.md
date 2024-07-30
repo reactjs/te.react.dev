@@ -224,10 +224,10 @@ export default App = AppTSX;
 
 మేము TypeScript ను కొన్ని కీలక ప్రదేశాలలో ఉపయోగిస్తున్నాము:
 
- - `interface State` reducer యొక్క state యొక్క ఆకారాన్ని వర్ణిస్తుంది.
- - `type CounterAction` reducer కు పంపవచ్చే వేర్వేరు actions ను వర్ణిస్తుంది.
- - `const initialState: State` initial state కు type ను అందిస్తుంది, మరియు అదే type `useReducer` ద్వారా డిఫాల్ట్ గా ఉపయోగించబడుతుంది.
- - `stateReducer(state: State, action: CounterAction): State` reducer function యొక్క arguments మరియు return value కు types ను సెట్ చేస్తుంది.
+ - `interface State` reducer యొక్క state షేప్ ని డిస్క్రైబ్ చేస్తుంది.
+ - `type CounterAction` reducer కు dispatch చేసే వేర్వేరు actions ను డిస్క్రైబ్ చేస్తుంది.
+ - `const initialState: State` ఇనీషియల్ state కు టైప్ ను అందిస్తుంది, మరియు అదే టైప్ `useReducer` ద్వారా డిఫాల్ట్ గా ఉపయోగించబడుతుంది.
+ - `stateReducer(state: State, action: CounterAction): State` reducer ఫంక్షన్ యొక్క అర్గుమెంత్స్ మరియు రిటర్న్ వేల్యూ కు టైప్స్ ను సెట్ చేస్తుంది.
 
 `initialState` పై type సెట్ చేయడానికి మరింత స్పష్టమైన ప్రత్యామ్నాయం `useReducer` కు type argument ను అందించడం:
 
