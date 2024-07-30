@@ -229,7 +229,7 @@ export default App = AppTSX;
  - `const initialState: State` ఇనీషియల్ state కు టైప్ ను అందిస్తుంది, మరియు అదే టైప్ `useReducer` ద్వారా డిఫాల్ట్ గా ఉపయోగించబడుతుంది.
  - `stateReducer(state: State, action: CounterAction): State` reducer ఫంక్షన్ యొక్క అర్గుమెంత్స్ మరియు రిటర్న్ వేల్యూ కు టైప్స్ ను సెట్ చేస్తుంది.
 
-`initialState` పై type సెట్ చేయడానికి మరింత స్పష్టమైన ప్రత్యామ్నాయం `useReducer` కు type argument ను అందించడం:
+`initialState` పై టైప్ని సెట్ చేయడానికి మరింత ఎక్స్ప్లిసిట్ ఆల్టర్నేటివ్ `useReducer` కు టైప్ ఆర్గుమెంట్ ను అందించడం:
 
 ```ts
 import { stateReducer, State } from './your-reducer-implementation';
