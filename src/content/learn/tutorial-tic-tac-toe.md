@@ -1133,7 +1133,11 @@ export default function Board() {
 
 <Note>
 
+<<<<<<< HEAD
 JavaScript [క్లోసురేష్స్ (closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) ని సపోర్ట్ చేస్తుంది అంటే ఇన్నర్ ఫంక్షన్కు (ఉదా. `handleClick`) ఔటర్ ఫంక్షన్‌లో డిఫైన్ చేయబడిన వేరియబుల్స్ మరియు ఫంక్షన్‌లకు యాక్సెస్‌ను కలిగి ఉంటుంది (ఉదా. `Board`). `handleClick` ఫంక్షన్ `squares` state ని రీడ్ చేయగలదు మరియు `setSquares` మెథడ్ ని కాల్ చేయగలదు ఎందుకంటే అవి రెండూ `Board` ఫంక్షన్‌లో డిఫైన్ చేయబడ్డాయి.
+=======
+JavaScript supports [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) which means an inner function (e.g. `handleClick`) has access to variables and functions defined in an outer function (e.g. `Board`). The `handleClick` function can read the `squares` state and call the `setSquares` method because they are both defined inside of the `Board` function.
+>>>>>>> 1697ae89a3bbafd76998dd7496754e5358bc1e9a
 
 </Note>
 
