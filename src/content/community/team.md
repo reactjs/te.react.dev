@@ -42,15 +42,7 @@ Current members of the React team are listed in alphabetical order below.
     Josh majored in Mathematics and discovered programming while in college. His first professional developer job was to program insurance rate calculations in Microsoft Excel, the paragon of Reactive Programming which must be why he now works on React. In between that time Josh has been an IC, Manager, and Executive at a few startups. outside of work he likes to push his limits with cooking.
 </TeamMember>
 
-<<<<<<< HEAD
-<TeamMember name="Kathryn Middleton" permalink="kathryn-middleton" photo="/images/team/kathryn-middleton.jpg" github="kmiddleton14" twitter="kmiddleton14" title="Engineering Manager at Meta">
-    Kathryn initially discovered web development when she wanted to make her myspace page look cool. She ended up majoring in Computer Science, and quickly became a huge fan of React building features on the Instagram.com team. Outside of work she loves playing pingpong, teaching spin classes, and going plant shopping.
-</TeamMember>
-
-<TeamMember name="Lauren Tan" permalink="lauren-tan" photo="/images/team/lauren.jpg" github="poteto" twitter="potetotes" threads="potetotes" personal="no.lol" title="Engineer at Meta">
-=======
 <TeamMember name="Lauren Tan" permalink="lauren-tan" photo="/images/team/lauren.jpg" github="poteto" twitter="potetotes" threads="potetotes" bsky="no.lol" title="Engineer at Meta">
->>>>>>> 8201e7e9203321bd1648c3ab0b76ef943c9ec3ad
     Lauren's programming career peaked when she first discovered the `<marquee>` tag. She’s been chasing that high ever since. She studied Finance instead of CS in college, so she learned to code using Excel instead of Java. Lauren enjoys dropping cheeky memes in chat, playing video games with her partner, and petting her dog Zelda.
 </TeamMember>
 
