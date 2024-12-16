@@ -52,6 +52,7 @@ react-devtools
 
 ![React డెవలపర్ టూల్స్ స్టాండ్ అలొనె](/images/docs/react-devtools-standalone.png)
 
+<<<<<<< HEAD
 ## మొబైల్ (React Native) {/*mobile-react-native*/}
 [React Native](https://reactnative.dev/) తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి కూడా  React డెవలపర్ టూల్స్ ను ఉపయోగించవచ్చు.
 
@@ -59,11 +60,15 @@ React డెవలపర్ టూల్స్ ను ఉపయోగించ�
 ```bash
 # Yarn
 yarn global add react-devtools
+=======
+## Mobile (React Native) {/*mobile-react-native*/}
 
-# Npm
-npm install -g react-devtools
-```
+To inspect apps built with [React Native](https://reactnative.dev/), you can use [React Native DevTools](https://reactnative.dev/docs/debugging/react-native-devtools), the built-in debugger that deeply integrates React Developer Tools. All features work identically to the browser extension, including native element highlighting and selection.
+>>>>>>> 3b02f828ff2a4f9d2846f077e442b8a405e2eb04
 
+[Learn more about debugging in React Native.](https://reactnative.dev/docs/debugging)
+
+<<<<<<< HEAD
 తరువాత టెర్మినల్ నుండి డెవలపర్ టూల్స్ ను ఓపెన్ చేయండి.
 ```bash
 react-devtools
@@ -74,3 +79,6 @@ react-devtools
 > డెవలపర్ టూల్స్ కొన్ని సెకన్ల తర్వాత కనెక్ట్ కాకపోతే యాప్‌ని రీలోడ్ చేయడానికి ప్రయత్నించండి.
 
 [React Native డీబగ్గింగ్ గురించి మరింత తెలుసుకోండి.](https://reactnative.dev/docs/debugging)
+=======
+> For versions of React Native earlier than 0.76, please use the standalone build of React DevTools by following the [Safari and other browsers](#safari-and-other-browsers) guide above.
+>>>>>>> 3b02f828ff2a4f9d2846f077e442b8a405e2eb04
