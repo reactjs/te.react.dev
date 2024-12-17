@@ -1,24 +1,24 @@
 ---
-title: Your First Component
+title: మీ మొదటి కంపోనెంట్
 ---
 
 <Intro>
 
-*Components* are one of the core concepts of React. They are the foundation upon which you build user interfaces (UI), which makes them the perfect place to start your React journey!
+*కంపోనెంట్‌లు* React యొక్క ప్రధాన కాన్సెప్ట్‌లలో ఒకటి. ఇవి యూజర్ ఇంటర్‌ఫేస్‌లు (UI) నిర్మించే పునాది, అందుకే React ప్రయాణాన్ని ప్రారంభించడానికి ఇవి ఉత్తమమైన ప్రదేశం!
 
 </Intro>
 
 <YouWillLearn>
 
-* What a component is
-* What role components play in a React application
-* How to write your first React component
+* కంపోనెంట్ అంటే ఏమిటి
+* React యాప్‌లో కంపోనెంట్‌లు ఏ పాత్ర పోషిస్తాయి
+* మీ మొదటి React కంపోనెంట్ రాయడం ఎలా
 
 </YouWillLearn>
 
-## Components: UI building blocks {/*components-ui-building-blocks*/}
+## కంపోనెంట్‌లు: UI బిల్డింగ్ బ్లాక్‌లు {/*components-ui-building-blocks*/}
 
-On the Web, HTML lets us create rich structured documents with its built-in set of tags like `<h1>` and `<li>`:
+Webలో, HTML దాని అంతర్నిర్మిత `<h1>` మరియు `<li>` వంటి ట్యాగ్‌ల సెట్‌తో రిచ్ స్ట్రక్చర్డ్ డాక్యుమెంట్‌లను రూపొందించడానికి అనుమతిస్తుంది:
 
 ```html
 <article>
@@ -31,11 +31,11 @@ On the Web, HTML lets us create rich structured documents with its built-in set 
 </article>
 ```
 
-This markup represents this article `<article>`, its heading `<h1>`, and an (abbreviated) table of contents as an ordered list `<ol>`. Markup like this, combined with CSS for style, and JavaScript for interactivity, lies behind every sidebar, avatar, modal, dropdown—every piece of UI you see on the Web.
+ఈ మార్కప్ ఈ ఆర్టికల్ `<article>`, దాని హెడ్డింగ్ `<h1>`, మరియు ఒక టేబుల్ ఆఫ్ కంటెంట్ `<ol>`గా ప్రాతినిధ్యం వహిస్తుంది. ఇలా మార్కప్, CSS స్టైల్ కోసం, మరియు జావాస్క్రిప్ట్ ఇంటరాక్టివిటీ కోసం కలిపి ప్రతి సైడ్‌బార్, అవతార్, మోడల్, డ్రాప్‌డౌన్ వంటి వెబ్‌లో మీరు చూస్తున్న ప్రతి UI భాగం వెనుక ఉంటుంది.
 
-React lets you combine your markup, CSS, and JavaScript into custom "components", **reusable UI elements for your app.** The table of contents code you saw above could be turned into a `<TableOfContents />` component you could render on every page. Under the hood, it still uses the same HTML tags like `<article>`, `<h1>`, etc.
+React మీ మార్కప్, CSS, మరియు జావాస్క్రిప్ట్‌ను కస్టమ్ "కంపోనెంట్స్"గా కలిపే అవకాశాన్ని ఇస్తుంది, **మీ యాప్‌కు రీయూజబుల్ UI ఎలిమెంట్స్.** మీరు పై కోడ్‌ను `<TableOfContents />` కంపోనెంట్‌గా మార్చి ప్రతి పేజీలో కూడా రెండర్ చేయవచ్చు. అంతర్గతంగా, ఇది ఇంకా అదే HTML ట్యాగ్లను ఉపయోగిస్తుంది, ఉదాహరణకు `<article>`, `<h1>` మరియు తదితరాలు.
 
-Just like with HTML tags, you can compose, order and nest components to design whole pages. For example, the documentation page you're reading is made out of React components:
+HTML ట్యాగ్‌లతో చేసినట్లుగా, మీరు కంపోనెంట్స్‌ని కలపడం, ఆర్డర్ చేయడం మరియు నెస్టింగ్ చేయడం ద్వారా పూర్తి పేజీలను డిజైన్ చేయవచ్చు. ఉదాహరణకు, మీరు చదివే డాక్యుమెంటేషన్ పేజీ React కంపోనెంట్స్‌తో తయారైంది:
 
 ```js
 <PageLayout>
@@ -51,11 +51,11 @@ Just like with HTML tags, you can compose, order and nest components to design w
 </PageLayout>
 ```
 
-As your project grows, you will notice that many of your designs can be composed by reusing components you already wrote, speeding up your development. Our table of contents above could be added to any screen with `<TableOfContents />`! You can even jumpstart your project with the thousands of components shared by the React open source community like [Chakra UI](https://chakra-ui.com/) and [Material UI.](https://material-ui.com/)
+మీ ప్రాజెక్ట్ పెరుగుతున్న కొద్దీ, మీరు ఇప్పటికే రాసిన కంపోనెంట్లను పునర్వినియోగించడం ద్వారా మీ డిజైన్లను రూపొందించవచ్చని గమనిస్తారు, తద్వారా అభివృద్ధి వేగవంతమవుతుంది. మా టేబుల్ ఆఫ్ కంటెంట్స్ పైగా `<TableOfContents />` తో ఏ స్క్రీన్‌లోనైనా జోడించవచ్చు! మీరు React ఓపెన్ సోర్స్ కమ్యూనిటీ ద్వారా పంచబడిన వేలాది కంపోనెంట్లను ఉపయోగించి మీ ప్రాజెక్ట్‌ను ప్రారంభించవచ్చు, ఉదాహరణకు [Chakra UI](https://chakra-ui.com/) మరియు [Material UI](https://material-ui.com/).
 
-## Defining a component {/*defining-a-component*/}
+## కంపోనెంట్‌ను నిర్వచించడం {/*defining-a-component*/}
 
-Traditionally when creating web pages, web developers marked up their content and then added interaction by sprinkling on some JavaScript. This worked great when interaction was a nice-to-have on the web. Now it is expected for many sites and all apps. React puts interactivity first while still using the same technology: **a React component is a JavaScript function that you can _sprinkle with markup_.** Here's what that looks like (you can edit the example below):
+సాంప్రదాయంగా వెబ్ పేజీలను సృష్టిస్తున్నప్పుడు, వెబ్ డెవలపర్లు ముందుగా వారి కంటెంట్‌ను మార్కప్ చేసి, తరువాత కొంచెం జావాస్క్రిప్ట్ జోడించడం ద్వారా ఇంటరాక్షన్‌ను అందించేవారు. ఇది ఇంటరాక్షన్ ఒక అదనపు లక్షణంగా ఉండినప్పుడు బాగా పనిచేసేది. కానీ ఇప్పుడు, ఇది చాలా సైట్లకు మరియు అన్ని యాప్‌లకు అవసరంగా మారింది. React ఇంటరాక్షన్‌ను మొదటి ప్రాధాన్యంగా ఉంచుతుంది, అయినప్పటికీ అదే టెక్నాలజీని ఉపయోగిస్తుంది: **React కాంపొనెంట్ అనేది JavaScript ఫంక్షన్, దీనిని మీరు _మార్కప్‌తో కలపవచ్చు_.** ఇది ఎలా కనిపిస్తుందో ఇక్కడ ఉంది (క్రింది ఉదాహరణను మీరు ఎడిట్ చేయవచ్చు):
 
 <Sandpack>
 
@@ -76,33 +76,33 @@ img { height: 200px; }
 
 </Sandpack>
 
-And here's how to build a component:
+ఇదీ ఒక కంపోనెంట్‌ను ఎలా నిర్మించాలో:
 
-### Step 1: Export the component {/*step-1-export-the-component*/}
+### స్టెప్ 1: కంపోనెంట్‌ను ఎక్స్‌పోర్ట్ చేయండి {/*step-1-export-the-component*/}
 
-The `export default` prefix is a [standard JavaScript syntax](https://developer.mozilla.org/docs/web/javascript/reference/statements/export) (not specific to React). It lets you mark the main function in a file so that you can later import it from other files. (More on importing in [Importing and Exporting Components](/learn/importing-and-exporting-components)!)
+`export default` ప్రిఫిక్స్ ఒక [స్టాండర్డ్ జావాస్క్రిప్ట్ సింటాక్స్](https://developer.mozilla.org/docs/web/javascript/reference/statements/export) (React కి ప్రత్యేకం కాదు). ఇది మీరు ఒక ఫైల్‌లో ప్రధాన ఫంక్షన్‌ని మార్క్ చేయడానికి అనుమతిస్తుంది, తద్వారా మీరు ఆ ఫంక్షన్‌ని ఇతర ఫైళ్ల నుంచి దిగుమతి చేసుకోవచ్చు. ([కంపోనెంట్లను ఇంపోర్ట్ చేయడం మరియు ఎక్స్‌పోర్ట్ చేయడం](/learn/importing-and-exporting-components) లో మరింత తెలుసుకోండి!)
 
-### Step 2: Define the function {/*step-2-define-the-function*/}
+### స్టెప్ 2: ఫంక్షన్ నిర్వచించండి {/*step-2-define-the-function*/}
 
-With `function Profile() { }` you define a JavaScript function with the name `Profile`.
+`function Profile() { }` తో మీరు `Profile` అనే పేరుతో ఒక జావాస్క్రిప్ట్ ఫంక్షన్ నిర్వచిస్తారు.
 
 <Pitfall>
 
-React components are regular JavaScript functions, but **their names must start with a capital letter** or they won't work!
+React కంపోనెంట్లు సాధారణ జావాస్క్రిప్ట్ ఫంక్షన్‌లే, కానీ **వాటి పేర్లు పెద్ద అక్షరంతో ప్రారంభమవ్వాలి** లేకపోతే అవి పని చేయవు!
 
 </Pitfall>
 
-### Step 3: Add markup {/*step-3-add-markup*/}
+### స్టెప్ 3: మార్కప్ జోడించండి {/*step-3-add-markup*/}
 
-The component returns an `<img />` tag with `src` and `alt` attributes. `<img />` is written like HTML, but it is actually JavaScript under the hood! This syntax is called [JSX](/learn/writing-markup-with-jsx), and it lets you embed markup inside JavaScript.
+కంపోనెంట్ `src` మరియు `alt` అట్రిబ్యూట్లతో కూడిన `<img />` ట్యాగ్‌ను return చేస్తుంది. `<img />` ను HTML లాగా రాస్తారు, కానీ ఇది వాస్తవానికి జావాస్క్రిప్ట్ లో ఉండే కోడ్! ఈ సింటాక్స్‌ను [JSX](/learn/writing-markup-with-jsx) అని పిలుస్తారు, మరియు ఇది జావాస్క్రిప్ట్‌లో మార్కప్‌ను ఎంబెడ్ చేయటానికి అనుమతిస్తుంది.
 
-Return statements can be written all on one line, as in this component:
+Return స్టేట్మెంట్‌ను ఈ కంపోనెంట్‌లోని విధంగా ఒకే లైనులో రాయవచ్చు:
 
 ```js
 return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
 ```
 
-But if your markup isn't all on the same line as the `return` keyword, you must wrap it in a pair of parentheses:
+మీ మార్కప్ `return` కీవర్డ్‌తో ఒకే లైన్‌లో లేకపోతే, మీరు దాన్ని ఒక జంట పేరెంటీసిస్‌లో  చుట్టాలి::
 
 ```js
 return (
@@ -114,13 +114,13 @@ return (
 
 <Pitfall>
 
-Without parentheses, any code on the lines after `return` [will be ignored](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)!
+పేరెంటీసిస్ లేకుండా, `return` తర్వాతి లైన్లలో ఉన్న ఎలాంటి కోడ్ కూడా [గమనించబడదు](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)!
 
 </Pitfall>
 
-## Using a component {/*using-a-component*/}
+## ఒక కంపోనెంట్ ను ఉపయోగించడం {/*using-a-component*/}
 
-Now that you've defined your `Profile` component, you can nest it inside other components. For example, you can export a `Gallery` component that uses multiple `Profile` components:
+ఇప్పుడు మీరు మీ `Profile` కంపోనెంట్‌ను నిర్వచించేసిన తర్వాత, మీరు దీన్ని ఇతర కంపోనెంట్లలో నెస్టు చేయవచ్చు. ఉదాహరణకు, మీరు అనేక `Profile` కంపోనెంట్లను ఉపయోగించే `Gallery` కంపోనెంట్‌ను ఎక్స్‌పోర్ట్ చేయవచ్చు:
 
 <Sandpack>
 
@@ -152,14 +152,14 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-### What the browser sees {/*what-the-browser-sees*/}
+### బ్రౌజర్ ఏమి చూస్తుంది {/*what-the-browser-sees*/}
 
-Notice the difference in casing:
+కేస్‌లో ఉన్న తేడాను గమనించండి:
 
-* `<section>` is lowercase, so React knows we refer to an HTML tag.
-* `<Profile />` starts with a capital `P`, so React knows that we want to use our component called `Profile`.
+* `<section>` ఇది చిన్న అక్షరాలలో ఉంది, కాబట్టి Reactకు తెలుసు మనం HTML ట్యాగ్‌ను సూచిస్తున్నాము.
+* `<Profile />` ఇది పెద్ద `P`తో ప్రారంభమవుతుంది, కాబట్టి Reactకు తెలుసు మనం `Profile` అనే కాంపొనెంట్‌ను ఉపయోగించాలనుకుంటున్నాము.
 
-And `Profile` contains even more HTML: `<img />`. In the end, this is what the browser sees:
+మరియు `Profile` లో ఇంకా HTML ఉంది: `<img />` . చివరికి, బ్రౌజర్ ఇది చూస్తుంది:
 
 ```html
 <section>
@@ -170,15 +170,15 @@ And `Profile` contains even more HTML: `<img />`. In the end, this is what the b
 </section>
 ```
 
-### Nesting and organizing components {/*nesting-and-organizing-components*/}
+### కంపోనెంట్లను నెస్టింగ్ మరియు ఆర్గనైజ్ చేయడం {/*nesting-and-organizing-components*/}
 
-Components are regular JavaScript functions, so you can keep multiple components in the same file. This is convenient when components are relatively small or tightly related to each other. If this file gets crowded, you can always move `Profile` to a separate file. You will learn how to do this shortly on the [page about imports.](/learn/importing-and-exporting-components)
+కంపోనెంట్లు సాధారణ జావాస్క్రిప్ట్ ఫంక్షన్లు, కాబట్టి మీరు ఒకే ఫైల్‌లో అనేక కంపోనెంట్లను ఉంచవచ్చు. ఇది కంపోనెంనెంట్లు సున్నితంగా చిన్నవిగా లేదా ఒకరికొకటి దగ్గరగా సంబంధం ఉన్నప్పుడు చాలా సౌకర్యవంతంగా ఉంటుంది. ఈ ఫైలు చాలా నిండి పోయినప్పుడు, మీరు ఎప్పుడైనా `Profile` కంపోనెంట్‌ను ప్రత్యేకమైన ఫైల్‌కు తరలించవచ్చు. మీరు ఈ విధానం గురించి త్వరలో [ఇంపోర్ట్స్ పేజీలో](/learn/importing-and-exporting-components) నేర్చుకుంటారు.
 
-Because the `Profile` components are rendered inside `Gallery`—even several times!—we can say that `Gallery` is a **parent component,** rendering each `Profile` as a "child". This is part of the magic of React: you can define a component once, and then use it in as many places and as many times as you like.
+కారణంగా, `Profile` కంపోనెంట్స్ `Gallery` లో రేండర్ అవుతున్నాయి—చెప్పాలంటే, అనేకసార్లు!—కాబట్టి మనం చెప్పవచ్చు `Gallery` అనేది ఒక **పేరెంట్ కంపోనెంట్**, మరియు ప్రతి `Profile` ను "చైల్డ్" గా రేండర్ చేస్తుంది. ఇది React యొక్క మ్యాజిక్ భాగం: మీరు ఒక కంపోనెంట్ని ఒకసారి డిఫైన్ చేసి, అప్పుడు దాన్ని మీరు ఇష్టపడే ఎన్ని ప్రదేశాల్లోనూ, ఎన్ని సార్లు అయినా ఉపయోగించవచ్చు.
 
 <Pitfall>
 
-Components can render other components, but **you must never nest their definitions:**
+కంపోనెంట్లు మరొక కంపోనెంట్లను రేండర్ చేయవచ్చు, కానీ **మీరు వాటి డిఫినిషన్స్‌ను ఎప్పుడూ నెస్ట్ చేయకూడదు:**
 
 ```js {2-5}
 export default function Gallery() {
@@ -190,7 +190,7 @@ export default function Gallery() {
 }
 ```
 
-The snippet above is [very slow and causes bugs.](/learn/preserving-and-resetting-state#different-components-at-the-same-position-reset-state) Instead, define every component at the top level:
+పై కోడ్ [చాలా మెల్లగా పనిచేస్తుంది మరియు బగ్స్‌ను కలిగిస్తుంది.](/learn/preserving-and-resetting-state#different-components-at-the-same-position-reset-state) దాని స్థానంలో, ప్రతి కంపోనెంట్‌ను టాప్ లెవెల్‌లో నిర్వచించండి:
 
 ```js {5-8}
 export default function Gallery() {
@@ -203,34 +203,34 @@ function Profile() {
 }
 ```
 
-When a child component needs some data from a parent, [pass it by props](/learn/passing-props-to-a-component) instead of nesting definitions.
+ఒక చైల్డ్ కంపోనెంట్ ఒక ప్యారెంట్ నుండి డేటాను అవసరమైతే, [props ద్వారా పంపండి](/learn/passing-props-to-a-component) డిఫినిషన్స్‌ను నెస్ట్ చేయడం కాకుండా.
 
 </Pitfall>
 
 <DeepDive>
 
-#### Components all the way down {/*components-all-the-way-down*/}
+#### కంపోనెంట్స్ అన్ని దారిలో {/*components-all-the-way-down*/}
 
-Your React application begins at a "root" component. Usually, it is created automatically when you start a new project. For example, if you use [CodeSandbox](https://codesandbox.io/) or if you use the framework [Next.js](https://nextjs.org/), the root component is defined in `pages/index.js`. In these examples, you've been exporting root components.
+మీ React అప్లికేషన్ ఒక "రూట్" కంపోనెంట్‌తో ప్రారంభం అవుతుంది. సాధారణంగా, మీరు కొత్త ప్రాజెక్ట్ ప్రారంభించేపుడు ఇది ఆటోమాటిక్‌గా సృష్టించబడుతుంది. ఉదాహరణకు, మీరు [CodeSandbox](https://codesandbox.io/) లేదా [Next.js](https://nextjs.org/) ఫ్రేమ్‌వర్క్‌ను ఉపయోగిస్తే, రూట్ కంపోనెంట్ `pages/index.js` లో నిర్వచించబడుతుంది. ఈ ఉదాహరణల్లో, మీరు రూట్ కంపోనెంట్లను ఎక్స్‌పోర్ట్ చేస్తున్నారు.
 
-Most React apps use components all the way down. This means that you won't only use components for reusable pieces like buttons, but also for larger pieces like sidebars, lists, and ultimately, complete pages! Components are a handy way to organize UI code and markup, even if some of them are only used once.
+మొత్తం React యాప్స్ కంపోనెంట్స్‌ను అన్ని దారిలో ఉపయోగిస్తాయి. అంటే, మీరు కేవలం రీయూజబుల్ భాగాలు, ఉదాహరణకు బటన్‌లతో మాత్రమే కంపోనెంట్స్‌ను ఉపయోగించరు, కానీ పెద్ద భాగాలు, ఉదాహరణకు సైడ్‌బార్లు, జాబితాలు, మరియు చివరగా, పూర్తి పేజీలు కూడా! కంపోనెంట్స్ UI కోడ్ మరియు మార్కప్‌ను వ్యవస్థీకరించడానికి చాలా ఉపయోగకరమైన మార్గం, కొన్నిటిని ఒకసారి మాత్రమే ఉపయోగించినా.
 
-[React-based frameworks](/learn/start-a-new-react-project) take this a step further. Instead of using an empty HTML file and letting React "take over" managing the page with JavaScript, they *also* generate the HTML automatically from your React components. This allows your app to show some content before the JavaScript code loads.
+[React ఆధారిత ఫ్రేమ్‌వర్క్‌లు](/learn/start-a-new-react-project) ఈ దశను మరింత ముందుకు తీసుకుంటాయి. ఒక ఖాళీ HTML ఫైల్‌ను ఉపయోగించి, React "పేజీని నిర్వహించేందుకు" జావాస్క్రిప్ట్‌తో పేజీని నిర్వహించడానికి అనుమతించే బదులుగా, అవి *మీ రియాక్ట్ కాంపొనెంట్ల నుండి HTMLని ఆటోమేటిగ్గా* జనరేట్ చేస్తాయి. ఇది జావాస్క్రిప్ట్ కోడ్ లోడ్ అవకముందు మీ యాప్ కొన్ని కంటెంట్‌ను చూపించడానికి అనుమతిస్తుంది.
 
-Still, many websites only use React to [add interactivity to existing HTML pages.](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) They have many root components instead of a single one for the entire page. You can use as much—or as little—React as you need.
+అయితే, అనేక వెబ్‌సైట్లు Reactని కేవలం [మొదలైన HTML పేజీలకు ఇంటరాక్టివిటీ జోడించడానికి](/learn/add-react-to-an-existing-project#using-react-for-a-part-of-your-existing-page) మాత్రమే ఉపయోగిస్తాయి. అవి పేజీ మొత్తం కోసం ఒకే ఒక రూట్ కాంపొనెంట్ యొక్క స్థానంలో అనేక రూట్ కాంపొనెంట్లను కలిగి ఉంటాయి. మీరు ఎంత React ఉపయోగించాలనుకుంటే, అంతా లేదా కొంత React ఉపయోగించవచ్చు.
 
 </DeepDive>
 
 <Recap>
 
-You've just gotten your first taste of React! Let's recap some key points.
+మీరు React ను మొదటి సారి అనుభవించారు! కొన్ని ముఖ్యమైన అంశాలను పునరావలంబం చేద్దాం.
 
-* React lets you create components, **reusable UI elements for your app.**
-* In a React app, every piece of UI is a component.
-* React components are regular JavaScript functions except:
+* React మీకు **మీ యాప్ కోసం రీయూజబుల్ UI ఎలిమెంట్స్** అయిన కంపోనెంట్లను సృష్టించడానికి అనుమతిస్తుంది.
+* React యాప్‌లో ప్రతి UI భాగం ఒక కంపోనెంట్.
+* React కంపోనెంట్లు సాధారణ జావాస్క్రిప్ట్ ఫంక్షన్లు అయినప్పటికీ:
 
-  1. Their names always begin with a capital letter.
-  2. They return JSX markup.
+  1. వాటి పేర్లు ఎల్లప్పుడూ పెద్ద అక్షరంతో ప్రారంభం అవుతాయి.
+  2. అవి JSX మార్కప్‌ను return ఇస్తాయీ.
 
 </Recap>
 
@@ -238,9 +238,9 @@ You've just gotten your first taste of React! Let's recap some key points.
 
 <Challenges>
 
-#### Export the component {/*export-the-component*/}
+#### కంపోనెంట్‌ను ఎక్స్‌పోర్ట్ చేయండి {/*export-the-component*/}
 
-This sandbox doesn't work because the root component is not exported:
+ఈ శాండ్‌బాక్స్ పని చేయడం లేదు, ఎందుకంటే రూట్ కంపోనెంట్ ఎక్స్‌పోర్ట్ చేయబడలేదు:
 
 <Sandpack>
 
@@ -261,11 +261,11 @@ img { height: 181px; }
 
 </Sandpack>
 
-Try to fix it yourself before looking at the solution!
+పరిష్కారాన్ని చూడటానికి ముందు దానిని మీరు స్వయంగా సరిచేయడానికి ప్రయత్నించండి!
 
 <Solution>
 
-Add `export default` before the function definition like so:
+ఫంక్షన్ నిర్వచనానికి ముందు `export default` జోడించండి ఇలా:
 
 <Sandpack>
 
@@ -286,17 +286,17 @@ img { height: 181px; }
 
 </Sandpack>
 
-You might be wondering why writing `export` alone is not enough to fix this example. You can learn the difference between `export` and `export default` in [Importing and Exporting Components.](/learn/importing-and-exporting-components)
+మీరు ఈ ఉదాహరణను సరిచేయడానికి కేవలం `export` వ్రాయడం ఎందుకు సరిపోదో అనుకుంటున్నారో. `export` మరియు `export default` మధ్య తేడా తెలుసుకోడానికి [కంపోనెంట్లను ఇంపోర్ట్ చేసుకోవడం మరియు ఎక్స్‌పోర్ట్ చేసుకోవడం](/learn/importing-and-exporting-components) చూడండి.
 
 </Solution>
 
-#### Fix the return statement {/*fix-the-return-statement*/}
+#### రిటర్న్ స్టేట్‌మెంట్‌ని సరిచేయండి {/*fix-the-return-statement*/}
 
-Something isn't right about this `return` statement. Can you fix it?
+ఈ `return` స్టేట్‌మెంట్‌లో ఏదో సరైనది లేదు. మీరు దీన్ని సరిచేయగలరా?
 
 <Hint>
 
-You may get an "Unexpected token" error while trying to fix this. In that case, check that the semicolon appears *after* the closing parenthesis. Leaving a semicolon inside `return ( )` will cause an error.
+మీరు దీన్ని సరి చేసేటప్పుడు "Unexpected token" ఎర్రర్ వస్తే, దయచేసి పరిక్షించండి, సెమికోలన్ `return ( )` ముగిసిన తరువాత రావాలి. సెమికోలన్‌ను `return ( )` లోపల ఉంచితే ఎర్రర్ వస్తుంది.
 
 </Hint>
 
@@ -318,7 +318,7 @@ img { height: 180px; }
 
 <Solution>
 
-You can fix this component by moving the return statement to one line like so:
+మీరు ఈ కంపోనెంట్‌ని సరి చేసేందుకు, return స్టేట్మెంట్‌ను ఒకే లైన్‌లో కింద చూపించినట్లుగా మార్చవచ్చు:
 
 <Sandpack>
 
@@ -334,7 +334,7 @@ img { height: 180px; }
 
 </Sandpack>
 
-Or by wrapping the returned JSX markup in parentheses that open right after `return`:
+లేదా `return` తరువాత వెంటనే తెరవబడే పేరెంటీసిస్ లో JSX మార్కప్‌ను చుట్టి రాయడం ద్వారా:
 
 <Sandpack>
 
@@ -357,9 +357,9 @@ img { height: 180px; }
 
 </Solution>
 
-#### Spot the mistake {/*spot-the-mistake*/}
+#### పొరపాటును కనుగొనండి {/*spot-the-mistake*/}
 
-Something's wrong with how the `Profile` component is declared and used. Can you spot the mistake? (Try to remember how React distinguishes components from the regular HTML tags!)
+`Profile` కంపోనెంట్ ఎలా ప్రకటించబడిందో మరియు ఉపయోగించబడిందో ఒకసారి పరిశీలించండి. మీరు తప్పు ఎక్కడ ఉంది అన్నదాన్ని గుర్తించగలరా? (React ఎలా కంపోనెంట్లను సాధారణ HTML ట్యాగుల నుండి వేరు చేస్తుందో గుర్తు పెట్టుకోండి!)
 
 <Sandpack>
 
@@ -393,9 +393,9 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 <Solution>
 
-React component names must start with a capital letter.
+React కంపోనెంట్ పేర్లు పెద్ద అక్షరంతో ప్రారంభించాలి.
 
-Change `function profile()` to `function Profile()`, and then change every `<profile />` to `<Profile />`:
+`function profile()` ని `function Profile()` గా మార్చండి, మరియు ఆపై ప్రతి `<profile />` ని `<Profile />` గా మార్చండి:
 
 <Sandpack>
 
@@ -429,9 +429,9 @@ img { margin: 0 10px 10px 0; }
 
 </Solution>
 
-#### Your own component {/*your-own-component*/}
+#### మీ స్వంత కంపోనెంట్ {/*your-own-component*/}
 
-Write a component from scratch. You can give it any valid name and return any markup. If you're out of ideas, you can write a `Congratulations` component that shows `<h1>Good job!</h1>`. Don't forget to export it!
+మీరు ఒక కొత్త కంపోనెంట్‌ని ప్రారంభించండి. మీరు దానికి ఏదైనా సరైన పేరు ఇవ్వవచ్చు మరియు ఏదైనా మార్కప్‌ని return చేయవచ్చు. మీకు ఆలోచనలేమైనా లేకపోతే, మీరు `Congratulations` కంపోనెంట్‌ను రాయవచ్చు, ఇది `<h1>Good job!</h1>` ని చూపిస్తుంది. దాన్ని ఎక్స్‌పోర్ట్ చేయడం మర్చిపోకండి!
 
 <Sandpack>
 
