@@ -1,26 +1,26 @@
 ---
-title: Importing and Exporting Components
+title: కంపోనెంట్లను ఇంపోర్ట్ మరియు ఎక్స్‌పోర్ట్ చేయడం
 ---
 
 <Intro>
 
-The magic of components lies in their reusability: you can create components that are composed of other components. But as you nest more and more components, it often makes sense to start splitting them into different files. This lets you keep your files easy to scan and reuse components in more places.
+కంపోనెంట్ల మ్యాజిక్ వాటి రీయూజబులిటీలో ఉంది: మీరు ఇతర కంపోనెంట్లతో కలిపిన కంపోనెంట్లను సృష్టించవచ్చు. కానీ మీరు ఎక్కువ కంపోనెంట్లను నెస్ట్ చేసినప్పుడు, వాటిని వేరువేరు ఫైళ్లలో విభజించడం ప్రారంభించటం ఆలోచనీయంగా ఉంటుంది. ఇది మీ ఫైళ్లను సులభంగా స్కాన్ చేయగలిగేలా చేస్తుంది మరియు కంపోనెంట్లను మరిన్ని ప్రదేశాలలో రీయూజబుల్ చేసుకునేందుకు అనుకూలంగా ఉంటుంది.
 
 </Intro>
 
 <YouWillLearn>
 
-* What a root component file is
-* How to import and export a component
-* When to use default and named imports and exports
-* How to import and export multiple components from one file
-* How to split components into multiple files
+* రూట్ కంపోనెంట్ ఫైల్ అంటే ఏమిటో
+* కంపోనెంట్లను ఇంపోర్ట్ చేసుకోవడం మరియు ఎక్స్‌పోర్ట్ చేయడం ఎలా
+* డిఫాల్ట్ మరియు నేమ్డ్ ఇంపోర్ట్ మరియు ఎక్స్‌పోర్ట్ ఎప్పుడు మరియు ఎలా ఉపయోగించాలో
+* ఒక ఫైల్ నుండి అనేక కంపోనెంట్లను ఇంపోర్ట్ చేయడం మరియు ఎక్స్‌పోర్ట్ చేయడం ఎలా
+* కంపోనెంట్లను అనేక ఫైళ్లలో విభజించడం ఎలా చేయాలో
 
 </YouWillLearn>
 
-## The root component file {/*the-root-component-file*/}
+## రూట్ కంపోనెంట్ ఫైల్ {/*the-root-component-file*/}
 
-In [Your First Component](/learn/your-first-component), you made a `Profile` component and a `Gallery` component that renders it:
+[మీ మొదటి కంపోనెంట్](/learn/your-first-component) లో, మీరు `Profile` అనే కంపోనెంట్ మరియు దానిని రెండర్ చేసే `Gallery` అనే కంపోనెంట్ సృష్టించారు:
 
 <Sandpack>
 
@@ -52,17 +52,17 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-These currently live in a **root component file,** named `App.js` in this example. Depending on your setup, your root component could be in another file, though. If you use a framework with file-based routing, such as Next.js, your root component will be different for every page.
+ఇవి ప్రస్తుతం **రూట్ కంపోనెంట్ ఫైల్** లో ఉన్నాయి, ఈ ఉదాహరణలో `App.js`. మీ సెటప్‌పై ఆధారపడి, మీ రూట్ కంపోనెంట్ వేరే ఫైల్‌లో ఉండవచ్చు. మీరు Next.js లాంటి ఫైల్ ఆధారిత రూటింగ్ ఫ్రేమ్‌వర్క్ ఉపయోగిస్తే, ప్రతి పేజీకి మీ రూట్ కంపోనెంట్ వేరుగా ఉంటుంది.
 
-## Exporting and importing a component {/*exporting-and-importing-a-component*/}
+## కంపోనెంట్లను ఎక్స్‌పోర్ట్ మరియు ఇంపోర్ట్ చేయడం {/*exporting-and-importing-a-component*/}
 
-What if you want to change the landing screen in the future and put a list of science books there? Or place all the profiles somewhere else? It makes sense to move `Gallery` and `Profile` out of the root component file. This will make them more modular and reusable in other files. You can move a component in three steps:
+మీరు భవిష్యత్తులో ల్యాండింగ్ స్క్రీన్‌ను మార్చి అక్కడ ఒక సైన్స్ పుస్తకాల జాబితా ఉంచాలని అనుకుంటే? లేదా అన్ని ప్రొఫైల్స్‌ను మరొకచోట ఉంచాలనుకుంటే? `Gallery` మరియు `Profile` ను రూట్ కంపోనెంట్ ఫైల్ నుండి బయటకు తరలించడం అవసరం. ఇది వాటిని మరింత మాడ్యులర్‌గా, ఇతర ఫైళ్లలో రీయూజబుల్ చేయడానికి అనుకూలంగా చేస్తుంది. కంపోనెంట్‌ను తరలించడానికి మూడు దశలు ఉన్నాయి:
 
-1. **Make** a new JS file to put the components in.
-2. **Export** your function component from that file (using either [default](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_the_default_export) or [named](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_named_exports) exports).
-3. **Import** it in the file where you’ll use the component (using the corresponding technique for importing [default](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#importing_defaults) or [named](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#import_a_single_export_from_a_module) exports).
+1. **కొత్త** JS ఫైల్ ను కంపోనెంట్లను ఉంచడానికి సృష్టించండి.
+2. ఆ ఫైల్ నుండి మీ ఫంక్షన్ కంపోనెంట్‌ను **ఎక్స్‌పోర్ట్** చేయండి ([డిఫాల్ట్](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_the_default_export) లేదా [నేమ్డ్](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_named_exports) ఎక్స్‌పోర్ట్స్‌ను ఉపయోగించి).
+3. మీరు కంపోనెంట్‌ను ఉపయోగించే ఫైల్‌లో **ఇంపోర్ట్** చేసుకోండి ((తదనుగుణంగా [డిఫాల్ట్](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#importing_defaults) లేదా [నేమ్డ్](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#import_a_single_export_from_a_module) ఇంపోర్ట్‌ల పద్ధతిని ఉపయోగించండి).
 
-Here both `Profile` and `Gallery` have been moved out of `App.js` into a new file called `Gallery.js`. Now you can change `App.js` to import `Gallery` from `Gallery.js`:
+ఇక్కడ `Profile` మరియు `Gallery` రెండూ `App.js` నుండి బయటకు తీసి కొత్త ఫైల్ `Gallery.js` లో ఉంచబడ్డాయి. ఇప్పుడు మీరు `App.js` లో `Gallery.js` నుండి `Gallery` ని ఇంపోర్ట్ చేసుకోవచ్చు:
 
 <Sandpack>
 
@@ -104,60 +104,60 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Notice how this example is broken down into two component files now:
+ఈ ఉదాహరణ ఇప్పుడు రెండు కంపోనెంట్ ఫైళ్లలో విభజించబడింది:
 
 1. `Gallery.js`:
-     - Defines the `Profile` component which is only used within the same file and is not exported.
-     - Exports the `Gallery` component as a **default export.**
+     - `Profile` కంపోనెంట్‌ను డిఫైన్ చేస్తుంది, ఇది అదే ఫైల్‌లో మాత్రమే ఉపయోగించబడుతుంది మరియు ఎక్స్‌పోర్ట్ చేయబడదు.
+     - `Gallery` కంపోనెంట్‌ను **డిఫాల్ట్ ఎక్స్‌పోర్ట్** గా ఎక్స్‌పోర్ట్‌ చేస్తుంది.
 2. `App.js`:
-     - Imports `Gallery` as a **default import** from `Gallery.js`.
-     - Exports the root `App` component as a **default export.**
+     - `Gallery.js` నుండి `Gallery` ను **డిఫాల్ట్ ఇంపోర్ట్** గా ఇంపోర్ట్ చేసుకుంటుంది.
+     - రూట్ App కంపోనెంట్‌ను **డిఫాల్ట్ ఎక్స్‌పోర్ట్** గా ఎక్స్‌పోర్ట్‌ చేస్తుంది.
 
 
 <Note>
 
-You may encounter files that leave off the `.js` file extension like so:
+మీరు `.js` ఫైల్ ఎక్స్‌టెన్షన్ లేకుండా ఉండే ఫైళ్లను ఎదుర్కొన్నట్లయితే, అవి ఈ విధంగా ఉంటాయి:
 
 ```js 
 import Gallery from './Gallery';
 ```
 
-Either `'./Gallery.js'` or `'./Gallery'` will work with React, though the former is closer to how [native ES Modules](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) work.
+React తో, `'./Gallery.js'` లేదా `'./Gallery'` రెండూ పని చేస్తాయి, అయితే మొదటి పద్ధతి [నేటివ్ ES మాడ్యూల్స్](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) ఎలా పని చేస్తాయో దానికి దగ్గరగా ఉంటుంది.
 
 </Note>
 
 <DeepDive>
 
-#### Default vs named exports {/*default-vs-named-exports*/}
+#### డిఫాల్ట్ ఎక్స్‌పోర్ట్స్ వర్సెస్ నేమ్డ్ ఎక్స్‌పోర్ట్స్ {/*default-vs-named-exports*/}
 
-There are two primary ways to export values with JavaScript: default exports and named exports. So far, our examples have only used default exports. But you can use one or both of them in the same file. **A file can have no more than one _default_ export, but it can have as many _named_ exports as you like.**
+JavaScript లో వాల్యూస్‌ను ఎక్స్‌పోర్ట్ చేయడానికి రెండు ప్రధాన మార్గాలు ఉన్నాయి: డిఫాల్ట్ ఎక్స్‌పోర్ట్స్ మరియు నేమ్డ్ ఎక్స్‌పోర్ట్స్. ఇంతవరకు, మా ఉదాహరణలు కేవలం డిఫాల్ట్ ఎక్స్‌పోర్ట్స్ మాత్రమే ఉపయోగించాయి. కానీ మీరు వాటిలో ఒకటి లేదా రెండూ ఉపయోగించవచ్చు. **ఒక ఫైల్‌లో కేవలం ఒకే ఒక డిఫాల్ట్ ఎక్స్‌పోర్ట్ ఉండవచ్చు, కానీ మీరు అనుకున్నంత నేమ్డ్ ఎక్స్‌పోర్ట్స్ ఉంచవచ్చు.**
 
-![Default and named exports](/images/docs/illustrations/i_import-export.svg)
+![డిఫాల్ట్ మరియు నేమ్డ్ ఎక్స్‌పోర్ట్స్](/images/docs/illustrations/i_import-export.svg)
 
-How you export your component dictates how you must import it. You will get an error if you try to import a default export the same way you would a named export! This chart can help you keep track:
+మీరు మీ కంపోనెంట్‌ను ఎక్స్‌పోర్ట్ చేసే విధానం మీరు దాన్ని ఎలా ఇంపోర్ట్ చేయాలో నిర్ణయిస్తుంది. మీరు డిఫాల్ట్ ఎక్స్‌పోర్ట్‌ను నేమ్డ్ ఎక్స్‌పోర్ట్‌కి సరిపోలిన విధంగా ఇంపోర్ట్ చేయాలని ప్రయత్నిస్తే, ఎర్రర్ వస్తుంది! ఈ చార్ట్ మీకు సహాయం చేస్తుంది:
 
-| Syntax           | Export statement                           | Import statement                          |
+| సింటాక్స్           | ఎక్స్‌పోర్ట్ స్టేట్మెంట్                           | ఇంపోర్ట్ స్టేట్మెంట్                          |
 | -----------      | -----------                                | -----------                               |
-| Default  | `export default function Button() {}` | `import Button from './Button.js';`     |
-| Named    | `export function Button() {}`         | `import { Button } from './Button.js';` |
+| డిఫాల్ట్  | `export default function Button() {}` | `import Button from './Button.js';`     |
+| నేమ్డ్    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
-When you write a _default_ import, you can put any name you want after `import`. For example, you could write `import Banana from './Button.js'` instead and it would still provide you with the same default export. In contrast, with named imports, the name has to match on both sides. That's why they are called _named_ imports!
+మీరు ఒక _డిఫాల్ట్_ ఇంపోర్ట్ రాస్తే, మీరు import తర్వాత ఏ పేరైనా ఉంచవచ్చు. ఉదాహరణకు, మీరు `import Banana from './Button.js'` అని రాయవచ్చు మరియు అది మీకు అదే డిఫాల్ట్ ఎగుమతిని అందిస్తుంది. ప్రతికూలంగా, నేమ్డ్ ఇంపోర్ట్ లో, పేరు రెండు వైపులా సరిపోయేది కావాలి. అందుకే వాటిని _నేమ్డ్_ ఇంపోర్ట్ లు అని పిలుస్తారు!
 
-**People often use default exports if the file exports only one component, and use named exports if it exports multiple components and values.** Regardless of which coding style you prefer, always give meaningful names to your component functions and the files that contain them. Components without names, like `export default () => {}`, are discouraged because they make debugging harder.
+**మొత్తం ఫైల్ ఒకే ఒక కంపోనెంట్‌ను ఎక్స్‌పోర్ట్ చేస్తే, డిఫాల్ట్ ఎక్స్‌పోర్ట్స్ సాధారణంగా ఉపయోగిస్తారు, మరియు అది అనేక కంపోనెంట్లు మరియు విలువలను ఎక్స్‌పోర్ట్ చేస్తే, నేమ్డ్ ఎక్స్‌పోర్ట్స్ ఉపయోగిస్తారు.** మీరు ఎంచుకున్న కోడింగ్ శైలి ఏదైనా అయినా, ఎల్లప్పుడూ మీ కంపోనెంట్ ఫంక్షన్స్ మరియు వాటిని కలిగి ఉన్న ఫైళ్ళకు అర్థవంతమైన పేర్లను ఇవ్వండి. పేరులు లేని కంపోనెంట్లు, ఉదాహరణకి `export default () => {}`, డీబగ్గింగ్‌ను కష్టతరంగా చేస్తాయి కనుక వాటిని ఉపయోగించడం ప్రోత్సహించదు.
 
 </DeepDive>
 
-## Exporting and importing multiple components from the same file {/*exporting-and-importing-multiple-components-from-the-same-file*/}
+## ఒకే ఫైల్ నుండి అనేక కంపోనెంట్లను ఎక్స్‌పోర్ట్ మరియు ఇంపోర్ట్ చేయడం {/*exporting-and-importing-multiple-components-from-the-same-file*/}
 
-What if you want to show just one `Profile` instead of a gallery? You can export the `Profile` component, too. But `Gallery.js` already has a *default* export, and you can't have _two_ default exports. You could create a new file with a default export, or you could add a *named* export for `Profile`. **A file can only have one default export, but it can have numerous named exports!**
+మీరు gallery బదులు ఒకే `Profile` చూపించాలని కోరుకుంటే ఏమిటి? మీరు `Profile` కంపోనెంట్‌ను కూడా ఎక్స్‌పోర్ట్ చేయవచ్చు. కానీ `Gallery.js` లో ఇప్పటికే డిఫాల్ట్ ఎక్స్‌పోర్ట్ ఉంది, మరియు మీరు _రెండు_ డిఫాల్ట్ ఎక్స్‌పోర్ట్స్ కలిగి ఉండలేరు. మీరు ఒక కొత్త ఫైల్‌ను డిఫాల్ట్ ఎక్స్‌పోర్ట్‌తో సృష్టించవచ్చు, లేదా `Profile` కోసం నేమ్డ్ ఎక్స్‌పోర్ట్‌ను జోడించవచ్చు. **ఒక ఫైల్‌లో కేవలం ఒక డిఫాల్ట్ ఎక్స్‌పోర్ట్ ఉండవచ్చు, కానీ అనేక నేమ్డ్ ఎక్స్‌పోర్ట్స్ ఉండవచ్చు!**
 
 <Note>
 
-To reduce the potential confusion between default and named exports, some teams choose to only stick to one style (default or named), or avoid mixing them in a single file. Do what works best for you!
+డిఫాల్ట్ మరియు నేమ్డ్ ఎక్స్‌పోర్ట్స్ మధ్య గందరగోళాన్ని తగ్గించడానికి, కొంతమంది టీములు ఒకే శైలిని మాత్రమే (డిఫాల్ట్ లేదా నేమ్డ్) ఉపయోగించడం లేదా వాటిని ఒకే ఫైల్‌లో మిళితం చేయడం నుండి తప్పించుకుంటారు. మీకు ఏది సరైనదో అది చేయండి!
 
 </Note>
 
-First, **export** `Profile` from `Gallery.js` using a named export (no `default` keyword):
+మొదట, **ఎక్స్‌పోర్ట్** చేయండి `Profile` ని `Gallery.js` నుండి, నేమ్డ్ ఎక్స్‌పోర్ట్ ద్వారా (డిఫాల్ట్ కీవర్డ్‌ను ఉపయోగించకుండా):
 
 ```js
 export function Profile() {
@@ -165,13 +165,13 @@ export function Profile() {
 }
 ```
 
-Then, **import** `Profile` from `Gallery.js` to `App.js` using a named import (with the curly braces):
+తర్వాత, **ఇంపోర్ట్** చేయండి `Profile` ని `Gallery.js` నుండి `App.js` లో, నేమ్డ్ ఇంపోర్ట్ ద్వారా (కర్లీ బ్రేసెస్‌తో):
 
 ```js
 import { Profile } from './Gallery.js';
 ```
 
-Finally, **render** `<Profile />` from the `App` component:
+చివరగా, **రెండర్** చేయండి `<Profile />` ని `App` కంపోనెంట్ నుండి:
 
 ```js
 export default function App() {
@@ -179,7 +179,7 @@ export default function App() {
 }
 ```
 
-Now `Gallery.js` contains two exports: a default `Gallery` export, and a named `Profile` export. `App.js` imports both of them. Try editing `<Profile />` to `<Gallery />` and back in this example:
+ఇప్పుడు `Gallery.js` లో రెండు ఎక్స్‌పోర్ట్ లు ఉన్నాయి: ఒక డిఫాల్ట్ Gallery ఎక్స్‌పోర్ట్, మరియు ఒక నేమ్డ్ `Profile` ఎక్స్‌పోర్ట్. `App.js` రెండింటినీ ఇంపోర్ట్ చేసుకుంటుంది. ఈ ఉదాహరణలో `<Profile />` ను `<Gallery />` గా ఎడిట్ చేసి, మళ్ళీ వెనక్కి మార్చడానికి ప్రయత్నించండి:
 
 <Sandpack>
 
@@ -222,24 +222,24 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Now you're using a mix of default and named exports:
+ఇప్పుడు మీరు డిఫాల్ట్ మరియు నేమ్డ్ ఎక్స్‌పోర్ట్‌ల మిశ్రమాన్ని ఉపయోగిస్తున్నారు:
 
 * `Gallery.js`:
-  - Exports the `Profile` component as a **named export called `Profile`.**
-  - Exports the `Gallery` component as a **default export.**
+  - `Profile` కంపోనెంట్‌ను **నేమ్డ్ ఎక్స్‌పోర్ట్ చేస్తుంది, దీనిని `Profile` అని పిలవబడుతుంది.**
+  - `Gallery` కంపోనెంట్‌ను **డిఫాల్ట్ ఎక్స్‌పోర్ట్** గా ఎక్స్‌పోర్ట్ చేస్తుంది.
 * `App.js`:
-  - Imports `Profile` as a **named import called `Profile`** from `Gallery.js`.
-  - Imports `Gallery` as a **default import** from `Gallery.js`.
-  - Exports the root `App` component as a **default export.**
+  - `Gallery.js` నుండి `Profile` ను **నేమ్డ్ ఇంపోర్ట్ చేసుకుంటుంది, దీనిని `Profile` అని పిలవబడుతుంది.**
+  - `Gallery` ను `Gallery.js` నుండి **డిఫాల్ట్ ఇంపోర్ట్** గా ఇంపోర్ట్ చేసుకుంటుంది.
+  - రూట్ `App` కంపోనెంట్‌ను **డిఫాల్ట్ ఎక్స్‌పోర్ట్** గా ఎక్స్‌పోర్ట్ చేస్తుంది.
 
 <Recap>
 
-On this page you learned:
+ఈ పేజీలో మీరు నేర్చుకున్నవి::
 
-* What a root component file is
-* How to import and export a component
-* When and how to use default and named imports and exports
-* How to export multiple components from the same file
+* రూట్ కంపోనెంట్ ఫైల్ అంటే ఏమిటి
+* ఒక కంపోనెంట్‌ను ఎలా ఇంపోర్ట్ మరియు ఎక్స్‌పోర్ట్ చేయాలి
+* డిఫాల్ట్ మరియు నేమ్డ్ ఇంపోర్ట్స్ మరియు ఎక్స్‌పోర్ట్స్ ను ఎప్పుడు మరియు ఎలా ఉపయోగించాలి
+* ఒకే ఫైల్ నుండి అనేక కంపోనెంట్లను ఎలా ఎక్స్‌పోర్ట్ చేయాలి
 
 </Recap>
 
@@ -247,22 +247,22 @@ On this page you learned:
 
 <Challenges>
 
-#### Split the components further {/*split-the-components-further*/}
+#### కంపోనెంట్లను మరింత విభజించండి {/*split-the-components-further*/}
 
-Currently, `Gallery.js` exports both `Profile` and `Gallery`, which is a bit confusing.
+ప్రస్తుతం, `Gallery.js` రెండు `Profile` మరియు `Gallery` కంపోనెంట్లను ఎక్స్‌పోర్ట్ చేస్తుంది, ఇది కొంత గందరగోళంగా ఉంది.
 
-Move the `Profile` component to its own `Profile.js`, and then change the `App` component to render both `<Profile />` and `<Gallery />` one after another.
+`Profile` కంపోనెంట్‌ను దాని స్వంత `Profile.js` కు తరలించండి, మరియు తర్వాత `App` కంపోనెంట్‌ను మార్చి `<Profile />` మరియు `<Gallery />` ను వరుసగా రెండర్ చేయండి.
 
-You may use either a default or a named export for `Profile`, but make sure that you use the corresponding import syntax in both `App.js` and `Gallery.js`! You can refer to the table from the deep dive above:
+మీరు `Profile` కోసం డిఫాల్ట్ లేదా నేమ్డ్ ఎక్స్‌పోర్ట్‌ను ఉపయోగించవచ్చు, కానీ మీరు రెండు `App.js` మరియు `Gallery.js` లో సరైన ఇంపోర్ట్ సింట్యాక్స్‌ను ఉపయోగిస్తున్నారో చూడండి! మీరు పై డీప్ డైవ్ లోని చార్టును చూడవచ్చు:
 
-| Syntax           | Export statement                           | Import statement                          |
+| సింటాక్స్           | ఎక్స్‌పోర్ట్ స్టేట్‌మెంట్                           | ఇంపోర్ట్ స్టేట్‌మెంట్                          |
 | -----------      | -----------                                | -----------                               |
-| Default  | `export default function Button() {}` | `import Button from './Button.js';`     |
-| Named    | `export function Button() {}`         | `import { Button } from './Button.js';` |
+| డిఫాల్ట్  | `export default function Button() {}` | `import Button from './Button.js';`     |
+| నేమ్డ్    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
 <Hint>
 
-Don't forget to import your components where they are called. Doesn't `Gallery` use `Profile`, too?
+మీరు ఎక్కడ పిలవబడతాయో అక్కడ మీ కంపోనెంట్లను ఇంపోర్ట్ చేయడం మర్చిపోకండి. `Gallery` కూడా `Profile` ను ఉపయోగించదేమో?
 
 </Hint>
 
@@ -313,11 +313,11 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-After you get it working with one kind of exports, make it work with the other kind.
+మీరు ఒక రకమైన ఎక్స్‌పోర్ట్స్‌తో పని చేయగానే, ఇతర రకమైన ఎక్స్‌పోర్ట్స్‌తో కూడా పనిచేయాలని ప్రయత్నించండి.
 
 <Solution>
 
-This is the solution with named exports:
+ఇది నేమ్డ్ ఎక్స్‌పోర్ట్స్‌తో సమాధానం:
 
 <Sandpack>
 
@@ -367,7 +367,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-This is the solution with default exports:
+ఇది డిఫాల్ట్ ఎక్స్‌పోర్ట్స్‌తో సమాధానం:
 
 <Sandpack>
 
