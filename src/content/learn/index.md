@@ -4,7 +4,11 @@ title: Quick Start
 
 <Intro>
 
+<<<<<<< HEAD
 React డాక్యుమెంటేషన్‌కు స్వాగతం! ఈ పేజీ మీరు రోజూ ఉపయోగించే 80% React కాన్సెప్ట్‌లకు పరిచయాన్ని అందిస్తుంది.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> 6ae99dddc3b503233291da96e8fd4b118ed6d682
 
 </Intro>
 
