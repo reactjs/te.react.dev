@@ -54,7 +54,7 @@ react-devtools
 
 ## మొబైల్ (React Native) {/*mobile-react-native*/}
 
-[React Native](https://reactnative.dev/)‌ తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి, మీరు React డెవలపర్ టూల్స్‌ను లోతుగా అనుసంధానించే ఇన్-బిల్ట్ డీబగ్గర్ అయిన [React Native DevTools](https://reactnative.dev/docs/debugging/react-native-devtools) ని ఉపయోగించవచ్చు. అన్ని ఫీచర్లు బ్రౌజర్ ఎక్స్టెన్షన్ తో సమానంగా పని చేస్తాయి, నేటివ్ ఎలిమెంట్ హైలైటింగ్ మరియు సెలక్షన్ తో సహా.
+[React Native](https://reactnative.dev/)‌ తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి, మీరు React డెవలపర్ టూల్స్‌ను లోతుగా అనుసంధానించే ఇన్-బిల్ట్ డీబగ్గర్ అయిన [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) ని ఉపయోగించవచ్చు. అన్ని ఫీచర్లు బ్రౌజర్ ఎక్స్టెన్షన్ తో సమానంగా పని చేస్తాయి, నేటివ్ ఎలిమెంట్ హైలైటింగ్ మరియు సెలక్షన్ తో సహా.
 
 [React Native డీబగ్గింగ్ గురించి మరింత తెలుసుకోండి.](https://reactnative.dev/docs/debugging)
 
