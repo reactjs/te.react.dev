@@ -1,26 +1,26 @@
 ---
-title: Passing Props to a Component
+title: కంపోనెంట్‌కు Props పాస్ చేయడం
 ---
 
 <Intro>
 
-React components use *props* to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+React కంపోనెంట్‌లు *props* ను ఒకదానితో ఒకటి కమ్యూనికేట్ చేసుకునేందుకు ఉపయోగిస్తాయి. ప్రతి పేరెంట్ కంపోనెంట్ దాని చైల్డ్ కంపోనెంట్‌లకు props ద్వారా కొంత సమాచారం పాస్ చేయవచ్చు. Props మీకు HTML ఆట్రిబ్యుట్‌లను గుర్తు చేయవచ్చు, కానీ మీరు వాటి ద్వారా ఆబ్జెక్ట్‌లు, అర్రేలు, ఫంక్షన్‌లు వంటి ఏదైనా జావాస్క్రిప్ట్ విలువలను పాస్ చేయవచ్చు.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to pass props to a component
-* How to read props from a component
-* How to specify default values for props
-* How to pass some JSX to a component
-* How props change over time
+* ఎలా props ను ఒక కంపోనెంట్‌కు పాస్ చేయాలి
+* ఎలా props ను ఒక కంపోనెంట్‌లో చదవాలి
+* props కోసం డిఫాల్ట్ విలువలు ఎలా స్పెసిఫై చేయాలి props
+* కొంత JSX ను కంపోనెంట్‌కు ఎలా పాస్ చేయాలి
+* ఎలా props కాలక్రమంలో మారతాయి
 
 </YouWillLearn>
 
-## Familiar props {/*familiar-props*/}
+## తెలిసిన props {/*familiar-props*/}
 
-Props are the information that you pass to a JSX tag. For example, `className`, `src`, `alt`, `width`, and `height` are some of the props you can pass to an `<img>`:
+Props అనేవి మీరు JSX ట్యాగ్‌కు పాస్ చేసే సమాచారం. ఉదాహరణకు, `className`, `src`, `alt`, `width`, మరియు `height` ఇవి మీరు `<img>` ట్యాగ్‌కు పాస్ చేయగల props:
 
 <Sandpack>
 
@@ -51,11 +51,11 @@ body { min-height: 120px; }
 
 </Sandpack>
 
-The props you can pass to an `<img>` tag are predefined (ReactDOM conforms to [the HTML standard](https://www.w3.org/TR/html52/semantics-embedded-content.html#the-img-element)). But you can pass any props to *your own* components, such as `<Avatar>`, to customize them. Here's how!
+మీరు `<img>` ట్యాగ్‌కు పాస్ చేయగల props ముందే నిర్ణయించినవి (ReactDOM దీనికి అనుగుణంగా ఉంటుంది [HTML ప్రమాణం](https://www.w3.org/TR/html52/semantics-embedded-content.html#the-img-element)). మీరు ఏవైనా ప్రాప్‌లను *మీ స్వంత* భాగాలకు పాస్ చేయవచ్చు, ఉదాహరణకు `<Avatar>`, వాటిని అనుకూలీకరించడానికి (to customize them). ఇలా చేయండి!
 
-## Passing props to a component {/*passing-props-to-a-component*/}
+## కంపోనెంట్‌కు props పాస్ చేయడం {/*passing-props-to-a-component*/}
 
-In this code, the `Profile` component isn't passing any props to its child component, `Avatar`:
+ఈ కోడ్‌లో, `Profile` కంపోనెంట్ తన చైల్డ్ కంపోనెంట్ అయిన `Avatar` కు ఎలాంటి props ని పాస్ చేయడంలేదు:
 
 ```js
 export default function Profile() {
@@ -65,9 +65,9 @@ export default function Profile() {
 }
 ```
 
-You can give `Avatar` some props in two steps.
+మీరు `Avatar` కు రెండు రకాలుక props ఇవ్వవచ్చు.
 
-### Step 1: Pass props to the child component {/*step-1-pass-props-to-the-child-component*/}
+### స్టెప్ 1: చైల్డ్ కంపోనెంట్‌కు props పాస్ చేయండి. {/*step-1-pass-props-to-the-child-component*/}
 
 First, pass some props to `Avatar`. For example, let's pass two props: `person` (an object), and `size` (a number):
 
