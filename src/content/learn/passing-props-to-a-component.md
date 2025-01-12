@@ -69,7 +69,7 @@ export default function Profile() {
 
 ### స్టెప్ 1: చైల్డ్ కంపోనెంట్‌కు props పాస్ చేయండి. {/*step-1-pass-props-to-the-child-component*/}
 
-First, pass some props to `Avatar`. For example, let's pass two props: `person` (an object), and `size` (a number):
+మొదట, `Avatar` కు కొన్ని props పాస్ చేయండి. ఉదాహరణకు, రెండు props పాస్ చేద్దాం: `person` (an object) మరియు `size` (a number):
 
 ```js
 export default function Profile() {
@@ -84,15 +84,15 @@ export default function Profile() {
 
 <Note>
 
-If double curly braces after `person=` confuse you, recall [they're merely an object](/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx) inside the JSX curlies.
+`person=` తరువాత డబుల్ కర్లీ బ్రాకెట్స్ మీకు సందేహం కలిగిస్తే, అవి JSX కర్లీస్ [ఒక ఆబ్జెక్ట్ మాత్రమే](/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx) అని గుర్తుంచుకోండి.
 
 </Note>
 
-Now you can read these props inside the `Avatar` component.
+ఇప్పుడు మీరు ఈ props ను `Avatar` కంపోనెంట్ లో చదవచ్చు.
 
-### Step 2: Read props inside the child component {/*step-2-read-props-inside-the-child-component*/}
+### స్టెప్ 2: చైల్డ్ కంపోనెంట్ లో props ను చదవండి. {/*step-2-read-props-inside-the-child-component*/}
 
-You can read these props by listing their names `person, size` separated by the commas inside `({` and `})` directly after `function Avatar`. This lets you use them inside the `Avatar` code, like you would with a variable.
+మీరు ఈ props ను `function Avatar` తర్వాత నేరుగా `({` మరియు `})` లో కమాలతో వేరు చేసిన `person, size` పేర్లను జాబితా చేయడం ద్వారా చదవచ్చు. ఇది మీకు `Avatar` కోడ్ లో వేరియబుల్ వంటి వాటిని ఉపయోగించడానికి అనుమతిస్తుంది.
 
 ```js
 function Avatar({ person, size }) {
@@ -100,9 +100,9 @@ function Avatar({ person, size }) {
 }
 ```
 
-Add some logic to `Avatar` that uses the `person` and `size` props for rendering, and you're done.
+`Avatar` లో `person` మరియు `size` props ను ఉపయోగించి రెండరింగ్ కోసం కొంత లాజిక్ జోడించండి, అంతే మీ పని పూర్తవుతుంది.
 
-Now you can configure `Avatar` to render in many different ways with different props. Try tweaking the values!
+ఇప్పుడు మీరు `Avatar` ను వివిధ props తో అనేక రకాలుగా రెండర్ చేయడానికి కాన్ఫిగర్ చేయవచ్చు. వాల్యూ మార్చి ప్రయత్నించండి!
 
 <Sandpack>
 
@@ -168,9 +168,9 @@ body { min-height: 120px; }
 
 </Sandpack>
 
-Props let you think about parent and child components independently. For example, you can change the `person` or the `size` props inside `Profile` without having to think about how `Avatar` uses them. Similarly, you can change how the `Avatar` uses these props, without looking at the `Profile`.
+Props మీకు పేరెంట్ మరియు చైల్డ్ కంపోనెంట్‌లను స్వతంత్రంగా ఆలోచించడానికి అనుమతిస్తాయి. ఉదాహరణకు, మీరు `Profile` లో `person` లేదా `size` props ను మార్చవచ్చు, కానీ `Avatar` అవి ఎలా ఉపయోగిస్తుందో గురించి ఆలోచించాల్సిన అవసరం లేదు. అదేవిధంగా, మీరు `Avatar` ఈ props ను ఎలా ఉపయోగిస్తుందో మార్చవచ్చు, `Profile` ను చూడకుండా.
 
-You can think of props like "knobs" that you can adjust. They serve the same role as arguments serve for functions—in fact, props _are_ the only argument to your component! React component functions accept a single argument, a `props` object:
+మీరు props ను "knobs" లాగా అనుకోవచ్చు, వాటిని మీరు సర్దుబాటు చేయవచ్చు. ఇవి ఫంక్షన్‌లకు ఆర్గుమెంట్‌లు ఎంత ముఖ్యమో, అదే పాత్ర పోషిస్తాయి—వాస్తవానికి, props మీ కంపోనెంట్‌కు కలిగే ఏకైక ఆర్గుమెంట్! React కంపోనెంట్ ఫంక్షన్‌లు ఒకే ఆర్గుమెంట్, అంటే `props` ఆబ్జెక్ట్‌ను స్వీకరిస్తాయి:
 
 ```js
 function Avatar(props) {
@@ -180,11 +180,11 @@ function Avatar(props) {
 }
 ```
 
-Usually you don't need the whole `props` object itself, so you destructure it into individual props.
+సాధారణంగా, మీకు మొత్తం `props` ఆబ్జెక్ట్ అవసరం ఉండదు, కాబట్టి మీరు దానిని విడగొట్టి సొంతంగా props గా ఉపయోగిస్తారు.
 
 <Pitfall>
 
-**Don't miss the pair of `{` and `}` curlies** inside of `(` and `)` when declaring props:
+**props డిక్లేర్ చేస్తూ `{` మరియు `}` కర్లీస్ జత** `(` మరియు `)` లోపల మిస్ చేయకండి.
 
 ```js
 function Avatar({ person, size }) {
@@ -192,7 +192,7 @@ function Avatar({ person, size }) {
 }
 ```
 
-This syntax is called ["destructuring"](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Unpacking_fields_from_objects_passed_as_a_function_parameter) and is equivalent to reading properties from a function parameter:
+ఈ సింటాక్స్‌ను ["డీస్ట్రక్చరింగ్"](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Unpacking_fields_from_objects_passed_as_a_function_parameter) అని పిలుస్తారు ఇది ఒక ఫంక్షన్ పరమేటర్ నుండి ప్రాపర్టీలు చదవడానికి సమానమైనది:
 
 ```js
 function Avatar(props) {
@@ -204,9 +204,9 @@ function Avatar(props) {
 
 </Pitfall>
 
-## Specifying a default value for a prop {/*specifying-a-default-value-for-a-prop*/}
+## prop డిఫాల్ట్ వాల్యూ స్పెసిఫై చేయడం {/*specifying-a-default-value-for-a-prop*/}
 
-If you want to give a prop a default value to fall back on when no value is specified, you can do it with the destructuring by putting `=` and the default value right after the parameter:
+మీరు prop కి డిఫాల్ట్ వాల్యూ ఇచ్చి, ఎలాంటి వాల్యూ నిర్దేశించకుండా వదిలేస్తే అది డిఫాల్ట్ వాల్యూ పడ్డప్పుడు, మీరు డీస్ట్రక్చరింగ్ ద్వారా `=` డిఫాల్ట్ వాల్యూ పరమేటర్ తర్వాత పెట్టి ఇది చేయవచ్చు:
 
 ```js
 function Avatar({ person, size = 100 }) {
@@ -214,13 +214,13 @@ function Avatar({ person, size = 100 }) {
 }
 ```
 
-Now, if `<Avatar person={...} />` is rendered with no `size` prop, the `size` will be set to `100`.
+ఇప్పుడు, ఏదైనా `size` prop లేకుండా `<Avatar person={...} />` రెండర్ అయితే, `size` వాల్యూ `100` గా సెట్ అవుతుంది.
 
-The default value is only used if the `size` prop is missing or if you pass `size={undefined}`. But if you pass `size={null}` or `size={0}`, the default value will **not** be used.
+డిఫాల్ట్ వాల్యూ మాత్రమే `size` prop మిస్సయితే లేదా `size={undefined}` పాస్ చేసినప్పుడు ఉపయోగించబడుతుంది. కానీ మీరు `size={null}` లేదా `size={0}` పాస్ చేస్తే, డిఫాల్ట్ వాల్యూ **ఉపయోగించబడదు**.
 
-## Forwarding props with the JSX spread syntax {/*forwarding-props-with-the-jsx-spread-syntax*/}
+## JSX స్ప్రెడ్ సింటాక్స్ ద్వారా props ఫార్వర్డ్ చేయడం {/*forwarding-props-with-the-jsx-spread-syntax*/}
 
-Sometimes, passing props gets very repetitive:
+కొన్నిసార్లు, props ఇవ్వడం చాలా బోర్ కొడుతుంది:
 
 ```js
 function Profile({ person, size, isSepia, thickBorder }) {
