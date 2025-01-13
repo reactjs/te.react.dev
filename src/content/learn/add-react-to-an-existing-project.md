@@ -20,15 +20,9 @@ title: React ను ఇప్పటికే ఉన్న ప్రాజెక�
 
 దీన్ని సెటప్ చేయడానికి మీరు దిగువ స్టెప్స్ ను  అనుసరించాలని మేము సిఫార్సు చేస్తున్నాము:
 
-<<<<<<< HEAD
 1. [React ఆధారిత ఫ్రేమ్‌వర్క్‌లలో](/learn/start-a-new-react-project) ఒకదాన్ని ఉపయోగించి **మీ యాప్‌లోని React భాగాన్ని రూపొందించండి**.
-2. మీ ఫ్రేమ్‌వర్క్ యొక్క కాన్ఫిగరేషన్‌లో **`/some-app` ని *base path* గా స్పెసిఫ్య్ చేయండి** (ఉదాహరణకు: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+2. మీ ఫ్రేమ్‌వర్క్ యొక్క కాన్ఫిగరేషన్‌లో **`/some-app` ని *base path* గా స్పెసిఫ్య్ చేయండి** (ఉదాహరణకు: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. మీ React యాప్లోని `/some-app/` కింద ఉన్న అన్ని రిక్వెస్టులను స్వీకరించడానికి **మీ సర్వర్ లేదా ప్రాక్సీని కాన్ఫిగర్ చేయండి**.
-=======
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
->>>>>>> 9000e6e003854846c4ce5027703b5ce6f81aad80
 
 మీ యాప్‌లోని React భాగం ఆ ఫ్రేమ్‌వర్క్‌లలో రూపొందించిన [మాడ్యూల్లను వాడుకొని ప్రయోజనం పొందగలదని](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) ఇది నిర్ధారిస్తుంది.
 
