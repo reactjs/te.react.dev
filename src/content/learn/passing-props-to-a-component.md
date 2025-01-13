@@ -237,7 +237,7 @@ function Profile({ person, size, isSepia, thickBorder }) {
 }
 ```
 
-There's nothing wrong with repetitive code—it can be more legible. But at times you may value conciseness. Some components forward all of their props to their children, like how this `Profile` does with `Avatar`. Because they don't use any of their props directly, it can make sense to use a more concise "spread" syntax:
+తరుచుగా వాడే కోడ్‌లో ఎలాంటి తప్పు లేదు—అది మరింత స్పష్టంగా చదవగలిగేది కావచ్చు. కానీ కొన్నిసార్లు మీరు సంక్షిప్తతకు విలువ ఇస్తారు. కొన్ని కంపోనెంట్‌లు తమ props ను అన్ని చైల్డ్‌లకు ఫార్వర్డ్ చేస్తాయి, ఉదాహరణకు, ఈ `Profile` లో `Avatar` props పాస్ చేసిన విధానం. అవి తమ props ను నేరుగా ఉపయోగించకపోతే, మరింత కొద్దిపాటి "స్ప్రెడ్" సింటాక్స్ ఉపయోగించడం సరైనది కావచ్చు:
 
 ```js
 function Profile(props) {
@@ -249,11 +249,11 @@ function Profile(props) {
 }
 ```
 
-This forwards all of `Profile`'s props to the `Avatar` without listing each of their names.
+ఇది `Profile` లోని అన్ని props లను వాటి పేర్లను లేకుండా `Avatar` కు ఫార్వర్డ్ చేస్తుంది.
 
-**Use spread syntax with restraint.** If you're using it in every other component, something is wrong. Often, it indicates that you should split your components and pass children as JSX. More on that next!
+**స్ప్రెడ్ సింటాక్స్‌ను లిమిటెడ్ కా ఉపయోగించండి.** మీరు దాన్ని ప్రతి ఇతర కంపోనెంట్‌లో ఉపయోగిస్తే, దాంట్లో ఏదో పొరపాటు ఉంది. ఇది తరచుగా మీ కంపోనెంట్‌లను విడిగ, చిల్డ్రన్‌ను JSX‌ గా పాస్ చేయాలని చూస్తుంది. దీని గురించి మరింత తరువాత తెలుసుకుందాం!
 
-## Passing JSX as children {/*passing-jsx-as-children*/}
+## JSX ని చిల్డ్రన్‌గా పాస్ చేయడం {/*passing-jsx-as-children*/}
 
 It is common to nest built-in browser tags:
 
