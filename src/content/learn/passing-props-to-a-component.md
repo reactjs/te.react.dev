@@ -255,7 +255,7 @@ function Profile(props) {
 
 ## JSX ని చిల్డ్రన్‌గా పాస్ చేయడం {/*passing-jsx-as-children*/}
 
-It is common to nest built-in browser tags:
+బిల్ట్-ఇన్ బ్రౌజర్ ట్యాగ్‌లను నెస్టింగ్ చేయడం సాధారణ ప్రాక్టీస్:
 
 ```js
 <div>
@@ -263,7 +263,7 @@ It is common to nest built-in browser tags:
 </div>
 ```
 
-Sometimes you'll want to nest your own components the same way:
+కొన్నిసార్లు మీరు మీ సొంత కంపోనెంట్‌లను కూడా అదే విధంగా నెస్ట్ చేయాలని కోరుకుంటారు:
 
 ```js
 <Card>
@@ -271,7 +271,7 @@ Sometimes you'll want to nest your own components the same way:
 </Card>
 ```
 
-When you nest content inside a JSX tag, the parent component will receive that content in a prop called `children`. For example, the `Card` component below will receive a `children` prop set to `<Avatar />` and render it in a wrapper div:
+మీరు JSX ట్యాగ్‌లో కంటెంట్‌ను నెస్ట్ చేస్తే, పేర్ెంట్ కంపోనెంట్ ఆ కంటెంట్‌ను `children` అనే prop లో స్వీకరిస్తుంది. ఉదాహరణకు, కింద ఇచ్చిన `Card` కంపోనెంట్ `<Avatar />` ను `children` prop గా స్వీకరిస్తుంది మరియు దాన్ని ఒక రేపర్‌ల `div` లో రెండర్ చేస్తుంది:
 
 <Sandpack>
 
@@ -347,17 +347,17 @@ export function getImageUrl(person, size = 's') {
 
 </Sandpack>
 
-Try replacing the `<Avatar>` inside `<Card>` with some text to see how the `Card` component can wrap any nested content. It doesn't need to "know" what's being rendered inside of it. You will see this flexible pattern in many places.
+`<Card>` లోని `<Avatar>` ను కొన్ని టెక్స్ట్‌తో మార్చి ప్రయత్నించండి, అప్పుడు `Card` కంపోనెంట్ ఎలాంటి నెస్టెడ్ కంటెంట్‌ను అయినా ఎలా ర్యాప్ చేయగలదో మీరు గమనించవచ్చు. దాని లోపల ఏమి రెండర్ అవుతుందో "తెలుసుకోవాల్సిన" అవసరం దీనికి లేదు. మీరు చాలా చోట్ల ఈ సౌకర్యవంతమైన పాటర్న్ చూస్తారు.
 
-You can think of a component with a `children` prop as having a "hole" that can be "filled in" by its parent components with arbitrary JSX. You will often use the `children` prop for visual wrappers: panels, grids, etc.
+`children` prop ఉన్న ఒక కాంపోనెంట్‌ను దాని పేరెంట్ కాంపోనెంట్‌ల ద్వారా ఆర్బిట్రరీ JSX తో "నింపగల" "రంధ్రం" కలిగి ఉన్నట్లు మీరు అనుకోవచ్చు. మీరు తరచుగా విజువల్ రేపర్‌ల కోసం `children` prop ఉపయోగిస్తారు: ప్యానెల్‌లు, గ్రిడ్‌లు మొదలైనవి.
 
 <Illustration src="/images/docs/illustrations/i_children-prop.png" alt='A puzzle-like Card tile with a slot for "children" pieces like text and Avatar' />
 
-## How props change over time {/*how-props-change-over-time*/}
+## Props కాలక్రమేణా ఎలా మారుతాయో {/*how-props-change-over-time*/}
 
-The `Clock` component below receives two props from its parent component: `color` and `time`. (The parent component's code is omitted because it uses [state](/learn/state-a-components-memory), which we won't dive into just yet.)
+కింద ఇచ్చిన `Clock` కంపోనెంట్ దాని పేర్ెంట్ కంపోనెంట్ నుండి రెండు ప్రాప్స్‌ని స్వీకరిస్తుంది: `color` మరియు `time`. (పేర్ెంట్ కంపోనెంట్ కోడ్‌ను మినహాయించారు, ఎందుకంటే అది [state](/learn/state-a-components-memory) ను ఉపయోగిస్తుంది, దానిపై మనం ఇప్పుడే చర్చించటం లేదు.)
 
-Try changing the color in the select box below:
+కింద ఉన్న సెలెక్ట్ బాక్స్‌లో రంగును మార్చి చూడండి:
 
 <Sandpack>
 
@@ -407,21 +407,21 @@ export default function App() {
 
 </Sandpack>
 
-This example illustrates that **a component may receive different props over time.** Props are not always static! Here, the `time` prop changes every second, and the `color` prop changes when you select another color. Props reflect a component's data at any point in time, rather than only in the beginning.
+ఈ ఉదాహరణ **ఒక కంపోనెంట్ సమయం గడిచేకొద్దీ వేర్వేరు props పొందవచ్చు** అని చూపిస్తుంది. Props ఎప్పుడూ స్థిరంగా ఉండవు! ఇక్కడ, `time` prop ప్రతి సెకనుకు మారుతుంది, మరియు `color` ప్రాప్ మీరు మరో రంగును ఎంచుకున్నప్పుడు మారుతుంది. Props ఒక కంపోనెంట్ యొక్క డేటాను ఎప్పుడైనా ప్రతిబింబిస్తాయి, మొదట్లో మాత్రమే కాదు.
 
-However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)—a term from computer science meaning "unchangeable". When a component needs to change its props (for example, in response to a user interaction or new data), it will have to "ask" its parent component to pass it _different props_—a new object! Its old props will then be cast aside, and eventually the JavaScript engine will reclaim the memory taken by them.
+అయితే, props [ఇమ్మ్యుటబుల్](https://en.wikipedia.org/wiki/Immutable_object)—ఇది కంప్యూటర్ సైన్స్ లో "మార్చలేనిది" అనే అర్థం కలిగిన పదం. ఒక కంపోనెంట్ దాని props మార్చాల్సినప్పుడు (ఉదాహరణకు, యూజర్ చర్య లేదా కొత్త డేటాకు ప్రతిస్పందనగా), అది దాని పేరెంట్ కంపోనెంట్ props _వేరే props_-కొత్త ఆబ్జెక్ట్‌ను పంపించమని "ఆరాధించాలి"! దాని పాత props తరువాత దూరంగా వేయబడతాయి, మరియు చివరికి జావాస్క్రిప్ట్ ఇంజిన్ వాటి ద్వారా తీసుకున్న మెమరీని తిరిగి స్వీకరిస్తుంది.
 
-**Don't try to "change props".** When you need to respond to the user input (like changing the selected color), you will need to "set state", which you can learn about in [State: A Component's Memory.](/learn/state-a-components-memory)
+**"Props మార్చడానికి ప్రయత్నించకండి".** మీరు యూజర్ ఇన్పుట్ (ఎంచుకున్న రంగును మార్చడం వంటి) కి స్పందించాల్సినప్పుడు, మీరు "state సెట్ చేయాలి", దానిపై మీరు [State: A Component's Memory.](/learn/state-a-components-memory) లో తెలుసుకోవచ్చు
 
 <Recap>
 
-* To pass props, add them to the JSX, just like you would with HTML attributes.
-* To read props, use the `function Avatar({ person, size })` destructuring syntax.
-* You can specify a default value like `size = 100`, which is used for missing and `undefined` props.
-* You can forward all props with `<Avatar {...props} />` JSX spread syntax, but don't overuse it!
-* Nested JSX like `<Card><Avatar /></Card>` will appear as `Card` component's `children` prop.
-* Props are read-only snapshots in time: every render receives a new version of props.
-* You can't change props. When you need interactivity, you'll need to set state.
+* Props పంపించడానికి, వాటిని JSX లో జోడించండి, మీరు HTML అట్రిబ్యూషన్లతో చేసినట్లే.
+* Props ను చదవడానికి, `function Avatar({ person, size })` డెస్ట్రక్చరింగ్ సింటాక్స్ ఉపయోగించండి.
+* మీరు `size = 100` వంటి డిఫాల్ట్ వాల్యూ స్పెసిఫై చేయవచ్చు, ఇది లేకపోతే మరియు `undefined` props కోసం ఉపయోగించబడుతుంది.
+* మీరు `<Avatar {...props} />` JSX స్ప్రెడ్ సింటాక్స్‌తో అన్ని props ఫార్వర్డ్ చేయవచ్చు, కానీ దీనిని ఎక్కువగా ఉపయోగించకండి!
+* `<Card><Avatar /></Card>` వంటి నెస్టెడ్ JSX `Card` కంపోనెంట్ యొక్క `children` prop కనిపిస్తుంది.
+*  Props సమయానికి చదవడానికి మాత్రమే స్నాప్‌షార్ట్: ప్రతి రెండరింగ్ ఒక కొత్త props వెర్షన్‌ను అందిస్తుంది.
+* మీరు props మార్చలేరు. మీరు ఇంటరాక్టివిటీ అవసరమైనప్పుడు, state సెట్ చేయాల్సి ఉంటుంది.
 
 </Recap>
 
@@ -429,9 +429,9 @@ However, props are [immutable](https://en.wikipedia.org/wiki/Immutable_object)�
 
 <Challenges>
 
-#### Extract a component {/*extract-a-component*/}
+#### కంపోనెంట్‌ను ఎక్స్‌ట్రాక్ట్ చేయండి {/*extract-a-component*/}
 
-This `Gallery` component contains some very similar markup for two profiles. Extract a `Profile` component out of it to reduce the duplication. You'll need to choose what props to pass to it.
+ఈ `Gallery` కంపోనెంట్‌లో రెండు ప్రొఫైళ్లకు సంబంధించిన చాలా సమానమైన మార్కప్ ఉంది. డుప్లికేషన్‌ను తగ్గించేందుకు దీని నుండి ఒక `Profile` కంపోనెంట్‌ను ఎక్స్‌ట్రాక్ట్ చేయండి. దీనికి ఏమి props పంపాలనేది మీరు నిర్ణయించుకోవాలి.
 
 <Sandpack>
 
@@ -524,15 +524,15 @@ li { margin: 5px; }
 
 <Hint>
 
-Start by extracting the markup for one of the scientists. Then find the pieces that don't match it in the second example, and make them configurable by props.
+మొదట ఒక శాస్త్రవేత్తకు సంబంధించిన మార్కప్‌ను ఎక్స్‌ట్రాక్ట్ చేయడం ప్రారంభించండి. ఆపై, రెండో ఉదాహరణలో వాటితో సరిపోని భాగాలను గుర్తించండి మరియు వాటిని props ద్వారా కాన్ఫిగర్ చేయగలిగేలా చేయండి.
 
 </Hint>
 
 <Solution>
 
-In this solution, the `Profile` component accepts multiple props: `imageId` (a string), `name` (a string), `profession` (a string), `awards` (an array of strings), `discovery` (a string), and `imageSize` (a number).
+ఈ పరిష్కారంలో, `Profile` కంపోనెంట్ అనేక props లను అందుకుంటుంది: `imageId` (a string), `name` (a string), `profession` (a string), `awards` (an array of strings), `discovery` (a string), `imageSize` (a number).
 
-Note that the `imageSize` prop has a default value, which is why we don't pass it to the component.
+గమనించండి, `imageSize` prop కు ఒక డిఫాల్ట్ వాల్యూ ఉంది, అందువల్ల దాన్ని కంపోనెంట్‌కు పంపించవలసిన అవసరం లేదు.
 
 <Sandpack>
 
@@ -630,9 +630,9 @@ li { margin: 5px; }
 
 </Sandpack>
 
-Note how you don't need a separate `awardCount` prop if `awards` is an array. Then you can use `awards.length` to count the number of awards. Remember that props can take any values, and that includes arrays too!
+గమనించండి, `awards` ఒక array అయితే, మీరు ప్రత్యేకంగా `awardCount` prop అవసరం లేకుండా `awards.length`ను ఉపయోగించి అవార్డుల సంఖ్యను లెక్కించవచ్చు. గుర్తుంచుకోండి, props ఏవైనా వాల్యుస్ తీసుకోగలవు, వీటిలో arrays కూడా ఉన్నాయి!
 
-Another solution, which is more similar to the earlier examples on this page, is to group all information about a person in a single object, and pass that object as one prop:
+మరొక పరిష్కారం, ఈ పేజీలోని గత ఉదాహరణలతో మరింత సమానం, అంటే వ్యక్తి గురించి అన్ని సమాచారం ఒకే ఆబ్జెక్ట్‌లో గ్రూప్ చేయడం మరియు ఆ ఆబ్జెక్ట్‌ను ఒకే prop గా పాస్ చేయడం:
 
 <Sandpack>
 
@@ -727,15 +727,15 @@ li { margin: 5px; }
 
 </Sandpack>
 
-Although the syntax looks slightly different because you're describing properties of a JavaScript object rather than a collection of JSX attributes, these examples are mostly equivalent, and you can pick either approach.
+మీరు JSX లక్షణాలు సమాహారం కాకుండా జావాస్క్రిప్ట్ ఆబ్జెక్ట్ యొక్క లక్షణాలను వివరిస్తున్నందున వాక్యనిర్మాణం కొద్దిగా భిన్నంగా కనిపిస్తున్నప్పటికీ, ఈ ఉదాహరణలు చాలా వరకు సమానంగా ఉంటాయి మరియు మీరు ఈ రెండు విధానాలలో ఏదైనా ఎంచుకోవచ్చు.
 
 </Solution>
 
-#### Adjust the image size based on a prop {/*adjust-the-image-size-based-on-a-prop*/}
+#### Prop ఆధారంగా ఇమేజ్ సైజ్ అడ్జస్ట్ చేయండి {/*adjust-the-image-size-based-on-a-prop*/}
 
-In this example, `Avatar` receives a numeric `size` prop which determines the `<img>` width and height. The `size` prop is set to `40` in this example. However, if you open the image in a new tab, you'll notice that the image itself is larger (`160` pixels). The real image size is determined by which thumbnail size you're requesting.
+ఈ ఉదాహరణలో, `Avatar` నెంబర్ గా ఉన్న `size` prop స్వీకరిస్తుంది, ఇది `<img>` యొక్క వెడల్పు మరియు ఎత్తు నిర్ణయిస్తుంది. ఈ ఉదాహరణలో `size` prop విలువ `40` గా నిర్ణయించబడింది. అయితే, మీరు ఇమేజ్ కొత్త ట్యాబ్‌లో తెరిస్తే, మీరు గమనించవచ్చు ఇమేజ్ తేలికగా పెద్దదిగా ఉంటుంది (`160` పిక్సెల్స్). వాస్తవ ఇమేజ్ పరిమాణం మీరు కోరిన థంబ్నెయిల్ పరిమాణం ఆధారంగా నిర్ణయించబడుతుంది.
 
-Change the `Avatar` component to request the closest image size based on the `size` prop. Specifically, if the `size` is less than `90`, pass `'s'` ("small") rather than `'b'` ("big") to the `getImageUrl` function. Verify that your changes work by rendering avatars with different values of the `size` prop and opening images in a new tab.
+`Avatar` కంపోనెంట్‌ను `size` prop ఆధారంగా సన్నిహితమైన ఇమేజ్ పరిమాణాన్ని కోరేందుకు మార్చండి. ప్రత్యేకంగా, `size` విలువ `90` కంటే తక్కువ అయితే, `'s'` (''స్మాల్'') ను `'b'` (''బిగ్'') కంటే `getImageUrl` ఫంక్షన్‌కు పంపండి. మీరు చేసిన మార్పులు పని చేస్తున్నాయో లేదో ధృవీకరించడానికి వివిధ `size` prop విలువలతో అవతార్‌లను రెండర్ చేసి, చిత్రాలను కొత్త టాబ్‌లో ఓపెన్ చేయండి.
 
 <Sandpack>
 
@@ -786,7 +786,7 @@ export function getImageUrl(person, size) {
 
 <Solution>
 
-Here is how you could go about it:
+ఇక్కడ మీరు దీన్ని ఎలా చేయగలరో చూపిస్తాను:
 
 <Sandpack>
 
@@ -848,7 +848,7 @@ export function getImageUrl(person, size) {
 
 </Sandpack>
 
-You could also show a sharper image for high DPI screens by taking [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio) into account:
+మీరు [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio) ను పరిగణనలోకి తీసుకుని, అధిక DPI స్క్రీన్ల కోసం మరింత స్పష్టమైన చిత్రం చూపించవచ్చు:
 
 <Sandpack>
 
@@ -919,13 +919,13 @@ export function getImageUrl(person, size) {
 
 </Sandpack>
 
-Props let you encapsulate logic like this inside the `Avatar` component (and change it later if needed) so that everyone can use the `<Avatar>` component without thinking about how the images are requested and resized.
+Props మీరు ఈ తరహా లాజిక్‌ను `Avatar` కంపోనెంట్ లోపల ఎంకాప్‌ ఎన్‌క్యాప్సులేట్ అనుమతిస్తాయి (కానీ అవసరమైతే తర్వాత మార్పులు చేయవచ్చు), తద్వారా ప్రతి ఒక్కరూ `<Avatar>` కంపోనెంట్‌ని ఉపయోగించడానికి, చిత్రాలను ఎలా అభ్యర్థించాలి మరియు సైజు మార్చాలి అనే దానిపై ఆలోచించకుండానే ఉపయోగించవచ్చు.
 
 </Solution>
 
-#### Passing JSX in a `children` prop {/*passing-jsx-in-a-children-prop*/}
+#### పాసింగ్ JSX ఇన్ ఏ `children` prop {/*passing-jsx-in-a-children-prop*/}
 
-Extract a `Card` component from the markup below, and use the `children` prop to pass different JSX to it:
+కింద ఇచ్చిన మార్కప్ నుండి `Card` కంపోనెంట్ ను ఎక్స్‌ట్రాక్ట్ చేసి, దానిలో డిఫరెంట్ JSX ని పంపించడానికి `children` prop ఉపయోగించండి:
 
 <Sandpack>
 
@@ -983,13 +983,13 @@ h1 {
 
 <Hint>
 
-Any JSX you put inside of a component's tag will be passed as the `children` prop to that component.
+మీరు ఒక కంపోనెంట్ ట్యాగ్‌లో పెట్టిన ఏ JSX. ఆ కంపోనెంట్‌కు `children` prop పంపబడుతుంది.
 
 </Hint>
 
 <Solution>
 
-This is how you can use the `Card` component in both places:
+ఈ విధంగా మీరు రెండు ప్రదేశాలలో `Card` కాంపోనెంట్‌ని ఉపయోగించవచ్చు:
 
 <Sandpack>
 
@@ -1051,7 +1051,7 @@ h1 {
 
 </Sandpack>
 
-You can also make `title` a separate prop if you want every `Card` to always have a title:
+మీరు ప్రతి `Card` కి ఎల్లప్పుడూ టైటిల్ ఉండాలని కోరుకుంటే మీరు `title`ని ప్రత్యేక prop కూడా చేయవచ్చు:
 
 <Sandpack>
 
