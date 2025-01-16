@@ -1,24 +1,24 @@
 ---
-title: Writing Markup with JSX
+title: JSX తో మార్కప్ రాయడం
 ---
 
 <Intro>
 
-*JSX* is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. Although there are other ways to write components, most React developers prefer the conciseness of JSX, and most codebases use it.
+*JSX* అనేది JavaScript కోసం ఒక సింటాక్స్ ఎక్స్‌టెన్షన్. ఇది JavaScript ఫైల్‌లో HTML లాంటి మార్కప్ రాయడానికి అనుమతిస్తుంది. కంపోనెంట్లను రాయడానికి ఇతర మార్గాలు ఉన్నప్పటికీ, చాలా React డెవలపర్లు JSX యొక్క సౌకర్యాన్ని ఇష్టపడతారు మరియు చాలా కోడ్‌బేస్‌లు దీనిని ఉపయోగిస్తాయి.
 
 </Intro>
 
 <YouWillLearn>
 
-* Why React mixes markup with rendering logic
-* How JSX is different from HTML
-* How to display information with JSX
+* React మార్కప్‌ను రెండరింగ్ లాజిక్‌తో ఎందుకు కలుపుతుంది
+* JSX HTML కి ఎలా భిన్నంగా ఉంటుంది
+* JSX ద్వారా సమాచారం ఎలా ప్రదర్శించాలి
 
 </YouWillLearn>
 
-## JSX: Putting markup into JavaScript {/*jsx-putting-markup-into-javascript*/}
+## JSX: మార్కప్‌ను JavaScript లో ఉంచడం {/*jsx-putting-markup-into-javascript*/}
 
-The Web has been built on HTML, CSS, and JavaScript. For many years, web developers kept content in HTML, design in CSS, and logic in JavaScript—often in separate files! Content was marked up inside HTML while the page's logic lived separately in JavaScript:
+Web అనేది HTML, CSS, మరియు JavaScript పై ఆధారపడి నిర్మించబడింది. చాలా సంవత్సరాలుగా, వెబ్ డెవలపర్లు కంటెంట్‌ను HTML లో, డిజైన్‌ను CSS లో, మరియు లాజిక్‌ను JavaScript లో విడిగా ఉంచేవారు—ఇప్పటికీ వేరే ఫైళ్లలో! కంటెంట్ HTML లో మార్కప్ చేయబడేది, ఆ పేజీ యొక్క లాజిక్ మాత్రం JavaScript లో వేరుగా ఉండేది:
 
 <DiagramGroup>
 
@@ -36,37 +36,37 @@ JavaScript
 
 </DiagramGroup>
 
-But as the Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML! This is why **in React, rendering logic and markup live together in the same place—components.**
+కానీ Web మరింత ఇంటరాక్టివ్‌గా మారుతున్న కొద్దీ, లాజిక్ ఎక్కువగా కంటెంట్‌ను నిర్ణయించింది. JavaScript అనేది HTML ని నియంత్రించేది! అందుకే **React లో, రెండరింగ్ లాజిక్ మరియు మార్కప్ కంపోనెంట్లలో ఒకే చోట ఉంటాయి.**
 
 <DiagramGroup>
 
 <Diagram name="writing_jsx_sidebar" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Sidebar which calls the function isLoggedIn, highlighted in yellow. Nested inside the function highlighted in purple is the p tag from before, and a Form tag referencing the component shown in the next diagram.">
 
-`Sidebar.js` React component
+`Sidebar.js` React కంపోనెంట్
 
 </Diagram>
 
 <Diagram name="writing_jsx_form" height={330} width={325} alt="React component with HTML and JavaScript from previous examples mixed. Function name is Form containing two handlers onClick and onSubmit highlighted in yellow. Following the handlers is HTML highlighted in purple. The HTML contains a form element with a nested input element, each with an onClick prop.">
 
-`Form.js` React component
+`Form.js` React కంపోనెంట్
 
 </Diagram>
 
 </DiagramGroup>
 
-Keeping a button's rendering logic and markup together ensures that they stay in sync with each other on every edit. Conversely, details that are unrelated, such as the button's markup and a sidebar's markup, are isolated from each other, making it safer to change either of them on their own.
+బటన్ యొక్క రెండరింగ్ లాజిక్ మరియు మార్కప్‌ను కలిపి ఉంచడం వల్ల, ప్రతిసారి మార్పులు చేసినప్పుడు అవి ఒకే సమన్వయంతో ఉండేలా చేస్తుంది. మరోవైపు, బటన్ యొక్క మార్కప్ మరియు సైడ్బార్ యొక్క మార్కప్ వంటి సంబంధం లేని వివరాలు ఒకదానితో ఒకటి ప్రత్యేకంగా ఉంచబడతాయి, దీనివల్ల వాటిలో ఏదైనా స్వతంత్రంగా మార్చడం మరింత సురక్షితంగా ఉంటుంది.
 
-Each React component is a JavaScript function that may contain some markup that React renders into the browser. React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information. The best way to understand this is to convert some HTML markup to JSX markup.
+ప్రతి React కంపోనెంట్ అనేది ఒక JavaScript ఫంక్షన్, ఇది React బ్రౌజర్‌లో రెండర్ చేసే కొంత మార్కప్‌ను కలిగి ఉండవచ్చు. React కంపోనెంట్‌లు ఆ మార్కప్‌ను ప్రదర్శించడానికి JSX అనే సింటాక్స్ ఎక్స్‌టెన్షన్ ఉపయోగిస్తాయి. JSX అనేది HTML లాంటిదిగా కనిపిస్తుంది, కానీ ఇది కొంచెం స్ట్రిక్ట్ గా ఉంటుంది మరియు డైనమిక్ సమాచారాన్ని ప్రదర్శించగలదు. దీనిని అర్థం చేసుకోవడానికి ఉత్తమమైన మార్గం, కొంత HTML మార్కప్‌ను JSX మార్కప్‌లోకి మార్చడం.
 
 <Note>
 
-JSX and React are two separate things. They're often used together, but you *can* [use them independently](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#whats-a-jsx-transform) of each other. JSX is a syntax extension, while React is a JavaScript library.
+JSX మరియు React రెండు వేర్వేరు విషయాలు. వీటిని తరచుగా కలిపి ఉపయోగిస్తారు, కానీ మీరు [వాటిని స్వతంత్రంగా ఉపయోగించవచ్చు](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#whats-a-jsx-transform). JSX అనేది ఒక సింటాక్స్ ఎక్స్‌టెన్షన్ కాగా, React అనేది ఒక JavaScript లైబ్రరీ.
 
 </Note>
 
-## Converting HTML to JSX {/*converting-html-to-jsx*/}
+## HTML ని JSX గా మార్చడం {/*converting-html-to-jsx*/}
 
-Suppose that you have some (perfectly valid) HTML:
+మీ దగ్గర కొంత (పూర్తిగా సరైన) HTML ఉందని అనుకుందాం:
 
 ```html
 <h1>Hedy Lamarr's Todos</h1>
@@ -82,7 +82,7 @@ Suppose that you have some (perfectly valid) HTML:
 </ul>
 ```
 
-And you want to put it into your component:
+మరియు మీరు దానిని మీ కంపోనెంట్‌లో పెట్టాలనుకుంటున్నట్లయితే:
 
 ```js
 export default function TodoList() {
@@ -92,7 +92,7 @@ export default function TodoList() {
 }
 ```
 
-If you copy and paste it as is, it will not work:
+మీరు కాపీ చేసి అలాగే పేస్ట్ చేస్తే, ఇది పని చేయదు:
 
 
 <Sandpack>
@@ -122,21 +122,21 @@ img { height: 90px }
 
 </Sandpack>
 
-This is because JSX is stricter and has a few more rules than HTML! If you read the error messages above, they'll guide you to fix the markup, or you can follow the guide below.
+ఇది ఎందుకంటే JSX అనేది HTML కంటే స్ట్రిక్ట్ గా ఉంటుంది మరియు దాని కోసం కొన్ని అదనపు నియమాలు ఉన్నాయి! మీరు పై ఎర్రర్ మెసేజ్‌లను చదవితే, అవి మార్కప్‌ని సరిచేయడంలో మీకు మార్గనిర్దేశం చేస్తాయి, లేదా మీరు కింద ఉన్న గైడ్‌ను అనుసరించవచ్చు.
 
 <Note>
 
-Most of the time, React's on-screen error messages will help you find where the problem is. Give them a read if you get stuck!
+చాలా సమయాల్లో, React యొక్క ఆన్-స్క్రీన్ ఎర్రర్ మెసేజ్‌లు సమస్య ఎక్కడ ఉందో కనుగొనడంలో మీకు సహాయపడతాయి. మీరు చిక్కులో పడితే, వాటిని చదవండి!
 
 </Note>
 
-## The Rules of JSX {/*the-rules-of-jsx*/}
+## JSX యొక్క నియమాలు {/*the-rules-of-jsx*/}
 
-### 1. Return a single root element {/*1-return-a-single-root-element*/}
+### 1. ఒకే రూట్ ఎలిమెంట్‌ని return చేయండి {/*1-return-a-single-root-element*/}
 
-To return multiple elements from a component, **wrap them with a single parent tag.**
+కంపోనెంట్ల నుంచి అనేక ఎలిమెంట్స్‌ ని return చేయాలంటే, **వాటిని ఒకే పేరెంట్ ట్యాగ్‌తో చుట్టండి.**
 
-For example, you can use a `<div>`:
+ఉదాహరణకు, మీరు `<div>` ని ఉపయోగించవచ్చు:
 
 ```js {1,11}
 <div>
@@ -153,7 +153,7 @@ For example, you can use a `<div>`:
 ```
 
 
-If you don't want to add an extra `<div>` to your markup, you can write `<>` and `</>` instead:
+మీరు మీ మార్కప్‌కి అదనపు `<div>` జోడించకూడదనుకుంటే, మీరు బదులుగా `<>` మరియు `</>` వ్రాయవచ్చు:
 
 ```js {1,11}
 <>
@@ -169,21 +169,21 @@ If you don't want to add an extra `<div>` to your markup, you can write `<>` and
 </>
 ```
 
-This empty tag is called a *[Fragment.](/reference/react/Fragment)* Fragments let you group things without leaving any trace in the browser HTML tree.
+ఈ ఖాళీ ట్యాగ్‌ని *[Fragment](/reference/react/Fragment)* అని అంటారు. Fragments బ్రౌజర్ HTML ట్రీలో ఎలాంటి జాడను వదలకుండా విషయాలను సమూహపరచడానికి మిమ్మల్ని అనుమతిస్తాయి.
 
 <DeepDive>
 
-#### Why do multiple JSX tags need to be wrapped? {/*why-do-multiple-jsx-tags-need-to-be-wrapped*/}
+#### ఎందుకు మల్టిపుల్ JSX ట్యాగ్‌లను ర్యాప్ చేయాలి? {/*why-do-multiple-jsx-tags-need-to-be-wrapped*/}
 
-JSX looks like HTML, but under the hood it is transformed into plain JavaScript objects. You can't return two objects from a function without wrapping them into an array. This explains why you also can't return two JSX tags without wrapping them into another tag or a Fragment.
+JSX అనేది HTML లాగా కనిపిస్తుంది, కానీ లోపలి భాగంలో ఇది సాధారణ JavaScript ఆబ్జెక్టులుగా మార్చబడుతుంది. మీరు ఒక ఫంక్షన్ నుండి రెండు ఆబ్జెక్టులను తిరిగి ఇచ్చే అవకాశం లేదు, అవి ఒక array లో ర్యాప్ చేయాల్సి ఉంటుంది. ఇదే కారణంగా, మీరు రెండు JSX ట్యాగ్‌లను కూడా మరో ట్యాగ్ లేదా fragment లో ర్యాప్ చేయకుండా తిరిగి ఇవ్వలేరు.
 
 </DeepDive>
 
-### 2. Close all the tags {/*2-close-all-the-tags*/}
+### 2. అన్ని ట్యాగ్‌లను మూసివేయండి {/*2-close-all-the-tags*/}
 
-JSX requires tags to be explicitly closed: self-closing tags like `<img>` must become `<img />`, and wrapping tags like `<li>oranges` must be written as `<li>oranges</li>`.
+JSX లో ట్యాగ్‌లను స్పష్టంగా మూసివేయాల్సి ఉంటుంది: స్వయంగా మూసే ట్యాగ్‌లాంటి `<img>` ను `<img />` గా మార్చాలి, మరియు వ్రాపింగ్ టాగ్స్ లాంటి `<li>oranges` ను `<li>oranges</li>` అని రాయాలి.
 
-This is how Hedy Lamarr's image and list items look closed:
+ఇది Hedy Lamarr యొక్క చిత్రమూ, లిస్ట్ అంశాలు ఎలా మూసివేయబడ్డాయో చూడండి:
 
 ```js {2-6,8-10}
 <>
@@ -200,11 +200,11 @@ This is how Hedy Lamarr's image and list items look closed:
 </>
 ```
 
-### 3. camelCase <s>all</s> most of the things! {/*3-camelcase-salls-most-of-the-things*/}
+### 3. camelCase <s>అన్ని</s> చాలా విషయాలు! {/*3-camelcase-salls-most-of-the-things*/}
 
-JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects. In your own components, you will often want to read those attributes into variables. But JavaScript has limitations on variable names. For example, their names can't contain dashes or be reserved words like `class`.
+JSX JavaScript గా మారుతుంది మరియు JSX లో రాసిన అట్రిబ్యూట్లు JavaScript ఆబ్జెక్టుల key లు అవుతాయి. మీ స్వంత కాంపోనెంట్లలో, మీరు తరచుగా ఆ అట్రిబ్యూట్లను వేరియబుల్స్‌లో చదవాలనుకుంటారు. కానీ JavaScript వేరియబుల్ పేర్లపై కొన్ని పరిమితులు ఉన్నాయి. ఉదాహరణకు, వాటి పేర్లలో డాష్‌లు ఉండకూడదు లేదా `class` వంటి రిజర్వ్ చేసిన పదాలు ఉండకూడదు.
 
-This is why, in React, many HTML and SVG attributes are written in camelCase. For example, instead of `stroke-width` you use `strokeWidth`. Since `class` is a reserved word, in React you write `className` instead, named after the [corresponding DOM property](https://developer.mozilla.org/en-US/docs/Web/API/Element/className):
+అందుకే React లో, చాలా HTML మరియు SVG అట్రిబ్యూట్లు camelCase లో రాయబడతాయి. ఉదాహరణకు, `stroke-width` బదులుగా మీరు `strokeWidth` ఉపయోగిస్తారు. `class` అనేది రిజర్వ్ చేసిన పదం కావడం వలన, React లో మీరు `className` అని రాస్తారు, ఇది [అనుకూల DOM ప్రాపర్టీ](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) ఆధారంగా ఉంటుంది:
 
 ```js {4}
 <img 
@@ -214,19 +214,19 @@ This is why, in React, many HTML and SVG attributes are written in camelCase. Fo
 />
 ```
 
-You can [find all these attributes in the list of DOM component props.](/reference/react-dom/components/common) If you get one wrong, don't worry—React will print a message with a possible correction to the [browser console.](https://developer.mozilla.org/docs/Tools/Browser_Console)
+మీరు [ఈ అన్ని అట్రిబ్యూట్లను DOM కంపోనెంట్ ప్రాపర్టీలు యొక్క లిస్ట్‌లో కనుగొనవచ్చు](/reference/react-dom/components/common). మీరు వాటిలో ఒకటి తప్పు చేసినా, చింతించకండి—React ఒక సందేశాన్ని ప్రింట్ చేస్తుంది, దాని పరిష్కారం కోసం [బ్రౌజర్ కన్సోల్](https://developer.mozilla.org/docs/Tools/Browser_Console) లో చూడండి.
 
 <Pitfall>
 
-For historical reasons, [`aria-*`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) and [`data-*`](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) attributes are written as in HTML with dashes.
+చరిత్రాత్మక కారణాల వల్ల, [`aria-*`](https://developer.mozilla.org/docs/Web/Accessibility/ARIA) మరియు [`data-*`](https://developer.mozilla.org/docs/Learn/HTML/Howto/Use_data_attributes) అట్రిబ్యూట్లు HTML లో డాష్‌లతో రాయబడతాయి.
 
 </Pitfall>
 
-### Pro-tip: Use a JSX Converter {/*pro-tip-use-a-jsx-converter*/}
+### ప్రో-టిప్: JSX కన్వర్టర్‌ను ఉపయోగించండి {/*pro-tip-use-a-jsx-converter*/}
 
-Converting all these attributes in existing markup can be tedious! We recommend using a [converter](https://transform.tools/html-to-jsx) to translate your existing HTML and SVG to JSX. Converters are very useful in practice, but it's still worth understanding what is going on so that you can comfortably write JSX on your own.
+ఇప్పటికే ఉన్న మార్కప్‌లో ఈ అట్రిబ్యూట్లను అన్నింటినీ మార్చడం చాలా శ్రమతో కూడుకున్నది! మీ ప్రస్తుత HTML మరియు SVG ని JSX కి అనువదించడానికి [కన్‌వర్టర్](https://transform.tools/html-to-jsx) ని ఉపయోగించమని మేము సిఫార్సు చేస్తున్నాము. కన్వర్టర్లు ప్రాక్టికల్‌గా చాలా ఉపయోగకరంగా ఉంటాయి, కానీ మీరు సరిగ్గా ఏం జరుగుతుందో అర్థం చేసుకోవడం ఇంకా విలువైనది, తద్వారా మీరు సొంతంగా JSX సౌకర్యంగా రాయగలుగుతారు.
 
-Here is your final result:
+ఇది మీ చివరి ఫలితం:
 
 <Sandpack>
 
@@ -258,11 +258,11 @@ img { height: 90px }
 
 <Recap>
 
-Now you know why JSX exists and how to use it in components:
+ఇప్పుడు మీరు JSX ఎందుకు ఉన్నదీ, కంపోనెంట్లలో దాన్ని ఎలా ఉపయోగించాలో తెలుసుకున్నారు:
 
-* React components group rendering logic together with markup because they are related.
-* JSX is similar to HTML, with a few differences. You can use a [converter](https://transform.tools/html-to-jsx) if you need to.
-* Error messages will often point you in the right direction to fixing your markup.
+* React కంపోనెంట్లు రెండరింగ్ లాజిక్ మరియు మార్కప్‌ను ఒకే చోట గ్రూప్ చేస్తాయి, ఎందుకంటే అవి పరస్పర సంబంధితమైనవి.
+* JSX అనేది HTML లాగా ఉంటుంది, కానీ కొన్ని తేడాలు ఉన్నాయి. అవసరమైతే మీరు [కన్‌వర్టర్](https://transform.tools/html-to-jsx) ను ఉపయోగించవచ్చు.
+* ఎర్రర్ మెసేజ్‌లు మీ మార్కప్‌ను సరిచేయడానికి సరైన దిశను చూపిస్తాయి.
 
 </Recap>
 
@@ -270,9 +270,9 @@ Now you know why JSX exists and how to use it in components:
 
 <Challenges>
 
-#### Convert some HTML to JSX {/*convert-some-html-to-jsx*/}
+#### కొంత HTML ని JSX గా మార్చండి {/*convert-some-html-to-jsx*/}
 
-This HTML was pasted into a component, but it's not valid JSX. Fix it:
+ఈ HTML ను ఒక కంపోనెంట్‌లో పెట్టారు, కానీ ఇది సరైన JSX కాదు. దీన్ని సరిచేయండి:
 
 <Sandpack>
 
@@ -308,7 +308,7 @@ export default function Bio() {
 
 </Sandpack>
 
-Whether to do it by hand or using the converter is up to you!
+దీనిని స్వయంగా చేయాలా లేదా కన్వర్టర్‌ను ఉపయోగించాలా అనేది మీ ఇష్టంపై ఆధారపడి ఉంటుంది!
 
 <Solution>
 
