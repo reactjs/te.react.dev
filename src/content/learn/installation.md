@@ -1,35 +1,35 @@
 ---
-title: Installation
+title: ఇన్స్టలేషన్
 ---
 
 <Intro>
 
-React ప్రారంభం నుండి, క్రమంగా స్వీకరించుట​ కొరకు రూపొందించబడింది. మీకు అవసరమైనంత React ని ఉపయోగించవచ్చు. మీరు అసలైన React ని, HTML పేజీకి కొంత ఇంటరాక్టివిటీని జోడించాలనుకున్నా లేదా సంక్లిష్టమైన(complex) React పవర్డ్ యాప్‌ని ప్రారంభించాలనుకున్నా, ఈ విభాగం మీకు అందుకు సహయపడుతుంది.
+React ను దశలవారీగా ఉపయోగించడానికి రూపొందించారు. మీ అవసరానికి అనుగుణంగా React ను కొంచెం లేదా ఎక్కువగా ఉపయోగించవచ్చు. React అంటే ఏమిటో తెలుసుకోవాలనుకుంటున్నారా, HTML పేజీకి ఇన్‌టరాక్టివిటీ జోడించాలనుకుంటున్నారా, లేదా ఒక పెద్ద React యాప్‌ను రూపొందించాలనుకుంటున్నారా? అయితే, ఈ విభాగం మీకు సహాయపడుతుంది.
 
 </Intro>
 
 <YouWillLearn isChapter={true}>
 
-* [How to start a new React project](/learn/start-a-new-react-project)
-* [How to add React to an existing project](/learn/add-react-to-an-existing-project)
-* [How to set up your editor](/learn/editor-setup)
-* [How to install React Developer Tools](/learn/react-developer-tools)
+* [కొత్త React ప్రాజెక్ట్‌ను ఎలా ప్రారంభించాలి](/learn/start-a-new-react-project)
+* [React ను ఇప్పటికే ఉన్న ప్రాజెక్ట్‌కు ఎలా జోడించాలి](/learn/add-react-to-an-existing-project)
+* [మీ ఎడిటర్‌ను ఎలా సెటప్ చేయాలి](/learn/editor-setup)
+* [React Developer Tools ను ఎలా ఇన్‌స్టాల్ చేయాలి](/learn/react-developer-tools)
 
 </YouWillLearn>
 
-## Try React {/*try-react*/}
+## React ను ట్రై చేయండి {/*try-react*/}
 
-You don't need to install anything to play with React. Try editing this sandbox!
+React తో పని చేయడానికి మీరు ఏమీ ఇన్‌స్టాల్ చేయాల్సిన అవసరం లేదు. ఈ సాండ్‌బాక్స్‌ను ఎడిట్ చేసి చూడండి!
 
 <Sandpack>
 
 ```js
 function Greeting({ name }) {
-  return <h1>Hello, {name}</h1>;
+  return <h1>హలో, {name}</h1>;
 }
 
 export default function App() {
-  return <Greeting name="world" />
+  return <Greeting name="వరల్డ్" />
 }
 ```
 
