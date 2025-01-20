@@ -62,12 +62,8 @@ npm install react react-dom
 <html>
   <head><title>My app</title></head>
   <body>
-<<<<<<< HEAD
     <!-- మీ ప్రస్తుత పేజీ కంటెంట్ (ఈ ఉదాహరణలో, ఇది రీప్లేస్ చేయబడుతుంది) -->
-=======
-    <!-- Your existing page content (in this example, it gets replaced) -->
     <div id="root"></div>
->>>>>>> b22cbc3fed310b39c99fdd0f01621ac1903d1e8e
   </body>
 </html>
 ```
