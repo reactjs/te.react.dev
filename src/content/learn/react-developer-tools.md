@@ -53,24 +53,9 @@ react-devtools
 ![React డెవలపర్ టూల్స్ స్టాండ్ అలొనె](/images/docs/react-devtools-standalone.png)
 
 ## మొబైల్ (React Native) {/*mobile-react-native*/}
-[React Native](https://reactnative.dev/) తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి కూడా  React డెవలపర్ టూల్స్ ను ఉపయోగించవచ్చు.
 
-React డెవలపర్ టూల్స్ ను ఉపయోగించడానికి సులభమైన మార్గం దీన్ని గ్లోబల్గా ఇన్‌స్టాల్ చేయడం:
-```bash
-# Yarn
-yarn global add react-devtools
-
-# Npm
-npm install -g react-devtools
-```
-
-తరువాత టెర్మినల్ నుండి డెవలపర్ టూల్స్ ను ఓపెన్ చేయండి.
-```bash
-react-devtools
-```
-
-దీన్ని రన్నింగ్లో ఉన్న ఏదైనా లోకల్ React Native యాప్‌కి కనెక్ట్ చేయాలి.
-
-> డెవలపర్ టూల్స్ కొన్ని సెకన్ల తర్వాత కనెక్ట్ కాకపోతే యాప్‌ని రీలోడ్ చేయడానికి ప్రయత్నించండి.
+[React Native](https://reactnative.dev/)‌ తో రూపొందించబడిన యాప్‌లను తనిఖీ చేయడానికి, మీరు React డెవలపర్ టూల్స్‌ను లోతుగా అనుసంధానించే ఇన్-బిల్ట్ డీబగ్గర్ అయిన [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) ని ఉపయోగించవచ్చు. అన్ని ఫీచర్లు బ్రౌజర్ ఎక్స్టెన్షన్ తో సమానంగా పని చేస్తాయి, నేటివ్ ఎలిమెంట్ హైలైటింగ్ మరియు సెలక్షన్ తో సహా.
 
 [React Native డీబగ్గింగ్ గురించి మరింత తెలుసుకోండి.](https://reactnative.dev/docs/debugging)
+
+> 0.76 కంటే ముందు React Native వెర్షన్‌ల కోసం, దయచేసి పైన ఉన్న [Safari మరియు ఇతర బ్రౌజర్‌ల](#safari-and-other-browsers) గైడ్‌ని అనుసరించడం ద్వారా React DevTools యొక్క స్టాండ్ అలొనె బిల్డ్ ను ఉపయోగించండి.
