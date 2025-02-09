@@ -1,30 +1,32 @@
 ---
-title: Adding Interactivity
+title: ఇంటరాక్టివిటీ ని జోడించటం
 ---
 
 <Intro>
 
-Some things on the screen update in response to user input. For example, clicking an image gallery switches the active image. In React, data that changes over time is called *state.* You can add state to any component, and update it as needed. In this chapter, you'll learn how to write components that handle interactions, update their state, and display different output over time.
+యూజర్ ఇన్పుట్కు రెస్పాన్స్ గా స్క్రీన్‌పై కొన్ని అంశాలు అప్‌డేట్ చేయబడతాయి. ఉదాహరణకు, ఇమేజ్ గ్యాలరీని క్లిక్ చేయడం వలన యాక్టివ్ ఇమేజ్ స్విచ్ చేయబడుతుంది. React లో, కాలక్రమేణా మారే డేటాను *state* అంటారు. మీరు ఏదైనా కాంపోనెంట్కి state ని జోడించవచ్చు మరియు అవసరమైన విధంగా దాన్ని అప్డేట్ చేయవచ్చు. ఈ చాప్టర్లో, ఇంట్రాక్షన్స్ ని హేండిల్ చేయడం, వాటి state ని అప్డేట్ చేయడం మరియు కాలక్రమేణా డిఫరెంట్ అవుట్‌పుట్‌లను డిస్ప్లే చేసే కాంపోనెంట్లను ఎలా వ్రాయాలో మీరు నేర్చుకుంటారు.
 
 </Intro>
 
+
 <YouWillLearn isChapter={true}>
 
-* [How to handle user-initiated events](/learn/responding-to-events)
-* [How to make components "remember" information with state](/learn/state-a-components-memory)
-* [How React updates the UI in two phases](/learn/render-and-commit)
-* [Why state doesn't update right after you change it](/learn/state-as-a-snapshot)
-* [How to queue multiple state updates](/learn/queueing-a-series-of-state-updates)
-* [How to update an object in state](/learn/updating-objects-in-state)
-* [How to update an array in state](/learn/updating-arrays-in-state)
+* [యూజర్ ఇనిషియేట్ చేసిన ఈవెంట్‌లను ఎలా హేండిల్ చేయాలి](/learn/responding-to-events)
+* [state తో ఇన్ఫర్మేషన్ ని "గుర్తుంచుకోవడానికి" కాంపోనెంట్లను ఎలా తయారు చేయాలి](/learn/state-a-components-memory)
+* [React ఎలా UI ని రెండు ఫేసెస్ లో అప్‌డేట్ చేస్తుంది](/learn/render-and-commit)
+* [మీరు మార్చిన వెంటనే state ఎందుకు అప్డేట్ అవ్వడు](/learn/state-as-a-snapshot)
+* [మల్టిపుల్ state అప్డేట్లను ఎలా క్యూ లో ఉంచాలి](/learn/queueing-a-series-of-state-updates)
+* [state లో ఉన్న ఆబ్జెక్ట్ ను ఎలా అప్‌డేట్ చేయాలి](/learn/updating-objects-in-state)
+* [state లో array ని ఎలా అప్‌డేట్ చేయాలి](/learn/updating-arrays-in-state)
 
 </YouWillLearn>
 
-## Responding to events {/*responding-to-events*/}
+## ఈవెంట్స్ కి రెస్పాండ్ అవ్వడం {/*responding-to-events*/}
 
-React lets you add *event handlers* to your JSX. Event handlers are your own functions that will be triggered in response to user interactions like clicking, hovering, focusing on form inputs, and so on.
+మీ JSX కి *ఈవెంట్ హ్యాండ్లర్‌లను* జోడించడానికి React మిమ్మల్ని అనుమతిస్తుంది. ఈవెంట్ హ్యాండ్లర్లు అనేవి మీ స్వంత ఫంక్షన్‌లు ఇవి క్లిక్ చేయడం, హోవర్ చేయడం, ఫోర్మ్ ఇన్పుట్ల పై ఫోకస్ చేయడం మొదలైన యూజర్ ఇంట్రాక్షన్స్కి రెస్పాన్స్ గా ట్రిగ్గర్ చేయబడతాయి.
 
-Built-in components like `<button>` only support built-in browser events like `onClick`. However, you can also create your own components, and give their event handler props any application-specific names that you like.
+`<button>` వంటి బిల్ట్-ఇన్ కాంపోనెంట్లు `onClick` వంటి బిల్ట్-ఇన్ బ్రౌజర్ ఈవెంట్‌లకు మాత్రమే సపోర్ట్ చేస్తాయి. అయితే, మీరు మీ స్వంత కాంపోనెంట్లను కూడా క్రియేట్ చేయొచ్చు మరియు వారి ఈవెంట్ హ్యాండ్లర్ props కు మీరు ఇష్టపడే ఏదైనా అప్లికేషన్-స్పెసిఫిక్ పేర్లను ఇవ్వవచ్చు.
+
 
 <Sandpack>
 
@@ -68,22 +70,22 @@ button { margin-right: 10px; }
 
 <LearnMore path="/learn/responding-to-events">
 
-Read **[Responding to Events](/learn/responding-to-events)** to learn how to add event handlers.
+ఈవెంట్ హ్యాండ్లర్‌లను ఎలా జోడించాలో తెలుసుకోవడానికి **[ఈవెంట్‌లకు రెస్పాండ్ అవ్వడం](/learn/responding-to-events)** గురించి చదవండి.
 
 </LearnMore>
 
-## State: a component's memory {/*state-a-components-memory*/}
+## state: ఒక కాంపోనెంట్ యొక్క మెమరీ {/*state-a-components-memory*/}
 
-Components often need to change what's on the screen as a result of an interaction. Typing into the form should update the input field, clicking "next" on an image carousel should change which image is displayed, clicking "buy" puts a product in the shopping cart. Components need to "remember" things: the current input value, the current image, the shopping cart. In React, this kind of component-specific memory is called *state.*
+ఇంట్రాక్షన్స్ కి ఫలితంగా స్క్రీన్‌పై ఉన్న వాటిని కాంపోనెంట్లు తరచుగా మార్చవలసి ఉంటుంది. ఫోర్మ్లో టైప్ చేయడం అనేది ఇన్పుట్ ఫీల్డ్‌ను అప్‌డేట్ చేయాలి, ఇమేజ్ కరౌసెల్ పై "నెక్స్ట్" ని క్లిక్ చేయడం ద్వారా ఏ ఇమేజ్ ప్రదర్శించబడుతుందో మార్చాలి, "కొనుగోలు" పై క్లిక్ చేసినప్పుడు షాపింగ్ కార్ట్‌లో ప్రోడక్ట్ ని ఉంచాలి. కాంపోనెంట్లు విషయాలను "గుర్తుంచుకోవాలి": ప్రస్తుత ఇన్పుట్ వేల్యూ, ప్రస్తుత ఇమేజ్, షాపింగ్ కార్ట్. React లో, ఈ రకమైన కాంపోనెంట్-నిర్దిష్ట మెమరీని *state* అంటారు.
 
-You can add state to a component with a [`useState`](/reference/react/useState) Hook. *Hooks* are special functions that let your components use React features (state is one of those features). The `useState` Hook lets you declare a state variable. It takes the initial state and returns a pair of values: the current state, and a state setter function that lets you update it.
+మీరు ఒక కాంపోనెంట్కి [`useState`](/reference/react/useState) హుక్ ద్వారా state ని జోడించవచ్చు. *హుక్స్* అనేవి మీ కాంపోనెంట్లు React ఫీచర్‌లను ఉపయోగించడానికి అనుమతించే ప్రత్యేక ఫంక్షన్లు (ఆ ఫీచర్లలో state ఒకటి). `useState` హుక్ state వేరియబుల్‌ని డిక్లేర్ చేయడానికి మిమ్మల్ని అనుమతిస్తుంది. ఇది ఇనీటియాల్ state ని తీసుకుంటుంది మరియు ఒక పెయిర్ అఫ్ వాల్యూస్ ని రిటర్న్ చేస్తుంది: ప్రస్తుత state మరియు దానిని అప్‌డేట్ చేయడానికి మిమ్మల్ని అనుమతించే state సెట్టర్ ఫంక్షన్.
 
 ```js
 const [index, setIndex] = useState(0);
 const [showMore, setShowMore] = useState(false);
 ```
 
-Here is how an image gallery uses and updates state on click:
+ఇమేజ్ గ్యాలరీ క్లిక్‌ పై state ని ఎలా ఉపయోగిస్తుంది మరియు అప్‌డేట్ చేస్తుందో ఇక్కడ చూడండి:
 
 <Sandpack>
 
@@ -229,43 +231,43 @@ button {
 
 <LearnMore path="/learn/state-a-components-memory">
 
-Read **[State: A Component's Memory](/learn/state-a-components-memory)** to learn how to remember a value and update it on interaction.
+వేల్యూ ను ఎలా గుర్తుంచుకోవాలి మరియు ఇంటరాక్షన్ పై దాన్ని ఎలా అప్డేట్ చేయాలో తెలుసుకోవడానికి [స్టేట్: ఎ కాంపోనెంట్స్ మెమరీ](/learn/state-a-components-memory) ని చదవండి.
 
 </LearnMore>
 
-## Render and commit {/*render-and-commit*/}
+## రెండర్ అండ్ కమిట్ {/*render-and-commit*/}
 
-Before your components are displayed on the screen, they must be rendered by React. Understanding the steps in this process will help you think about how your code executes and explain its behavior.
+మీ కాంపోనెంట్లు స్క్రీన్‌ పై ప్రదర్శించబడటానికి ముందు, అవి తప్పనిసరిగా React ద్వారా రెండర్ చేయబడాలి. ఈ ప్రాసెస్ లోని స్టెప్స్ ను అర్థం చేసుకోవడం వల్ల మీ కోడ్ ఎలా ఎగ్జిక్యూట్ చేయబడుతుందో తెలుసుకోవడానికి మరియు దాని ప్రవర్తనను వివరించడానికి మీకు సహాయపడుతుంది.
 
-Imagine that your components are cooks in the kitchen, assembling tasty dishes from ingredients. In this scenario, React is the waiter who puts in requests from customers and brings them their orders. This process of requesting and serving UI has three steps:
+మీ కాంపోనెంట్లు కిచెన్ లో కూక్స్ అని ఊహించుకోండి, అవి పదార్థాల నుండి రుచికరమైన వంటకాలను తయారు చేస్తున్నాయి. ఈ స్కీనారియోలో, React అనేది కస్టమర్ల నుండి రిక్వెస్ట్లను తీసుకుని వారి ఆర్డర్‌లను వారికి సర్వ్ చేసే వెయిటర్. UI ని రిక్వెస్ట్ మరియు సర్వ్ చేయడం అనే ఈ ప్రక్రియ మూడు స్టెప్స్ను కలిగి ఉంటుంది:
 
-1. **Triggering** a render (delivering the diner's order to the kitchen)
-2. **Rendering** the component (preparing the order in the kitchen)
-3. **Committing** to the DOM (placing the order on the table)
+1. **ట్రిగరింగ్** రెండర్ (డైనర్ యొక్క ఆర్డర్‌ను వంటగదికి డెలివర్ చేయడం)
+2. **రెండరింగ్** కాంపోనెంట్ (వంటగదిలో ఆర్డర్‌ను సిద్ధం చేయడం)
+3. DOM కి **కమిట్** చేయడం (ఆర్డర్‌ను టేబుల్‌ పై ఉంచడం)
 
 <IllustrationBlock sequential>
-  <Illustration caption="Trigger" alt="React as a server in a restaurant, fetching orders from the users and delivering them to the Component Kitchen." src="/images/docs/illustrations/i_render-and-commit1.png" />
+  <Illustration caption="ట్రిగ్గర్" alt="ఒక రెస్టారెంట్‌లో React సర్వర్‌గా, యూజర్ల నుండి ఆర్డర్‌లను తీసుకోవడం మరియు వాటిని కాంపోనెంట్ కిచెన్‌కు డెలివరీ చేయడం." src="/images/docs/illustrations/i_render-and-commit1.png" />
   <Illustration caption="Render" alt="The Card Chef gives React a fresh Card component." src="/images/docs/illustrations/i_render-and-commit2.png" />
   <Illustration caption="Commit" alt="React delivers the Card to the user at their table." src="/images/docs/illustrations/i_render-and-commit3.png" />
 </IllustrationBlock>
 
 <LearnMore path="/learn/render-and-commit">
 
-Read **[Render and Commit](/learn/render-and-commit)** to learn the lifecycle of a UI update.
+UI అప్‌డేట్ లైఫ్ సైకిల్ ని తెలుసుకోవడానికి **[రెండర్ అండ్ కమిట్](/learn/render-and-commit)** ని చదవండి.
 
 </LearnMore>
 
-## State as a snapshot {/*state-as-a-snapshot*/}
+## state ఒక స్నాప్‌షాట్ {/*state-as-a-snapshot*/}
 
-Unlike regular JavaScript variables, React state behaves more like a snapshot. Setting it does not change the state variable you already have, but instead triggers a re-render. This can be surprising at first!
+సాధారణ JavaScript వేరియబుల్స్ కాకుండా, React state స్నాప్‌షాట్ లాగా ప్రవర్తిస్తుంది. దీన్ని సెట్ చేయడం వలన మీరు ఇప్పటికే కలిగి ఉన్న state వేరియబుల్ మారదు, బదులుగా రీ-రెండర్‌ను ప్రేరేపిస్తుంది. ఇది మొదట ఆశ్చర్యం కలిగించవచ్చు!
 
 ```js
 console.log(count);  // 0
-setCount(count + 1); // Request a re-render with 1
-console.log(count);  // Still 0!
+setCount(count + 1); // 1 తో రీ-రెండర్‌ని రిక్వెస్ట్ చేయండి
+console.log(count);  // ఇప్పటికీ 0!
 ```
 
-This behavior helps you avoid subtle bugs. Here is a little chat app. Try to guess what happens if you press "Send" first and *then* change the recipient to Bob. Whose name will appear in the `alert` five seconds later?
+ఈ ప్రవర్తన మీకు సూక్ష్మ బగ్లను నివారించడంలో సహాయపడుతుంది. ఇక్కడ ఒక చిన్న చాట్ యాప్ ఉంది. మీరు ముందుగా "సెండ్" నొక్కి, *తరువాత* రెసెప్పెంట్ను బాబ్‌గా మార్చినట్లయితే ఏమి జరుగుతుందో ఊహించడానికి ప్రయత్నించండి. ఐదు సెకన్ల తర్వాత `alert` లో ఎవరి పేరు కనిపిస్తుంది?
 
 <Sandpack>
 
@@ -313,14 +315,14 @@ label, textarea { margin-bottom: 10px; display: block; }
 
 
 <LearnMore path="/learn/state-as-a-snapshot">
-
-Read **[State as a Snapshot](/learn/state-as-a-snapshot)** to learn why state appears "fixed" and unchanging inside the event handlers.
+  
+ఈవెంట్ హ్యాండ్లర్‌లలో state ఎందుకు "స్థిరంగా" మరియు మారకుండా కనిపిస్తుందో తెలుసుకోవడానికి **[state ఒక స్నాప్‌షాట్](/learn/state-as-a-snapshot)** ని చదవండి.
 
 </LearnMore>
 
-## Queueing a series of state updates {/*queueing-a-series-of-state-updates*/}
+## state అప్‌డేట్‌ల సెట్‌ను క్రమబద్ధీకరించడం {/*queueing-a-series-of-state-updates*/}
 
-This component is buggy: clicking "+3" increments the score only once.
+ఈ కాంపోనెంట్ బగ్గా ఉంది: '+3' పై క్లిక్ చేసినప్పుడు స్కోరును ఒకసారి మాత్రమే పెంచుతుంది.
 
 <Sandpack>
 
@@ -354,7 +356,8 @@ button { display: inline-block; margin: 10px; font-size: 20px; }
 
 </Sandpack>
 
-[State as a Snapshot](/learn/state-as-a-snapshot) explains why this is happening. Setting state requests a new re-render, but does not change it in the already running code. So `score` continues to be `0` right after you call `setScore(score + 1)`.
+[state ఒక స్నాప్‌షాట్](/learn/state-as-a-snapshot) ఇది ఎందుకు జరుగుతుందో వివరిస్తుంది. state ని సెట్ చేయడం కొత్త రీ-రెండర్‌ను రిక్వెస్ట్ చేస్తుంది, కానీ ఇప్పటికే రన్ అవుతున్న కోడ్‌లో దాన్ని మార్చదు. కాబట్టి మీరు `setScore(score + 1)` ని కాల్ చేసిన వెంటనే `score` `0` గా కొనసాగుతుంది.
+
 
 ```js
 console.log(score);  // 0
@@ -366,7 +369,8 @@ setScore(score + 1); // setScore(0 + 1);
 console.log(score);  // 0
 ```
 
-You can fix this by passing an *updater function* when setting state. Notice how replacing `setScore(score + 1)` with `setScore(s => s + 1)` fixes the "+3" button. This lets you queue multiple state updates.
+మీరు state ని సెట్ చేసేటప్పుడు *అప్‌డేటర్ ఫంక్షన్* ని పాస్ చేయడం ద్వారా దీన్ని పరిష్కరించవచ్చు. `setScore(score + 1)` ని `setScore(s => s + 1)` తో రీప్లేస్ చేయడం ద్వారా అది "+3" బటన్‌ను ఎలా ఫిక్స్ చేస్తుందో గమనించండి. ఇది మల్టిపుల్ state అప్డేట్లను క్కు చేయడానికి మిమ్మల్ని అనుమతిస్తుంది.
+
 
 <Sandpack>
 
@@ -402,15 +406,16 @@ button { display: inline-block; margin: 10px; font-size: 20px; }
 
 <LearnMore path="/learn/queueing-a-series-of-state-updates">
 
-Read **[Queueing a Series of State Updates](/learn/queueing-a-series-of-state-updates)** to learn how to queue a sequence of state updates.
+state అప్‌డేట్‌ల సీక్వెన్స్ ని ఎలా క్యూలో ఉంచాలో తెలుసుకోవడానికి **[state అప్‌డేట్‌ల సెట్‌ను క్రమబద్ధీకరించడం](/learn/queueing-a-series-of-state-updates)** గురించి చదవండి.
 
 </LearnMore>
 
-## Updating objects in state {/*updating-objects-in-state*/}
+## state లో ఆబ్జెక్ట్‌లను అప్‌డేట్ చేయడం {/*updating-objects-in-state*/}
 
-State can hold any kind of JavaScript value, including objects. But you shouldn't change objects and arrays that you hold in the React state directly. Instead, when you want to update an object and array, you need to create a new one (or make a copy of an existing one), and then update the state to use that copy.
+state ఆబ్జెక్ట్‌లతో సహా ఎలాంటి JavaScript వేల్యూ ని అయినా కలిగి ఉంటుంది. కానీ మీరు డైరెక్ట్ గా React state లో ఉంచే ఆబ్జెక్ట్లను మరియు array లను చేంజ్ చేయకూడదు. బదులుగా, మీరు ఆబ్జెక్ట్ మరియు array ని అప్‌డేట్ చేయాలనుకున్నప్పుడు, మీరు కొత్తదాన్ని సృష్టించాలి (లేదా ఇప్పటికే ఉన్న దాని కాపీని తయారు చేయాలి), ఆపై ఆ కాపీని ఉపయోగించడానికి state ను అప్‌డేట్ చేయాలి.
 
-Usually, you will use the `...` spread syntax to copy objects and arrays that you want to change. For example, updating a nested object could look like this:
+
+సాధారణంగా, మీరు మార్చాలనుకుంటున్న ఆబ్జెక్ట్లు మరియు array లను కాపీ చేయడానికి మీరు `...` స్ప్రెడ్ సింటాక్స్‌ని ఉపయోగిస్తారు. ఉదాహరణకు, నెస్టెడ్ ఆబ్జెక్ట్ ను అప్డేట్ చేయడం ఇలా ఉంటుంది:
 
 <Sandpack>
 
@@ -518,7 +523,7 @@ img { width: 200px; height: 200px; }
 
 </Sandpack>
 
-If copying objects in code gets tedious, you can use a library like [Immer](https://github.com/immerjs/use-immer) to reduce repetitive code:
+ఆబ్జెక్ట్‌లను కోడ్‌లో కాపీ చేయడం విసుగు తెప్పిస్తే, రిపిటీటివ్ కోడ్‌ను తగ్గించడానికి మీరు [Immer](https://github.com/immerjs/use-immer) అనే లైబ్రరీని ఉపయోగించవచ్చు:
 
 <Sandpack>
 
@@ -633,13 +638,13 @@ img { width: 200px; height: 200px; }
 
 <LearnMore path="/learn/updating-objects-in-state">
 
-Read **[Updating Objects in State](/learn/updating-objects-in-state)** to learn how to update objects correctly.
+ఆబ్జెక్ట్‌లను కరెక్ట్ గా ఎలా అప్‌డేట్ చేయాలో తెలుసుకోవడానికి **[state లో ఆబ్జెక్ట్‌లను అప్‌డేట్ చేయడం](/learn/updating-objects-in-state)** గురించి చదవండి.
 
 </LearnMore>
 
-## Updating arrays in state {/*updating-arrays-in-state*/}
+## state లో array లను అప్డేట్ చేయడం {/*updating-arrays-in-state*/}
 
-Arrays are another type of mutable JavaScript objects you can store in state and should treat as read-only. Just like with objects, when you want to update an array stored in state, you need to create a new one (or make a copy of an existing one), and then set state to use the new array:
+array లు అనేవి మీరు state లో స్టోర్ చేయగల మరొక రకమైన మ్యుటేబుల్ JavaScript ఆబ్జెక్ట్‌లు మరియు వాటిని రీడ్-ఓన్లీ గా మాత్రమే పరిగణించాలి. ఆబ్జెక్ట్‌ల మాదిరిగానే, మీరు store లో స్టోర్ చేయబడిన array ని అప్‌డేట్ చేయాలనుకున్నప్పుడు, మీరు కొత్తదాన్ని సృష్టించాలి (లేదా ఇప్పటికే ఉన్న దాని కాపీని తయారు చేయాలి), ఆపై కొత్త array ని ఉపయోగించడానికి state ని సెట్ చేయాలి:
 
 <Sandpack>
 
@@ -705,7 +710,7 @@ function ItemList({ artworks, onToggle }) {
 
 </Sandpack>
 
-If copying arrays in code gets tedious, you can use a library like [Immer](https://github.com/immerjs/use-immer) to reduce repetitive code:
+కోడ్‌లో array లను కాపీ చేయడం విసుగు తెప్పిస్తే, రిపిటీటివ్ కోడ్‌ను తగ్గించడానికి మీరు [Immer](https://github.com/immerjs/use-immer) అనే లైబ్రరీని ఉపయోగించవచ్చు:
 
 <Sandpack>
 
@@ -789,12 +794,12 @@ function ItemList({ artworks, onToggle }) {
 
 <LearnMore path="/learn/updating-arrays-in-state">
 
-Read **[Updating Arrays in State](/learn/updating-arrays-in-state)** to learn how to update arrays correctly.
+array లను సరిగ్గా ఎలా అప్‌డేట్ చేయాలో తెలుసుకోవడానికి **[state లో array లను అప్‌డేట్ చేయడం](/learn/updating-arrays-in-state)** గురించి చదవండి.
 
 </LearnMore>
 
-## What's next? {/*whats-next*/}
+## తరవాత ఏంటి? {/*whats-next*/}
 
-Head over to [Responding to Events](/learn/responding-to-events) to start reading this chapter page by page!
+ఈ చాప్టర్ ని పేజీలవారీగా చదవడం ప్రారంభించడానికి [ఈవెంట్లకు రెస్పాండ్ అవ్వడం](/learn/responding-to-events) కి వెళ్లండి!
 
-Or, if you're already familiar with these topics, why not read about [Managing State](/learn/managing-state)?
+లేదా, మీకు ఈ టాపిక్స్ గురించి ఇప్పటికే తెలిసి ఉంటే, [మేనేజింగ్ state](/learn/managing-state) గురించి ఎందుకు చదవకూడదు?
