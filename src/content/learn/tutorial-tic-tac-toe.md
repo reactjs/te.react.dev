@@ -295,7 +295,11 @@ export default function Square() {
 }
 ```
 
+<<<<<<< HEAD
 _బ్రౌసర్_ విభాగం ఇలా X తో కూడిన స్క్వేర్ ని ప్రదర్శించాలి:
+=======
+The _browser_ section should be displaying a square with an X in it like this:
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 ![X నిండిన స్క్వేర్](../images/tutorial/x-filled-square.png)
 
@@ -1325,7 +1329,11 @@ body {
 1. `squares` array లోని మొదటి ఎలిమెంట్ ని `null` నుండి `X` కి అప్డేట్ చేయడానికి `handleClick` ఆర్గ్యుమెంట్ (`0`) ని ఉపయోగిస్తుంది.
 1. `Board` కాంపోనెంట్ యొక్క `squares` state అప్డేట్ చేయబడింది, కాబట్టి `Board` మరియు దాని చైల్డ్స్ అందరూ మళ్ళీ రెండర్ అవుతారు. ఇది `0` ఇండెక్స్తో ఉన్న `Square` కాంపోనెంట్ యొక్క `value` ప్రాప్‌ను `null` నుండి `X` కి మార్చడానికి కారణమవుతుంది.
 
+<<<<<<< HEAD
 చివరగా, యూసర్ టాప్ లెఫ్ట్ స్క్వేర్‌ని క్లిక్ చేసిన తర్వాత అది ఖాళీ నుండి `X` గా మారడం చూస్తారు.
+=======
+In the end the user sees that the upper left square has changed from empty to having an `X` after clicking it.
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 <Note>
 
@@ -1406,7 +1414,11 @@ export default function Board() {
 
 `X` ఒక `O` ద్వారా ఒవెర్రైట్ చేయబడింది! ఇది గేమ్‌కు చాలా ఆసక్తికరమైన ట్విస్ట్‌ని జోడిస్తుంది, మనం ప్రస్తుతానికి ఒరిజినల్ రూల్స్ కు కట్టుబడి ఉందాము.
 
+<<<<<<< HEAD
 మీరు స్క్వేర్‌ను `X` లేదా `O` తో మార్క్ చేసినప్పుడు, స్క్వేర్‌లో ఇప్పటికే `X` లేదా `O` వేల్యూ ఉందో లేదో తనిఖీ చేయడం లేదు. మీరు *ఎర్లీగా రిటర్న్ చేయడం* ద్వారా దీన్ని పరిష్కరించవచ్చు. స్క్వేర్‌లో ఇప్పటికే `X` లేదా `O` ఉందో లేదో మీరు తనిఖీ చేస్తారు. స్క్వేర్ ఇప్పటికే ఫిల్ అయి ఉంటే, మీరు ముందుగా `handleClick` ఫంక్షన్‌లో `return` అవుతారు--ఇది బోర్డ్ state ని అప్డేట్ చేయడానికి ప్రయత్నించే ముందు.
+=======
+When you mark a square with an `X` or an `O` you aren't first checking to see if the square already has an `X` or `O` value. You can fix this by *returning early*. You'll check to see if the square already has an `X` or an `O`. If the square is already filled, you will `return` in the `handleClick` function early--before it tries to update the board state.
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 ```js {2,3,4}
 function handleClick(i) {
@@ -1556,7 +1568,11 @@ function calculateWinner(squares) {
 
 </Note>
 
+<<<<<<< HEAD
 ప్లేయర్ గెలిచాడో లేదో తనిఖీ చేయడానికి మీరు `Board` కాంపోనెంట్ యొక్క `handleClick` ఫంక్షన్‌లో `calculateWinner(squares)` ని కాల్ చేస్తారు. యూసర్ ఇప్పటికే `X` లేదా `O` ని కలిగి ఉన్న స్క్వేర్‌ని క్లిక్ చేశారో లేదో తనిఖీ చేసే సమయంలోనే మీరు ఈ తనిఖీని పెర్ఫర్మ్ చేయవచ్చు. మేము రెండు సందర్భాల్లో ఎర్లీగా రిటర్న్ చేయాలనుకుంటున్నాను:
+=======
+You will call `calculateWinner(squares)` in the `Board` component's `handleClick` function to check if a player has won. You can perform this check at the same time you check if a user has clicked a square that already has an `X` or an `O`. We'd like to return early in both cases:
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
 ```js {2}
 function handleClick(i) {
