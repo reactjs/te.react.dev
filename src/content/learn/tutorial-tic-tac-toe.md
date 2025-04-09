@@ -2247,11 +2247,7 @@ body {
 
 </Sandpack>
 
-<<<<<<< HEAD
 మీరు `map` కి పంపిన ఫంక్షన్‌లోని `history` array ద్వారా ఇటరేట్ అవుతున్నపుడు, `squares` ఆర్గ్యుమెంట్ `history` లోని ప్రతి ఎలిమెంట్ గుండా వెళుతుంది మరియు `move` ఆర్గ్యుమెంట్ ప్రతి array ఇండెక్స్ ద్వారా వెళుతుంది: `0`, `1`, `2`, …. (చాలా సందర్భాలలో, మీకు యాక్చువల్ array ఎలిమెంట్లు అవసరం, కానీ కదలికల లిస్ట్ ను అందించడానికి మీకు ఇండెక్స్లు మాత్రమే అవసరం.)
-=======
-As you iterate through the `history` array inside the function you passed to `map`, the `squares` argument goes through each element of `history`, and the `move` argument goes through each array index: `0`, `1`, `2`, …. (In most cases, you'd need the actual array elements, but to render a list of moves you will only need indexes.)
->>>>>>> 5138e605225b24d25701a1a1f68daa90499122a4
 
 టిక్-టాక్-టో గేమ్ చరిత్రలో ప్రతి కదలిక కోసం, మీరు `<li>` లో ఒక బటన్‌ను కలిగి ఉన్న లిస్ట్ ఐటెం `<button>` ని క్రియేట్ చేస్తారు. బటన్‌లో `onClick` హ్యాండ్లర్ ఉంది, ఇది `jumpTo` (మీరు ఇంకా ఇంప్లిమెంట్ చేయలేదు) అనే ఫంక్షన్‌ని కాల్ చేస్తుంది.
 
