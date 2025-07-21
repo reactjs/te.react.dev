@@ -11,27 +11,16 @@ TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు �
 
 <YouWillLearn>
 
-<<<<<<< HEAD
 * [TypeScript లో React కాంపోనెంట్లను ఎలా రాయడం](/learn/typescript#typescript-with-react-components)
 * [Hooks తో టైప్ ఉదాహరణలు](/learn/typescript#example-hooks)
-* [`@types/react` నుండి సాధారణ టైప్స్](/learn/typescript/#useful-types)
-* [మరింత నేర్చుకోవడానికి రిసోర్సెస్](/learn/typescript/#further-learning)
-=======
-* [TypeScript with React Components](/learn/typescript#typescript-with-react-components)
-* [Examples of typing with Hooks](/learn/typescript#example-hooks)
-* [Common types from `@types/react`](/learn/typescript#useful-types)
-* [Further learning locations](/learn/typescript#further-learning)
->>>>>>> d52b3ec734077fd56f012fc2b30a67928d14cc73
+* [`@types/react` నుండి సాధారణ టైప్స్](/learn/typescript#useful-types)
+* [మరింత నేర్చుకోవడానికి రిసోర్సెస్](/learn/typescript#further-learning)
 
 </YouWillLearn>
 
 ## ఇన్‌స్టాలేషన్ {/*installation*/}
 
-<<<<<<< HEAD
-అన్ని [ప్రొడక్షన్-గ్రేడ్ React ఫ్రేమ్‌వర్క్‌లు](/learn/start-a-new-react-project#production-grade-react-frameworks) TypeScript ని ఉపయోగించడం కోసం సపోర్ట్ను అందిస్తాయి. ఇన్‌స్టాలేషన్ కోసం ఫ్రేమ్‌వర్క్ యొక్క ప్రత్యేక గైడ్‌ను అనుసరించండి:
-=======
-All [production-grade React frameworks](/learn/creating-a-react-app#full-stack-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
->>>>>>> d52b3ec734077fd56f012fc2b30a67928d14cc73
+అన్ని [ప్రొడక్షన్-గ్రేడ్ React ఫ్రేమ్‌వర్క్‌లు](/learn/creating-a-react-app#full-stack-frameworks) TypeScript ని ఉపయోగించడం కోసం సపోర్ట్ను అందిస్తాయి. ఇన్‌స్టాలేషన్ కోసం ఫ్రేమ్‌వర్క్ యొక్క ప్రత్యేక గైడ్‌ను అనుసరించండి:
 
 - [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
