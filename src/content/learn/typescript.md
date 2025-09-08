@@ -32,14 +32,20 @@ TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు �
 React యొక్క టైప్ డెఫినిషన్ల లేటెస్ట్ వెర్షన్ను ఇన్‌స్టాల్ చేయడానికి:
 
 <TerminalBlock>
-npm install @types/react @types/react-dom
+npm install --save-dev @types/react @types/react-dom
 </TerminalBlock>
 
 మీ `tsconfig.json` లో, క్రింది కంపైలర్ ఆప్షన్స్ ని సెట్ చేయాలి:
 
+<<<<<<< HEAD
 1. [`lib`](https://www.typescriptlang.org/tsconfig/#lib) లో `dom` ఉండాలి (గమనిక: ఎలాంటి `lib` ఆప్షన్ స్పెసిఫ్య్ చేయలేదు అంటే, `dom` డిఫాల్ట్ గా ఉంటుంది).
 1. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) ని తప్పనిసరిగా వెలిడ్ అయ్యే ఆప్షన్లలో ఒకదానికి సెట్ చేయాలి. చాలా అప్లికేషన్స్‌కి `preserve` సరిపోతుంది.
   మీరు లైబ్రరీని పబ్లిష్ చేస్తున్నట్లు అయితే, ఎలాంటి వేల్యూ ను ఎంచుకోవాలో తెలుసుకోవడానికి [`jsx` డాక్యుమెంటేషన్](https://www.typescriptlang.org/tsconfig/#jsx) ను సంప్రదించండి.
+=======
+1. `dom` must be included in [`lib`](https://www.typescriptlang.org/tsconfig/#lib) (Note: If no `lib` option is specified, `dom` is included by default).
+2. [`jsx`](https://www.typescriptlang.org/tsconfig/#jsx) must be set to one of the valid options. `preserve` should suffice for most applications.
+  If you're publishing a library, consult the [`jsx` documentation](https://www.typescriptlang.org/tsconfig/#jsx) on what value to choose.
+>>>>>>> d34c6a2c6fa49fc6f64b07aa4fa979d86d41c4e8
 
 ## TypeScript లో React కాంపోనెంట్లను ఎలా రాయడం {/*typescript-with-react-components*/}
 
