@@ -20,7 +20,11 @@ TypeScript అనేది JavaScript కోడ్‌బేస్‌లకు �
 
 ## ఇన్‌స్టాలేషన్ {/*installation*/}
 
+<<<<<<< HEAD
 అన్ని [ప్రొడక్షన్-గ్రేడ్ React ఫ్రేమ్‌వర్క్‌లు](/learn/start-a-new-react-project#full-stack-frameworks) TypeScript ని ఉపయోగించడం కోసం సపోర్ట్ను అందిస్తాయి. ఇన్‌స్టాలేషన్ కోసం ఫ్రేమ్‌వర్క్ యొక్క ప్రత్యేక గైడ్‌ను అనుసరించండి:
+=======
+All [production-grade React frameworks](/learn/creating-a-react-app#full-stack-frameworks) offer support for using TypeScript. Follow the framework specific guide for installation:
+>>>>>>> 2534424ec6c433cc2c811d5a0bd5a65b75efa5f0
 
 - [Next.js](https://nextjs.org/docs/app/building-your-application/configuring/typescript)
 - [Remix](https://remix.run/docs/en/1.19.2/guides/typescript)
