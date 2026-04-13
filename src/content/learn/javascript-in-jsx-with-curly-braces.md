@@ -41,11 +41,7 @@ export default function Avatar() {
 
 </Sandpack>
 
-<<<<<<< HEAD
-ఇక్కడ, `"https://i.imgur.com/7vQD0fPs.jpg"` మరియు `"Gregorio Y. Zara"` strings గా పాస్ అవుతున్నాయి.
-=======
-Here, `"https://react.dev/images/docs/scientists/7vQD0fPs.jpg"` and `"Gregorio Y. Zara"` are being passed as strings.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+ఇక్కడ, `"https://react.dev/images/docs/scientists/7vQD0fPs.jpg"` మరియు `"Gregorio Y. Zara"` strings గా పాస్ అవుతున్నాయి.
 
 కానీ మీరు డైనమిక్‌గా `src` లేదా `alt` టెక్ట్స్ ను స్పెసిఫై చేయాలనుకుంటే? మీరు **JavaScript నుండి వాల్యూలను ఉపయోగించడానికి `"` మరియు `"` ను `{` మరియు `}` తో మార్చవచ్చు**:
 
@@ -432,11 +428,7 @@ body > div > div { padding: 20px; }
 
 కింద ఇచ్చిన ఆబ్జెక్టులో, పూర్తి చిత్రం URL నాలుగు భాగాల్లో విభజించబడింది: బేస్ URL, `imageId`, `imageSize`, మరియు ఫైల్ ఎక్స్‌టెన్షన్.
 
-<<<<<<< HEAD
-మేము ఈ అట్రిబ్యూట్లను కలిపి చిత్రం URL తయారుచేయాలని కోరుకుంటున్నాము: బేస్ URL (ఎప్పుడూ `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`), మరియు ఫైల్ ఎక్స్‌టెన్షన్ (ఎప్పుడూ `'.jpg'`). అయితే, `<img>` ట్యాగ్ లో `src` ఎలా నిర్దేశించబడింది అనేదిలో ఏదో తప్పు ఉంది.
-=======
-We want the image URL to combine these attributes together: base URL (always `'https://react.dev/images/docs/scientists/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`), and file extension (always `'.jpg'`). However, something is wrong with how the `<img>` tag specifies its `src`.
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+మేము ఈ అట్రిబ్యూట్లను కలిపి చిత్రం URL తయారుచేయాలని కోరుకుంటున్నాము: బేస్ URL (ఎప్పుడూ `'https://react.dev/images/docs/scientists/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`), మరియు ఫైల్ ఎక్స్‌టెన్షన్ (ఎప్పుడూ `'.jpg'`). అయితే, `<img>` ట్యాగ్ లో `src` ఎలా నిర్దేశించబడింది అనేదిలో ఏదో తప్పు ఉంది.
 
 మీరు దీనిని సరి చేయగలరా?
 
