@@ -337,7 +337,7 @@ import './styles.css';
 import App from './App';
 ```
 
-1-5 లైన్స్ అవసరమైన అన్ని ముక్కలను ఒకచోట చేర్చాయి: 
+1-5 లైన్స్ అవసరమైన అన్ని ముక్కలను ఒకచోట చేర్చాయి:
 
 * React
 * వెబ్ బ్రౌజర్‌లతో మాట్లాడటానికి React లైబ్రరీ (React DOM)
@@ -2073,12 +2073,12 @@ export default function Game() {
 }
 ```
 
-మీ కోడ్ ఎలా ఉండాలో మీరు క్రింద చూడవచ్చు. మీరు డెవలపర్ టూల్స్ కన్సోల్‌లో ఇలా చెప్పే ఎర్రర్ ని చూడాలని గుర్తుంచుకోండి: 
+మీ కోడ్ ఎలా ఉండాలో మీరు క్రింద చూడవచ్చు. మీరు డెవలపర్ టూల్స్ కన్సోల్‌లో ఇలా చెప్పే ఎర్రర్ ని చూడాలని గుర్తుంచుకోండి:
 
 <ConsoleBlock level="warning">
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
 </ConsoleBlock>
-  
+
 మీరు నెక్స్ట్ సెక్షన్లో ఈ ఎర్రర్ ని ఫిక్స్ చేస్తారు.
 
 <Sandpack>
