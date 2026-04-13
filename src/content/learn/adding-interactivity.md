@@ -315,7 +315,7 @@ label, textarea { margin-bottom: 10px; display: block; }
 
 
 <LearnMore path="/learn/state-as-a-snapshot">
-  
+
 ఈవెంట్ హ్యాండ్లర్‌లలో state ఎందుకు "స్థిరంగా" మరియు మారకుండా కనిపిస్తుందో తెలుసుకోవడానికి **[state ఒక స్నాప్‌షాట్](/learn/state-as-a-snapshot)** ని చదవండి.
 
 </LearnMore>
