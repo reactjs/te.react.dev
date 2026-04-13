@@ -337,7 +337,11 @@ import './styles.css';
 import App from './App';
 ```
 
+<<<<<<< HEAD
 1-5 లైన్స్ అవసరమైన అన్ని ముక్కలను ఒకచోట చేర్చాయి: 
+=======
+Lines 1-5 bring all the necessary pieces together:
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 * React
 * వెబ్ బ్రౌజర్‌లతో మాట్లాడటానికి React లైబ్రరీ (React DOM)
@@ -551,7 +555,11 @@ export default function Board() {
 }
 ```
 
+<<<<<<< HEAD
 బ్రౌజర్ `div` ల మాదిరిగా కాకుండా, మీరు సృష్టించే కాంపోనెంట్లు `Board` మరియు `Square` తప్పనిసరిగా క్యాపిటల్ లెటర్ తో స్టార్ట్ అవ్వాలి.
+=======
+Note how unlike the browser `div`s, your own components `Board` and `Square` must start with a capital letter.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 ఏమి జరిగిందో చూద్దాం:
 
@@ -1094,7 +1102,11 @@ function Square({ value, onSquareClick }) {
 }
 ```
 
+<<<<<<< HEAD
 ఇప్పుడు మీరు `onSquareClick` ప్రాప్‌ని `Board` కాంపోనెంట్‌లోని ఫంక్షన్‌కి కనెక్ట్ చేస్తారు, దానికి మీరు `handleClick` అని పేరు పెట్టారు. `onSquareClick` ని `handleClick` కి కనెక్ట్ చేయడానికి, మీరు మొదటి `Square` కాంపోనెంట్ యొక్క `onSquareClick` ప్రాప్‌కి ఒక ఫంక్షన్‌ని పాస్ చేస్తారు:
+=======
+Now you'll connect the `onSquareClick` prop to a function in the `Board` component that you'll name `handleClick`. To connect `onSquareClick` to `handleClick` you'll pass a function to the `onSquareClick` prop of the first `Square` component:
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 ```js {7}
 export default function Board() {
@@ -2073,13 +2085,22 @@ export default function Game() {
 }
 ```
 
+<<<<<<< HEAD
 మీ కోడ్ ఎలా ఉండాలో మీరు క్రింద చూడవచ్చు. మీరు డెవలపర్ టూల్స్ కన్సోల్‌లో ఇలా చెప్పే ఎర్రర్ ని చూడాలని గుర్తుంచుకోండి: 
+=======
+You can see what your code should look like below. Note that you should see an error in the developer tools console that says:
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <ConsoleBlock level="warning">
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
 </ConsoleBlock>
+<<<<<<< HEAD
   
 మీరు నెక్స్ట్ సెక్షన్లో ఈ ఎర్రర్ ని ఫిక్స్ చేస్తారు.
+=======
+
+You'll fix this error in the next section.
+>>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
 
 <Sandpack>
 
