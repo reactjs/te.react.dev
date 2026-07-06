@@ -899,6 +899,7 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
+<<<<<<< HEAD
 React DevTools మీ React కాంపోనెంట్‌ల props మరియు state ని చెక్ చేయడానికి మిమ్మల్ని అనుమతిస్తాయి. CodeSandbox లోని _Browser_ విభాగం దిగువన మీరు React DevTools ట్యాబ్‌ను కనుగొనవచ్చు:
 
 ![CodeSandbox లోని React DevTools](../images/tutorial/codesandbox-devtools.png)
@@ -906,12 +907,26 @@ React DevTools మీ React కాంపోనెంట్‌ల props మరి
 స్క్రీన్‌పై పర్టికులర్ కాంపోనెంట్ ని ఇన్స్పెక్ట చేయడానికి, React DevTools టాప్ లెఫ్ట్ కార్నర్లో ఉన్న బటన్‌ను ఉపయోగించండి:
 
 ![React DevTools తో పేజీలోని కాంపోనెంట్లను సెలెక్ట్ చేయడం](../images/tutorial/devtools-select.gif)
+=======
+React Developer Tools let you check the props and the state of your React components. It is available as a [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), and [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) browser extension.
 
-<Note>
+After you install it, a new *Components* tab will appear in your browser Developer Tools for sites using React. If you're following along in CodeSandbox, you'd need to first open your sandbox preview in a new tab:
 
+![opening in new tab](../images/tutorial/sandbox-new-tab.png)
+
+Then, on the preview page, open your browser's DevTools and find the *Components* tab:
+>>>>>>> 2639f369946f763fff9a2572b0d7c4b9e2f83ebd
+
+![components tab](../images/tutorial/components-tab.png)
+
+<<<<<<< HEAD
 లోకల్ డెవలప్మెంట్ కోసం, React DevTools [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), మరియు [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) బ్రౌజర్ ఎక్స్టెన్షన్ గా అందుబాటులో ఉంది. దీన్ని ఇన్‌స్టాల్ చేయండి మరియు React ని ఉపయోగించే సైట్‌ల కోసం మీ బ్రౌజర్ డెవలపర్ టూల్స్‌లో *Components* ట్యాబ్ కనిపిస్తుంది.
+=======
+To inspect a particular component on the screen, use the button in the top left corner of the Components tab:
 
-</Note>
+![inspecting with devtools](../images/tutorial/devtools-inspect.gif)
+>>>>>>> 2639f369946f763fff9a2572b0d7c4b9e2f83ebd
+
 
 ## గేమ్‌ను పూర్తి చేయడం {/*completing-the-game*/}
 
