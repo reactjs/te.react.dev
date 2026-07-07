@@ -899,19 +899,20 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
-React DevTools మీ React కాంపోనెంట్‌ల props మరియు state ని చెక్ చేయడానికి మిమ్మల్ని అనుమతిస్తాయి. CodeSandbox లోని _Browser_ విభాగం దిగువన మీరు React DevTools ట్యాబ్‌ను కనుగొనవచ్చు:
+React Developer Tools మీ React కాంపోనెంట్‌ల props మరియు state ని చెక్ చేయడానికి సహాయపడతాయి. ఇది [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), మరియు [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) బ్రౌజర్ ఎక్స్టెన్షన్‌గా అందుబాటులో ఉంది.
 
-![CodeSandbox లోని React DevTools](../images/tutorial/codesandbox-devtools.png)
+మీరు దాన్ని ఇన్‌స్టాల్ చేసిన తర్వాత, React ని ఉపయోగించే సైట్‌ల కోసం మీ బ్రౌజర్ Developer Tools లో కొత్త *Components* ట్యాబ్ కనిపిస్తుంది. మీరు CodeSandbox లోనే ఈ ట్యుటోరియల్‌ని అనుసరిస్తుంటే, ముందుగా మీ sandbox preview ని కొత్త ట్యాబ్‌లో ఓపెన్ చేయాలి:
 
-స్క్రీన్‌పై పర్టికులర్ కాంపోనెంట్ ని ఇన్స్పెక్ట చేయడానికి, React DevTools టాప్ లెఫ్ట్ కార్నర్లో ఉన్న బటన్‌ను ఉపయోగించండి:
+![కొత్త ట్యాబ్‌లో ఓపెన్ చేయడం](../images/tutorial/sandbox-new-tab.png)
 
-![React DevTools తో పేజీలోని కాంపోనెంట్లను సెలెక్ట్ చేయడం](../images/tutorial/devtools-select.gif)
+తర్వాత, ఆ preview పేజీలో మీ బ్రౌజర్ DevTools ని ఓపెన్ చేసి, *Components* ట్యాబ్‌ని కనుగొనండి:
 
-<Note>
+![Components ట్యాబ్](../images/tutorial/components-tab.png)
 
-లోకల్ డెవలప్మెంట్ కోసం, React DevTools [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), మరియు [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) బ్రౌజర్ ఎక్స్టెన్షన్ గా అందుబాటులో ఉంది. దీన్ని ఇన్‌స్టాల్ చేయండి మరియు React ని ఉపయోగించే సైట్‌ల కోసం మీ బ్రౌజర్ డెవలపర్ టూల్స్‌లో *Components* ట్యాబ్ కనిపిస్తుంది.
+స్క్రీన్‌పై ఒక నిర్దిష్ట కాంపోనెంట్ ని ఇన్స్పెక్ట చేయడానికి, Components ట్యాబ్ టాప్-లెఫ్ట్ కార్నర్‌లో ఉన్న బటన్‌ని ఉపయోగించండి:
 
-</Note>
+![DevTools తో ఇన్స్పెక్ట చేయడం](../images/tutorial/devtools-inspect.gif)
+
 
 ## గేమ్‌ను పూర్తి చేయడం {/*completing-the-game*/}
 
