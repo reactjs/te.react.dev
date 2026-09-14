@@ -93,11 +93,7 @@
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.5.1",
-<<<<<<< HEAD
-    "react-server-dom-webpack": "^19.2.5",
-=======
     "react-server-dom-webpack": "^19.3.0",
->>>>>>> 8efce7853d0fc59e615ed1c253799cf1798b8428
     "reading-time": "^1.2.0",
     "remark": "^12.0.1",
     "remark-external-links": "^7.0.0",
