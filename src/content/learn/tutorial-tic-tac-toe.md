@@ -1138,11 +1138,7 @@ JavaScript [క్లోసురేష్స్ (closures)](https://developer.m
 
 </Note>
 
-<<<<<<< HEAD
-ఇప్పుడు మీరు X లను బోర్డ్‌కి జోడించవచ్చు... కానీ అప్పర్ లెఫ్ట్ స్క్వేర్కి మాత్రమే. అప్పర్ లెఫ్ట్ స్క్వేర్ (`0`) కోసం ఇండెక్స్ ను అప్డేట్ చేయడానికి మీ `handleClick` ఫంక్షన్ హార్డ్‌కోడ్ చేయబడింది. ఏదైనా స్క్వేర్‌ని అప్‌డేట్ చేయడానికి `handleClick` ని అప్‌డేట్ చేద్దాం. అప్‌డేట్ చేయడానికి స్క్వేర్ ఇండెక్స్‌ను తీసుకునే `handleClick` ఫంక్షన్‌కు ఆర్గ్యుమెంట్ `i` ని జోడించండి:
-=======
-Now you can add X's to the board...  but only to the upper left square. Your `handleClick` function is hardcoded to update the index for the upper left square (`0`). Let's update `handleClick` to be able to update any square. Add a parameter `i` to the `handleClick` function that takes the index of the square to update:
->>>>>>> f5fa1e82edacdf8c6bfc4dfd9cf52029a96d5fd3
+ఇప్పుడు మీరు X లను బోర్డ్‌కి జోడించవచ్చు... కానీ అప్పర్ లెఫ్ట్ స్క్వేర్కి మాత్రమే. అప్పర్ లెఫ్ట్ స్క్వేర్ (`0`) కోసం ఇండెక్స్ ను అప్డేట్ చేయడానికి మీ `handleClick` ఫంక్షన్ హార్డ్‌కోడ్ చేయబడింది. ఏదైనా స్క్వేర్‌ని అప్‌డేట్ చేయడానికి `handleClick` ని అప్‌డేట్ చేద్దాం. అప్‌డేట్ చేయడానికి స్క్వేర్ ఇండెక్స్‌ను తీసుకునే `handleClick` ఫంక్షన్‌కు పెరామీటర్ `i` ని జోడించండి:
 
 ```js {4,6}
 export default function Board() {
