@@ -334,7 +334,11 @@ function MyComponent() {
 
 </Note>
 
+<<<<<<< HEAD
 [`useMemo`](/reference/react/useMemo) Hook ఒక ఫంక్షన్ కాల్ నుండి ఒక మేమోరైజ్డ్ వేల్యూ ను సృష్టిస్తుంది/రీ-అక్సెస్ చేస్తుంది, 2వ పారామీటర్‌గా పంపబడిన డిపెండెన్సీలు మారినప్పుడు మాత్రమే ఫంక్షన్ రీ-రన్ అవుతుంది. Hook ను కాల్ చేయడం వలన వచ్చిన రిజల్ట్ అనేది మొదటి పారామీటర్‌ లోని ఫంక్షన్ నుండి రిటర్న్ అయిన వాల్యూ ద్వారా అంచనా వేయబడుతుంది. మీరు మరింత ఎక్స్ప్లిసిట్ గా టైప్ ఆర్గుమెంట్ ను Hook కు ప్రొవైడ్ చేయవచ్చు.
+=======
+The [`useMemo`](/reference/react/useMemo) Hooks will create/re-access a memoized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed. The result of calling the Hook is inferred from the return value from the function in the first parameter. You can be more explicit by providing a type argument to the Hook.
+>>>>>>> f5fa1e82edacdf8c6bfc4dfd9cf52029a96d5fd3
 
 ```ts
 // visibleTodos యొక్క టైప్, filterTodos యొక్క రిటర్న్ వేల్యూ నుండి ఊహించబడుతుంది.
