@@ -14,12 +14,8 @@ This repo contains the source code and documentation powering [te.react.dev](htt
 
 ### Installation
 
-<<<<<<< HEAD
 1. `cd te.react.dev` to go into the project root
-=======
-1. `cd react.dev` to go into the project root
-2. `git remote add my-fork-name https://github.com/YOUR_USERNAME/react.dev.git` to add your fork as a remote. Replace `YOUR_USERNAME` with your GitHub username. You only need to do this once.
->>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
+2. `git remote add my-fork-name https://github.com/YOUR_USERNAME/te.react.dev.git` to add your fork as a remote. Replace `YOUR_USERNAME` with your GitHub username. You only need to do this once.
 3. `yarn` to install the website's npm dependencies
 
 ### Running locally
@@ -62,11 +58,7 @@ The documentation is divided into several sections with a different tone and pur
 
 ## Translation
 
-<<<<<<< HEAD
 If you are interested in translating `te.react.dev`, please see the current translation efforts [here](https://github.com/reactjs/te.react.dev/issues/1).
-=======
-If you are interested in translating `react.dev`, please see the current translation efforts [here](https://react.dev/community/translations).
->>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 ## License
 Content submitted to [te.react.dev](https://te-react-dev.vercel.app) is CC-BY-4.0 licensed, as found in the [LICENSE-DOCS.md](https://github.com/reactjs/te.react.dev/blob/main/LICENSE-DOCS.md) file.
